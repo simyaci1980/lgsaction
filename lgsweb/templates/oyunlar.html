@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Oyun Alanı & Etkinlikler{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .oyun-container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); padding: 40px 32px; }
+        .oyun-baslik { text-align: center; color: #2d5be3; font-size: 2em; font-family: Arial, sans-serif; margin-bottom: 24px; }
+        .oyun-aciklama { text-align: center; font-size: 1.2em; color: #1565c0; margin-bottom: 24px; }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="oyun-container">
+    <div class="oyun-baslik">Oyun Alanı & Etkinlikler</div>
+    <div class="oyun-aciklama">Burada fen, matematik, tarih gibi dersler için oyunlaştırılmış etkinlikler ve interaktif içerikler bulabilirsiniz.</div>
+    <hr>
+    <!-- Örnek: Mevsimlerin Oluşumu Etkileşimi -->
+    <h2 style="color:#2d5be3;">Mevsimlerin Oluşumu: Etkileşimli Dünya</h2>
+    <img src="/static/resimler/mevsimlerin_olusumu.jpg" id="earthImg" style="max-width: 700px; width: 100%; border-radius: 12px; display:block; margin:0 auto;">
+    <div id="question" style="margin-top:16px; font-size:1.2em; text-align:center;">Dünya üzerinde bir yere tıkla: Hangi mevsim yaşanıyor?</div>
+    <div id="answer" style="margin-top:12px; font-size:1.1em; color:#1565c0; text-align:center;"></div>
+    <script>
+    document.getElementById('earthImg').onclick = function(e) {
+      var x = e.offsetX;
+      var y = e.offsetY;
+      var img = e.target;
+      var h = img.height;
+      var w = img.width;
+      var mevsim = "";
+      if (y < h/2) {
+        mevsim = "Kuzey Yarımküre: Sonbahar veya Kış";
+      } else {
+        mevsim = "Güney Yarımküre: İlkbahar veya Yaz";
+      }
+      document.getElementById('answer').innerText = mevsim;
+    };
+    </script>
+    <hr>
+      <!-- Mevsimlerin Oluşumu: Oyunlaştırılmış Soru -->
+      <h2 style="color:#2d5be3; margin-top:40px;">Mevsimlerin Oluşumu: Oyun</h2>
+      <div id="oyunSoru" style="font-size:1.2em; text-align:center; margin-bottom:12px;"></div>
+      <img src="/static/resimler/mevsimlerin_olusumu.jpg" id="oyunEarthImg" style="max-width: 700px; width: 100%; border-radius: 12px; display:block; margin:0 auto;">
+      <div id="oyunCevap" style="margin-top:12px; font-size:1.1em; color:#1565c0; text-align:center;"></div>
+      <div id="oyunPuan" style="margin-top:12px; font-size:1.1em; color:#2d5be3; text-align:center;"></div>
+      <button onclick="yeniSoru()" style="margin:16px auto; display:block;">Yeni Soru</button>
+        <div id="topAnim" style="position:relative; width:700px; height:0; margin:0 auto;"></div>
+      <script>
+      // Top animasyonu için
+      function topFirlat(x, y, color) {
+        var topDiv = document.createElement('div');
+        topDiv.style.position = 'absolute';
+        topDiv.style.left = (x-15) + 'px';
+        topDiv.style.top = '-30px';
+        topDiv.style.width = '30px';
+        topDiv.style.height = '30px';
+        topDiv.style.borderRadius = '50%';
+        topDiv.style.background = color;
+        topDiv.style.boxShadow = '0 0 8px #333';
+        topDiv.style.zIndex = '10';
+        topDiv.style.transition = 'top 0.5s cubic-bezier(.42,1.5,.58,1), left 0.5s';
+        document.getElementById('topAnim').appendChild(topDiv);
+        setTimeout(function(){
+          topDiv.style.top = (y-15) + 'px';
+        }, 50);
+        setTimeout(function(){
+          topDiv.remove();
+        }, 700);
+      }
+      // Oyun verileri
+      var yarimkureler = ["Kuzey Yarımküre", "Güney Yarımküre"];
+      var mevsimler = ["İlkbahar", "Yaz", "Sonbahar", "Kış"];
+      var dogruYarimkure = "";
+      var dogruMevsim = "";
+      var puan = 0;
+
+      function yeniSoru() {
+        // Rastgele yarımküre ve mevsim seç
+        dogruYarimkure = yarimkureler[Math.floor(Math.random()*yarimkureler.length)];
+        dogruMevsim = mevsimler[Math.floor(Math.random()*mevsimler.length)];
+        document.getElementById('oyunSoru').innerText = dogruYarimkure + "'de " + dogruMevsim + " mevsimi yaşanıyor. Haritada doğru bölgeye tıkla!";
+        document.getElementById('oyunCevap').innerText = "";
+      }
+
+      document.getElementById('oyunEarthImg').onclick = function(e) {
+        var x = e.offsetX;
+        var y = e.offsetY;
+        var img = e.target;
+        var h = img.height;
+        var w = img.width;
+        var secilenYarimkure = (y < h/2) ? "Kuzey Yarımküre" : "Güney Yarımküre";
+        var secilenMevsim = "";
+        if (secilenYarimkure === "Kuzey Yarımküre") {
+          if (dogruMevsim === "İlkbahar" || dogruMevsim === "Yaz") secilenMevsim = dogruMevsim;
+          else secilenMevsim = mevsimler[(mevsimler.indexOf(dogruMevsim)+2)%4];
+        } else {
+          if (dogruMevsim === "Sonbahar" || dogruMevsim === "Kış") secilenMevsim = dogruMevsim;
+          else secilenMevsim = mevsimler[(mevsimler.indexOf(dogruMevsim)+2)%4];
+        }
+        if (secilenYarimkure === dogruYarimkure && secilenMevsim === dogruMevsim) {
+          puan++;
+          topFirlat(x, y, 'green');
+          document.getElementById('oyunCevap').innerText = "Vurdun! Doğru bölgeye topu attın.";
+        } else {
+          topFirlat(x, y, 'red');
+          document.getElementById('oyunCevap').innerText = "Iskaladın! Doğru cevap: " + dogruYarimkure + " - " + dogruMevsim;
+          // Doğru bölgeyi göster
+          var dogruY = (dogruYarimkure === "Kuzey Yarımküre") ? h/4 : h*3/4;
+          var dogruX = w/2;
+          setTimeout(function(){
+            topFirlat(dogruX, dogruY, 'green');
+          }, 700);
+        }
+        document.getElementById('oyunPuan').innerText = "Puan: " + puan;
+      };
+      yeniSoru();
+      </script>
+      <!-- Yeni oyun/etkinlikler buraya eklenebilir -->
+      <div style="margin-top:32px; text-align:center; color:#888;">Yeni oyunlar ve etkinlikler için bu sayfayı kullanabilirsiniz.</div>
+</div>
+{% endblock %}

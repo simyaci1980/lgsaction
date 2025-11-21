@@ -28,4 +28,5 @@ urlpatterns = [
     path('inkilap/', views.inkilap, name='inkilap'),
     path('ingilizce/', views.ingilizce, name='ingilizce'),
     path('din/', views.din, name='din'),
+    path('oyunlar/', views.oyunlar, name='oyunlar'),
 ]

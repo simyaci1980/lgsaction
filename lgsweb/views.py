@@ -20,3 +20,6 @@ def ingilizce(request):
 
 def din(request):
     return render(request, 'din.html')
+
+def oyunlar(request):
+    return render(request, 'oyunlar.html')
