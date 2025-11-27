@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+{% endblock %}
+<script>
+<script>
+function safeKatexRender(expr, id) {
+    var el = document.getElementById(id);
+    if (el) katex.render(expr, el);
+}
+function checkAB(inputA, inputB, correctA, correctB, resultId) {
+    var valA = document.getElementById(inputA).value.trim();
+    var valB = document.getElementById(inputB).value.trim();
+    var resultSpan = document.getElementById(resultId);
+    var katexStr = correctA + "\\sqrt{" + correctB + "}";
+    if (valA === correctA && valB === correctB) {
+        resultSpan.innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru!</span> <span id="'+resultId+'-katex"></span>';
+        safeKatexRender(katexStr, resultId+'-katex');
+    } else {
+        resultSpan.innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış cevap, </span><span id="'+resultId+'-dogru"></span><span style="color:#d32f2f;font-weight:bold;"> olmalıydı.</span>';
+        setTimeout(function() {
+            safeKatexRender(katexStr, resultId+'-dogru');
+        }, 10);
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    safeKatexRender("a\\sqrt{b}", "akokb-formul");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul2-disi");
+    safeKatexRender("\\sqrt{a^2b}", "akokb-formul2-kok");
+    safeKatexRender("\\sqrt{a^2b}", "hedef-id");
+    safeKatexRender("a\\sqrt{b}", "hedef-id1");
+    safeKatexRender("a\\sqrt{b}", "hedef-id2");
+    // Başlık ve formüller
+    safeKatexRender("a\\sqrt{b}", "title-akokb");
+    safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul");
+    safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul2");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul3");
+    safeKatexRender("3\\sqrt{2}", "ex-sqrt-18-result");
+    // Açıklama ve örnekler
+    safeKatexRender("\\sqrt{18}", "ex-sqrt-18");
+    safeKatexRender("\\sqrt{18} = \\sqrt{9 \\times 2} = \\sqrt{9} \\times \\sqrt{2} = 3 \\sqrt{2}", "ex-sqrt-18-step");
+    // Alıştırmalar: kök dışına çıkarma
+    safeKatexRender("\\sqrt{27}", "ex-sqrt-27");
+    safeKatexRender("\\sqrt{50}", "ex-sqrt-50");
+    safeKatexRender("\\sqrt{75}", "ex-sqrt-75");
+    safeKatexRender("\\sqrt{24}", "ex-sqrt-24");
+    safeKatexRender("\\sqrt{300}", "ex-sqrt-300");
+    safeKatexRender("\\sqrt{32}", "ex-sqrt-32");
+    safeKatexRender("a\\sqrt{b}", "ex-a-kok-b-title");
+    // Kök içine alma örnekleri
+    safeKatexRender("a\\sqrt{b} = \\sqrt{a^2b}", "akokb-ters-formul");
+    safeKatexRender("4\\sqrt{3}", "ex-akokb-4-3");
+    safeKatexRender("4\\sqrt{3} = \\sqrt{4^2 \\times 3} = \\sqrt{16 \\times 3} = \\sqrt{48}", "ex-akokb-4-3-step");
+    // Alıştırmalar: kök içine alma
+    safeKatexRender("2\\sqrt{3}", "ex-akokb-2-3");
+    safeKatexRender("\\sqrt{12}", "ex-akokb-2-3-ans");
+    safeKatexRender("3\\sqrt{5}", "ex-akokb-3-5");
+    safeKatexRender("\\sqrt{45}", "ex-akokb-3-5-ans");
+    safeKatexRender("4\\sqrt{7}", "ex-akokb-4-7");
+    safeKatexRender("\\sqrt{112}", "ex-akokb-4-7-ans");
+    safeKatexRender("7\\sqrt{2}", "ex-akokb-7-2");
+    safeKatexRender("\\sqrt{98}", "ex-akokb-7-2-ans");
+    safeKatexRender("-3\\sqrt{3}", "ex-akokb-3-3");
+    safeKatexRender("-\\sqrt{27}", "ex-akokb-3-3-ans");
+    safeKatexRender("-6\\sqrt{3}", "ex-akokb-6-3");
+    safeKatexRender("-\\sqrt{108}", "ex-akokb-6-3-ans");
+    safeKatexRender("-4\\sqrt{5}", "ex-akokb-4-5");
+    safeKatexRender("-\\sqrt{80}", "ex-akokb-4-5-ans");
+    // Sıralama tablosu
+    safeKatexRender("2\\sqrt{3}", "cmp-2-3");
+    safeKatexRender("\\sqrt{10}", "cmp-10");
+    safeKatexRender("4\\sqrt{7}", "cmp-4-7");
+    safeKatexRender("5\\sqrt{5}", "cmp-5-5");
+    safeKatexRender("5\\sqrt{2}", "cmp-5-2");
+    safeKatexRender("4\\sqrt{3}", "cmp-4-3");
+    safeKatexRender("6\\sqrt{3}", "cmp-6-3");
+    safeKatexRender("3\\sqrt{12}", "cmp-3-12");
+    safeKatexRender("4\\sqrt{5}", "cmp-4-5");
+    safeKatexRender("3\\sqrt{6}", "cmp-3-6");
+    safeKatexRender("2\\sqrt{7}", "cmp-2-7");
+    safeKatexRender("3\\sqrt{10}", "cmp-3-10");
+});
+</script>
+</script>
+{% block content %}
+<div class="container" style="max-width:1200px; margin:0 auto; font-size:1.15em;">
+    <h2 class="highlight" style="color:#1976d2;">Karekök İçindeki Bir İfadeyi <span id="title-akokb"></span> Şeklinde Yazma</h2>
+    <div class="tip-box">
+        Kareköklü bir ifadeyi <span id="hedef-id"></span>=<span id="hedef-id1"></span> şeklinde yazarken karekök içindeki sayı, çarpanlarından biri tam kare olan iki sayının çarpımı olarak yazılır. Tam kare olan sayının karekökü alınarak kökün önüne çarpan olarak yazılır.<br>
+        <span class="important" style="color:#d32f2f;">Formül:</span> <span id="akokb-formul2" class="highlight"></span><br>
+        <span class="important" style="margin-left:16px;">Kök içinde gösterimi: <span style="color:#1976d2; font-weight:bold; font-size:1.15em;" id="akokb-formul2-kok"></span> <span style="color:#388e3c; font-weight:bold; margin-left:12px;">Kök dışı gösterimi: <span id="akokb-formul2-disi"></span></span></span><br>
+        <span class="important">Örnek: </span> <span id="ex-sqrt-18"></span> sayısını <span id="akokb-formul3"></span> şeklinde yazalım.<br>
+        <span id="ex-sqrt-18-step"></span>
+        <span class="highlight" style="color:#388e3c;">Sonuç: <span id="ex-sqrt-18-result"></span></span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script>
+    function safeKatexRender(expr, id) {
+        var el = document.getElementById(id);
+        if (el) katex.render(expr, el);
+    }
+    function checkAB(inputA, inputB, correctA, correctB, resultId) {
+        var valA = document.getElementById(inputA).value.trim();
+        var valB = document.getElementById(inputB).value.trim();
+        var resultSpan = document.getElementById(resultId);
+        if (valA == correctA && valB == correctB) {
+            resultSpan.innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru!</span> <span id="'+resultId+'-katex"></span>';
+            safeKatexRender(correctA + "\\sqrt{" + correctB + "}", resultId+'-katex');
+        } else {
+            resultSpan.innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış cevap, </span><span id="'+resultId+'-dogru"></span><span style="color:#d32f2f;font-weight:bold;"> olmalıydı.</span>';
+            setTimeout(function() {
+                safeKatexRender(correctA + "\\sqrt{" + correctB + "}", resultId+'-dogru');
+            }, 10);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        safeKatexRender("a\\sqrt{b}", "akokb-formul");
+        safeKatexRender("a\\sqrt{b}", "akokb-formul2-disi");
+        safeKatexRender("\\sqrt{a^2b}", "akokb-formul2-kok");
+        safeKatexRender("\\sqrt{a^2b}", "hedef-id");
+        safeKatexRender("a\\sqrt{b}", "hedef-id1");
+        safeKatexRender("a\\sqrt{b}", "hedef-id2");
+        // Başlık ve formüller
+        safeKatexRender("a\\sqrt{b}", "title-akokb");
+        safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul");
+        safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul2");
+        safeKatexRender("a\\sqrt{b}", "akokb-formul3");
+        safeKatexRender("3\\sqrt{2}", "ex-sqrt-18-result");
+        // Açıklama ve örnekler
+        safeKatexRender("\\sqrt{18}", "ex-sqrt-18");
+        safeKatexRender("\\sqrt{18} = \\sqrt{9 \\times 2} = \\sqrt{9} \\times \\sqrt{2} = 3 \\sqrt{2}", "ex-sqrt-18-step");
+        // Alıştırmalar: kök dışına çıkarma
+        safeKatexRender("\\sqrt{27}", "ex-sqrt-27");
+        safeKatexRender("\\sqrt{50}", "ex-sqrt-50");
+        safeKatexRender("\\sqrt{75}", "ex-sqrt-75");
+        safeKatexRender("\\sqrt{24}", "ex-sqrt-24");
+        safeKatexRender("\\sqrt{300}", "ex-sqrt-300");
+        safeKatexRender("\\sqrt{32}", "ex-sqrt-32");
+        safeKatexRender("a\\sqrt{b}", "ex-a-kok-b-title");
+        // Kök içine alma örnekleri
+        safeKatexRender("a\\sqrt{b} = \\sqrt{a^2b}", "akokb-ters-formul");
+        safeKatexRender("4\\sqrt{3}", "ex-akokb-4-3");
+        safeKatexRender("4\\sqrt{3} = \\sqrt{4^2 \\times 3} = \\sqrt{16 \\times 3} = \\sqrt{48}", "ex-akokb-4-3-step");
+        // Alıştırmalar: kök içine alma
+        safeKatexRender("2\\sqrt{3}", "ex-akokb-2-3");
+        safeKatexRender("\\sqrt{12}", "ex-akokb-2-3-ans");
+        safeKatexRender("3\\sqrt{5}", "ex-akokb-3-5");
+        safeKatexRender("\\sqrt{45}", "ex-akokb-3-5-ans");
+        safeKatexRender("4\\sqrt{7}", "ex-akokb-4-7");
+        safeKatexRender("\\sqrt{112}", "ex-akokb-4-7-ans");
+        safeKatexRender("7\\sqrt{2}", "ex-akokb-7-2");
+        safeKatexRender("\\sqrt{98}", "ex-akokb-7-2-ans");
+        safeKatexRender("-3\\sqrt{3}", "ex-akokb-3-3");
+        safeKatexRender("-\\sqrt{27}", "ex-akokb-3-3-ans");
+        safeKatexRender("-6\\sqrt{3}", "ex-akokb-6-3");
+        safeKatexRender("-\\sqrt{108}", "ex-akokb-6-3-ans");
+        safeKatexRender("-4\\sqrt{5}", "ex-akokb-4-5");
+        safeKatexRender("-\\sqrt{80}", "ex-akokb-4-5-ans");
+        // Sıralama tablosu
+        safeKatexRender("2\\sqrt{3}", "cmp-2-3");
+        safeKatexRender("\\sqrt{10}", "cmp-10");
+        safeKatexRender("4\\sqrt{7}", "cmp-4-7");
+        safeKatexRender("5\\sqrt{5}", "cmp-5-5");
+        safeKatexRender("5\\sqrt{2}", "cmp-5-2");
+        safeKatexRender("4\\sqrt{3}", "cmp-4-3");
+        safeKatexRender("6\\sqrt{3}", "cmp-6-3");
+        safeKatexRender("3\\sqrt{12}", "cmp-3-12");
+        safeKatexRender("4\\sqrt{5}", "cmp-4-5");
+        safeKatexRender("3\\sqrt{6}", "cmp-3-6");
+        safeKatexRender("2\\sqrt{7}", "cmp-2-7");
+        safeKatexRender("3\\sqrt{10}", "cmp-3-10");
+    });
+    </script>
+    <div class="exercise-box">
+        <b>Aşağıda verilen sayıları <span id="hedef-id2"></span> şeklinde yazınız:</b><br>
+        <div>
+            <span id="ex-sqrt-27"></span> = 
+            <input type="text" id="input-sqrt-27-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-27-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-27-a','input-sqrt-27-b',3,3,'result-sqrt-27')">Kontrol</button>
+            <span id="result-sqrt-27"></span>
+        </div>
+        <div>
+            <span id="ex-sqrt-50"></span> = 
+            <input type="text" id="input-sqrt-50-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-50-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-50-a','input-sqrt-50-b',5,2,'result-sqrt-50')">Kontrol</button>
+            <span id="result-sqrt-50"></span>
+        </div>
+        <div>
+            <span id="ex-sqrt-75"></span> = 
+            <input type="text" id="input-sqrt-75-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-75-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-75-a','input-sqrt-75-b',5,3,'result-sqrt-75')">Kontrol</button>
+            <span id="result-sqrt-75"></span>
+        </div>
+        <div>
+            <span id="ex-sqrt-24"></span> = 
+            <input type="text" id="input-sqrt-24-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-24-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-24-a','input-sqrt-24-b',2,6,'result-sqrt-24')">Kontrol</button>
+            <span id="result-sqrt-24"></span>
+        </div>
+        <div>
+            <span id="ex-sqrt-300"></span> = 
+            <input type="text" id="input-sqrt-300-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-300-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-300-a','input-sqrt-300-b',10,3,'result-sqrt-300')">Kontrol</button>
+            <span id="result-sqrt-300"></span>
+        </div>
+        <div>
+            <span id="ex-sqrt-32"></span> = 
+            <input type="text" id="input-sqrt-32-a" style="width:32px; font-size:1em; text-align:center;" autocomplete="off"> 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-sqrt-32-b" style="width:32px; font-size:1em; text-align:center;" autocomplete="off">
+            <button onclick="checkAB('input-sqrt-32-a','input-sqrt-32-b',4,2,'result-sqrt-32')">Kontrol</button>
+            <span id="result-sqrt-32"></span>
+        </div>
+    </div>
+    <div class="tip-box" style="margin-top:24px;">
+        <span class="highlight" style="color:#1976d2; font-size:1.5em; font-weight:bold; display:block; margin-bottom:8px;">a√b Şeklindeki Bir İfadeyi Karekök İçinde Yazma</span>
+        <span id="akokb-ters-formul" class="highlight"></span><br>
+        <span style="color:#d32f2f;">a√b şeklinde yazılan bir ifadenin katsayısını kök içine alırken katsayının karesi alınır ve kök içindeki sayı ile çarpım biçiminde yazılır.</span><br>
+        <span class="important">Örnek: </span> <span id="ex-akokb-4-3"></span> sayısını karekök içinde yazalım.<br>
+        <span id="ex-akokb-4-3-step"></span>
+    </div>
+    <div class="exercise-box">
+        <b>Aşağıda verilen ifadeleri karekök içinde yazınız:</b><br>
+        <div><span id="ex-akokb-2-3"></span> = <span id="ex-akokb-2-3-ans"></span></div>
+        <div><span id="ex-akokb-3-5"></span> = <span id="ex-akokb-3-5-ans"></span></div>
+        <div><span id="ex-akokb-4-7"></span> = <span id="ex-akokb-4-7-ans"></span></div>
+        <div><span id="ex-akokb-7-2"></span> = <span id="ex-akokb-7-2-ans"></span></div>
+        <div><span id="ex-akokb-3-3"></span> = <span id="ex-akokb-3-3-ans"></span></div>
+        <div><span id="ex-akokb-6-3"></span> = <span id="ex-akokb-6-3-ans"></span></div>
+        <div><span id="ex-akokb-4-5"></span> = <span id="ex-akokb-4-5-ans"></span></div>
+    </div>
+    <div class="tip-box" style="margin-top:24px;">
+        <span style="color:#1976d2; font-size:1.5em; font-weight:bold; display:block; margin-bottom:8px;">Kareköklü ifadeler sıralanırken katsayılar kök içine alınır.</span><br>
+        Pozitif kareköklerde kök içi büyük olan ifade, negatif kareköklerde kök içi küçük olan ifade daha büyüktür.<br>
+        <b>Aşağıdaki tabloda noktalı yerlere &lt;, &gt;, = sembollerinden uygun olanı yazınız.</b>
+    </div>
+    <div class="exercise-box">
+        <div><span id="cmp-2-3"></span> ............. <span id="cmp-10"></span></div>
+        <div><span id="cmp-4-7"></span> ............ <span id="cmp-5-5"></span></div>
+        <div><span id="cmp-5-2"></span> ............ <span id="cmp-4-3"></span></div>
+        <div><span id="cmp-6-3"></span> ............ <span id="cmp-3-12"></span></div>
+        <div><span id="cmp-4-5"></span> ............ <span id="cmp-3-6"></span></div>
+        <div><span id="cmp-2-7"></span> ............ <span id="cmp-3-10"></span></div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+function checkAB(inputA, inputB, correctA, correctB, resultId) {
+    var valA = document.getElementById(inputA).value.trim();
+    var valB = document.getElementById(inputB).value.trim();
+    var resultSpan = document.getElementById(resultId);
+    if (valA == correctA && valB == correctB) {
+        resultSpan.innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru!</span> <span id="'+resultId+'-katex"></span>';
+        safeKatexRender(correctA + "\\sqrt{" + correctB + "}", resultId+'-katex');
+    } else {
+        resultSpan.innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış!</span>';
+    }
+}
+<script>
+function safeKatexRender(expr, id) {
+    var el = document.getElementById(id);
+    if (el) katex.render(expr, el);
+}
+document.addEventListener("DOMContentLoaded", function() {
+    safeKatexRender("a\\sqrt{b}", "akokb-formul");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul2-disi");
+    safeKatexRender("\\sqrt{a^2b}", "akokb-formul2-kok");
+    safeKatexRender("\\sqrt{a^2b}", "hedef-id");
+    safeKatexRender("a\\sqrt{b}", "hedef-id1");
+    safeKatexRender("a\\sqrt{b}", "hedef-id2");
+    // Başlık ve formüller
+    safeKatexRender("a\\sqrt{b}", "title-akokb");
+    safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul");
+    safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul2");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul3");
+    safeKatexRender("3\\sqrt{2}", "ex-sqrt-18-result");
+    // Açıklama ve örnekler
+    safeKatexRender("\\sqrt{18}", "ex-sqrt-18");
+    safeKatexRender("\\sqrt{18} = \\sqrt{9 \\times 2} = \\sqrt{9} \\times \\sqrt{2} = 3 \\sqrt{2}", "ex-sqrt-18-step");
+    // Alıştırmalar: kök dışına çıkarma
+    safeKatexRender("\\sqrt{27}", "ex-sqrt-27");
+    safeKatexRender("3\\sqrt{3}", "ex-sqrt-27-ans");
+    safeKatexRender("\\sqrt{50}", "ex-sqrt-50");
+    safeKatexRender("5\\sqrt{2}", "ex-sqrt-50-ans");
+    safeKatexRender("\\sqrt{75}", "ex-sqrt-75");
+    safeKatexRender("5\\sqrt{3}", "ex-sqrt-75-ans");
+    safeKatexRender("2\\sqrt{6}", "ex-sqrt-24-ans");
+    safeKatexRender("\\sqrt{24}", "ex-sqrt-24");
+    safeKatexRender("10\\sqrt{3}", "ex-sqrt-300-ans");
+    safeKatexRender("\\sqrt{300}", "ex-sqrt-300");
+    safeKatexRender("4\\sqrt{2}", "ex-sqrt-32-ans");
+    safeKatexRender("\\sqrt{32}", "ex-sqrt-32");
+    // Kök içine alma örnekleri
+    safeKatexRender("a\\sqrt{b} = \\sqrt{a^2b}", "akokb-ters-formul");
+    safeKatexRender("4\\sqrt{3}", "ex-akokb-4-3");
+    safeKatexRender("4\\sqrt{3} = \\sqrt{4^2 \\times 3} = \\sqrt{16 \\times 3} = \\sqrt{48}", "ex-akokb-4-3-step");
+    // Alıştırmalar: kök içine alma
+    safeKatexRender("2\\sqrt{3}", "ex-akokb-2-3");
+    safeKatexRender("\\sqrt{12}", "ex-akokb-2-3-ans");
+    safeKatexRender("3\\sqrt{5}", "ex-akokb-3-5");
+    safeKatexRender("\\sqrt{45}", "ex-akokb-3-5-ans");
+    safeKatexRender("4\\sqrt{7}", "ex-akokb-4-7");
+    safeKatexRender("\\sqrt{112}", "ex-akokb-4-7-ans");
+    safeKatexRender("7\\sqrt{2}", "ex-akokb-7-2");
+    safeKatexRender("\\sqrt{98}", "ex-akokb-7-2-ans");
+    safeKatexRender("-3\\sqrt{3}", "ex-akokb-3-3");
+    safeKatexRender("-\\sqrt{27}", "ex-akokb-3-3-ans");
+    safeKatexRender("-6\\sqrt{3}", "ex-akokb-6-3");
+    safeKatexRender("-\\sqrt{108}", "ex-akokb-6-3-ans");
+    safeKatexRender("-4\\sqrt{5}", "ex-akokb-4-5");
+    safeKatexRender("-\\sqrt{80}", "ex-akokb-4-5-ans");
+    // Sıralama tablosu
+    safeKatexRender("2\\sqrt{3}", "cmp-2-3");
+    safeKatexRender("\\sqrt{10}", "cmp-10");
+    safeKatexRender("4\\sqrt{7}", "cmp-4-7");
+    safeKatexRender("5\\sqrt{5}", "cmp-5-5");
+    safeKatexRender("5\\sqrt{2}", "cmp-5-2");
+    safeKatexRender("4\\sqrt{3}", "cmp-4-3");
+    safeKatexRender("6\\sqrt{3}", "cmp-6-3");
+    safeKatexRender("3\\sqrt{12}", "cmp-3-12");
+    safeKatexRender("4\\sqrt{5}", "cmp-4-5");
+    safeKatexRender("3\\sqrt{6}", "cmp-3-6");
+    safeKatexRender("2\\sqrt{7}", "cmp-2-7");
+    safeKatexRender("3\\sqrt{10}", "cmp-3-10");
+});
+</script>
+{% endblock %}

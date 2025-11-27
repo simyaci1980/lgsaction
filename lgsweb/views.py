@@ -53,6 +53,15 @@ def uslu_ondalik(request):
 
 def uslu_bilimsel(request):
     return render(request, 'matematik/uslu_bilimsel.html')
+
+def karekok_foyler(request):
+    return render(request, 'matematik/karekok_foyler.html')
+
+def karekok_tamkare(request):
+    return render(request, 'matematik/karekok_tamkare.html')
+
+def karekok_akokb(request):
+    return render(request, 'matematik/karekok_akokb.html')
     
 
 

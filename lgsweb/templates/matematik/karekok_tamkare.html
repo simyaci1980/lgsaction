@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+        .highlight { color: #d32f2f; font-weight: bold; font-size: 1.25em; }
+        .important { color: #1976d2; font-weight: bold; }
+        .container { font-size: 1.25em; }
+        .example-box { background: #e3f2fd; padding: 12px; border-radius: 8px; margin: 16px 0; }
+        .exercise-box { background: #fffde7; padding: 12px; border-radius: 8px; margin: 16px 0; }
+        .tip-box { background: #ffebee; padding: 12px; border-radius: 8px; margin: 16px 0; }
+        .between-box { background: #e8f5e9; padding: 12px; border-radius: 8px; margin: 16px 0; }
+        .kareler-svg {
+            display: flex;
+            justify-content: space-around;
+            margin: 16px 0;
+        }
+        .kare-svg-label {
+            text-align: center;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container" style="max-width:1200px; margin:0 auto;">
+    <h2 class="highlight">Kareköklü İfadeler</h2>
+    <h3 class="important">Karekök Alma</h3>
+    <p>Bir pozitif tam sayının, hangi pozitif tam sayının karesi olduğunu bulma işlemine <span class="highlight">karekök alma</span> denir.<br>
+    Karekök alma işlemi, alanı verilen bir karenin bir kenar uzunluğunu bulmak için de kullanılır.<br>
+    <span class="important" id="math-karekok-symbol"></span> sembolü ile gösterilir. <span class="highlight" id="math-karekok-3"></span> ifadesi “karekök üç” veya “üçün karekökü” diye okunur.</p>
+    <div class="example-box">
+        <b>Örnek:</b> Alanı <span class="highlight" id="math-karekok-64"></span> olan bir karenin bir kenarı <span class="highlight" id="math-karekok-64-equal"></span> br'dir. Çünkü <span class="important">8 × 8 = 64</span>.
+    </div>
+    <h3 class="important">Tam Kare Sayılar</h3>
+    <p>Sıfırdan farklı bir tam sayının karesi olan sayılara <span class="highlight">tam kare (karesel) sayı</span> denir.<br>
+    Sıfır bir tam kare sayı değildir.</p>
+    <div class="exercise-box">
+        <b>Alıştırmalar:</b><br>
+        <span class="highlight" id="math-karekok-49"></span>
+        <input class="answer-input" id="input-1" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(1,7)">Kontrol Et</button><span class="result" id="result-1"></span><br>
+        <span class="highlight" id="math-karekok-81"></span>
+        <input class="answer-input" id="input-2" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(2,9)">Kontrol Et</button><span class="result" id="result-2"></span><br>
+        <span class="highlight" id="math-karekok-121"></span>
+        <input class="answer-input" id="input-3" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(3,11)">Kontrol Et</button><span class="result" id="result-3"></span><br>
+        <span class="highlight" id="math-karekok-225"></span>
+        <input class="answer-input" id="input-4" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(4,15)">Kontrol Et</button><span class="result" id="result-4"></span><br>
+        <span class="highlight" id="math-karekok-900"></span>
+        <input class="answer-input" id="input-5" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(5,30)">Kontrol Et</button><span class="result" id="result-5"></span><br>
+        <span class="important" id="math-karekok-16-81"></span>
+        <input class="answer-input" id="input-6" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(6,13)">Kontrol Et</button><span class="result" id="result-6"></span><br>
+        <span class="important" id="math-karekok-196-49"></span>
+        <input class="answer-input" id="input-7" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(7,2)">Kontrol Et</button><span class="result" id="result-7"></span><br>
+        <span class="important" id="math-karekok-25-0"></span>
+        <input class="answer-input" id="input-8" type="number" placeholder="Cevap"> <button class="check-btn" onclick="checkAnswer(8,0)">Kontrol Et</button><span class="result" id="result-8"></span><br>
+    </div>
+    <div class="example-box">
+        <b>Örnek:</b> Alanları <span class="highlight">25 m²</span>, <span class="highlight">16 m²</span> ve <span class="highlight">81 m²</span> olan üç kare var.<br>
+        Aşağıda her bir karenin görseli verilmiştir. Her bir karenin bir kenarını telle kaplayacaksak, telin en az uzunluğu ne olmalıdır?
+        <div class="kareler-svg">
+            <div>
+                <svg width="80" height="80">
+                    <rect x="10" y="10" width="60" height="60" fill="#fff" stroke="#1976d2" stroke-width="3" />
+                    <text x="40" y="45" text-anchor="middle" font-size="1.2em" fill="#388e3c">25 m²</text>
+                </svg>
+                <div class="kare-svg-label">Alan: 25 m²</div>
+            </div>
+            <div>
+                <svg width="64" height="64">
+                    <rect x="2" y="2" width="60" height="60" fill="#fff" stroke="#d32f2f" stroke-width="3" />
+                    <text x="32" y="37" text-anchor="middle" font-size="1.2em" fill="#388e3c">16 m²</text>
+                </svg>
+                <div class="kare-svg-label">Alan: 16 m²</div>
+            </div>
+            <div>
+                <svg width="100" height="100">
+                    <rect x="10" y="10" width="80" height="80" fill="#fff" stroke="#388e3c" stroke-width="3" />
+                    <text x="50" y="60" text-anchor="middle" font-size="1.2em" fill="#1976d2">81 m²</text>
+                </svg>
+                <div class="kare-svg-label">Alan: 81 m²</div>
+            </div>
+        </div>
+        <div class="solution-step">Adım 1: Her bir karenin bir kenar uzunluğunu bulalım.<br>
+            <span id="math-step2"></span> <br>
+            <span class="important">25 m² için bir kenar: √25 = 5 m</span><br>
+            <span class="important">16 m² için bir kenar: √16 = 4 m</span><br>
+            <span class="important">81 m² için bir kenar: √81 = 9 m</span>
+        </div>
+        <div class="solution-step">Adım 2: Kenar uzunluklarını toplayalım.<br>
+            <span id="math-step3"></span> <br>
+            <span class="important">5 + 4 + 9 = 18 m</span>
+        </div>
+        <div class="solution-final">Sonuç: Telin en az uzunluğu <b>18 metre</b> olmalıdır.</div>
+    </div>
+    <div class="tip-box">
+        <b>Önemli:</b> <span class="highlight">Karekök içi asla negatif olamaz.</span> Karekök işlemi sonucu daima pozitif çıkar.<br>
+        <span class="important" id="math-x2-16"></span> için x = +4 veya x = -4 olabilir, fakat <span class="highlight" id="math-karekok-16"></span> daima pozitif bir sayıdır.
+    </div>
+    <h3 class="important">Tam Kare Olmayan Sayılar</h3>
+    <div class="rule-box" style="background:#f9f9f9; border-left:4px solid #4caf50; padding:10px; margin-bottom:16px;">
+        <b class="important">Kural:</b> Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu bulmak için:<br>
+        <span class="highlight">1.</span> Karekökün içindeki sayının hangi iki <span class="highlight">tam kare sayı</span> arasında olduğu bulunur.<br>
+        <span class="highlight">2.</span> Bulunan tam kare sayıların <span class="highlight">karekökü</span> alınır.
+    </div>
+    <div class="example-box">
+        <b>Örnek:</b><br>
+        <span id="math-karekok-40-tek"></span> sayısı, <span id="math-karekok-36-tek"></span> sayısı ile <span id="math-karekok-49-tek"></span> sayısı arasında olduğundan <span class="highlight">6 ile 7</span> arasındadır.<br>
+        <span style="color:#1976d2;">Çünkü 36 = 6 × 6 ve 49 = 7 × 7</span>
+    </div>
+    <h3 class="important">Alıştırma</h3>
+    <div style="margin-bottom:8px;"><span id="math-test-kok35"></span> </div>
+    <div class="exercise-box" style="background: #fffde7; padding: 12px; border-radius: 8px; margin: 16px 0;">
+        <div>
+            <span class="highlight" id="math-ex2-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex2-low" style="width:40px;"> ile <input type="number" id="ex2-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex2', 5, 6)">Kontrol Et</button>
+            <span id="ex2-feedback"></span>
+            <span id="result-ex2" class="result"></span>
+        </div>
+        <div style="margin-top:12px;">
+            <span class="highlight" id="math-ex3-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex3-low" style="width:40px;"> ile <input type="number" id="ex3-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex3', 7, 8)">Kontrol Et</button>
+            <span id="ex3-feedback"></span>
+            <span id="result-ex3" class="result"></span>
+        </div>
+        <div style="margin-top:12px;">
+            <span class="highlight" id="math-ex4-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex4-low" style="width:40px;"> ile <input type="number" id="ex4-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex4', 4, 5)">Kontrol Et</button>
+            <span id="ex4-feedback"></span>
+            <span id="result-ex4" class="result"></span>
+        </div>
+        <div style="margin-top:12px;">
+            <span class="highlight" id="math-ex5-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex5-low" style="width:40px;"> ile <input type="number" id="ex5-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex5', 9, 10)">Kontrol Et</button>
+            <span id="ex5-feedback"></span>
+            <span id="result-ex5" class="result"></span>
+        </div>
+        <div style="margin-top:12px;">
+            <span class="highlight" id="math-ex6-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex6-low" style="width:40px;"> ile <input type="number" id="ex6-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex6', 2, 3)">Kontrol Et</button>
+            <span id="ex6-feedback"></span>
+            <span id="result-ex6" class="result"></span>
+        </div>
+        <div style="margin-top:12px;">
+            <span class="highlight" id="math-ex7-inline"></span> sayısı hangi iki tam sayı arasındadır?
+            <input type="number" id="ex7-low" style="width:40px;"> ile <input type="number" id="ex7-high" style="width:40px;"> 
+            <button onclick="checkAnswer2('ex7', 6, 7)">Kontrol Et</button>
+            <span id="ex7-feedback"></span>
+            <span id="result-ex7" class="result"></span>
+        </div>
+    </div>
+    <div style="margin-top:24px; font-size:1.1em; color:#1565c0;"></div>
+</div>
+<script>
+    // Test: √35 KaTeX ile görünmeli
+    katex.render("\\sqrt{35}", document.getElementById('math-test-kok35'));
+  window.checkAnswer = function(idx, correct) {
+    var val = document.getElementById('input-' + idx).value.trim();
+    var result = document.getElementById('result-' + idx);
+    if (val === "") {
+      result.textContent = "Lütfen bir cevap girin.";
+      result.style.color = "#ffa000";
+      return;
+    }
+    if (Number(val) === correct) {
+      result.textContent = "Doğru!";
+      result.style.color = "#388e3c";
+    } else {
+      result.textContent = "Yanlış!";
+      result.style.color = "#d32f2f";
+    }
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script>
+function safeKatexRender(expr, id) {
+    var el = document.getElementById(id);
+    if (el) katex.render(expr, el);
+}
+document.addEventListener("DOMContentLoaded", function() {
+    safeKatexRender("\\sqrt{}", 'math-karekok-symbol');
+    safeKatexRender("\\sqrt{3}", 'math-karekok-3');
+    safeKatexRender("\\sqrt{64}", 'math-karekok-64');
+    safeKatexRender("\\sqrt{64}=8", 'math-karekok-64-equal');
+    safeKatexRender("\\sqrt{49}", 'math-karekok-49');
+    safeKatexRender("\\sqrt{81}", 'math-karekok-81');
+    safeKatexRender("\\sqrt{40}", 'math-karekok-40-tek');
+    safeKatexRender("\\sqrt{36}", 'math-karekok-36-tek');
+    safeKatexRender("\\sqrt{49}", 'math-karekok-49-tek');
+    safeKatexRender("\\sqrt{121}", 'math-karekok-121');
+    safeKatexRender("\\sqrt{225}", 'math-karekok-225');
+    safeKatexRender("\\sqrt{900}", 'math-karekok-900');
+    safeKatexRender("\\sqrt{16}+\\sqrt{81}", 'math-karekok-16-81');
+    safeKatexRender("\\sqrt{196}:\\sqrt{49}", 'math-karekok-196-49');
+    safeKatexRender("\\sqrt{25}\\times0", 'math-karekok-25-0');
+    safeKatexRender("\\sqrt{25}", 'math-karekok-25');
+    safeKatexRender("\\sqrt{16}", 'math-karekok-16');
+    safeKatexRender("\\sqrt{81}", 'math-karekok-81');
+    safeKatexRender("\\sqrt{25}+\\sqrt{16}+\\sqrt{81}=5+4+9=18\\ \mathrm{br}", 'math-karekok-25-16-81');
+    safeKatexRender("x^2=16", 'math-x2-16');
+    safeKatexRender("\\sqrt{16}", 'math-karekok-16');
+    safeKatexRender("41", 'math-karekok-41');
+    safeKatexRender("\\sqrt{41}", 'math-karekok-41-symbol');
+    safeKatexRender("\\sqrt{72}", 'math-karekok-72');
+    safeKatexRender("\\sqrt{94}", 'math-karekok-94');
+    safeKatexRender("\\sqrt{58}", 'math-karekok-58');
+    safeKatexRender("\\sqrt{225}", 'math-karekok-225-between');
+    safeKatexRender("25 + 16 + 81", 'math-step1');
+    safeKatexRender("5 + 4 + 9", 'math-step2');
+    safeKatexRender("18", 'math-step3');
+    safeKatexRender("Cevap: 18 \\mathrm{br}", 'math-step4');
+    safeKatexRender("\\sqrt{40}", 'math-karekok-40');
+    safeKatexRender("\\sqrt{36}", 'math-karekok-36');
+    safeKatexRender("\\sqrt{49}", 'math-karekok-49');
+    safeKatexRender("\\sqrt{35}", 'math-ex2');
+    safeKatexRender("\\sqrt{35}", 'math-ex2-inline');
+    safeKatexRender("25", 'math-tip-25');
+    safeKatexRender("36", 'math-tip-36');
+    safeKatexRender("\\sqrt{35}", 'math-test-kok35');
+    // Yeni eklenen 5 alıştırma için KaTeX render
+    safeKatexRender("\\sqrt{60}", 'math-ex3-inline');
+    safeKatexRender("\\sqrt{20}", 'math-ex4-inline');
+    safeKatexRender("\\sqrt{95}", 'math-ex5-inline');
+    safeKatexRender("\\sqrt{7}", 'math-ex6-inline');
+    safeKatexRender("\\sqrt{45}", 'math-ex7-inline');
+});
+
+function checkAnswer(idx, correct) {
+    var val = document.getElementById('input-' + idx).value.trim();
+    var result = document.getElementById('result-' + idx);
+    if (val === "") {
+      result.textContent = "Lütfen bir cevap girin.";
+      result.style.color = "#ffa000";
+      return;
+    }
+    if (Number(val) === correct) {
+      result.textContent = "Doğru!";
+      result.style.color = "#388e3c";
+    } else {
+      result.textContent = "Yanlış!";
+      result.style.color = "#d32f2f";
+    }
+}
+
+function checkAnswer2(ex, low, high) {
+    const valLow = document.getElementById(ex+'-low').value.trim();
+    const valHigh = document.getElementById(ex+'-high').value.trim();
+    let feedback = '';
+    if (valLow == low && valHigh == high) {
+        feedback = '<span style="color:green;font-weight:bold;">Doğru!</span>';
+    } else {
+        feedback = `<span style='color:red;'>Yanlış. Doğru cevap: ${low} ile ${high} arasında.`;
+    }
+    document.getElementById(ex+'-feedback').innerHTML = feedback;
+}
+</script>
+{% endblock %}
