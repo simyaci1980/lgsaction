@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+{% block title %}Basit Olayların Olma Olasılığı{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        body {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+        }
+        h1, h2, h3, h4 {
+            line-height: 1.4;
+        }
+        .konu-kutusu p, .ornek p {
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        .cozum p {
+            font-size: 1.02em;
+        }
+        strong {
+            font-weight: 600;
+        }
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container" style="max-width:900px; margin:0 auto;">
+    <!-- Yüzen İkonlar -->
+    <div class="floating-icon" style="top:100px; left:-60px;">🎲</div>
+    <div class="floating-icon" style="top:300px; right:-60px;">🎯</div>
+    <div class="floating-icon" style="top:500px; left:-70px;">🎰</div>
+    <div class="floating-icon" style="top:700px; right:-50px;">🎪</div>
+    <div class="floating-icon" style="top:900px; left:-60px;">🎡</div>
+    <div class="floating-icon" style="top:1100px; right:-60px;">🎲</div>
+    <div class="floating-icon" style="top:1300px; left:-70px;">💰</div>
+    <div class="floating-icon" style="top:1500px; right:-60px;">🃏</div>
+    <div class="floating-icon" style="top:1700px; left:-60px;">🎮</div>
+    <div class="floating-icon" style="top:1900px; right:-70px;">🎨</div>
+    <div class="floating-icon" style="top:2100px; left:-60px;">🎭</div>
+    <div class="floating-icon" style="top:2300px; right:-60px;">🎪</div>
+    
+    <div class="content-wrapper">
+    <h1 class="main-title" style="color:#e65100;">Basit Olayların Olma Olasılığı 🎲</h1>
+    
+    <div class="konu-kutusu" style="background:#fff3e0; padding:24px; border-radius:12px; margin:24px 0;">
+        <h2 style="color:#f57c00;">📚 Olasılığın Temel Kavramları</h2>
+        
+        <div style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #f57c00;">
+            <p><strong style="color:#e65100;">🔬 Deney:</strong> Bir olayın ne olacağını görmek için yapılan işe denir.</p>
+        </div>
+        
+        <div style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #f57c00;">
+            <p><strong style="color:#e65100;">📊 Çıktı:</strong> Bir deneyin sonucunda oluşabilecek sonuçların her birine denir.</p>
+        </div>
+        
+        <div style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #f57c00;">
+            <p><strong style="color:#e65100;">🎯 Örnek Uzay:</strong> Bir deneyin sonucunda gerçekleşebilecek durumların tümüne denir.</p>
+        </div>
+        
+        <div style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #f57c00;">
+            <p><strong style="color:#e65100;">✨ Olay:</strong> Gerçekleşmesi beklenen duruma denir.</p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <h3 style="color:#e65100;">🎲 Uygulama 1: Zar Atma</h3>
+        <p style="font-style:italic; color:#666;">Bir zar havaya atıldığında, zarın üst yüzüne gelen rakamın çift olması ile ilgili durumu inceleyelim.</p>
+        
+        <div style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>🔬 Deney:</strong> Bir zar atma</p>
+            <p><strong>✨ Olay:</strong> Çift sayı gelmesi</p>
+            <p><strong>🎯 Örnek Uzay:</strong> {1, 2, 3, 4, 5, 6}</p>
+            <p><strong>📊 Çıktı:</strong> 1, 2, 3, 4, 5 veya 6</p>
+            <hr style="border:1px solid #f57c00; margin:12px 0;">
+            <p><strong style="color:#e65100;">İstenen Olay:</strong> Çift sayılar → {2, 4, 6}</p>
+            <p><strong style="color:#e65100;">Olasılık:</strong> $P(\text{Çift}) = \frac{3}{6} = \frac{1}{2}$</p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <h3 style="color:#e65100;">🎨 Uygulama 2: Top Çekme</h3>
+        <p style="font-style:italic; color:#666;">Eş büyüklükteki 5 yeşil, 3 kırmızı topun bulunduğu torbadan çekilen topun kırmızı olması durumunu inceleyelim.</p>
+        
+        <div style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>🔬 Deney:</strong> Torbadan bir top çekme</p>
+            <p><strong>✨ Olay:</strong> Kırmızı top gelmesi</p>
+            <p><strong>🎯 Örnek Uzay:</strong> {5 yeşil, 3 kırmızı} = 8 top</p>
+            <p><strong>📊 Çıktı:</strong> Yeşil veya Kırmızı top</p>
+            <hr style="border:1px solid #f57c00; margin:12px 0;">
+            <p><strong style="color:#e65100;">İstenen Olay:</strong> Kırmızı toplar → 3 tane</p>
+            <p><strong style="color:#e65100;">Olasılık:</strong> $P(\text{Kırmızı}) = \frac{3}{8}$</p>
+        </div>
+    </div>
+
+    <div class="konu-kutusu" style="background:#e3f2fd; padding:24px; border-radius:12px; margin:24px 0;">
+        <h2 style="color:#1976d2;">📐 Olasılık Formülü</h2>
+        <div style="background:white; padding:16px; border-radius:8px; margin:16px 0;">
+            <p style="font-size:1.2em; text-align:center; color:#e65100;">
+                <strong>Olasılık (P) = $\frac{\text{İstenen Durumların Sayısı}}{\text{Tüm Olası Durumların Sayısı}}$</strong>
+            </p>
+        </div>
+        <p>Olasılık değeri her zaman <strong>0 ile 1 arasında</strong> bir sayıdır:</p>
+        <ul>
+            <li><strong>P = 0:</strong> Olay kesinlikle gerçekleşmez (imkansız olay)</li>
+            <li><strong>P = 1:</strong> Olay kesinlikle gerçekleşir (kesin olay)</li>
+            <li><strong>0 < P < 1:</strong> Olay gerçekleşebilir (belirsiz olay)</li>
+        </ul>
+    </div>
+
+    <div class="konu-kutusu" style="background:#fff3e0; padding:24px; border-radius:12px; margin:24px 0;">
+        <h2 style="color:#f57c00;">🎯 Bir Olaya Ait Olası Durumlar</h2>
+        <p>Yapılan ya da yapılacak bir deneyin örnek uzayına <strong>olası durumlar</strong> denir.</p>
+        
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0;">
+            <h4 style="color:#e65100;">💰 Örnek: Madeni Para Atma</h4>
+            <p><strong>Deney:</strong> Bir madeni paranın havaya atılması</p>
+            <p><strong>Olası Durumlar:</strong> {Yazı, Tura}</p>
+            <p><strong>Olası Durum Sayısı:</strong> 2</p>
+        </div>
+
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0;">
+            <h4 style="color:#e65100;">🎲 Örnek: Zar Atma</h4>
+            <p><strong>Deney:</strong> Bir zarın havaya atılması</p>
+            <p><strong>Olası Durumlar:</strong> {1, 2, 3, 4, 5, 6}</p>
+            <p><strong>Olası Durum Sayısı:</strong> 6</p>
+        </div>
+
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0;">
+            <h4 style="color:#e65100;">🅰️ Örnek: Kelimeden Harf Seçme</h4>
+            <p><strong>Deney:</strong> "KAHRAMANMARAŞ" kelimesinin harflerinin eş kartlara yazıldıktan sonra bir torbaya atılıp rastgele bir kart seçilmesi</p>
+            <p><strong>Olası Durumlar:</strong> {K, A, H, R, M, N, Ş}</p>
+            <p style="color:#666; font-size:0.9em;">* Aynı harfler tek kez yazılır</p>
+            <p><strong>Olası Durum Sayısı:</strong> 7 farklı harf</p>
+            <hr style="border:1px solid #f57c00; margin:8px 0;">
+            <p style="color:#e65100;"><strong>Not:</strong> Toplam 14 kart var ama farklı harf sayısı 7'dir.</p>
+        </div>
+    </div>
+
+    <div class="konu-kutusu" style="background:#e1f5fe; padding:24px; border-radius:12px; margin:24px 0;">
+        <h2 style="color:#0277bd;">⚖️ "Daha Az", "Eşit" ve "Daha Fazla" Olasılık</h2>
+        <p>Olayların olasılıklarını karşılaştırarak hangisinin gerçekleşme ihtimalinin daha fazla olduğunu belirleyebiliriz.</p>
+        
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #0277bd;">
+            <h4 style="color:#0277bd;">🎯 Eşit Olasılık Örneği</h4>
+            <p><strong>Deney:</strong> Bir madeni para havaya atıldığında</p>
+            <p>• Tura gelme olasılığı: $P(\text{Tura}) = \frac{1}{2}$</p>
+            <p>• Yazı gelme olasılığı: $P(\text{Yazı}) = \frac{1}{2}$</p>
+            <p style="color:#0277bd; font-weight:bold;">→ Tura gelme olasılığı ile yazı gelme olasılığı <span style="background:#ffeb3b; padding:2px 8px; border-radius:4px;">EŞİTTİR</span></p>
+        </div>
+
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #43a047;">
+            <h4 style="color:#43a047;">📊 Daha Fazla ve Daha Az Olasılık Örneği 1</h4>
+            <p><strong>Deney:</strong> 8 kız, 5 erkekten oluşan bir gruptan rastgele bir öğrenci seçilmesi</p>
+            <p>• Toplam öğrenci: 8 + 5 = 13</p>
+            <p>• Kız olma olasılığı: $P(\text{Kız}) = \frac{8}{13}$</p>
+            <p>• Erkek olma olasılığı: $P(\text{Erkek}) = \frac{5}{13}$</p>
+            <p style="color:#43a047; font-weight:bold;">→ Kız olma olasılığı <span style="background:#c8e6c9; padding:2px 8px; border-radius:4px;">DAHA FAZLA</span></p>
+            <p style="color:#e53935; font-weight:bold;">→ Erkek olma olasılığı <span style="background:#ffcdd2; padding:2px 8px; border-radius:4px;">DAHA AZ</span></p>
+        </div>
+
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #7b1fa2;">
+            <h4 style="color:#7b1fa2;">🎲 Eşit Olasılık Örneği 2</h4>
+            <p><strong>Deney:</strong> Bir zar atıldığında</p>
+            <p>• Asal sayı: {2, 3, 5} → 3 tane</p>
+            <p>• Tek sayı: {1, 3, 5} → 3 tane</p>
+            <p>• Asal sayı gelme olasılığı: $P(\text{Asal}) = \frac{3}{6} = \frac{1}{2}$</p>
+            <p>• Tek sayı gelme olasılığı: $P(\text{Tek}) = \frac{3}{6} = \frac{1}{2}$</p>
+            <p style="color:#7b1fa2; font-weight:bold;">→ Asal sayı gelme olasılığı ile tek sayı gelme olasılığı <span style="background:#e1bee7; padding:2px 8px; border-radius:4px;">EŞİTTİR</span></p>
+        </div>
+
+        <div class="ornek" style="background:white; padding:16px; border-radius:8px; margin:16px 0; border-left:4px solid #d32f2f;">
+            <h4 style="color:#d32f2f;">🚂 Daha Az Olasılık Örneği</h4>
+            <p><strong>Deney:</strong> İçinde 24 kadın, 18 erkek bulunan bir trenden rastgele bir kişi seçilmesi</p>
+            <p>• Toplam kişi: 24 + 18 = 42</p>
+            <p>• Kadın olma olasılığı: $P(\text{Kadın}) = \frac{24}{42} = \frac{4}{7}$</p>
+            <p>• Erkek olma olasılığı: $P(\text{Erkek}) = \frac{18}{42} = \frac{3}{7}$</p>
+            <p style="color:#d32f2f; font-weight:bold;">→ Erkek olma olasılığı, kadın olma olasılığından <span style="background:#ffcdd2; padding:2px 8px; border-radius:4px;">DAHA AZDIR</span></p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px;">
+        <h3 style="color:#e65100;">📝 Örnek 1: Zar Atma</h3>
+        <p>Bir zar atıldığında 3 gelme olasılığı nedir?</p>
+        <div class="cozum" style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>Çözüm:</strong></p>
+            <p>• Zarda toplam <strong>6 sayı</strong> vardır: {1, 2, 3, 4, 5, 6}</p>
+            <p>• İstenen durum: <strong>1 tane</strong> (sadece 3)</p>
+            <p>• $P(3) = \frac{1}{6}$</p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px;">
+        <h3 style="color:#e65100;">📝 Örnek 2: Çift Sayı Gelme Olasılığı</h3>
+        <p>Bir zar atıldığında çift sayı gelme olasılığı nedir?</p>
+        <div class="cozum" style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>Çözüm:</strong></p>
+            <p>• Çift sayılar: {2, 4, 6} → <strong>3 tane</strong></p>
+            <p>• Tüm olası durumlar: <strong>6 tane</strong></p>
+            <p>• $P(\text{Çift}) = \frac{3}{6} = \frac{1}{2}$</p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px;">
+        <h3 style="color:#e65100;">📝 Örnek 3: Kart Çekme</h3>
+        <p>Bir torbada 3 kırmızı, 2 mavi, 5 yeşil top vardır. Rastgele bir top çekildiğinde yeşil top gelme olasılığı nedir?</p>
+        <div class="cozum" style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>Çözüm:</strong></p>
+            <p>• Toplam top sayısı: 3 + 2 + 5 = <strong>10 top</strong></p>
+            <p>• Yeşil top sayısı: <strong>5 top</strong></p>
+            <p>• $P(\text{Yeşil}) = \frac{5}{10} = \frac{1}{2}$</p>
+        </div>
+    </div>
+
+    <div class="konu-kutusu" style="background:#e3f2fd; padding:24px; border-radius:12px; margin:24px 0;">
+        <h2 style="color:#1976d2;">🎯 Önemli Noktalar</h2>
+        <ul>
+            <li>Tüm olası durumları doğru saymak çok önemlidir</li>
+            <li>İstenen durumları dikkatli belirlemeliyiz</li>
+            <li>Olasılık sonucu her zaman 0 ile 1 arasındadır</li>
+            <li>Tüm olayların olasılıklarının toplamı 1'dir</li>
+        </ul>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #f57c00; padding:20px; margin:24px 0; border-radius:8px;">
+        <h3 style="color:#e65100;">📝 Örnek 4: İki Zar Atma</h3>
+        <p>İki zar birlikte atıldığında toplamlarının 7 gelme olasılığı nedir?</p>
+        <div class="cozum" style="background:#fff3e0; padding:16px; border-radius:8px; margin-top:12px;">
+            <p><strong>Çözüm:</strong></p>
+            <p>• İki zar atıldığında toplam durum sayısı: 6 × 6 = <strong>36</strong></p>
+            <p>• Toplamı 7 olan durumlar: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → <strong>6 durum</strong></p>
+            <p>• $P(\text{Toplam 7}) = \frac{6}{36} = \frac{1}{6}$</p>
+        </div>
+    </div>
+
+    <div class="ornek" style="background:#ffffff; border-left:6px solid #ff6f00; padding:20px; margin:24px 0; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+        <h3 style="color:#ff6f00;">🎡 LGS Tipi Soru: Çark Yarışması</h3>
+        <p style="background:#fff3e0; padding:12px; border-radius:8px; margin-bottom:16px;">Düzenlenen bir yarışmada katılımcıların isimleri, aynı büyüklükte iki farklı çarkın üzerine yerleştirilmiştir. Bu çarklardan birincisi <strong>6 eş dilime</strong>, ikincisi <strong>8 eş dilime</strong> ayrılmıştır.</p>
+        
+        <div style="display:flex; justify-content:space-around; margin:24px 0; flex-wrap:wrap;">
+            <div style="text-align:center; margin:16px;">
+                <h4 style="color:#e65100;">1. ÇARK (6 dilim)</h4>
+                <div style="width:240px; height:240px; border-radius:50%; border:8px solid #e65100; position:relative; margin:16px auto; background:conic-gradient(from 0deg, #ffccbc 0deg 60deg, #ffab91 60deg 120deg, #ff8a65 120deg 180deg, #ff7043 180deg 240deg, #ff5722 240deg 300deg, #f4511e 300deg 360deg); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                    <!-- Merkez daire -->
+                    <div style="background:white; border-radius:50%; width:40px; height:40px; position:absolute; z-index:10; border:2px solid #e65100;"></div>
+                    <!-- İsimler dilimlerde -->
+                    <span style="position:absolute; top:15%; left:50%; transform:translateX(-50%); font-weight:bold; font-size:0.85em; color:#000;">Mehmet</span>
+                    <span style="position:absolute; top:35%; right:12%; font-weight:bold; font-size:0.85em; color:#000;">Hakan</span>
+                    <span style="position:absolute; bottom:35%; right:12%; font-weight:bold; font-size:0.85em; color:#000;">Selin</span>
+                    <span style="position:absolute; bottom:15%; left:50%; transform:translateX(-50%); font-weight:bold; font-size:0.85em; color:#000;">Ece</span>
+                    <span style="position:absolute; bottom:35%; left:12%; font-weight:bold; font-size:0.85em; color:#000;">İpek</span>
+                    <span style="position:absolute; top:35%; left:12%; font-weight:bold; font-size:0.85em; color:#000;">Yunus</span>
+                </div>
+                <div style="background:#ffebee; padding:12px; border-radius:8px; margin-top:12px;">
+                    <p style="margin:4px;"><strong>Her kişi:</strong> $\frac{1}{6}$ olasılık</p>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin:16px;">
+                <h4 style="color:#1976d2;">2. ÇARK (8 dilim)</h4>
+                <div style="width:240px; height:240px; border-radius:50%; border:8px solid #1976d2; position:relative; margin:16px auto; background:conic-gradient(from 0deg, #bbdefb 0deg 45deg, #90caf9 45deg 90deg, #64b5f6 90deg 135deg, #42a5f5 135deg 180deg, #2196f3 180deg 225deg, #1e88e5 225deg 270deg, #1976d2 270deg 315deg, #1565c0 315deg 360deg); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                    <!-- Merkez daire -->
+                    <div style="background:white; border-radius:50%; width:40px; height:40px; position:absolute; z-index:10; border:2px solid #1976d2;"></div>
+                    <!-- İsimler dilimlerde (8 dilim) -->
+                    <span style="position:absolute; top:12%; left:50%; transform:translateX(-50%); font-weight:bold; font-size:0.75em; color:#000;">Mehmet</span>
+                    <span style="position:absolute; top:22%; right:15%; font-weight:bold; font-size:0.75em; color:#000;">Hakan</span>
+                    <span style="position:absolute; top:50%; right:8%; transform:translateY(-50%); font-weight:bold; font-size:0.75em; color:#000;">Selin</span>
+                    <span style="position:absolute; bottom:22%; right:15%; font-weight:bold; font-size:0.75em; color:#000;">Ece</span>
+                    <span style="position:absolute; bottom:12%; left:50%; transform:translateX(-50%); font-weight:bold; font-size:0.75em; color:#000;">Ece</span>
+                    <span style="position:absolute; bottom:22%; left:15%; font-weight:bold; font-size:0.75em; color:#000;">İpek</span>
+                    <span style="position:absolute; top:50%; left:8%; transform:translateY(-50%); font-weight:bold; font-size:0.75em; color:#000;">İpek</span>
+                    <span style="position:absolute; top:22%; left:15%; font-weight:bold; font-size:0.75em; color:#000;">Burak</span>
+                </div>
+                <div style="background:#e3f2fd; padding:12px; border-radius:8px; margin-top:12px;">
+                    <p style="margin:4px;"><strong>Ece ve İpek:</strong> $\frac{2}{8}$ = $\frac{1}{4}$</p>
+                    <p style="margin:4px;"><strong>Diğerleri:</strong> $\frac{1}{8}$</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background:#fff3e0; padding:20px; border-radius:8px; margin-top:24px;">
+            <p style="font-weight:bold; color:#e65100; margin-bottom:16px;">Yarışmanın ilk bölümünde 1. çarkın çevrilmesi sonucu <u>Mehmet kazandığına göre</u>, yarışmanın ikinci bölümünde 2. çark çevrildiğinde yarışmanın kazananı ile ilgili aşağıdakilerden hangisi <strong>yanlıştır?</strong></p>
+            
+            <div style="margin:16px 0; padding:12px; background:white; border-radius:8px;">
+                <p><strong>A)</strong> Hakan'ın kazanma olasılığı azalmıştır.</p>
+                <div style="padding-left:24px; color:#666; font-size:0.9em;">
+                    <p>1. Çark: $\frac{1}{6} \approx 0.167$ → 2. Çark: $\frac{1}{8} = 0.125$ ✓ (Azaldı)</p>
+                </div>
+            </div>
+
+            <div style="margin:16px 0; padding:12px; background:white; border-radius:8px;">
+                <p><strong>B)</strong> Ece'nin kazanma olasılığı artmıştır.</p>
+                <div style="padding-left:24px; color:#666; font-size:0.9em;">
+                    <p>1. Çark: $\frac{1}{6} \approx 0.167$ → 2. Çark: $\frac{2}{8} = \frac{1}{4} = 0.25$ ✓ (Arttı)</p>
+                </div>
+            </div>
+
+            <div style="margin:16px 0; padding:12px; background:white; border-radius:8px;">
+                <p><strong>C)</strong> İpek'in kazanma olasılığı artmıştır.</p>
+                <div style="padding-left:24px; color:#666; font-size:0.9em;">
+                    <p>1. Çark: $\frac{1}{6} \approx 0.167$ → 2. Çark: $\frac{2}{8} = \frac{1}{4} = 0.25$ ✓ (Arttı)</p>
+                </div>
+            </div>
+
+            <div style="margin:16px 0; padding:12px; background:#ffcdd2; border-radius:8px; border:3px solid #d32f2f;">
+                <p><strong>D)</strong> Mehmet'in kazanma olasılığı artmıştır. ❌</p>
+                <div style="padding-left:24px; color:#b71c1c; font-size:0.9em;">
+                    <p><strong>YANLIŞ!</strong> 1. Çark: $\frac{1}{6} \approx 0.167$ → 2. Çark: $\frac{1}{8} = 0.125$ (Azaldı, artmadı!)</p>
+                </div>
+            </div>
+
+            <div style="background:#c8e6c9; padding:16px; border-radius:8px; margin-top:20px; border-left:6px solid #43a047;">
+                <p style="color:#2e7d32; font-weight:bold;">✓ CEVAP: D</p>
+                <p style="color:#1b5e20;">Mehmet'in olasılığı $\frac{1}{6}$'dan $\frac{1}{8}$'e düştüğü için artmadı, azaldı. Bu seçenek yanlıştır.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="/matematik/unite-3/" style="display:inline-block; margin-top:32px; padding:12px 24px; background:#e3f2fd; color:#1976d2; border-radius:8px; text-decoration:none; font-weight:bold;">← 3. Ünite'ye Dön</a>
+    </div> <!-- content-wrapper kapatma -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+{% endblock %}

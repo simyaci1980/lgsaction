@@ -33,6 +33,9 @@ def matematik_unite_1(request):
 def matematik_unite_2(request):
     return render(request, 'matematik/matematik_unite_2.html')
 
+def matematik_unite_3(request):
+    return render(request, 'matematik/matematik_unite_3.html')
+
 def veri_analizi(request):
     return render(request, 'matematik/veri_analizi.html')
 
@@ -71,6 +74,12 @@ def karekok_toplama_cikarma(request):
 
 def karekok_ondalik(request):
     return render(request, 'matematik/karekok_ondalik.html')
+
+def olasilik(request):
+    return render(request, 'matematik/olasilik.html')
+
+def cebirsel_ifadeler(request):
+    return render(request, 'matematik/cebirsel_ifadeler.html')
 
 
 

@@ -54,6 +54,35 @@ def karekok_carpma_bolme(request):
 - Projede custom Django app yapısı veya modeller yok; yeni veri modeline ihtiyaç varsa önce `INSTALLED_APPS`'e uygulama ekleyip migration oluşturun.
 - Testler veya CI konfigürasyonu bulunmuyor. Otomatik test/formatlama talimatı verirken bunu belirtin.
 
+**Proje Sahibi Tercihleri (Copilot için)**
+- ❌ Uzun açıklamalar yapma
+- ✅ Direkt kopyalanabilir kod ver
+- ✅ Tek satır komutlar tercih et
+- ✅ Hata mesajında anında çözüm sun
+- ✅ Dosya yollarını tam yaz
+- ❌ "Yapabilirsin, deneyebilirsin" gibi öneri cümleleri kurma
+- ✅ Direkt "Şunu yap" tarzında yaz
+
+**Sık Kullanılan Kalıplar**
+```python
+# Yeni view ekleme
+def sayfa_adi(request):
+    return render(request, 'matematik/sayfa_adi.html')
+```
+
+```python
+# URL pattern
+path('matematik/sayfa_adi/', views.sayfa_adi, name='sayfa_adi'),
+```
+
+**Otomatik Kontrol Listesi**
+Her yeni sayfa eklendiğinde:
+1. urls.py güncellendi mi?
+2. views.py'de fonksiyon var mı?
+3. Template oluşturuldu mu?
+4. KaTeX CDN bir kez mi yükleniyor?
+5. base.html extend edildi mi?
+
 Eğer bu dosyada eksik gördüğünüz veya daha ayrıntı isterseniz belirtin — içerikleri proje özelinde genişleteyim.
 
 *** Son güncelleme: Otomatik olarak oluşturuldu — lütfen geri bildirim verin. ***

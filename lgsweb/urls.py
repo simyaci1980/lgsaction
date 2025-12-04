@@ -25,6 +25,7 @@ urlpatterns = [
     path('matematik/', views.matematik, name='matematik'),
     path('matematik/unite-1/', views.matematik_unite_1, name='matematik_unite_1'),
     path('matematik/unite-2/', views.matematik_unite_2, name='matematik_unite_2'),
+    path('matematik/unite-3/', views.matematik_unite_3, name='matematik_unite_3'),
     path('matematik/veri-analizi/', views.veri_analizi, name='veri_analizi'),
     path('matematik/karekok/', views.karekok, name='karekok'),
     path('matematik/karekok_foyler/', views.karekok_foyler, name='karekok_foyler'),
@@ -42,7 +43,9 @@ urlpatterns = [
     path('matematik/uslu_foyler/', views.uslu_foyler, name='uslu_foyler'),
     path('matematik/uslu_islemler/', views.uslu_islemler, name='uslu_islemler'),
     path('matematik/uslu_ondalik/', views.uslu_ondalik, name='uslu_ondalik'),
+    path('matematik/cebirsel-ifadeler/', views.cebirsel_ifadeler, name='cebirsel_ifadeler'),
     path('matematik/uslu_bilimsel/', views.uslu_bilimsel, name='uslu_bilimsel'),
+    path('matematik/olasilik/', views.olasilik, name='olasilik'),
     path('din/', views.din, name='din'),
     path('oyunlar/', views.oyunlar, name='oyunlar'),
 ]

@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width:1200px; margin:0 auto; font-size:1.25em;">
+    <h2 class="highlight" style="color:#1976d2;">Karekök İçindeki Bir İfadeyi <span id="title-akokb"></span> Şeklinde Yazma</h2>
+    
+    <div class="tip-box">
+        Kareköklü bir ifadeyi <span id="hedef-id"></span>=<span id="hedef-id1"></span> şeklinde yazarken karekök içindeki sayı, çarpanlarından biri tam kare olan iki sayının çarpımı olarak yazılır. Tam kare olan sayının karekökü alınarak kökün önüne çarpan olarak yazılır.<br>
+        <span class="important" style="color:#d32f2f;">Formül:</span> <span id="akokb-formul2" class="highlight"></span><br>
+        <span class="important" style="margin-left:16px;">Kök içinde gösterimi: <span style="color:#1976d2; font-weight:bold; font-size:1.15em;" id="akokb-formul2-kok"></span> <span style="color:#388e3c; font-weight:bold; margin-left:12px;">Kök dışı gösterimi: <span id="akokb-formul2-disi"></span></span></span><br> <br><br>
+        <span class="important">Örnek: </span> <span id="ex-sqrt-18"></span> sayısını <span id="akokb-formul3"></span> şeklinde yazalım.<br>
+        <span id="ex-sqrt-18-step"></span><br>
+        <span class="highlight" style="color:#388e3c;">Sonuç: <span id="ex-sqrt-18-result"></span></span>
+    </div>
+
+    <div class="tip-box" style="margin-bottom:18px;">
+        <span class="important">Örnek (Çarpma):</span> <span id="mul-ex-1"></span><br>
+        <span id="mul-ex-1-step"></span><br>
+        <span class="highlight" style="color:#388e3c;">Sonuç: <span id="mul-ex-1-result"></span></span>
+    </div>
+
+    <!-- Kök içine alma bölümü -->
+    <div class="tip-box" style="margin-top:24px;">
+        <span class="highlight" style="color:#1976d2; font-size:1.5em; font-weight:bold; display:block; margin-bottom:8px;">a√b Şeklindeki Bir İfadeyi Karekök İçinde Yazma</span>
+        <span id="akokb-ters-formul" class="highlight"></span><br><br>
+        <span style="color:#d32f2f;">a√b şeklinde yazılan bir ifadenin katsayısını kök içine alırken katsayının karesi alınır ve kök içindeki sayı ile çarpım biçiminde yazılır.</span><br><br>
+        <span class="important">Örnek: </span> <span id="ex-akokb-4-3"></span> sayısını karekök içinde yazalım.<br><br>
+        <span id="ex-akokb-4-3-step"></span>
+    </div>
+
+    <div class="tip-box">
+        <b>Aşağıda verilen ifadeleri karekök içinde yazınız:</b><br><br>
+        
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-2-3"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-akokb-2-3" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-2-3', '12', 'result-akokb-2-3', '\\sqrt{12}')">Kontrol</button>
+            <span id="result-akokb-2-3"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-3-5"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-akokb-3-5" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-3-5', '45', 'result-akokb-3-5', '\\sqrt{45}')">Kontrol</button>
+            <span id="result-akokb-3-5"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-4-7"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-akokb-4-7" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-4-7', '112', 'result-akokb-4-7', '\\sqrt{112}')">Kontrol</button>
+            <span id="result-akokb-4-7"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-7-2"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">√</span>
+            <input type="text" id="input-akokb-7-2" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-7-2', '98', 'result-akokb-7-2', '\\sqrt{98}')">Kontrol</button>
+            <span id="result-akokb-7-2"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-3-3"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">-√</span>
+            <input type="text" id="input-akokb-3-3" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-3-3', '27', 'result-akokb-3-3', '-\\sqrt{27}')">Kontrol</button>
+            <span id="result-akokb-3-3"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-6-3"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">-√</span>
+            <input type="text" id="input-akokb-6-3" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-6-3', '108', 'result-akokb-6-3', '-\\sqrt{108}')">Kontrol</button>
+            <span id="result-akokb-6-3"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="ex-akokb-4-5"></span> = 
+            <span style="font-size:1.2em; font-weight:bold;">-√</span>
+            <input type="text" id="input-akokb-4-5" style="width:60px; font-size:1em; text-align:center;" autocomplete="off" />
+            <button onclick="checkKokIc('input-akokb-4-5', '80', 'result-akokb-4-5', '-\\sqrt{80}')">Kontrol</button>
+            <span id="result-akokb-4-5"></span>
+        </div>
+    </div>
+
+    <!-- Sıralama bölümü KALDIRILDI - ondalik.html'de olacak -->
+    <div class="tip-box" style="margin-top:24px;">
+        <span style="color:#1976d2; font-size:1.5em; font-weight:bold; display:block; margin-bottom:8px;">Kareköklü ifadeler sıralanırken katsayılar kök içine alınır.</span><br><br>
+        Pozitif kareköklerde kök içi büyük olan ifade, negatif kareköklerde kök içi küçük olan ifade daha büyüktür.<br><br>
+        <b>Aşağıdaki tabloda noktalı yerlere &lt;, &gt;, = sembollerinden uygun olanı yazınız.</b>
+    </div>
+
+    <!-- Mevcut karşılaştırma bölümü -->
+    <div class="exercise-box">
+        <div style="margin-bottom:20px;">
+            <span id="cmp-2-3"></span>
+            <select id="cmp-input-2-3-10" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-10"></span>
+            <button onclick="checkCmp('cmp-input-2-3-10', '<', 'cmp-result-2-3-10')">Kontrol</button>
+            <span id="cmp-result-2-3-10"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="cmp-4-7"></span>
+            <select id="cmp-input-4-7-5-5" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-5-5"></span>
+            <button onclick="checkCmp('cmp-input-4-7-5-5', '>', 'cmp-result-4-7-5-5')">Kontrol</button>
+            <span id="cmp-result-4-7-5-5"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="cmp-5-2"></span>
+            <select id="cmp-input-5-2-4-3" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-4-3"></span>
+            <button onclick="checkCmp('cmp-input-5-2-4-3', '>', 'cmp-result-5-2-4-3')">Kontrol</button>
+            <span id="cmp-result-5-2-4-3"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="cmp-6-3"></span>
+            <select id="cmp-input-6-3-3-12" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-3-12"></span>
+            <button onclick="checkCmp('cmp-input-6-3-3-12', '=', 'cmp-result-6-3-3-12')">Kontrol</button>
+            <span id="cmp-result-6-3-3-12"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="cmp-4-5"></span>
+            <select id="cmp-input-4-5-3-6" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-3-6"></span>
+            <button onclick="checkCmp('cmp-input-4-5-3-6', '>', 'cmp-result-4-5-3-6')">Kontrol</button>
+            <span id="cmp-result-4-5-3-6"></span>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <span id="cmp-2-7"></span>
+            <select id="cmp-input-2-7-3-10" style="width:60px; font-size:1em; text-align:center;">
+                <option value="">?</option>
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+                <option value="=">=</option>
+            </select>
+            <span id="cmp-3-10"></span>
+            <button onclick="checkCmp('cmp-input-2-7-3-10', '<', 'cmp-result-2-7-3-10')">Kontrol</button>
+            <span id="cmp-result-2-7-3-10"></span>
+        </div>
+    </div>
+</div>
+
+<!-- KaTeX ve JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script>
+function safeKatexRender(expr, id) {
+    var el = document.getElementById(id);
+    if (el) katex.render(expr, el);
+}
+
+function checkKokIc(inputId, correctValue, resultId, katexExpr) {
+    var val = document.getElementById(inputId).value.trim();
+    var resultSpan = document.getElementById(resultId);
+    if (val === correctValue) {
+        resultSpan.innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru!</span> <span id="'+resultId+'-katex"></span>';
+        safeKatexRender(katexExpr, resultId+'-katex');
+    } else {
+        resultSpan.innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış, doğru cevap: </span><span id="'+resultId+'-dogru"></span>';
+        setTimeout(function() {
+            safeKatexRender(katexExpr, resultId+'-dogru');
+        }, 10);
+    }
+}
+
+function checkCmp(inputId, correctSign, resultId) {
+    var val = document.getElementById(inputId).value.trim();
+    var resultSpan = document.getElementById(resultId);
+    if (val === correctSign) {
+        resultSpan.innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru!</span>';
+    } else {
+        resultSpan.innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış!</span>';
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    safeKatexRender("a\\sqrt{b}", "title-akokb");
+    safeKatexRender("\\sqrt{a^2b}", "hedef-id");
+    safeKatexRender("a\\sqrt{b}", "hedef-id1");
+    safeKatexRender("a^2b = a\\sqrt{b}", "akokb-formul2");
+    safeKatexRender("\\sqrt{a^2b}", "akokb-formul2-kok");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul2-disi");
+    safeKatexRender("a\\sqrt{b}", "akokb-formul3");
+    safeKatexRender("\\sqrt{18}", "ex-sqrt-18");
+    safeKatexRender("\\sqrt{18} = \\sqrt{9 \\times 2} = \\sqrt{9} \\times \\sqrt{2} = 3 \\sqrt{2}", "ex-sqrt-18-step");
+    safeKatexRender("3\\sqrt{2}", "ex-sqrt-18-result");
+    
+    safeKatexRender("2\\sqrt{3} \\cdot 4\\sqrt{5}", "mul-ex-1");
+    safeKatexRender("2\\sqrt{3} \\cdot 4\\sqrt{5} = (2 \\cdot 4) \\sqrt{3 \\cdot 5} = 8 \\sqrt{15}", "mul-ex-1-step");
+    safeKatexRender("8\\sqrt{15}", "mul-ex-1-result");
+    
+    safeKatexRender("a\\sqrt{b} = \\sqrt{a^2b}", "akokb-ters-formul");
+    safeKatexRender("4\\sqrt{3}", "ex-akokb-4-3");
+    safeKatexRender("4\\sqrt{3} = \\sqrt{4^2 \\times 3} = \\sqrt{16 \\times 3} = \\sqrt{48}", "ex-akokb-4-3-step");
+    
+    safeKatexRender("2\\sqrt{3}", "ex-akokb-2-3");
+    safeKatexRender("3\\sqrt{5}", "ex-akokb-3-5");
+    safeKatexRender("4\\sqrt{7}", "ex-akokb-4-7");
+    safeKatexRender("7\\sqrt{2}", "ex-akokb-7-2");
+    safeKatexRender("-3\\sqrt{3}", "ex-akokb-3-3");
+    safeKatexRender("-6\\sqrt{3}", "ex-akokb-6-3");
+    safeKatexRender("-4\\sqrt{5}", "ex-akokb-4-5");
+    
+    safeKatexRender("2\\sqrt{3}", "cmp-2-3");
+    safeKatexRender("\\sqrt{10}", "cmp-10");
+    safeKatexRender("4\\sqrt{7}", "cmp-4-7");
+    safeKatexRender("5\\sqrt{5}", "cmp-5-5");
+    safeKatexRender("5\\sqrt{2}", "cmp-5-2");
+    safeKatexRender("4\\sqrt{3}", "cmp-4-3");
+    safeKatexRender("6\\sqrt{3}", "cmp-6-3");
+    safeKatexRender("3\\sqrt{12}", "cmp-3-12");
+    safeKatexRender("4\\sqrt{5}", "cmp-4-5");
+    safeKatexRender("3\\sqrt{6}", "cmp-3-6");
+    safeKatexRender("2\\sqrt{7}", "cmp-2-7");
+    safeKatexRender("3\\sqrt{10}", "cmp-3-10");
+    
+    // Sıralama örnekleri KALDIRILDI
+});
+</script>
+
+<div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+    <a href="/matematik/karekok_foyler/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        ➡️ Karekök Föyler'e Git
+    </a>
+</div>
+
+{% endblock %}

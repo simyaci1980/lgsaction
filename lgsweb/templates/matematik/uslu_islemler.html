@@ -1,9 +1,245 @@
 {% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
 {% block content %}
-<div class="main-container" style="max-width:900px; margin:32px auto;">
-    <h1 class="main-title">Üslü İfadelerde İşlemler</h1>
-    <div class="highlight-box" style="background:#eafaf1; margin-top:24px;">
-        Üslü ifadelerle toplama, çıkarma, çarpma ve bölme işlemlerinin kuralları ve örnekleri bu föyde!
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">➕</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">✖️</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">➖</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">➗</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">🔢</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">⚡</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">📊</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">🎯</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">💡</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🧮</div>
+
+    <h1 class="main-title">ÜSLÜ İFADELERDE İŞLEMLER <span style="color:#f39c12;">&#9889;</span></h1>
+    <ul class="topic-list">
+        <li>Toplama ve Çıkarma İşlemleri</li>
+        <li>Çarpma İşlemleri</li>
+        <li>Bölme İşlemleri</li>
+    </ul>
+    <hr>
+
+    <!-- TOPLAMA VE ÇIKARMA -->
+    <section class="section">
+        <h2><span style="color:#e74c3c;">&#9733;</span> Toplama ve Çıkarma İşlemleri</h2>
+        <div class="highlight-box">
+            <b style="color:#d35400;">Önemli Kural:</b> <span style="color:#34495e;">Üslü ifadelerde toplama veya çıkarma yapabilmek için <b style="color:#e67e22;">taban ve üs aynı olmalıdır</b>. Aynıysa sadece <b>katsayılar toplanır/çıkarılır</b>.</span>
+        </div>
+        
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">Genel Formül:</b></p>
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>m · a<sup>n</sup> ± k · a<sup>n</sup> = (m ± k) · a<sup>n</sup></b>
+            </p>
+        </div>
+
+        <div class="highlight-box" style="background:#eafaf1;">
+            <b style="color:#27ae60;">Örnek 1:</b> <span style="color:#34495e;">3 · 2<sup>5</sup> + 4 · 2<sup>5</sup> = (3 + 4) · 2<sup>5</sup> = 7 · 2<sup>5</sup></span>
+        </div>
+
+        <div class="highlight-box" style="background:#eafaf1;">
+            <b style="color:#27ae60;">Örnek 2:</b> <span style="color:#34495e;">5 · 3<sup>4</sup> - 2 · 3<sup>4</sup> = (5 - 2) · 3<sup>4</sup> = 3 · 3<sup>4</sup></span>
+        </div>
+
+        <div class="highlight-box" style="background:#fff3cd;">
+            <b style="color:#e74c3c;">Dikkat!</b> <span style="color:#34495e;">Taban veya üs farklıysa toplama/çıkarma yapılamaz:</span><br>
+            <span style="color:#e74c3c;">2<sup>3</sup> + 2<sup>4</sup></span> <b>toplanamaz</b> (üsler farklı)<br>
+            <span style="color:#e74c3c;">3<sup>5</sup> + 4<sup>5</sup></span> <b>toplanamaz</b> (tabanlar farklı)
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru:</b> <span style="color:#2c3e50;">7 · 5<sup>3</sup> + 2 · 5<sup>3</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans1').style.display='block'">Cevabı Göster</button>
+            <div id="ans1" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> (7 + 2) · 5<sup>3</sup> = 9 · 5<sup>3</sup>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÇARPMA İŞLEMLERİ -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> Çarpma İşlemleri</h2>
+        
+        <div class="highlight-box">
+            <b style="color:#d35400;">1. Kural - Tabanlar Aynı:</b><br>
+            <span style="color:#34495e;">Tabanlar aynıysa <b style="color:#e67e22;">üsler toplanır</b>.</span>
+        </div>
+        
+        <div class="example-box">
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup></b>
+            </p>
+        </div>
+
+        <div class="grid-examples">
+            <div>2<sup>3</sup> · 2<sup>4</sup> = 2<sup>3+4</sup> = <span style="color:#27ae60;">2<sup>7</sup></span></div>
+            <div>5<sup>2</sup> · 5<sup>6</sup> = 5<sup>2+6</sup> = <span style="color:#27ae60;">5<sup>8</sup></span></div>
+            <div>3<sup>4</sup> · 3<sup>2</sup> = 3<sup>4+2</sup> = <span style="color:#27ae60;">3<sup>6</sup></span></div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:24px;">
+            <b style="color:#d35400;">2. Kural - Üsler Aynı:</b><br>
+            <span style="color:#34495e;">Üsler aynıysa <b style="color:#e67e22;">tabanlar çarpılır</b>.</span>
+        </div>
+
+        <div class="example-box">
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>a<sup>n</sup> · b<sup>n</sup> = (a · b)<sup>n</sup></b>
+            </p>
+        </div>
+
+        <div class="grid-examples">
+            <div>2<sup>5</sup> · 3<sup>5</sup> = (2 · 3)<sup>5</sup> = <span style="color:#27ae60;">6<sup>5</sup></span></div>
+            <div>4<sup>3</sup> · 5<sup>3</sup> = (4 · 5)<sup>3</sup> = <span style="color:#27ae60;">20<sup>3</sup></span></div>
+            <div>7<sup>2</sup> · 2<sup>2</sup> = (7 · 2)<sup>2</sup> = <span style="color:#27ae60;">14<sup>2</sup></span></div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru:</b> <span style="color:#2c3e50;">3<sup>4</sup> · 3<sup>7</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans2').style.display='block'">Cevabı Göster</button>
+            <div id="ans2" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> Tabanlar aynı → Üsler toplanır: 3<sup>4+7</sup> = 3<sup>11</sup>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLME İŞLEMLERİ -->
+    <section class="section">
+        <h2><span style="color:#9b59b6;">&#9733;</span> Bölme İşlemleri</h2>
+        
+        <div class="highlight-box">
+            <b style="color:#d35400;">1. Kural - Tabanlar Aynı:</b><br>
+            <span style="color:#34495e;">Tabanlar aynıysa <b style="color:#e67e22;">üsler çıkarılır</b>.</span>
+        </div>
+        
+        <div class="example-box">
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup></b>
+            </p>
+        </div>
+
+        <div class="grid-examples">
+            <div>5<sup>7</sup> ÷ 5<sup>3</sup> = 5<sup>7-3</sup> = <span style="color:#27ae60;">5<sup>4</sup></span></div>
+            <div>2<sup>8</sup> ÷ 2<sup>5</sup> = 2<sup>8-5</sup> = <span style="color:#27ae60;">2<sup>3</sup></span></div>
+            <div>10<sup>6</sup> ÷ 10<sup>2</sup> = 10<sup>6-2</sup> = <span style="color:#27ae60;">10<sup>4</sup></span></div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:24px;">
+            <b style="color:#d35400;">2. Kural - Üsler Aynı:</b><br>
+            <span style="color:#34495e;">Üsler aynıysa <b style="color:#e67e22;">tabanlar bölünür</b>.</span>
+        </div>
+
+        <div class="example-box">
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>a<sup>n</sup> ÷ b<sup>n</sup> = (a ÷ b)<sup>n</sup></b>
+            </p>
+        </div>
+
+        <div class="grid-examples">
+            <div>20<sup>4</sup> ÷ 5<sup>4</sup> = (20 ÷ 5)<sup>4</sup> = <span style="color:#27ae60;">4<sup>4</sup></span></div>
+            <div>16<sup>3</sup> ÷ 4<sup>3</sup> = (16 ÷ 4)<sup>3</sup> = <span style="color:#27ae60;">4<sup>3</sup></span></div>
+            <div>100<sup>5</sup> ÷ 10<sup>5</sup> = (100 ÷ 10)<sup>5</sup> = <span style="color:#27ae60;">10<sup>5</sup></span></div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru:</b> <span style="color:#2c3e50;">7<sup>9</sup> ÷ 7<sup>4</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans3').style.display='block'">Cevabı Göster</button>
+            <div id="ans3" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> Tabanlar aynı → Üsler çıkarılır: 7<sup>9-4</sup> = 7<sup>5</sup>
+            </div>
+        </div>
+    </section>
+
+    <!-- KARMA SORULAR -->
+    <section class="section">
+        <h2><span style="color:#e67e22;">&#9733;</span> Karma Sorular</h2>
+        
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru 1:</b> <span style="color:#2c3e50;">2<sup>3</sup> · 2<sup>5</sup> + 2<sup>7</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans4').style.display='block'">Cevabı Göster</button>
+            <div id="ans4" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b><br>
+                2<sup>3</sup> · 2<sup>5</sup> = 2<sup>8</sup><br>
+                2<sup>8</sup> + 2<sup>7</sup> → Tabanlar ve üsler aynı DEĞİL, toplanamaz<br>
+                Hesaplayalım: 256 + 128 = <b>384</b>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru 2:</b> <span style="color:#2c3e50;">3<sup>4</sup> · 2<sup>4</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans5').style.display='block'">Cevabı Göster</button>
+            <div id="ans5" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> Üsler aynı → Tabanlar çarpılır: (3 · 2)<sup>4</sup> = 6<sup>4</sup>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">Soru 3:</b> <span style="color:#2c3e50;">10<sup>5</sup> ÷ 10<sup>2</sup> - 2 · 10<sup>3</sup> = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans6').style.display='block'">Cevabı Göster</button>
+            <div id="ans6" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b><br>
+                10<sup>5</sup> ÷ 10<sup>2</sup> = 10<sup>3</sup><br>
+                10<sup>3</sup> - 2 · 10<sup>3</sup> = 1 · 10<sup>3</sup> - 2 · 10<sup>3</sup> = (1 - 2) · 10<sup>3</sup> = -1 · 10<sup>3</sup> = <b>-1000</b>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZEL DURUMLAR -->
+    <section class="section">
+        <h2><span style="color:#c0392b;">&#9733;</span> Özel Durumlar ve İpuçları</h2>
+        
+        <div class="highlight-box" style="background:#fef5e7;">
+            <b style="color:#d68910;">İpucu 1:</b> Önce çarpma/bölme, sonra toplama/çıkarma yapılır.
+        </div>
+
+        <div class="highlight-box" style="background:#fef5e7;">
+            <b style="color:#d68910;">İpucu 2:</b> Parantez varsa önce parantez içi hesaplanır.
+        </div>
+
+        <div class="highlight-box" style="background:#fef5e7;">
+            <b style="color:#d68910;">İpucu 3:</b> Katsayıları unutma! 3 · 2<sup>4</sup> = 3 · 16 = 48
+        </div>
+
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">Örnek:</b> <span style="color:#2c3e50;">(2<sup>3</sup>)<sup>2</sup> · 2<sup>4</sup> = ?</span></p>
+            <p><b>Çözüm:</b><br>
+            (2<sup>3</sup>)<sup>2</sup> = 2<sup>3·2</sup> = 2<sup>6</sup><br>
+            2<sup>6</sup> · 2<sup>4</sup> = 2<sup>6+4</sup> = <span style="color:#27ae60;">2<sup>10</sup></span>
+            </p>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/matematik/uslu_foyler/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ➡️ Üslü Föyler'e Git
+        </a>
+        <a href="/matematik/matematik/" style="display:inline-block; padding:14px 28px; background:#27ae60; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Matematik Ana Sayfa
+        </a>
     </div>
 </div>
 {% endblock %}

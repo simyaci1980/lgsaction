@@ -1,9 +1,386 @@
 {% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
 {% block content %}
-<div class="main-container" style="max-width:900px; margin:32px auto;">
-    <h1 class="main-title">Ondalık Gösterim</h1>
-    <div class="highlight-box" style="background:#eafaf1; margin-top:24px;">
-        Üslü ifadelerin ondalık gösterimi ve örnekler bu föyde!
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">🔢</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">📊</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">💯</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">🎯</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">📐</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">⚡</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">🧮</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">💡</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">📈</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🎲</div>
+
+    <h1 class="main-title">ÜSLÜ İFADELERDE ONDALIK GÖSTERİM <span style="color:#f39c12;">💯</span></h1>
+    <ul class="topic-list">
+        <li>Ondalık Sayıların Üslü Gösterimi</li>
+        <li>10'un Negatif Kuvvetleri</li>
+        <li>Bilimsel Gösterim ile İlişki</li>
+    </ul>
+    <hr>
+
+    <!-- ONDALIK GÖSTERİM NEDİR -->
+    <section class="section">
+        <h2><span style="color:#e74c3c;">&#9733;</span> Ondalık Gösterim Nedir?</h2>
+        <div class="highlight-box">
+            <b style="color:#d35400;">Tanım:</b> <span style="color:#34495e;">Bir sayının <b style="color:#e67e22;">basamak değerlerine göre açılımı</b>na ondalık gösterim denir.</span>
+        </div>
+        
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">📊 Basamak Şeması:</b></p>
+            <div style="overflow-x: auto; margin-top: 16px;">
+                <table style="margin: 0 auto; border-collapse: collapse; font-size: 0.95em; min-width: 600px;">
+                    <tr style="background: #1976d2; color: white;">
+                        <th style="padding: 10px; border: 2px solid #1565c0;">Binler<br>10³</th>
+                        <th style="padding: 10px; border: 2px solid #1565c0;">Yüzler<br>10²</th>
+                        <th style="padding: 10px; border: 2px solid #1565c0;">Onlar<br>10¹</th>
+                        <th style="padding: 10px; border: 2px solid #1565c0; background: #e74c3c;">Birler<br>10⁰</th>
+                        <th style="padding: 10px; border: 2px solid #e74c3c; background: #e74c3c; font-size: 1.5em;">.</th>
+                        <th style="padding: 10px; border: 2px solid #27ae60; background: #27ae60;">Onda Birler<br>10⁻¹</th>
+                        <th style="padding: 10px; border: 2px solid #27ae60; background: #27ae60;">Yüzde Birler<br>10⁻²</th>
+                        <th style="padding: 10px; border: 2px solid #27ae60; background: #27ae60;">Binde Birler<br>10⁻³</th>
+                    </tr>
+                    <tr style="background: #f5f5f5;">
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #1976d2;">3</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #1976d2;">5</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #1976d2;">2</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #e74c3c;">4</td>
+                        <td style="padding: 12px; border: 2px solid #e74c3c; text-align: center; font-weight: bold; font-size: 1.8em; color: #e74c3c;">,</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #27ae60;">5</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #27ae60;">6</td>
+                        <td style="padding: 12px; border: 2px solid #ddd; text-align: center; font-weight: bold; font-size: 1.3em; color: #27ae60;">7</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">3×10³</td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">5×10²</td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">2×10¹</td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">4×10⁰</td>
+                        <td style="padding: 8px; border: 2px solid #e74c3c; text-align: center;"></td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">5×10⁻¹</td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">6×10⁻²</td>
+                        <td style="padding: 8px; border: 2px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">7×10⁻³</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="margin-top: 16px; text-align: center; color: #666; font-size: 0.95em;">
+                <span style="color: #1976d2;">● Virgülden önce (pozitif üsler)</span> 
+                <span style="margin: 0 12px; color: #e74c3c;">● Virgül (10⁰)</span> 
+                <span style="color: #27ae60;">● Virgülden sonra (negatif üsler)</span>
+            </p>
+        </div>
+
+        <div class="highlight-box" style="background:#eafaf1; margin-top: 24px;">
+            <b style="color:#27ae60;">📌 Örnek - Sayıyı Açalım:</b><br>
+            <span style="color:#34495e; font-size: 1.1em;">3524.567 sayısı:</span><br><br>
+            <div style="text-align: center; font-size: 1.05em; line-height: 2;">
+                = <span style="color: #1976d2;">3×10³ + 5×10² + 2×10¹</span> + <span style="color: #e74c3c;">4×10⁰</span> + <span style="color: #27ae60;">5×10⁻¹ + 6×10⁻² + 7×10⁻³</span><br>
+                = <span style="color: #1976d2;">3×1000 + 5×100 + 2×10</span> + <span style="color: #e74c3c;">4×1</span> + <span style="color: #27ae60;">5×(1/10) + 6×(1/100) + 7×(1/1000)</span><br>
+                = <span style="color: #1976d2;">3000 + 500 + 20</span> + <span style="color: #e74c3c;">4</span> + <span style="color: #27ae60;">0.5 + 0.06 + 0.007</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#e1f5fe;">
+            <b style="color:#1565c0;">🔍 Önemli Noktalar:</b><br>
+            <span style="color:#34495e;">
+                ✓ <b>Virgülden önce:</b> Üsler pozitif (10¹, 10², 10³...)<br>
+                ✓ <b>Birler basamağı:</b> 10⁰ = 1<br>
+                ✓ <b>Virgülden sonra:</b> Üsler negatif (10⁻¹, 10⁻², 10⁻³...)
+            </span>
+        </div>
+
+        <div class="grid-examples"><br><br><br>
+            <div>25 = 2×10<sup>1</sup> + 5×10<sup>0</sup><br>
+                <span style="font-size:0.98em; color:#888;">2 onlar basamağı, 5 birler basamağı</span>
+            </div>
+            <div>0.7 = 7×10<sup>-1</sup><br>
+                <span style="font-size:0.98em; color:#888;">7 onda birler basamağı</span>
+            </div>
+            <div>0.35 = 3×10<sup>-1</sup> + 5×10<sup>-2</sup><br>
+                <span style="font-size:0.98em; color:#888;">3 onda bir, 5 yüzde bir</span>
+            </div>
+            <div>8.09 = 8×10<sup>0</sup> + 9×10<sup>-2</sup><br>
+                <span style="font-size:0.98em; color:#888;">8 birler, 9 yüzde birler</span>
+            </div>
+            <div>100.001 = 10<sup>2</sup> + 10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">Yüzler + binde birler</span>
+            </div>
+            <div>0.125 = 1×10<sup>-1</sup> + 2×10<sup>-2</sup> + 5×10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">Ondalık basamakları</span>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru:</b> <span style="color:#2c3e50;">2.47 sayısını ondalık gösterimde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans0').style.display='block'">Cevabı Göster</button>
+            <div id="ans0" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 2.47 = 2×10<sup>0</sup> + 4×10<sup>-1</sup> + 7×10<sup>-2</sup>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONDALIK SAYILARIN ÜSLÜ GÖSTERİMİ -->
+    <section class="section">
+        <h2><span style="color:#e74c3c;">&#9733;</span> Ondalık Sayıların Üslü Gösterimi</h2>
+        <div class="highlight-box">
+            <b style="color:#d35400;">Temel Kural:</b> <span style="color:#34495e;">Ondalık sayılar <b style="color:#e67e22;">10'un negatif kuvvetleri</b> ile gösterilebilir.</span>
+        </div>
+        
+        <div class="example-box">
+            <p style="font-size:1.1em; text-align:center; color:#2c3e50;">
+                <b>0.1 = 10<sup>-1</sup> = 1/10</b><br>
+                <b>0.01 = 10<sup>-2</sup> = 1/100</b><br>
+                <b>0.001 = 10<sup>-3</sup> = 1/1000</b>
+            </p>
+        </div>
+
+        <div class="grid-examples">
+            <div>0.5 = 5 × 10<sup>-1</sup><br>
+                <span style="font-size:0.98em; color:#888;">5 ondalık basamak → 5 × (1/10)</span>
+            </div>
+            <div>0.07 = 7 × 10<sup>-2</sup><br>
+                <span style="font-size:0.98em; color:#888;">7 yüzde basamak → 7 × (1/100)</span>
+            </div>
+            <div>0.003 = 3 × 10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">3 binde basamak → 3 × (1/1000)</span>
+            </div>
+            <div>0.25 = 25 × 10<sup>-2</sup><br>
+                <span style="font-size:0.98em; color:#888;">25 yüzde → 2.5 × 10<sup>-1</sup></span>
+            </div>
+            <div>0.008 = 8 × 10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">8 binde basamak</span>
+            </div>
+            <div>0.125 = 125 × 10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">125 binde → 1.25 × 10<sup>-1</sup></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10'UN NEGATİF KUVVETLERİ -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> 10'un Negatif Kuvvetleri</h2>
+        
+        <div class="highlight-box">
+            <b style="color:#d35400;">Kural:</b> <span style="color:#34495e;">10<sup>-n</sup> = 1 / 10<sup>n</sup></span>
+        </div>
+
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">Çevrim Tablosu:</b></p>
+        </div>
+
+        <div class="grid-examples">
+            <div>10<sup>-1</sup> = 1/10 = <span style="color:#27ae60;">0.1</span><br>
+                <span style="font-size:0.98em; color:#888;">Onda bir</span>
+            </div>
+            <div>10<sup>-2</sup> = 1/100 = <span style="color:#27ae60;">0.01</span><br>
+                <span style="font-size:0.98em; color:#888;">Yüzde bir</span>
+            </div>
+            <div>10<sup>-3</sup> = 1/1000 = <span style="color:#27ae60;">0.001</span><br>
+                <span style="font-size:0.98em; color:#888;">Binde bir</span>
+            </div>
+            <div>10<sup>-4</sup> = 1/10000 = <span style="color:#27ae60;">0.0001</span><br>
+                <span style="font-size:0.98em; color:#888;">On binde bir</span>
+            </div>
+            <div>10<sup>-5</sup> = 1/100000 = <span style="color:#27ae60;">0.00001</span><br>
+                <span style="font-size:0.98em; color:#888;">Yüz binde bir</span>
+            </div>
+            <div>10<sup>-6</sup> = 1/1000000 = <span style="color:#27ae60;">0.000001</span><br>
+                <span style="font-size:0.98em; color:#888;">Milyonda bir</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff3cd; margin-top:20px;">
+            <b style="color:#e74c3c;">💡 İpucu 2:</b> <span style="color:#34495e;">Virgülden sonraki sıfır sayısı = negatif üs değeri</span>
+        </div>
+
+        <div class="example-box" style="background:#f8f9fa; padding:16px; border-left:4px solid #e67e22; margin-top:16px;">
+            <b style="color:#e67e22;">📝 Adım Adım Örnekler:</b><br><br>
+            
+            <div style="background:#fff; padding:12px; border-radius:6px; margin-bottom:12px;">
+                <b style="color:#8e44ad;">Örnek 1:</b> 0.001<br>
+                <span style="color:#666; font-size:0.95em;">
+                • Virgülden sonra kaç sıfır var? → <b style="color:#e74c3c;">2 sıfır</b> (0.<u>0</u><u>0</u>1)<br>
+                • Ama virgülden sonra ilk anlamlı rakama kadar kaç basamak? → <b style="color:#e74c3c;">3 basamak</b><br>
+                • Demek ki üs: <b style="color:#e74c3c;">-3</b><br>
+                • Sonuç: 0.001 = <b style="color:#27ae60;">1 × 10<sup>-3</sup></b>
+                </span>
+            </div>
+
+            <div style="background:#fff; padding:12px; border-radius:6px; margin-bottom:12px;">
+                <b style="color:#8e44ad;">Örnek 2:</b> 0.00005<br>
+                <span style="color:#666; font-size:0.95em;">
+                • Virgülden sonra kaç sıfır var? → <b style="color:#e74c3c;">4 sıfır</b> (0.0<u>0</u><u>0</u><u>0</u>5)<br>
+                • Demek ki üs: <b style="color:#e74c3c;">-5</b><br>
+                • Sonuç: 0.00005 = <b style="color:#27ae60;">5 × 10<sup>-5</sup></b>
+                </span>
+            </div>
+
+            <div style="background:#fff; padding:12px; border-radius:6px;">
+                <b style="color:#8e44ad;">Örnek 3:</b> 0.0000078<br>
+                <span style="color:#666; font-size:0.95em;">
+                • Virgülden sonra kaç sıfır var? → <b style="color:#e74c3c;">5 sıfır</b> (0.0<u>0</u><u>0</u><u>0</u><u>0</u>78)<br>
+                • Demek ki üs: <b style="color:#e74c3c;">-6</b><br>
+                • Sonuç: 0.0000078 = <b style="color:#27ae60;">7.8 × 10<sup>-6</sup></b>
+                </span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#e8f4f8; margin-top:20px;">
+            <b style="color:#1976d2;">💡 İpucu 3:</b> <span style="color:#34495e;">Bilimsel gösterimde a ≥ 10 ise üssü 1 artır, a'yı 10'a böl</span>
+        </div>
+
+        <div class="example-box" style="background:#f8f9fa; padding:16px; border-left:4px solid #1976d2; margin-top:16px;">
+            <b style="color:#1976d2;">📝 Düzeltme İşlemi - Adım Adım:</b><br><br>
+            
+            <div style="background:#fff; padding:12px; border-radius:6px; margin-bottom:12px;">
+                <b style="color:#8e44ad;">Örnek 1:</b> 45 × 10<sup>3</sup> → Yanlış! (a = 45 ≥ 10)<br>
+                <span style="color:#666; font-size:0.95em;">
+                • <b style="color:#e67e22;">Adım 1:</b> a'yı 10'a böl → 45 ÷ 10 = <b>4.5</b><br>
+                • <b style="color:#e67e22;">Adım 2:</b> Üssü 1 artır → 3 + 1 = <b>4</b><br>
+                • <b style="color:#27ae60;">Sonuç:</b> 4.5 × 10<sup>4</sup> ✓
+                </span>
+            </div>
+
+            <div style="background:#fff; padding:12px; border-radius:6px; margin-bottom:12px;">
+                <b style="color:#8e44ad;">Örnek 2:</b> 120 × 10<sup>5</sup> → Yanlış! (a = 120 ≥ 10)<br>
+                <span style="color:#666; font-size:0.95em;">
+                • <b style="color:#e67e22;">Adım 1:</b> a'yı 10'a böl → 120 ÷ 10 = <b>12</b> (hala ≥ 10!)<br>
+                • <b style="color:#e67e22;">Adım 2:</b> Üssü 1 artır → 5 + 1 = <b>6</b><br>
+                • Hala yanlış! (12 ≥ 10), tekrar böl:<br>
+                • <b style="color:#e67e22;">Adım 3:</b> 12 ÷ 10 = <b>1.2</b><br>
+                • <b style="color:#e67e22;">Adım 4:</b> Üssü 1 artır → 6 + 1 = <b>7</b><br>
+                • <b style="color:#27ae60;">Sonuç:</b> 1.2 × 10<sup>7</sup> ✓
+                </span>
+            </div>
+
+            <div style="background:#fff; padding:12px; border-radius:6px;">
+                <b style="color:#8e44ad;">Örnek 3:</b> 15 × 10<sup>-2</sup> → Yanlış! (a = 15 ≥ 10)<br>
+                <span style="color:#666; font-size:0.95em;">
+                • <b style="color:#e67e22;">Adım 1:</b> a'yı 10'a böl → 15 ÷ 10 = <b>1.5</b><br>
+                • <b style="color:#e67e22;">Adım 2:</b> Üssü 1 artır → -2 + 1 = <b>-1</b><br>
+                • <b style="color:#27ae60;">Sonuç:</b> 1.5 × 10<sup>-1</sup> ✓
+                </span>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru:</b> <span style="color:#2c3e50;">10<sup>-4</sup> ondalık gösterimde kaçtır?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans1').style.display='block'">Cevabı Göster</button>
+            <div id="ans1" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 10<sup>-4</sup> = 1/10000 = 0.0001 (virgülden sonra 4 sıfır)
+            </div>
+        </div>
+    </section>
+
+    <!-- ONDALIK SAYILARLA İŞLEMLER -->
+    <section class="section">
+        <h2><span style="color:#9b59b6;">&#9733;</span> Ondalık Sayılarla İşlemler</h2>
+        
+        <div class="highlight-box">
+            <b style="color:#d35400;">Toplama/Çıkarma:</b><br>
+            <span style="color:#34495e;">Üsler aynı olmalı → Katsayılar toplanır/çıkarılır</span>
+        </div>
+
+        <div class="grid-examples">
+            <div>3 × 10<sup>-2</sup> + 5 × 10<sup>-2</sup> = <span style="color:#27ae60;">8 × 10<sup>-2</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">0.03 + 0.05 = 0.08</span>
+            </div>
+            <div>7 × 10<sup>-3</sup> - 2 × 10<sup>-3</sup> = <span style="color:#27ae60;">5 × 10<sup>-3</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">0.007 - 0.002 = 0.005</span>
+            </div>
+            <div>9 × 10<sup>-1</sup> + 4 × 10<sup>-1</sup> = <span style="color:#27ae60;">13 × 10<sup>-1</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">0.9 + 0.4 = 1.3</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:24px;">
+            <b style="color:#d35400;">Çarpma/Bölme:</b><br>
+            <span style="color:#34495e;">Katsayılar çarpılır/bölünür, üsler toplanır/çıkarılır</span>
+        </div>
+
+        <div class="grid-examples">
+            <div>(2 × 10<sup>-3</sup>) × (3 × 10<sup>-2</sup>) = <span style="color:#27ae60;">6 × 10<sup>-5</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">2×3=6, (-3)+(-2)=-5</span>
+            </div>
+            <div>(8 × 10<sup>-4</sup>) ÷ (2 × 10<sup>-2</sup>) = <span style="color:#27ae60;">4 × 10<sup>-2</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">8÷2=4, (-4)-(-2)=-2</span>
+            </div>
+            <div>(5 × 10<sup>-1</sup>)<sup>2</sup> = <span style="color:#27ae60;">25 × 10<sup>-2</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">5²=25, (-1)×2=-2</span>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">✏️ Soru:</b> <span style="color:#2c3e50;">(4 × 10<sup>-2</sup>) × (5 × 10<sup>-3</sup>) = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans2').style.display='block'">Cevabı Göster</button>
+            <div id="ans2" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 4×5=20, (-2)+(-3)=-5 → 20 × 10<sup>-5</sup> = 2 × 10<sup>-4</sup> = 0.0002
+            </div>
+        </div>
+    </section>
+
+    <!-- KARMA SORULAR -->
+    <section class="section">
+        <h2><span style="color:#c0392b;">&#9733;</span> Karma Sorular</h2>
+        
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 1:</b> <span style="color:#2c3e50;">2 × 10<sup>-3</sup> + 5 × 10<sup>-4</sup> işlemini yapınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans4').style.display='block'">Cevabı Göster</button>
+            <div id="ans4" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b><br>
+                Üsler farklı, önce eşitleyelim:<br>
+                2 × 10<sup>-3</sup> = 20 × 10<sup>-4</sup><br>
+                20 × 10<sup>-4</sup> + 5 × 10<sup>-4</sup> = 25 × 10<sup>-4</sup> = <b>2.5 × 10<sup>-3</sup></b>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 2:</b> <span style="color:#2c3e50;">(3 × 10<sup>-2</sup>) × (4 × 10<sup>3</sup>) = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans5').style.display='block'">Cevabı Göster</button>
+            <div id="ans5" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 3×4=12, (-2)+(3)=1 → 12 × 10<sup>1</sup> = <b>120</b>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 3:</b> <span style="color:#2c3e50;">0.008 sayısını a × 10<sup>n</sup> şeklinde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans6').style.display='block'">Cevabı Göster</button>
+            <div id="ans6" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 0.008 = 8 × 10<sup>-3</sup> (virgül 3 basamak sağa kaydırıldı)
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/matematik/uslu_foyler/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ➡️ Üslü Föyler'e Git
+        </a>
+        <a href="/matematik/matematik/" style="display:inline-block; padding:14px 28px; background:#27ae60; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Matematik Ana Sayfa
+        </a>
     </div>
 </div>
 {% endblock %}

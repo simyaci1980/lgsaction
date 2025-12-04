@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">✨</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">🔮</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">🎯</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">🧮</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">📐</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">💡</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">🎨</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">⚡</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">🌟</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🔬</div>
+
+    <h1 class="main-title">CEBİRSEL İFADELER VE ÖZDEŞLİKLER <span style="color:#9c27b0;">✨</span></h1>
+    <ul class="topic-list">
+        <li>Cebirsel İfadeler Nedir?</li>
+        <li>Özdeşlikler</li>
+        <li>Çarpanlara Ayırma</li>
+    </ul>
+    <hr>
+
+    <!-- CEBİRSEL İFADELER NEDİR -->
+    <section class="section">
+        <h2><span style="color:#9c27b0;">&#9733;</span> Cebirsel İfadeler Nedir?</h2>
+        <div class="highlight-box" style="background:#f3e5f5; padding:24px; border-radius:12px;">
+            <b style="color:#6a1b9a;">Tanım:</b> <span style="color:#34495e;">Sayılar, harfler ve işlem sembolleriyle oluşturulan matematiksel ifadelere <b style="color:#9c27b0;">cebirsel ifade</b> denir.</span>
+        </div>
+        
+        <div class="example-box" style="background:#fff; border-left:6px solid #9c27b0; padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style="color:#8e24aa;">📐 Örnekler:</b></p>
+            <ul style="line-height:2;">
+                <li><b>3x + 5</b> → Bir cebirsel ifade</li>
+                <li><b>2a² - 4b + 7</b> → Bir cebirsel ifade</li>
+                <li><b>x² + 2xy + y²</b> → Bir cebirsel ifade</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box" style="background:#fff; padding:16px; border-radius:8px; border-left:4px solid #9c27b0; margin-top:16px;">
+            <b style="color:#6a1b9a;">🔹 Terimler:</b><br>
+            <span style="color:#555;">Cebirsel ifadelerde <b>+</b> veya <b>-</b> işaretiyle ayrılan parçalara <b style="color:#9c27b0;">terim</b> denir.</span><br><br>
+            <b style="color:#8e24aa;">Örnek:</b> <span style="color:#2c3e50;">3x² - 5x + 7</span><br>
+            <span style="color:#666; font-size:0.95em;">→ 3 terim var: <b>3x²</b>, <b>-5x</b>, <b>+7</b></span>
+        </div>
+
+        <div class="highlight-box" style="background:#fff; padding:16px; border-radius:8px; border-left:4px solid #9c27b0; margin-top:16px;">
+            <b style="color:#6a1b9a;">🔹 Katsayı ve Sabit Terim:</b><br>
+            <span style="color:#555;"><b>Katsayı:</b> Değişkenin önündeki sayı</span><br>
+            <span style="color:#555;"><b>Sabit Terim:</b> Değişkeni olmayan terim</span><br><br>
+            <b style="color:#8e24aa;">Örnek:</b> <span style="color:#2c3e50;">5x - 3</span><br>
+            <span style="color:#666; font-size:0.95em;">→ Katsayı: <b>5</b>, Sabit terim: <b>-3</b></span>
+        </div>
+    </section>
+
+    <!-- ÖZDEŞLİKLER -->
+    <section class="section">
+        <h2><span style="color:#7b1fa2;">&#9733;</span> Özdeşlikler</h2>
+        
+        <div class="highlight-box" style="background:#f3e5f5; padding:24px; border-radius:12px;">
+            <b style="color:#6a1b9a;">Tanım:</b> <span style="color:#34495e;">Değişkenler yerine hangi değerler yazılırsa yazılsın her zaman doğru olan eşitliklere <b style="color:#9c27b0;">özdeşlik</b> denir.</span>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #7b1fa2; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">1️⃣ İki Terimin Karesi Özdeşlikleri</h3>
+            
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <p style="font-size:1.1em; text-align:center; color:#2c3e50; margin:8px 0;">
+                    <b>(a + b)² = a² + 2ab + b²</b>
+                </p>
+                <p style="text-align:center; color:#666; font-size:0.95em; margin:8px 0;">
+                    "Toplamın karesi, karelerin toplamı artı iki katı çarpım"
+                </p>
+            </div>
+
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <p style="font-size:1.1em; text-align:center; color:#2c3e50; margin:8px 0;">
+                    <b>(a - b)² = a² - 2ab + b²</b>
+                </p>
+                <p style="text-align:center; color:#666; font-size:0.95em; margin:8px 0;">
+                    "Farkın karesi, karelerin toplamı eksi iki katı çarpım"
+                </p>
+            </div>
+
+            <b style="color:#8e24aa;">📝 Örnek:</b><br>
+            <span style="color:#2c3e50;">(x + 3)² = x² + 2·x·3 + 3² = <b style="color:#27ae60;">x² + 6x + 9</b></span>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #7b1fa2; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">2️⃣ İki Kare Farkı Özdeşliği</h3>
+            
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <p style="font-size:1.1em; text-align:center; color:#2c3e50; margin:8px 0;">
+                    <b>a² - b² = (a + b)(a - b)</b>
+                </p>
+                <p style="text-align:center; color:#666; font-size:0.95em; margin:8px 0;">
+                    "İki kare farkı, toplamları ile farklarının çarpımına eşittir"
+                </p>
+            </div>
+
+            <b style="color:#8e24aa;">📝 Örnek:</b><br>
+            <span style="color:#2c3e50;">x² - 9 = x² - 3² = <b style="color:#27ae60;">(x + 3)(x - 3)</b></span>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #7b1fa2; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">3️⃣ İki Terimin Çarpımı Özdeşliği</h3>
+            
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <p style="font-size:1.1em; text-align:center; color:#2c3e50; margin:8px 0;">
+                    <b>(a + b)(a - b) = a² - b²</b>
+                </p>
+                <p style="text-align:center; color:#666; font-size:0.95em; margin:8px 0;">
+                    "Toplam çarpı fark, iki kare farkına eşittir"
+                </p>
+            </div>
+
+            <b style="color:#8e24aa;">📝 Örnek:</b><br>
+            <span style="color:#2c3e50;">(2x + 5)(2x - 5) = (2x)² - 5² = <b style="color:#27ae60;">4x² - 25</b></span>
+        </div>
+
+        <div class="interactive-box" style="background:#f3e5f5; padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style="color:#6a1b9a;">🧩 Soru:</b> <span style="color:#2c3e50;">(x - 4)² ifadesini açınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans1').style.display='block'">Cevabı Göster</button>
+            <div id="ans1" style="display:none; margin-top:12px; padding:12px; background:#e1bee7; border-left:4px solid #9c27b0;">
+                <b>Çözüm:</b> (x - 4)² = x² - 2·x·4 + 4² = <b style="color:#6a1b9a;">x² - 8x + 16</b>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÇARPANLARA AYIRMA -->
+    <section class="section">
+        <h2><span style="color:#8e24ad;">&#9733;</span> Çarpanlara Ayırma</h2>
+        
+        <div class="highlight-box" style="background:#f3e5f5; padding:24px; border-radius:12px;">
+            <b style="color:#6a1b9a;">Tanım:</b> <span style="color:#34495e;">Bir cebirsel ifadeyi çarpanların çarpımı şeklinde yazmaya <b style="color:#9c27b0;">çarpanlara ayırma</b> denir.</span>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #8e24aa; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">1️⃣ Ortak Çarpan Parantezine Alma</h3>
+            
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#8e24aa;">Yöntem:</b> Tüm terimlerde ortak olan çarpanı parantez dışına al.
+            </div>
+
+            <b style="color:#8e24aa;">📝 Örnekler:</b><br><br>
+            
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 1:</b> 6x + 9<br>
+                <span style="color:#666;">Ortak çarpan: 3</span><br>
+                <span style="color:#27ae60;">= 3(2x + 3)</span>
+            </div>
+
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 2:</b> x² - 5x<br>
+                <span style="color:#666;">Ortak çarpan: x</span><br>
+                <span style="color:#27ae60;">= x(x - 5)</span>
+            </div>
+
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 3:</b> 4a²b - 6ab²<br>
+                <span style="color:#666;">Ortak çarpan: 2ab</span><br>
+                <span style="color:#27ae60;">= 2ab(2a - 3b)</span>
+            </div>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #8e24aa; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">2️⃣ Özdeşlik Kullanarak Çarpanlara Ayırma</h3>
+            
+            <b style="color:#8e24aa;">📝 Örnekler:</b><br><br>
+            
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 1:</b> x² + 6x + 9<br>
+                <span style="color:#666;">→ (x + 3)² formunda</span><br>
+                <span style="color:#27ae60;">= (x + 3)²</span>
+            </div>
+
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 2:</b> 4x² - 25<br>
+                <span style="color:#666;">→ İki kare farkı: (2x)² - 5²</span><br>
+                <span style="color:#27ae60;">= (2x + 5)(2x - 5)</span>
+            </div>
+
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>Örnek 3:</b> x² - 10x + 25<br>
+                <span style="color:#666;">→ (x - 5)² formunda</span><br>
+                <span style="color:#27ae60;">= (x - 5)²</span>
+            </div>
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #8e24aa; padding:20px; border-radius:8px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:#6a1b9a; margin-top:0;">3️⃣ Gruplama Yöntemi</h3>
+            
+            <div style="background:#f8f9fa; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#8e24aa;">Yöntem:</b> Terimleri grupla, her gruptan ortak çarpanı al, sonra tekrar ortak çarpan al.
+            </div>
+
+            <b style="color:#8e24aa;">📝 Örnek:</b><br>
+            <div style="margin:12px 0; padding-left:16px;">
+                <b>ax + ay + bx + by</b><br>
+                <span style="color:#666;">→ Grupla: (ax + ay) + (bx + by)</span><br>
+                <span style="color:#666;">→ Ortak çarpan: a(x + y) + b(x + y)</span><br>
+                <span style="color:#27ae60;">= (x + y)(a + b)</span>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="background:#f3e5f5; padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style="color:#6a1b9a;">🧩 Soru 1:</b> <span style="color:#2c3e50;">12x - 8 ifadesini çarpanlara ayırınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans2').style.display='block'">Cevabı Göster</button>
+            <div id="ans2" style="display:none; margin-top:12px; padding:12px; background:#e1bee7; border-left:4px solid #9c27b0;">
+                <b>Çözüm:</b> Ortak çarpan 4 → 4(3x - 2)
+            </div>
+        </div>
+
+        <div class="interactive-box" style="background:#f3e5f5; padding:20px; border-radius:8px; margin-top:16px;">
+            <p><b style="color:#6a1b9a;">🧩 Soru 2:</b> <span style="color:#2c3e50;">x² - 16 ifadesini çarpanlara ayırınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans3').style.display='block'">Cevabı Göster</button>
+            <div id="ans3" style="display:none; margin-top:12px; padding:12px; background:#e1bee7; border-left:4px solid #9c27b0;">
+                <b>Çözüm:</b> İki kare farkı: x² - 4² = (x + 4)(x - 4)
+            </div>
+        </div>
+
+        <div class="interactive-box" style="background:#f3e5f5; padding:20px; border-radius:8px; margin-top:16px;">
+            <p><b style="color:#6a1b9a;">🧩 Soru 3:</b> <span style="color:#2c3e50;">x² + 4x + 4 ifadesini çarpanlara ayırınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans4').style.display='block'">Cevabı Göster</button>
+            <div id="ans4" style="display:none; margin-top:12px; padding:12px; background:#e1bee7; border-left:4px solid #9c27b0;">
+                <b>Çözüm:</b> (x + 2)² formunda → (x + 2)²
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖNEMLİ İPUÇLARI -->
+    <section class="section">
+        <h2><span style="color:#ab47bc;">&#9733;</span> Önemli İpuçları</h2>
+        
+        <div class="highlight-box" style="background:#fce4ec;">
+            <b style="color:#c2185b;">💡 İpucu 1:</b> Özdeşlikleri ezberlemek yerine mantığını anla!
+        </div>
+
+        <div class="highlight-box" style="background:#fce4ec;">
+            <b style="color:#c2185b;">💡 İpucu 2:</b> Çarpanlara ayırırken önce ortak çarpan ara, sonra özdeşliklere bak.
+        </div>
+
+        <div class="highlight-box" style="background:#fce4ec;">
+            <b style="color:#c2185b;">💡 İpucu 3:</b> (a + b)² ≠ a² + b² dikkat et! Ortadaki 2ab terimi unutma!
+        </div>
+
+        <div class="example-box" style="background:#fff; border-left:6px solid #ab47bc; padding:20px; border-radius:8px; margin-top:20px;">
+            <p><b style="color:#8e24aa;">🎯 Pratik Örnek:</b></p>
+            <p style="color:#2c3e50;">
+                Bir bahçenin uzunluğu (x + 5) m, genişliği (x + 5) m'dir.<br>
+                Bahçenin alanı kaç m²'dir?<br><br>
+                <b>Çözüm:</b><br>
+                Alan = (x + 5)(x + 5) = (x + 5)²<br>
+                = x² + 2·x·5 + 5²<br>
+                = <span style="color:#27ae60;">x² + 10x + 25 m²</span>
+            </p>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/matematik/unite-3/" style="display:inline-block; padding:14px 28px; background:#9c27b0; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ← 3. Ünite Ana Sayfa
+        </a>
+        <a href="/matematik/"style="display:inline-block; padding:14px 28px; background:#e1bee7; color:#6a1b9a; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Matematik Ana Sayfa
+        </a>
+    </div>
+</div>
+{% endblock %}

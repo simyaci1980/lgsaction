@@ -1,9 +1,301 @@
 {% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
 {% block content %}
-<div class="main-container" style="max-width:900px; margin:32px auto;">
-    <h1 class="main-title">Çok Büyük Sayılar ve Bilimsel Gösterim</h1>
-    <div class="highlight-box" style="background:#eafaf1; margin-top:24px;">
-        Çok büyük sayılar ve bilimsel gösterimle ilgili konu anlatımı ve örnekler bu föyde!
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">🌍</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">🔬</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">🚀</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">⚛️</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">🌌</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">🔭</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">🧬</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">💫</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">🪐</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🌟</div>
+
+    <h1 class="main-title">BİLİMSEL GÖSTERİM VE ÇOK BÜYÜK/KÜÇÜK SAYILAR <span style="color:#f39c12;">🔬</span></h1>
+    <ul class="topic-list">
+        <li>Çok Büyük Sayılar</li>
+        <li>Çok Küçük Sayılar</li>
+        <li>Bilimsel Gösterim Nedir?</li>
+        <li>Bilimsel Gösterimde İşlemler</li>
+    </ul>
+    <hr>
+
+    <!-- ÇOK BÜYÜK SAYILAR -->
+    <section class="section">
+        <h2><span style="color:#e74c3c;">&#9733;</span> Çok Büyük Sayılar</h2>
+        <div class="highlight-box">
+            <b style="color:#d35400;">Neden Gerekli?</b> <span style="color:#34495e;">Astronomi, fizik, ekonomi gibi alanlarda <b style="color:#e67e22;">çok büyük sayılarla</b> karşılaşırız. Bu sayıları yazmak ve okumak zordur.</span>
+        </div>
+        
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">🌍 Gerçek Hayattan Örnekler:</b></p>
+        </div>
+
+        <div class="grid-examples">
+            <div><b>Dünya-Güneş Mesafesi:</b><br>
+                150 000 000 000 m<br>
+                = <span style="color:#27ae60;">1.5 × 10<sup>11</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">150 milyar metre</span>
+            </div>
+            <div><b>Dünya'nın Kütlesi:</b><br>
+                5 970 000 000 000 000 000 000 000 kg<br>
+                = <span style="color:#27ae60;">5.97 × 10<sup>24</sup> kg</span><br>
+                <span style="font-size:0.98em; color:#888;">Çok daha kolay!</span>
+            </div>
+            <div><b>Işık Hızı:</b><br>
+                300 000 000 m/s<br>
+                = <span style="color:#27ae60;">3 × 10<sup>8</sup> m/s</span><br>
+                <span style="font-size:0.98em; color:#888;">Saniyede 300 milyon metre</span>
+            </div>
+            <div><b>Avogadro Sayısı:</b><br>
+                602 000 000 000 000 000 000 000<br>
+                = <span style="color:#27ae60;">6.02 × 10<sup>23</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">Kimyada önemli sabit</span>
+            </div>
+            <div><b>Galaksimizdeki Yıldız:</b><br>
+                200 000 000 000<br>
+                = <span style="color:#27ae60;">2 × 10<sup>11</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">200 milyar yıldız</span>
+            </div>
+            <div><b>Türkiye Nüfusu (2024):</b><br>
+                85 000 000<br>
+                = <span style="color:#27ae60;">8.5 × 10<sup>7</sup></span><br>
+                <span style="font-size:0.98em; color:#888;">85 milyon kişi</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff3cd; margin-top:20px;">
+            <b style="color:#e74c3c;">💡 Dikkat:</b> <span style="color:#34495e;">Çok büyük sayıları normal yazmak yerine <b>bilimsel gösterim</b> kullanmak çok daha pratiktir!</span>
+        </div>
+    </section>
+
+    <!-- ÇOK KÜÇÜK SAYILAR -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> Çok Küçük Sayılar</h2>
+        
+        <div class="highlight-box">
+            <b style="color:#d35400;">Mikroskopik Dünya:</b> <span style="color:#34495e;">Atomlar, moleküller, virüsler gibi çok küçük boyutları ifade ederken <b style="color:#e67e22;">çok küçük sayılara</b> ihtiyaç duyarız.</span>
+        </div>
+
+        <div class="example-box">
+            <p><b style="color:#8e44ad;">🔬 Gerçek Hayattan Örnekler:</b></p>
+        </div>
+
+        <div class="grid-examples">
+            <div><b>Bir Atomun Çapı:</b><br>
+                0.000 000 000 1 m<br>
+                = <span style="color:#27ae60;">1 × 10<sup>-10</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">On milyarda bir metre</span>
+            </div>
+            <div><b>Elektronun Kütlesi:</b><br>
+                0.000 000 000 000 000 000 000 000 000 000 91 kg<br>
+                = <span style="color:#27ae60;">9.1 × 10<sup>-31</sup> kg</span><br>
+                <span style="font-size:0.98em; color:#888;">İnanılmaz küçük!</span>
+            </div>
+            <div><b>Protonun Çapı:</b><br>
+                0.000 000 000 000 000 87 m<br>
+                = <span style="color:#27ae60;">8.7 × 10<sup>-16</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">Atomdan da küçük</span>
+            </div>
+            <div><b>Bakteri Boyutu:</b><br>
+                0.000 001 m<br>
+                = <span style="color:#27ae60;">1 × 10<sup>-6</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">1 mikrometre</span>
+            </div>
+            <div><b>Virüs Boyutu:</b><br>
+                0.000 000 1 m<br>
+                = <span style="color:#27ae60;">1 × 10<sup>-7</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">100 nanometre</span>
+            </div>
+            <div><b>DNA Kalınlığı:</b><br>
+                0.000 000 002 m<br>
+                = <span style="color:#27ae60;">2 × 10<sup>-9</sup> m</span><br>
+                <span style="font-size:0.98em; color:#888;">2 nanometre</span>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru:</b> <span style="color:#2c3e50;">Bir saç telinin kalınlığı 0.00008 m'dir. Bunu bilimsel gösterimde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans1').style.display='block'">Cevabı Göster</button>
+            <div id="ans1" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 0.00008 = 8 × 10<sup>-5</sup> m (virgül 5 basamak sağa kaydırıldı)
+            </div>
+        </div>
+    </section>
+
+    <!-- BİLİMSEL GÖSTERİM NEDİR -->
+    <section class="section">
+        <h2><span style="color:#9b59b6;">&#9733;</span> Bilimsel Gösterim Nedir?</h2>
+        
+        <div class="highlight-box" style="background:#e3ecfc;">
+            <b style="color:#d35400;">Tanım:</b> <span style="color:#34495e;">Bir sayıyı <b style="color:#e67e22;">a × 10<sup>n</sup></b> şeklinde yazmaya <b>bilimsel gösterim</b> denir.</span><br><br>
+            <b>Koşul:</b> <span style="color:#e74c3c;">1 ≤ a < 10</span> olmalıdır.
+        </div>
+
+        <div class="example-box">
+            <p style="font-size:1.2em; text-align:center; color:#2c3e50;">
+                <b>a × 10<sup>n</sup></b>
+            </p>
+            <p style="text-align:center; color:#666; margin-top:8px;">
+                <b style="color:#e74c3c;">a:</b> Katsayı (1 ile 10 arasında)<br>
+                <b style="color:#1976d2;">n:</b> Üs (tam sayı)
+            </p>
+        </div>
+
+        <div class="highlight-box" style="background:#eafaf1;">
+            <b style="color:#27ae60;">📌 Virgül Kaydırma Kuralı:</b><br><br>
+            <div style="text-align:center; margin-top:12px;">
+                <div style="display:inline-block; text-align:left; font-size:1.05em;">
+                    • Virgül <b style="color:#1976d2;">SOLA</b> kaydırılırsa → <b style="color:#1976d2; border-bottom:2px solid #1976d2;">n</b> (üs) <b style="color:#27ae60;">POZİTİF</b><br>
+                    • Virgül <b style="color:#e74c3c;">SAĞA</b> kaydırılırsa → <b style="color:#1976d2; border-bottom:2px solid #1976d2;">n</b> (üs) <b style="color:#e74c3c;">NEGATİF</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-examples">
+            <div>45000 → 4.5 × 10<sup>4</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 4 basamak sola → n=+4</span>
+            </div>
+            <div>0.0032 → 3.2 × 10<sup>-3</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 3 basamak sağa → n=-3</span>
+            </div>
+            <div>780000 → 7.8 × 10<sup>5</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 5 basamak sola → n=+5</span>
+            </div>
+            <div>0.00056 → 5.6 × 10<sup>-4</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 4 basamak sağa → n=-4</span>
+            </div>
+            <div>9200000 → 9.2 × 10<sup>6</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 6 basamak sola → n=+6</span>
+            </div>
+            <div>0.000000028 → 2.8 × 10<sup>-8</sup><br>
+                <span style="font-size:0.98em; color:#888;">Virgül 8 basamak sağa → n=-8</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff3cd; margin-top:20px;">
+            <b style="color:#e74c3c;">⚠️ Hata Yapmayın!</b><br><br>
+            <div style="font-size:1.05em; line-height:2;">
+                ❌ <b>Yanlış:</b> 45 × 10<sup>3</sup> 
+                <span style="color:#666;">(çünkü <b style="color:#e74c3c; border-bottom:2px solid #e74c3c;">a</b> = 45 ≥ 10 olmamalı)</span><br>
+                ✅ <b>Doğru:</b> 4.5 × 10<sup>4</sup> 
+                <span style="color:#666;">(çünkü 1 ≤ <b style="color:#27ae60; border-bottom:2px solid #27ae60;">a</b> = 4.5 < 10)</span>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-top:20px; border-left:6px solid #f39c12; padding:20px; box-shadow:0 4px 15px rgba(102,126,234,0.4);">
+            <b style="color:#fff; font-size:1.15em; text-shadow:1px 1px 2px rgba(0,0,0,0.3);">💡 ÖNEMLİ! Üslü İfadelerden Farkı:</b><br><br>
+            <div style="background:rgba(255,255,255,0.95); padding:16px; border-radius:8px; margin-top:12px;">
+                <div style="margin-bottom:16px;">
+                    <b style="color:#8e44ad; font-size:1.05em;">🔹 Üslü ifadelerde:</b><br>
+                    <span style="color:#2c3e50; margin-left:20px;">Sadece <b style="color:#e74c3c;">üslerle</b> ilgilenirsin<br>
+                    <span style="font-size:0.95em; color:#666;">(çünkü tabanlar zaten aynı)</span></span>
+                    <div style="background:#f8f9fa; padding:12px; margin:8px 0 0 20px; border-radius:6px; border-left:3px solid #8e44ad;">
+                        <b style="color:#8e44ad;">Örnek:</b> x<sup>8</sup> ÷ x<sup>5</sup><br>
+                        <span style="color:#666; font-size:0.95em;">
+                        • Tabanlar aynı: <b>x</b> ve <b>x</b><br>
+                        • Sadece üsleri çıkar: 8 - 5 = 3<br>
+                        • Sonuç: <b style="color:#27ae60;">x<sup>3</sup></b><br>
+                        • Katsayı yok, sadece üsler!</span>
+                    </div>
+                </div>
+                <div style="border-top:2px dashed #bdc3c7; padding-top:16px;">
+                    <b style="color:#16a085; font-size:1.05em;">🔹 Bilimsel gösterimde:</b><br>
+                    <span style="color:#2c3e50; margin-left:20px;">Tabanlar zaten 10, ama <b style="color:#e67e22; background:#fff3cd; padding:3px 8px; border-radius:4px;">önündeki sayıları (katsayıları) da hesaba katman gerekiyor!</b></span>
+                    <div style="background:#f8f9fa; padding:12px; margin:8px 0 0 20px; border-radius:6px; border-left:3px solid #16a085;">
+                        <b style="color:#16a085;">Örnek:</b> (6 × 10<sup>8</sup>) ÷ (3 × 10<sup>5</sup>)<br>
+                        <span style="color:#666; font-size:0.95em;">
+                        • Tabanlar aynı: <b>10</b> ve <b>10</b><br>
+                        • <b style="color:#e67e22;">Adım 1:</b> Katsayıları böl → 6 ÷ 3 = <b>2</b><br>
+                        • <b style="color:#e67e22;">Adım 2:</b> Üsleri çıkar → 8 - 5 = <b>3</b><br>
+                        • Sonuç: <b style="color:#27ae60;">2 × 10<sup>3</sup> = 2000</b><br>
+                        • Hem katsayılar hem üsler!</span>
+                    </div>
+                </div>
+                <div style="background:#fff3cd; padding:12px; margin-top:12px; border-radius:6px; text-align:center;">
+                    <b style="color:#e67e22; font-size:1.05em;">⚡ Fark:</b> 
+                    <span style="color:#2c3e50;">Bilimsel gösterimde <b style="color:#e74c3c;">iki işlem</b> yapıyorsun: hem katsayılarla hem üslerle!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">✏️ Soru:</b> <span style="color:#2c3e50;">563000 sayısını bilimsel gösterimde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans2').style.display='block'">Cevabı Göster</button>
+            <div id="ans2" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 563000 = 5.63 × 10<sup>5</sup> (virgül 5 basamak sola kaydırıldı)
+            </div>
+        </div>
+    </section>
+
+    <!-- KARMA SORULAR -->
+    <section class="section">
+        <h2><span style="color:#c0392b;">&#9733;</span> Karma Sorular</h2>
+        
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 1:</b> <span style="color:#2c3e50;">0.00000456 sayısını bilimsel gösterimde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans4').style.display='block'">Cevabı Göster</button>
+            <div id="ans4" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 0.00000456 = 4.56 × 10<sup>-6</sup> (virgül 6 basamak sağa)
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 2:</b> <span style="color:#2c3e50;">(6 × 10<sup>8</sup>) ÷ (3 × 10<sup>5</sup>) = ?</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans5').style.display='block'">Cevabı Göster</button>
+            <div id="ans5" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> 6÷3=2, 8-5=3 → 2 × 10<sup>3</sup> = 2000
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 3:</b> <span style="color:#2c3e50;">3.5 × 10<sup>4</sup> sayısını normal gösterimde yazınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans6').style.display='block'">Cevabı Göster</button>
+            <div id="ans6" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> Virgül 4 basamak sola → 35000
+            </div>
+        </div>
+
+        <div class="interactive-box">
+            <p><b style="color:#16a085;">🧩 Soru 4:</b> <span style="color:#2c3e50;">(2 × 10<sup>3</sup>) + (5 × 10<sup>2</sup>) işlemini yapınız.</span></p>
+            <button class="answer-btn" onclick="document.getElementById('ans7').style.display='block'">Cevabı Göster</button>
+            <div id="ans7" style="display:none; margin-top:12px; padding:12px; background:#d5f4e6; border-left:4px solid #27ae60;">
+                <b>Çözüm:</b> (20 × 10<sup>2</sup>) + (5 × 10<sup>2</sup>) = 25 × 10<sup>2</sup> = 2.5 × 10<sup>3</sup> = 2500
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/matematik/uslu_foyler/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ➡️ Üslü Föyler'e Git
+        </a>
+        <a href="/matematik/matematik/" style="display:inline-block; padding:14px 28px; background:#27ae60; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Matematik Ana Sayfa
+        </a>
     </div>
 </div>
 {% endblock %}

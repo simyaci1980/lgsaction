@@ -1,0 +1,804 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+{% endblock %}
+{% block content %}
+<div class="container kareli-bg" style="max-width:1200px; margin:0 auto; font-size:1.25em;">
+    <h2 class="ozel-baslik">Karekök&shy;lü İfadelerde Çarpma ve Bölme İşlemi</h2>
+
+    <div class="aciklama-kutu" style="margin-top:24px;">
+        <b>Kural Açıklaması:</b><br>
+        Kareköklü ifadelerde çarpma yapılırken, kök dışındaki katsayılar kendi aralarında, kök içindeki sayılar da kendi aralarında çarpılır.<br>
+        Yani:
+        <span id="carpma-kural"></span>
+    </div>
+    <div class="formul-kutu" style="margin-top:24px;">
+        <b>Örnekler:</b><br>
+        <span id="carpma-ornek-1"></span><br>
+        <span id="carpma-ornek-1-adim"></span><br>
+        <span id="carpma-ornek-2"></span><br>
+        <span id="carpma-ornek-2-adim"></span>
+           <hr style="margin:18px 0;">
+           <b>Aşağıda verilen çarpma işlemlerini yapınız:</b><br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-3-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:12px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-3" style="width:80px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul3()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-3" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-4-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-4-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-4" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul4()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-4" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">6</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">4</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-5-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-5-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-5" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul5()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-5" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">8</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-6-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-6-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-6" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul6()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-6" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">6</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">12</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-7-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-7-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-7" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul7()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-7" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">12</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-8-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-8-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-8" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul8()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-8" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">4</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">8</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-9-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-9-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-9" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul9()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-9" style="margin-left:12px;"></span>
+        <br>
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-2</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-mul-10-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-mul-10-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-mul-10" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkMul10()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-mul-10" style="margin-left:12px;"></span>
+        <br>
+    </div>
+
+    <!-- ÖZEL DURUM: KÖK ORTADAN KALKMA -->
+    <div class="aciklama-kutu" style="margin-top:48px; background:#fff3e0; border-left-color:#f57c00;">
+        <b>⚡ Özel Durum - Kök Ortadan Kalkma:</b><br>
+        Bir kareköklü ifadeyi kendisiyle çarptığımızda kök ortadan kalkar!<br>
+        Çünkü: <span id="ozel-durum-kural"></span>
+    </div>
+    
+    <div class="formul-kutu" style="margin-top:24px; border-color:#ff9800;">
+        <b>Örnekler:</b><br>
+        <span id="ozel-ornek-1"></span><br>
+        <span id="ozel-ornek-1-aciklama" style="font-size:0.95em; color:#666;"></span><br><br>
+        <span id="ozel-ornek-2"></span><br>
+        <span id="ozel-ornek-2-aciklama" style="font-size:0.95em; color:#666;"></span>
+        <hr style="margin:18px 0;">
+        <b>Aşağıdaki işlemleri yapınız:</b><br>
+        
+        <!-- √7 ⋅ √7 = 7 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-ozel-1" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sadece sayı">
+        <button onclick="checkOzel1()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#fff3e0; color:#f57c00; border:1px solid #ffb74d; cursor:pointer;">Kontrol</button>
+        <span id="result-ozel-1" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- -3√7 ⋅ -2√7 = 6⋅7 = 42 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-ozel-2" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sadece sayı">
+        <button onclick="checkOzel2()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#fff3e0; color:#f57c00; border:1px solid #ffb74d; cursor:pointer;">Kontrol</button>
+        <span id="result-ozel-2" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 5√3 ⋅ 4√3 = 20⋅3 = 60 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">4</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-ozel-3" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sadece sayı">
+        <button onclick="checkOzel3()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#fff3e0; color:#f57c00; border:1px solid #ffb74d; cursor:pointer;">Kontrol</button>
+        <span id="result-ozel-3" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- -6√5 ⋅ 3√5 = -18⋅5 = -90 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-6</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">⋅</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-ozel-4" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sadece sayı">
+        <button onclick="checkOzel4()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#fff3e0; color:#f57c00; border:1px solid #ffb74d; cursor:pointer;">Kontrol</button>
+        <span id="result-ozel-4" style="margin-left:12px;"></span>
+        <br>
+    </div>
+
+    <!-- DOĞAL SAYI YAPAN ÇARPANLAR -->
+    <div class="aciklama-kutu" style="margin-top:48px; background:#f3e5f5; border-left-color:#9c27b0;">
+        <b>💡 Önemli Önerme - Doğal Sayı Yapan Çarpanlar:</b><br>
+        Kareköklü bir ifade <span id="carpan-genel"></span> şeklinde yazıldığında, <b>b'nin doğal sayı katı olan her sayı</b> bu kareköklü ifade ile çarpıldığında sonuç doğal sayı olur.<br><br>
+        <b>Başka bir deyişle:</b> <span id="carpan-kural"></span>
+    </div>
+    
+    <div class="formul-kutu" style="margin-top:24px; border-color:#9c27b0;">
+        <b>Örnekler:</b><br>
+        <span id="carpan-ornek-1"></span><br>
+        <span id="carpan-ornek-1-aciklama" style="font-size:0.95em; color:#666;"></span><br><br>
+        <span id="carpan-ornek-2"></span><br>
+        <span id="carpan-ornek-2-aciklama" style="font-size:0.95em; color:#666;"></span><br><br>
+        <span id="carpan-ornek-3"></span><br>
+        <span id="carpan-ornek-3-aciklama" style="font-size:0.95em; color:#666;"></span>
+        <hr style="margin:18px 0;">
+        <b>Aşağıdaki kareköklü ifadeleri doğal sayı yapan en küçük doğal sayıyı bulunuz:</b><br>
+        
+        <!-- √5 için: 5 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="margin:0 12px;">ile çarpılacak en küçük sayı:</span>
+        </span>
+        <input type="text" id="input-carpan-1" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sayı">
+        <button onclick="checkCarpan1()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#f3e5f5; color:#9c27b0; border:1px solid #ce93d8; cursor:pointer;">Kontrol</button>
+        <span id="result-carpan-1" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 2√3 için: 3 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="margin:0 12px;">ile çarpılacak en küçük sayı:</span>
+        </span>
+        <input type="text" id="input-carpan-2" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sayı">
+        <button onclick="checkCarpan2()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#f3e5f5; color:#9c27b0; border:1px solid #ce93d8; cursor:pointer;">Kontrol</button>
+        <span id="result-carpan-2" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 3√7 için: 7 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">7</span>
+            <span style="margin:0 12px;">ile çarpılacak en küçük sayı:</span>
+        </span>
+        <input type="text" id="input-carpan-3" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sayı">
+        <button onclick="checkCarpan3()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#f3e5f5; color:#9c27b0; border:1px solid #ce93d8; cursor:pointer;">Kontrol</button>
+        <span id="result-carpan-3" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- √12 için: 3 (çünkü √12 = 2√3) -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">12</span>
+            <span style="margin:0 12px;">ile çarpılacak en küçük sayı:</span>
+        </span>
+        <input type="text" id="input-carpan-4" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sayı">
+        <button onclick="checkCarpan4()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#f3e5f5; color:#9c27b0; border:1px solid #ce93d8; cursor:pointer;">Kontrol</button>
+        <span id="result-carpan-4" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 5√6 için: 6 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">6</span>
+            <span style="margin:0 12px;">ile çarpılacak en küçük sayı:</span>
+        </span>
+        <input type="text" id="input-carpan-5" style="width:80px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off" placeholder="Sayı">
+        <button onclick="checkCarpan5()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#f3e5f5; color:#9c27b0; border:1px solid #ce93d8; cursor:pointer;">Kontrol</button>
+        <span id="result-carpan-5" style="margin-left:12px;"></span>
+        <br>
+    </div>
+
+    <!-- BÖLME İŞLEMLERİ BAŞLANGIÇ -->
+    <div class="aciklama-kutu" style="margin-top:48px;">
+        <b>Bölme İşlemi Kuralı:</b><br>
+        Kareköklü ifadelerde bölme yapılırken, kök dışındaki katsayılar kendi aralarında, kök içindeki sayılar da kendi aralarında bölünür.<br>
+        Yani:
+        <span id="bolme-kural"></span>
+    </div>
+    
+    <div class="formul-kutu" style="margin-top:24px;">
+        <b>Örnekler:</b><br>
+        <span id="bolme-ornek-1"></span><br>
+        <span id="bolme-ornek-1-adim"></span><br>
+        <span id="bolme-ornek-2"></span><br>
+        <span id="bolme-ornek-2-adim"></span>
+        <hr style="margin:18px 0;">
+        <b>Aşağıda verilen bölme işlemlerini yapınız:</b><br>
+        
+        <!-- √15 ÷ √3 = √5 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">15</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">÷</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-div-1-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:12px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-div-1" style="width:80px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkDiv1()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-div-1" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 12√10 ÷ 3√2 = 4√5 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">12</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">10</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">÷</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">2</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-div-2-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-div-2-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-div-2" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkDiv2()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-div-2" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- 20√18 ÷ 4√6 = 5√3 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">20</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">18</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">÷</span>
+            <span style="display:inline-block; width:32px; text-align:center;">4</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">6</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-div-3-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-div-3-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-div-3" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkDiv3()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-div-3" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- -18√20 ÷ 6√5 = -3√4 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-18</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">20</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">÷</span>
+            <span style="display:inline-block; width:32px; text-align:center;">6</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">5</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-div-4-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-div-4-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-div-4" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkDiv4()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-div-4" style="margin-left:12px;"></span>
+        <br>
+
+        <!-- -30√12 ÷ -5√3 = 6√4 -->
+        <span style="display:inline-block; margin-bottom:28px; font-size:1.25em;">
+            <span style="display:inline-block; width:32px; text-align:center;">-30</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">12</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 18px;">÷</span>
+            <span style="display:inline-block; width:32px; text-align:center;">-5</span>
+            <span style="font-size:1.5em; font-weight:bold; margin:0 6px;">√</span>
+            <span style="display:inline-block; width:32px; text-align:center;">3</span>
+        </span> <span style="font-size:1.5em; font-weight:bold;">=</span>
+        <input type="text" id="input-div-5-coef" style="width:40px; font-size:1.15em; margin-left:12px; text-align:center;" autocomplete="off">
+        <input type="text" id="input-div-5-root" maxlength="1" style="width:28px; font-size:1.15em; margin-left:6px; text-align:center; cursor:pointer;" placeholder="√" autocomplete="off" onclick="toggleRootSign(this)">
+        <input type="text" id="input-div-5" style="width:60px; font-size:1.15em; margin-left:6px; text-align:center;" autocomplete="off">
+        <button onclick="checkDiv5()" style="margin-left:8px; font-size:1em; padding:2px 12px; border-radius:6px; background:#e3f2fd; color:#1976d2; border:1px solid #90caf9; cursor:pointer;">Kontrol</button>
+        <span id="result-div-5" style="margin-left:12px;"></span>
+        <br>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        safeKatexRender("a\\sqrt{b} \\cdot c\\sqrt{d} = (a \\cdot c) \\sqrt{b \\cdot d}", "carpma-kural");
+        safeKatexRender("2\\sqrt{3} \\cdot 4\\sqrt{5}", "carpma-ornek-1");
+        safeKatexRender("(2 \\cdot 4) \\sqrt{3 \\cdot 5} = 8 \\sqrt{15}", "carpma-ornek-1-adim");
+        safeKatexRender("3\\sqrt{2} \\cdot 7", "carpma-ornek-2");
+        safeKatexRender("(3 \\cdot 7) \\sqrt{2} = 21 \\sqrt{2}", "carpma-ornek-2-adim");
+        
+        // Özel durum: Kök ortadan kalkma
+        safeKatexRender("\\sqrt{a} \\cdot \\sqrt{a} = a", "ozel-durum-kural");
+        safeKatexRender("\\sqrt{7} \\cdot \\sqrt{7} = 7", "ozel-ornek-1");
+        safeKatexRender("\\text{Çünkü: } \\sqrt{7 \\cdot 7} = \\sqrt{49} = 7", "ozel-ornek-1-aciklama");
+        safeKatexRender("-3\\sqrt{7} \\cdot -2\\sqrt{7}", "ozel-ornek-2");
+        safeKatexRender("(-3 \\cdot -2) \\cdot (\\sqrt{7} \\cdot \\sqrt{7}) = 6 \\cdot 7 = 42", "ozel-ornek-2-aciklama");
+        
+        // Doğal sayı yapan çarpanlar
+        safeKatexRender("a\\sqrt{b}", "carpan-genel");
+        safeKatexRender("a\\sqrt{b} \\cdot (k \\cdot b) = \\text{Doğal Sayı} \\quad (k \\in \\mathbb{N})", "carpan-kural");
+        safeKatexRender("\\sqrt{5} \\text{ için en küçük çarpan: } 5", "carpan-ornek-1");
+        safeKatexRender("\\text{Çünkü: } \\sqrt{5} \\cdot 5 = \\sqrt{5 \\cdot 5} = \\sqrt{25} = 5", "carpan-ornek-1-aciklama");
+        safeKatexRender("2\\sqrt{3} \\text{ için en küçük çarpan: } 3", "carpan-ornek-2");
+        safeKatexRender("\\text{Çünkü: } 2\\sqrt{3} \\cdot 3 = 2 \\cdot 3 \\cdot \\sqrt{3} = 6\\sqrt{3} \\cdot \\sqrt{3} = 6 \\cdot 3 = 18", "carpan-ornek-2-aciklama");
+        safeKatexRender("\\sqrt{12} = 2\\sqrt{3} \\text{ için en küçük çarpan: } 3", "carpan-ornek-3");
+        safeKatexRender("\\text{Çünkü: } \\sqrt{12} \\cdot 3 = \\sqrt{12 \\cdot 3} = \\sqrt{36} = 6", "carpan-ornek-3-aciklama");
+        
+        // Bölme kuralları ve örnekleri
+        safeKatexRender("\\frac{a\\sqrt{b}}{c\\sqrt{d}} = \\frac{a}{c} \\sqrt{\\frac{b}{d}}", "bolme-kural");
+        safeKatexRender("\\frac{12\\sqrt{8}}{3\\sqrt{2}}", "bolme-ornek-1");
+        safeKatexRender("\\frac{12}{3} \\sqrt{\\frac{8}{2}} = 4 \\sqrt{4} = 4 \\cdot 2 = 8", "bolme-ornek-1-adim");
+        safeKatexRender("\\frac{10\\sqrt{18}}{2\\sqrt{2}}", "bolme-ornek-2");
+        safeKatexRender("\\frac{10}{2} \\sqrt{\\frac{18}{2}} = 5 \\sqrt{9} = 5 \\cdot 3 = 15", "bolme-ornek-2-adim");
+    });
+    function safeKatexRender(expr, id) {
+        var el = document.getElementById(id);
+        if (el) katex.render(expr, el);
+    }
+    </script>
+</div>
+<style>
+.kareli-bg {
+    background-image: url('https://www.transparenttextures.com/patterns/squared-paper.png');
+    background-repeat: repeat;
+}
+.ozel-baslik {
+    background: #c5e1f7;
+    color: #8e24aa;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 4px solid #8e24aa;
+    padding: 8px 24px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px #e0e0e0;
+    display: inline-block;
+}
+.aciklama-kutu {
+    background: #e3f2fd;
+    color: #1976d2;
+    font-size: 1.15em;
+    padding: 10px 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border-left: 6px solid #1976d2;
+    max-width: 700px;
+}
+.formul-kutu {
+    background: #fff;
+    border: 2px solid #d32f2f;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+    margin-left: 12px;
+    box-shadow: 1px 1px 8px #e0e0e0;
+}
+.ornekler-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.ornek-gorsel {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+.ornek-islem {
+    margin-left: 18px;
+    font-size: 1.3em;
+    background: #e0f7fa;
+    padding: 8px 18px;
+    border-radius: 8px;
+    display: inline-block; 
+
+}
+</style>
+<script>
+function checkMul3() {
+    var rootSign = document.getElementById('input-mul-3-root').value.trim();
+    var val = document.getElementById('input-mul-3').value.trim().replace(/\s+/g, '');
+    
+    // Doğru cevap: √15 (kök işareti var, içinde 15)
+    if (rootSign === '√' && val === '15') {
+        document.getElementById('result-mul-3').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! √5 ⋅ √3 = √15</span>';
+    } else if (rootSign === '' && val === '15') {
+        document.getElementById('result-mul-3').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Neredeyse doğru! Kök içindeki çarpma sonucu yine kök içinde kalır: √15</span>';
+    } else if (rootSign === '√' && val !== '15') {
+        document.getElementById('result-mul-3').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Kök içindeki sayıları çarp: 5 ⋅ 3 = 15, yani √15</span>';
+    } else {
+        document.getElementById('result-mul-3').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Doğru cevap: √15 (kök işaretine tıkla, sonra 15 yaz)</span>';
+    }
+}
+</script>
+<script>
+function toggleRootSign(el) {
+    if (el.value === '√') {
+        el.value = '';
+    } else {
+        el.value = '√';
+    }
+}
+
+// 2√7 ⋅ 3√5 = 6√35
+function checkMul4() {
+    var coef = document.getElementById('input-mul-4-coef').value.trim();
+    var root = document.getElementById('input-mul-4-root').value.trim();
+    var val = document.getElementById('input-mul-4').value.trim();
+    if (coef === '6' && root === '√' && val === '35') {
+        document.getElementById('result-mul-4').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 2√7 ⋅ 3√5 = 6√35</span>';
+    } else {
+        document.getElementById('result-mul-4').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (2⋅3)√(7⋅5) = 6√35</span>';
+    }
+}
+
+// 3√6 ⋅ 4√7 = 12√42
+function checkMul5() {
+    var coef = document.getElementById('input-mul-5-coef').value.trim();
+    var root = document.getElementById('input-mul-5-root').value.trim();
+    var val = document.getElementById('input-mul-5').value.trim();
+    if (coef === '12' && root === '√' && val === '42') {
+        document.getElementById('result-mul-5').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 3√6 ⋅ 4√7 = 12√42</span>';
+    } else {
+        document.getElementById('result-mul-5').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (3⋅4)√(6⋅7) = 12√42</span>';
+    }
+}
+
+// -2√3 ⋅ 3√8 = -6√24
+function checkMul6() {
+    var coef = document.getElementById('input-mul-6-coef').value.trim();
+    var root = document.getElementById('input-mul-6-root').value.trim();
+    var val = document.getElementById('input-mul-6').value.trim();
+    if (coef === '-6' && root === '√' && val === '24') {
+        document.getElementById('result-mul-6').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! -2√3 ⋅ 3√8 = -6√24</span>';
+    } else {
+        document.getElementById('result-mul-6').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-2⋅3)√(3⋅8) = -6√24</span>';
+    }
+}
+
+// -5√6 ⋅ -3√12 = 15√72
+function checkMul7() {
+    var coef = document.getElementById('input-mul-7-coef').value.trim();
+    var root = document.getElementById('input-mul-7-root').value.trim();
+    var val = document.getElementById('input-mul-7').value.trim();
+    if (coef === '15' && root === '√' && val === '72') {
+        document.getElementById('result-mul-7').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! -5√6 ⋅ -3√12 = 15√72</span>';
+    } else {
+        document.getElementById('result-mul-7').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-5⋅-3)√(6⋅12) = 15√72</span>';
+    }
+}
+
+// -2√12 ⋅ -5√3 = 10√36
+function checkMul8() {
+    var coef = document.getElementById('input-mul-8-coef').value.trim();
+    var root = document.getElementById('input-mul-8-root').value.trim();
+    var val = document.getElementById('input-mul-8').value.trim();
+    if (coef === '10' && root === '√' && val === '36') {
+        document.getElementById('result-mul-8').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! -2√12 ⋅ -5√3 = 10√36</span>';
+    } else {
+        document.getElementById('result-mul-8').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-2⋅-5)√(12⋅3) = 10√36</span>';
+    }
+}
+
+// 4√2 ⋅ 5 ⋅ 2√8 = 40√16
+function checkMul9() {
+    var coef = document.getElementById('input-mul-9-coef').value.trim();
+    var root = document.getElementById('input-mul-9-root').value.trim();
+    var val = document.getElementById('input-mul-9').value.trim();
+    if (coef === '40' && root === '√' && val === '16') {
+        document.getElementById('result-mul-9').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 4√2 ⋅ 5 ⋅ 2√8 = 40√16</span>';
+    } else {
+        document.getElementById('result-mul-9').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (4⋅5⋅2)√(2⋅8) = 40√16</span>';
+    }
+}
+
+// 5√2 ⋅ -3√3 ⋅ -2 = 30√6
+function checkMul10() {
+    var coef = document.getElementById('input-mul-10-coef').value.trim();
+    var root = document.getElementById('input-mul-10-root').value.trim();
+    var val = document.getElementById('input-mul-10').value.trim();
+    if (coef === '30' && root === '√' && val === '6') {
+        document.getElementById('result-mul-10').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 5√2 ⋅ -3√3 ⋅ -2 = 30√6</span>';
+    } else {
+        document.getElementById('result-mul-10').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (5⋅-3⋅-2)√(2⋅3) = 30√6</span>';
+    }
+}
+</script>
+
+<script>
+// ÖZEL DURUM: KÖK ORTADAN KALKMA KONTROL FONKSİYONLARI
+
+// √7 ⋅ √7 = 7
+function checkOzel1() {
+    var val = document.getElementById('input-ozel-1').value.trim();
+    
+    if (val === '7') {
+        document.getElementById('result-ozel-1').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! √7 ⋅ √7 = 7 (Kök ortadan kalktı!)</span>';
+    } else {
+        document.getElementById('result-ozel-1').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Aynı kökleri çarpınca kök ortadan kalkar: √7⋅√7 = 7</span>';
+    }
+}
+
+// -3√7 ⋅ -2√7 = 42
+function checkOzel2() {
+    var val = document.getElementById('input-ozel-2').value.trim();
+    
+    if (val === '42') {
+        document.getElementById('result-ozel-2').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! (-3)⋅(-2) = 6, √7⋅√7 = 7, sonuç: 6⋅7 = 42</span>';
+    } else if (val === '6') {
+        document.getElementById('result-ozel-2').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Neredeyse! Katsayılar: 6, ama √7⋅√7=7 ile de çarp: 6⋅7 = 42</span>';
+    } else {
+        document.getElementById('result-ozel-2').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-3⋅-2)⋅(√7⋅√7) = 6⋅7 = 42</span>';
+    }
+}
+
+// 5√3 ⋅ 4√3 = 60
+function checkOzel3() {
+    var val = document.getElementById('input-ozel-3').value.trim();
+    
+    if (val === '60') {
+        document.getElementById('result-ozel-3').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 5⋅4 = 20, √3⋅√3 = 3, sonuç: 20⋅3 = 60</span>';
+    } else if (val === '20') {
+        document.getElementById('result-ozel-3').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Eksik! Katsayılar: 20, ama √3⋅√3=3 ile de çarp: 20⋅3 = 60</span>';
+    } else {
+        document.getElementById('result-ozel-3').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (5⋅4)⋅(√3⋅√3) = 20⋅3 = 60</span>';
+    }
+}
+
+// -6√5 ⋅ 3√5 = -90
+function checkOzel4() {
+    var val = document.getElementById('input-ozel-4').value.trim();
+    
+    if (val === '-90') {
+        document.getElementById('result-ozel-4').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! (-6)⋅3 = -18, √5⋅√5 = 5, sonuç: -18⋅5 = -90</span>';
+    } else if (val === '-18') {
+        document.getElementById('result-ozel-4').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Eksik! Katsayılar: -18, ama √5⋅√5=5 ile de çarp: -18⋅5 = -90</span>';
+    } else {
+        document.getElementById('result-ozel-4').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-6⋅3)⋅(√5⋅√5) = -18⋅5 = -90</span>';
+    }
+}
+</script>
+
+<script>
+// DOĞAL SAYI YAPAN ÇARPANLAR KONTROL FONKSİYONLARI
+
+// √5 ile çarpılacak en küçük sayı: 5
+function checkCarpan1() {
+    var val = document.getElementById('input-carpan-1').value.trim();
+    
+    if (val === '5') {
+        document.getElementById('result-carpan-1').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! √5 ⋅ 5 = √25 = 5 (Doğal sayı)</span>';
+    } else if (val === '√5' || val === 'kök5') {
+        document.getElementById('result-carpan-1').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Dikkat! Kök içindeki sayıyı yazmalısın: 5</span>';
+    } else {
+        document.getElementById('result-carpan-1').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! √5 ⋅ 5 = 5 olur. En küçük çarpan: 5</span>';
+    }
+}
+
+// 2√3 ile çarpılacak en küçük sayı: 3
+function checkCarpan2() {
+    var val = document.getElementById('input-carpan-2').value.trim();
+    
+    if (val === '3') {
+        document.getElementById('result-carpan-2').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 2√3 ⋅ 3 = 6√3 ⋅ √3 = 6⋅3 = 18 (Doğal sayı)</span>';
+    } else if (val === '6') {
+        document.getElementById('result-carpan-2').innerHTML = '<span style="color:#f57c00;font-weight:bold;">6 da çalışır ama en küçük değil! Kök içindeki sayı: 3</span>';
+    } else {
+        document.getElementById('result-carpan-2').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Kök içindeki sayı olan 3 ile çarp.</span>';
+    }
+}
+
+// 3√7 ile çarpılacak en küçük sayı: 7
+function checkCarpan3() {
+    var val = document.getElementById('input-carpan-3').value.trim();
+    
+    if (val === '7') {
+        document.getElementById('result-carpan-3').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 3√7 ⋅ 7 = 21√7 ⋅ √7 = 21⋅7 = 147 (Doğal sayı)</span>';
+    } else {
+        document.getElementById('result-carpan-3').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Kök içindeki sayı olan 7 ile çarp.</span>';
+    }
+}
+
+// √12 ile çarpılacak en küçük sayı: 3 (çünkü √12 = 2√3)
+function checkCarpan4() {
+    var val = document.getElementById('input-carpan-4').value.trim();
+    
+    if (val === '3') {
+        document.getElementById('result-carpan-4').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! √12 = 2√3, yani 2√3 ⋅ 3 = 6 (Doğal sayı)</span>';
+    } else if (val === '12') {
+        document.getElementById('result-carpan-4').innerHTML = '<span style="color:#f57c00;font-weight:bold;">12 çalışır ama en küçük değil! √12 = 2√3, sadeleştir: 3</span>';
+    } else {
+        document.getElementById('result-carpan-4').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! √12 = 2√3, kök içindeki 3 ile çarp.</span>';
+    }
+}
+
+// 5√6 ile çarpılacak en küçük sayı: 6
+function checkCarpan5() {
+    var val = document.getElementById('input-carpan-5').value.trim();
+    
+    if (val === '6') {
+        document.getElementById('result-carpan-5').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 5√6 ⋅ 6 = 30√6 ⋅ √6 = 30⋅6 = 180 (Doğal sayı)</span>';
+    } else {
+        document.getElementById('result-carpan-5').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! Kök içindeki sayı olan 6 ile çarp.</span>';
+    }
+}
+</script>
+
+<script>
+// BÖLME İŞLEMLERİ KONTROL FONKSİYONLARI
+
+// √15 ÷ √3 = √5
+function checkDiv1() {
+    var rootSign = document.getElementById('input-div-1-root').value.trim();
+    var val = document.getElementById('input-div-1').value.trim();
+    
+    if (rootSign === '√' && val === '5') {
+        document.getElementById('result-div-1').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! √15 ÷ √3 = √5</span>';
+    } else if (rootSign === '' && val === '5') {
+        document.getElementById('result-div-1').innerHTML = '<span style="color:#f57c00;font-weight:bold;">Neredeyse! Sonuç kök içinde: √5</span>';
+    } else {
+        document.getElementById('result-div-1').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! √(15÷3) = √5</span>';
+    }
+}
+
+// 12√10 ÷ 3√2 = 4√5
+function checkDiv2() {
+    var coef = document.getElementById('input-div-2-coef').value.trim();
+    var root = document.getElementById('input-div-2-root').value.trim();
+    var val = document.getElementById('input-div-2').value.trim();
+    
+    if (coef === '4' && root === '√' && val === '5') {
+        document.getElementById('result-div-2').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 12√10 ÷ 3√2 = 4√5</span>';
+    } else {
+        document.getElementById('result-div-2').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (12÷3)√(10÷2) = 4√5</span>';
+    }
+}
+
+// 20√18 ÷ 4√6 = 5√3
+function checkDiv3() {
+    var coef = document.getElementById('input-div-3-coef').value.trim();
+    var root = document.getElementById('input-div-3-root').value.trim();
+    var val = document.getElementById('input-div-3').value.trim();
+    
+    if (coef === '5' && root === '√' && val === '3') {
+        document.getElementById('result-div-3').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! 20√18 ÷ 4√6 = 5√3</span>';
+    } else {
+        document.getElementById('result-div-3').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (20÷4)√(18÷6) = 5√3</span>';
+    }
+}
+
+// -18√20 ÷ 6√5 = -3√4
+function checkDiv4() {
+    var coef = document.getElementById('input-div-4-coef').value.trim();
+    var root = document.getElementById('input-div-4-root').value.trim();
+    var val = document.getElementById('input-div-4').value.trim();
+    
+    if (coef === '-3' && root === '√' && val === '4') {
+        document.getElementById('result-div-4').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! -18√20 ÷ 6√5 = -3√4</span>';
+    } else {
+        document.getElementById('result-div-4').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-18÷6)√(20÷5) = -3√4</span>';
+    }
+}
+
+// -30√12 ÷ -5√3 = 6√4
+function checkDiv5() {
+    var coef = document.getElementById('input-div-5-coef').value.trim();
+    var root = document.getElementById('input-div-5-root').value.trim();
+    var val = document.getElementById('input-div-5').value.trim();
+    
+    if (coef === '6' && root === '√' && val === '4') {
+        document.getElementById('result-div-5').innerHTML = '<span style="color:#388e3c;font-weight:bold;">Doğru! -30√12 ÷ -5√3 = 6√4</span>';
+    } else {
+        document.getElementById('result-div-5').innerHTML = '<span style="color:#d32f2f;font-weight:bold;">Yanlış! (-30÷-5)√(12÷3) = 6√4</span>';
+    }
+}
+</script>
+
+<div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+    <a href="/matematik/karekok_foyler/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        ➡️ Karekök Föyler'e Git
+    </a>
+</div>
+       
+{% endblock %}
