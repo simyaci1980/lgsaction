@@ -297,8 +297,76 @@ fen.html (7 ünite kartı)
        └─ iklim_olaylari.html
 ```
 
+---
 
-## 📄 Lisans
+### Dark Theme İçerik Sayfası - Renkli Yazı ve Görünür İkonlar (İnkılap Tarihi)
 
-Eğitim amaçlı proje.
+**Dosya:** `lgsweb/templates/inkilap/dunyasavasi_1.html`
+
+**Dark Theme Aktivasyon:**
+```html
+{% block extra_head %}
+<link rel="stylesheet" href="/static/dersler.css">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-theme');
+    });
+</script>
+{% endblock %}
+```
+
+**CSS'den Kural:**
+- Siyah arka plan (#0d0d0d - #1a1a1a gradient)
+- Container'lar: #1e1e1e, #282828, #333333
+- Default yazı rengi: #c8c8c8 gri
+
+**Yazı Renglendirilmesi (Önemli!):**
+```html
+<!-- Başlık (kalın) - Renkli -->
+<b style="color:#3498db;">I. Dünya Savaşı:</b>
+
+<!-- Normal metin - BEYAZ (#ffffff) -->
+<span style="color:#ffffff;">Tarihin kaydettiği ilk küresel savaştır...</span>
+```
+
+**Neden Beyaz?**
+- Siyah arka plan üzerinde #c8c8c8 gri = Soluk görülüyor
+- #ffffff beyaz = Dark theme'de maksimum kontras ve okunabilirlik
+- Başlık renglerinin (mavi, kırmızı, turuncu) yanında ayırım yapar
+
+**Renk Kodlaması (Semantik):**
+- 🔵 **Mavi (#3498db):** Savaşın Nedenleri bölümü başlıkları
+- 🔴 **Kırmızı (#e85d5d):** Bloklaşmalar ve İttifaklar bölümü
+- 🟠 **Turuncu (#f39c12):** Savaşın Başlaması ve Gelişmesi bölümü
+
+**Floating İkonlar - Görünürlük:**
+```html
+<!-- Soluk değil, PARLAK glow ile -->
+<div class="floating-icon" 
+     style="top:120px; left:-60px; 
+             opacity:1; 
+             filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">⚔️</div>
+```
+
+**İkon Özellikleri:**
+- `opacity: 1` = Tam görünür (0.15 değil!)
+- `filter: drop-shadow(...)` = Renkli halo efekti
+- Mavi ikonlar (sol taraf) = #3498db glow
+- Turuncu ikonlar (sağ taraf) = Kendi renkleri glow
+- Halo işaretleri: 8px bulanıklık, %60 opasite
+
+**Yazı vs İkon Özeti:**
+
+| Eleman | Renk | Opasite | Neden |
+|--------|------|---------|-------|
+| **Başlık (b tag)** | #3498db, #e85d5d, #f39c12 | 100% | Bölüm tanımlaması |
+| **Normal Metin (span)** | #ffffff BEYAZ | 100% | Dark theme'de okunabilirlik |
+| **Yüzen İkonlar** | Emoji (belli) | 100% | Görsel dekorasyon, parlak glow |
+
+**Yeniden Kullanım Kuralı:**
+1. Dark theme script ✅
+2. Normal yazılar: #ffffff beyaz ✅
+3. Bölüm başlıkları: Renkli (kodu #3498db vb.) ✅
+4. Yüzen ikonlar: `opacity:1` + `filter:drop-shadow()` ✅
+5. Kutular: Border-left renk, arka plan SİYAH (açık renk yok) ✅
 

@@ -2,10 +2,15 @@
 {% block extra_head %}
 <link rel="stylesheet" href="/static/dersler.css">
 <style>
-    .floating-icon { position:absolute; font-size:3em; opacity:0.12; pointer-events:none; z-index:0; }
+    .floating-icon { position:absolute; font-size:3em; pointer-events:none; z-index:0; }
     .container { position:relative; }
     @media (max-width:768px){ .floating-icon{ display:none; } }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-theme');
+    });
+</script>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -16,16 +21,16 @@
     <div class="floating-icon" style="top:140px; right:-60px;">🕯️</div>
     <div class="floating-icon" style="top:340px; right:-70px;">🛡️</div>
 
-    <h1 class="main-title">3.3 Maarif Kongresi (15-21 Temmuz 1921) <span style="color:#2e7d32;">📚</span></h1>
-    <p style="text-align:center; color:#555; max-width:900px; margin:0 auto 28px auto;">
+    <h1 class="main-title">3.3 Maarif Kongresi (15-21 Temmuz 1921) <span style=";">📚</span></h1>
+    <p style="text-align:center; max-width:900px; margin:0 auto 28px auto; line-height:1.8;">
         Cehaletle savaşın, cephedeki savaş kadar önemli olduğunu vurgulayan Mustafa Kemal Paşa, Kütahya-Eskişehir Muharebeleri sürerken eğitimi millî ve çağdaş temelde toparlamak için Maarif Kongresi'ni topladı.
     </p>
 
     <!-- Giriş ve Amaç -->
     <section class="section">
-        <h2><span style="color:#2e7d32;">&#9733;</span> Neden Toplandı?</h2>
-        <div class="highlight-box" style="background:#e8f5e9; padding:20px; border-radius:12px;">
-            <b style="color:#1b5e20;">Zamanlama:</b> Kütahya-Eskişehir Muharebeleri devam ederken, Yunanlar Ankara'ya yaklaşmıştı. Buna rağmen kongre ertelenmedi; cehaletle savaş, düşmanla savaş kadar kritik görüldü.
+        <h2><span style=";">&#9733;</span> Neden Toplandı?</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b>Zamanlama:</b> Kütahya-Eskişehir Muharebeleri devam ederken, Yunanlar Ankara'ya yaklaşmıştı. Buna rağmen kongre ertelenmedi; cehaletle savaş, düşmanla savaş kadar kritik görüldü.
         </div>
         <div class="example-box" style="margin-top:16px;">
             <ul style="line-height:1.8;">
@@ -38,9 +43,9 @@
 
     <!-- Katılım ve Açılış -->
     <section class="section">
-        <h2><span style="color:#2e7d32;">&#9733;</span> Katılım ve Açılış</h2>
-        <div class="highlight-box" style="background:#f1f8e9; padding:20px; border-radius:12px;">
-            <b style="color:#33691e;">Katılımcılar:</b> 180'den fazla kadın-erkek öğretmen, okul müdürü, maarif müdürü ve eğitimciler ülke genelinden geldi.
+        <h2><span style=";">&#9733;</span> Katılım ve Açılış</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b>Katılımcılar:</b> 180'den fazla kadın-erkek öğretmen, okul müdürü, maarif müdürü ve eğitimciler ülke genelinden geldi.
         </div>
         <div class="example-box" style="margin-top:16px;">
             <ul style="line-height:1.8;">
@@ -52,9 +57,9 @@
 
     <!-- Çalışmalar ve Kararlar -->
     <section class="section">
-        <h2><span style="color:#2e7d32;">&#9733;</span> Çalışmalar ve Sonuç</h2>
-        <div class="highlight-box" style="background:#e8f5e9; padding:20px; border-radius:12px;">
-            <b style="color:#1b5e20;">Çalışma süresi:</b> 15-21 Temmuz arası sürdü; savaş şartlarına rağmen tamamlandı.
+        <h2><span style=";">&#9733;</span> Çalışmalar ve Sonuç</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b>Çalışma süresi:</b> 15-21 Temmuz arası sürdü; savaş şartlarına rağmen tamamlandı.
         </div>
         <div class="example-box" style="margin-top:16px;">
             <ul style="line-height:1.8;">
@@ -67,8 +72,8 @@
     </section>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; background:#2e7d32; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">← 3. Ünite Ana Sayfa</a>
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#c8e6c9; color:#1b5e20; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">← İnkılap Tarihi Ana Sayfa</a>
+        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.5); margin-right:12px;">← 3. Ünite Ana Sayfa</a>
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.5);">← İnkılap Tarihi Ana Sayfa</a>
     </div>
 </div>
 {% endblock %}

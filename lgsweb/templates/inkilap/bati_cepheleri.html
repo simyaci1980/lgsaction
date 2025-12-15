@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% block extra_head %}
 <link rel="stylesheet" href="/static/dersler.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <style>
-    .floating-icon { position:absolute; font-size:3em; opacity:0.12; pointer-events:none; z-index:0; }
+    .floating-icon { position:absolute; font-size:3em; pointer-events:none; z-index:0; }
     .container { position:relative; }
     @media (max-width:768px){ .floating-icon{ display:none; } }
     .pill { display:inline-block; padding:6px 12px; border-radius:999px; font-weight:600; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-theme');
+    });
+</script>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -17,20 +24,36 @@
     <div class="floating-icon" style="top:120px; right:-60px;">🏛️</div>
     <div class="floating-icon" style="top:340px; right:-70px;">🛡️</div>
 
-    <h1 class="main-title">Batı Cephesi ve Düzenli Ordunun Kurulması <span style="color:#3949ab;">⚔️</span></h1>
-    <p style="text-align:center; color:#555; max-width:900px; margin:0 auto 28px auto;">Mondros sonrasında dağılan Osmanlı ordusunun yerini alacak düzenli ordunun kurulması, Kuvâ-yı Millîye'den düzenli orduya geçiş, İnönü savaşları ve Batı Cephesi'nin yapılandırılması.</p>
+    <h1 class="main-title">Batı Cephesi ve Düzenli Ordunun Kurulması <span style="">⚔️</span></h1>
+    <p style="text-align:center; max-width:900px; margin:0 auto 28px auto;">Mondros sonrasında dağılan Osmanlı ordusunun yerini alacak düzenli ordunun kurulması, Kuvâ-yı Millîye'den düzenli orduya geçiş, İnönü savaşları ve Batı Cephesi'nin yapılandırılması.</p>
 
-    <!-- Düzenli Orduya Geçiş -->
+    <div style="margin:32px 0; padding:20px; border-radius:12px;">
+        <h3 style="margin-top:0; text-align:center;">📍 Batı Cephesi Savaşları - Gerçek Harita</h3>
+        <div id="map" style="width:100%; height:500px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('map')) {
+                const map = L.map('map').setView([39.0, 29.0], 7);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap',
+                    maxZoom: 19
+                }).addTo(map);
+            }
+        });
+    </script>
+
     <section class="section">
-        <h2><span style="color:#3949ab;">&#9733;</span> Düzenli Ordunun Kurulması</h2>
-        <div class="highlight-box" style="background:#e8eaf6; padding:20px; border-radius:12px;">
-            <b style="color:#283593;">Mondros sonrası tablo:</b> Osmanlı ordusu dağıldı; 15. ve 20. Kolordular dışında düzenli birlik kalmadı. Kuvâ-yı Millîye batı ve güneyde fedakârca direnirken, merkezî disiplin eksikliği meclis otoritesini zedeliyordu.
+        <h2><span style="">&#9733;</span> Düzenli Ordunun Kurulması</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b style="">Mondros sonrası tablo:</b> Osmanlı ordusu dağıldı; 15. ve 20. Kolordular dışında düzenli birlik kalmadı. Kuvâ-yı Millîye batı ve güneyde fedakârca direnirken, merkezî disiplin eksikliği meclis otoritesini zedeliyordu.
         </div>
         <div class="example-box" style="margin-top:18px;">
             <ul style="line-height:1.8;">
                 <li><b>Sivas Kongresi sonrası:</b> Temsil Heyeti, Batı Anadolu Kuvâ-yı Millîye'sini örgütlemek için Ali Fuat Paşa'yı Batı Anadolu Genel Kuvâ-yı Milliye Komutanı yaptı.</li>
                 <li><b>Gediz Taarruzu (Ekim 1920):</b> Kuvâ-yı Millîye Yunanlara hücum etti ancak başarısız oldu; dağınıklık ve disiplin sorunları ortaya çıktı.</li>
-                <li><b>9 Kasım 1920:</b> Batı Cephesi ikiye ayrıldı. <span class="pill" style="background:#303f9f; color:white;">İzmit-Kütahya arası</span> Batı Cephesi Komutanı Albay İsmet (İnönü); <span class="pill" style="background:#1565c0; color:white;">Afyon-Adana arası</span> Güney Cephesi Komutanı Albay Refet (Bele).</li>
+                <li><b>9 Kasım 1920:</b> Batı Cephesi ikiye ayrıldı. <span class="pill" style="">İzmit-Kütahya arası</span> Batı Cephesi Komutanı Albay İsmet (İnönü); <span class="pill" style="">Afyon-Adana arası</span> Güney Cephesi Komutanı Albay Refet (Bele).</li>
                 <li><b>Kuvâ-yı Millîye'den düzene geçiş:</b> Birlikler Genelkurmay'a bağlandı; düzen ve disiplin hedeflendi.</li>
                 <li><b>Baş eğmeyenler:</b> Demirci Mehmet Efe, Çerkez Ethem gibi komutanlar ayaklandı; düzenli ordu bastırdı.</li>
             </ul>
@@ -39,9 +62,9 @@
 
     <!-- I. İnönü -->
     <section class="section">
-        <h2><span style="color:#3949ab;">&#9733;</span> I. İnönü Muharebesi (6-10 Ocak 1921)</h2>
-        <div class="highlight-box" style="background:#e8eaf6; padding:20px; border-radius:12px;">
-            <b style="color:#283593;">Amaç:</b> Yunanlar, Eskişehir'i alıp demiryoluyla Ankara'ya ulaşmak ve Meclisi dağıtmak istedi. İngiliz desteğiyle yeni kurulan düzenli orduyu yok etmeyi hedeflediler.
+        <h2><span style="">&#9733;</span> I. İnönü Muharebesi (6-10 Ocak 1921)</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b style="">Amaç:</b> Yunanlar, Eskişehir'i alıp demiryoluyla Ankara'ya ulaşmak ve Meclisi dağıtmak istedi. İngiliz desteğiyle yeni kurulan düzenli orduyu yok etmeyi hedeflediler.
         </div>
         <div class="example-box" style="margin-top:16px;">
             <ul style="line-height:1.8;">
@@ -50,8 +73,8 @@
                 <li><b>Sonuç:</b> Yunanlar geri çekildi; düzenli ordunun ilk zaferi kazanıldı.</li>
             </ul>
         </div>
-        <div class="highlight-box" style="background:#f1f8e9; padding:18px; border-radius:10px;">
-            <b style="color:#2e7d32;">Zaferin etkileri:</b>
+        <div class="highlight-box" style="padding:18px; border-radius:10px;">
+            <b style="">Zaferin etkileri:</b>
             <ul style="line-height:1.7; margin-top:8px;">
                 <li>Teşkilat-ı Esasiye Kanunu (20 Ocak 1921) kabul edildi; yeni Türk Devleti'nin ilk anayasası.</li>
                 <li>Çerkez Ethem Ayaklanması bastırıldı.</li>
@@ -67,9 +90,9 @@
 
     <!-- II. İnönü -->
     <section class="section">
-        <h2><span style="color:#3949ab;">&#9733;</span> II. İnönü Muharebesi (23 Mart - 1 Nisan 1921)</h2>
-        <div class="highlight-box" style="background:#e8eaf6; padding:20px; border-radius:12px;">
-            <b style="color:#283593;">Sebep:</b> Londra Konferansı'nda TBMM'nin barış taslağını reddetmesi üzerine İngiliz desteğiyle Yunanlar yeniden saldırdı; Eskişehir, Kütahya, Afyon üzerinden Ankara'yı hedefledi.
+        <h2><span style="">&#9733;</span> II. İnönü Muharebesi (23 Mart - 1 Nisan 1921)</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b style="">Sebep:</b> Londra Konferansı'nda TBMM'nin barış taslağını reddetmesi üzerine İngiliz desteğiyle Yunanlar yeniden saldırdı; Eskişehir, Kütahya, Afyon üzerinden Ankara'yı hedefledi.
         </div>
         <div class="example-box" style="margin-top:14px;">
             <ul style="line-height:1.8;">
@@ -78,8 +101,8 @@
                 <li>1 Nisan: Yunanlar geri çekildi; Afyon'u boşalttılar.</li>
             </ul>
         </div>
-        <div class="highlight-box" style="background:#f1f8e9; padding:16px; border-radius:10px;">
-            <b style="color:#2e7d32;">Sonuçlar:</b>
+        <div class="highlight-box" style="padding:16px; border-radius:10px;">
+            <b style="">Sonuçlar:</b>
             <ul style="line-height:1.7; margin-top:6px;">
                 <li>Mustafa Kemal Paşa: "Siz yalnız düşmanı değil, milletin makus talihini de yendiniz."</li>
                 <li>TBMM ve orduya güven yükseldi; İtalya çekilmeye başladı, Yunanlar Kocaeli'den, Fransızlar Zonguldak'tan çekildi.</li>
@@ -90,9 +113,9 @@
 
     <!-- Kütahya-Eskişehir -->
     <section class="section">
-        <h2><span style="color:#3949ab;">&#9733;</span> Kütahya-Eskişehir Muharebeleri (10-24 Temmuz 1921)</h2>
-        <div class="highlight-box" style="background:#e8eaf6; padding:20px; border-radius:12px;">
-            <b style="color:#283593;">Gelişmeler:</b> II. İnönü'den sonra Türk taarruz denemeleri sonuç vermedi. Yunan Kralı Konstantin yeni saldırıyı açıkladı; Yunan ordusu hazırlıklarını tamamladı.
+        <h2><span style="">&#9733;</span> Kütahya-Eskişehir Muharebeleri (10-24 Temmuz 1921)</h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px;">
+            <b style="">Gelişmeler:</b> II. İnönü'den sonra Türk taarruz denemeleri sonuç vermedi. Yunan Kralı Konstantin yeni saldırıyı açıkladı; Yunan ordusu hazırlıklarını tamamladı.
         </div>
         <div class="example-box" style="margin-top:14px;">
             <ul style="line-height:1.8;">
@@ -101,8 +124,8 @@
                 <li><b>Sakarya'nın doğusuna çekilme:</b> Mustafa Kemal Paşa emriyle taktik geri çekilme; ordunun yıpranması önlendi, Yunan ordusu lojistikten uzaklaştırıldı.</li>
             </ul>
         </div>
-        <div class="highlight-box" style="background:#fff3e0; padding:16px; border-radius:10px;">
-            <b style="color:#e65100;">Etkiler:</b>
+        <div class="highlight-box" style="padding:16px; border-radius:10px;">
+            <b style="">Etkiler:</b>
             <ul style="line-height:1.7; margin-top:6px;">
                 <li>Meclisin Kayseri'ye taşınması tartışıldı; Mustafa Kemal sorumluluğu üstlenerek Başkomutanlığa giden yolu açtı.</li>
                 <li>Fransa görüşmeleri erteledi; İtalya çekilme kararını askıya aldı.</li>
@@ -113,7 +136,7 @@
 
     <!-- Anayasa ve Diplomasi -->
     <section class="section">
-        <h2><span style="color:#3949ab;">&#9733;</span> Anayasa ve Diplomasi Adımları</h2>
+        <h2><span style="">&#9733;</span> Anayasa ve Diplomasi Adımları</h2>
         <div class="example-box">
             <ul style="line-height:1.8;">
                 <li><b>Teşkilat-ı Esasiye Kanunu (20 Ocak 1921):</b> 24 maddelik ilk anayasa; egemenlik kayıtsız şartsız milletindir, yasama-yürütme TBMM'de toplanır.</li>
@@ -126,8 +149,8 @@
     </section>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; background:#3949ab; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">← 3. Ünite Ana Sayfa</a>
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#c5cae9; color:#1a237e; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">← İnkılap Tarihi Ana Sayfa</a>
+        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">← 3. Ünite Ana Sayfa</a>
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">← İnkılap Tarihi Ana Sayfa</a>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<link rel="stylesheet" href="/static/dersler.css">
+<style>
+    .floating-icon { position:absolute; font-size:3em; pointer-events:none; z-index:0; }
+    .container { position:relative; }
+    @media (max-width:768px){ .floating-icon{ display:none; } }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-theme');
+    });
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen ikonlar -->
+    <div class="floating-icon" style="top:120px; left:-60px; opacity:1; filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">🏴</div>
+    <div class="floating-icon" style="top:300px; left:-70px; opacity:1; filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">⚔️</div>
+    <div class="floating-icon" style="top:520px; left:-65px; opacity:1; filter:drop-shadow(0 0 8px rgba(232, 93, 93, 0.6));">📜</div>
+    <div class="floating-icon" style="top:120px; right:-60px; opacity:1; filter:drop-shadow(0 0 8px rgba(232, 93, 93, 0.6));">🎖️</div>
+    <div class="floating-icon" style="top:340px; right:-70px; opacity:1; filter:drop-shadow(0 0 8px rgba(243, 156, 18, 0.6));">💣</div>
+
+    <h1 class="main-title">2.2 I. DÜNYA SAVAŞI'NDA OSMANLI DEVLETİ <span style="">🏴</span></h1>
+    <p style="text-align:center; max-width:900px; margin:0 auto 28px auto;">Osmanlı Devleti'nin I. Dünya Savaşı'na girişi ve savaş yıllarında yaşadığı gelişmeleri inceliyoruz.</p>
+
+    <!-- İçerik -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> <span style="color:#3498db;">Osmanlı Devleti'nin I. Dünya Savaşı'na Girişi</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #3498db;">
+            <span style="color:#ffffff;">I. Dünya Savaşı başladığında Osmanlı Devleti tarafsızlığını ilan etti. Fakat Osmanlı Devleti'nin savaşın dışında kalması oldukça zordu. Bu nedenle devletin savaşa girme ihtimalini göz önünde bulunduran Osmanlı yönetimi seferberlik ilan etmiş, ordu ve donanmasını iyileştirmek için çalışmalar yapmaya başlamıştır. Savaş başladığında kendisine müttefik arayan Osmanlı Devleti, İngiltere, Fransa ve Balkan devletlerine ittifak önerilerinde bulundu fakat olumlu bir sonuç alamadı. Rusya'nın bu devletlerle yakın ilişkide bulunması ve ittifak hâlinde olması bu girişimlerinden sonuç alınamamasında etkili oldu.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #3498db;">
+            <b style="color:#3498db;">Almanya'yla Yakınlaşma:</b> <span style="color:#ffffff;">Osmanlı Devleti, gelişmeler karşısında iktidardaki İttihat ve Terakki Hükûmeti'nin etkisiyle Almanya'ya yaklaştı. Bununla birlikte devletin son dönemlerinde askerî alanda yapılan ıslahatlarda Alman heyetlerinden geniş ölçüde yararlanılmış, ordu Alman silahları ile donatılmıştı. Almanya ile sürdürülen askerî, siyasi ve ekonomik iş birliği her iki devletin yakınlaşmasını ve ilişkilerinin süreklilik kazanmasını sağladı.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #3498db;">
+            <b style="color:#3498db;">Ittifak Antlaşması (2 Ağustos 1914):</b> <span style="color:#ffffff;">Sadrazam Sait Halim Paşa'nın yalısında, İttihat ve Terakki mensuplarının tercihleri doğrultusunda Almanya'yla gizli bir ittifak antlaşması yapıldı. Antlaşmaya göre Rusya'nın Avusturya-Macaristan İmparatorluğu'na savaş açması ve Almanya'nın savaşa girmesi durumunda Osmanlı Devleti savaşa katılacak ve Almanya'yı destekleyecekti.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #3498db;">
+            <b style="color:#3498db;">Savaşa Katılma (Kasım 1914):</b> <span style="color:#ffffff;">Akdeniz'de İngiliz gemileri tarafından takip edilen Goeben (Goben) ve Breslau (Breslav) adlı iki Alman savaş gemisi Boğazlar'ı geçerek Osmanlı Devleti'ne sığındı. Osmanlı Devleti önce bu gemilerin Almanya'dan satın alındığını duyurdu. Mürettebatı Alman olan gemilere Yavuz ve Midilli adı verildi. Tüm personele Osmanlı bahriyesinin üniforması giydirildi ve Türk bayrağı çekildi. Bu gemilere diğer gemilerin katılmasıyla Karadeniz'e açılan filo, Rusya'nın Sivastopol, Odessa (Odesa) ve Kefe liman şehirlerini topa tuttu. Bu olay üzerine 2 Kasım'da Rusya, 5 Kasım'da da İngiltere ve Fransa, Osmanlı Devleti'ne savaş açtılar. Osmanlı Devleti, 11 Kasım 1914'te Padişah Mehmet Reşat'ın "Cihad-ı Ekber"i ilan ederek İtilaf devletlerine karşı dünya Müslümanlarını savaşa çağırdı.</span>
+        </div>
+    </section>
+
+    <!-- Cepheler -->
+    <section class="section">
+        <h2><span style="color:#e85d5d;">&#9733;</span> <span style="color:#e85d5d;">Osmanlı Devleti'nin Cepheleri</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Kafkas Cephesi:</b> <span style="color:#ffffff;">Harbiye Nazırı Enver Paşa, 1914 yılı Aralık ayı sonlarında Ruslara karşı Sarıkamış Harekâtı'nı başlattı. Ağır kış şartları, malzeme eksikliği, salgın hastalıklar ve ordunun gerekli donanıma sahip olmaması nedeniyle harekât başarıya ulaşamadı. On binlerce Osmanlı askeri henüz Ruslarla savaşamadan hayatını kaybetti. Sarıkamış Harekâtı'nda cephedeki birliklerin büyük bir kısmının kaybedilmesi, Doğu Anadolu'yu Rusların istilasına açık hâle getirdi. Ruslar 1915 yılı başlarında saldırıya geçtiler. 1917'de Rusya'da Bolşevik İhtilali çıkması ile Rusya savaştan çekildi ve Kafkas Cephesi kapandı.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">1915 Olayları ve Sevk ve İskân Kanunu:</b> <span style="color:#ffffff;">Ermeniler Osmanlı Devleti'nin cephelerde savaşmasını ve savaşın getirdiği otorite boşluğunu fırsat olarak gördüler. Ülkenin çeşitli bölgelerinde çeteler kurdular ve yabancı devletlerin kışkırtmaları ile isyanlar çıkardılar. Kafkas Cephesi'nde Ruslarla iş birliği yapan Ermeniler, Osmanlı birliklerinin harekâtına engel olmak için yolları ve köprüleri imha ederek Rus işgalini kolaylaştırdılar. Bu gelişmeler üzerine Osmanlı Devleti, 27 Mayıs 1915 tarihinde Sevk ve İskân Kanunu çıkardı. Ermeniler, bu kanun gereğince Osmanlı toprağı olan Suriye'ye zorunlu göçe tabi tutuldu. Verileri ertelendi, diledikleri eşyalarını almalarına izin verildi ve güvenliklerini sağlamak için karakollar kuruldu.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Kanal Cephesi:</b> <span style="color:#ffffff;">Osmanlı Devleti, Almanlarla açtığı bu cephede Mısır'ı İngilizlerden geri almayı, Süveyş Kanalı'nı ele geçirmeyi amaçladı. Bahriye Nazırı Cemal Paşa komutasındaki IV. Ordu birlikleri Süveyş Kanalı'na taarruz etti. Şubat 1915'te yapılan I. Kanal Harekâtı ve Ağustos 1916'da gerçekleştirilen II. Kanal Harekâtı'nda başarıya ulaşılamadı. Bu andan itibaren İngilizlere Suriye ve Filistin yolu açılmış oldu.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Çanakkale Cephesi:</b> <span style="color:#ffffff;">Çanakkale Muharebeleri, I. Dünya Savaşı'nın seyrini değiştiren Türk ve dünya tarihinin kaydettiği en önemli olaylardan biridir. İtilaf devletleri güçlü bir donanmayla 19 Şubat 1915 tarihinde savaşı başlattılar. Müstahkem Mevki Komutanı Cevat Paşa'nın başarılı yönetimi, Türk topçularının isabetli atışları ve Nusret Mayın Gemisi'nin Boğaz'a döşediği mayınlar sonucunda İtilaf devletleri donanması ağır kayıplar verdi. 18 Mart 1915 tarihinde yenilgiye uğradı ve geri çekildi. Deniz savaşlarını kaybeden İtilaf devletleri, Gelibolu Yarımadası'na çıkarma yaparak Boğazlar'ı karadan geçme girişiminde bulundular. 25 Nisan 1915 tarihinde saldırıya geçtiler. Mustafa Kemal'in "Ben size taarruzu emretmiyorum, ölmeyi emrediyorum!" sözleriyle verdiği tarihî emir ve Anafartalar, Conkbayırı ve Kocaçimen'de yaptığı karşı taarruzlar sayesinde Anzaklar geri çekilmeye mecbur kaldı. 1916 yılı başlarında İtilaf devletleri Çanakkale'den tamamen çekildi.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Irak Cephesi:</b> <span style="color:#ffffff;">1914 yılı Kasım ayı başlarından itibaren Basra Körfezi'ne asker çıkararak Osmanlı topraklarına saldıran İngilizlerle savaşıldı. İngilizler Basra'yı ele geçirdiler ve Irak içlerine ilerlemeye devam etti. 1915 yılı Kasım ayında Selman-ı Pak Muharebeleri'nde Osmanlı kuvvetleri İngilizleri yenilgiye uğrattı. Halil (Kut) Paşa komutasındaki Osmanlı birlikleri Kut'ül-Amâre'de bulunan İngiliz kuvvetlerini kuşattı. General Townshend komutasındaki binlerce İngiliz askeri esir alındı. Fakat İngilizler yeni kuvvetler çıkararak ilerlemeleri devam ettirdi. 1916 ve 1917 yıllarına gelince Bağdat'ı ele geçiren İngilizler Musul'a yaklaşmışlardır.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Suriye-Filistin Cephesi:</b> <span style="color:#ffffff;">Kanal Cephesi'ndeki yenilgi nedeniyle İngilizlere Suriye ve Filistin yolu açıldı. İngilizler I. ve II. Gazze Savaşlarında yenilgiye uğratıldı. Fakat III. Gazze Savaşı'nda Osmanlı Devleti yenildi. Gazze, Kudüs ve ardından Yafa işgal edildi. Kuzeye doğru ilerleyen İngilizler Suriye'ye girdiler ve Şam'ı ele geçirdiler. Yıldırım Orduları Grubuna bağlı 7. Ordu Komutanlığına atanan Mustafa Kemal, dağılan Osmanlı birliklerini tekrar toparladı. Türk birlikleri İngiliz ve Arap kuvvetlerini Halep'in kuzeyinde durdurdu. Böylece Anadolu'nun işgali önlendi.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Hicaz-Yemen Cephesi:</b> <span style="color:#ffffff;">Osmanlı Devleti'nin Hicaz bölgesinde yer alan Mekke ve Medine'yi koruduğu, Yemen ve Asir'deki İngilizler ve Şerif Hüseyin'in kışkırttığı isyancı Arap kabileleri ile mücadele ettiği cephedir. İngilizlerin 1917 yılında Akabe'yi ele geçirmeleri üzerine bölgedeki Osmanlı hâkimiyeti sona erdi. Fakat Fahrettin Paşa Medine'de bulunan az sayıda Türk askeriyle burayı savunmaya devam etti. 1919 yılı başına kadar askerleriyle direnişini sürdürdü.</span>
+        </div>
+    </section>
+
+    <!-- Yeni Katılımlar ve Wilson İlkeleri -->
+    <section class="section">
+        <h2><span style="color:#f39c12;">&#9733;</span> <span style="color:#f39c12;">I. Dünya Savaşı'na Yeni Katılımlar ve Wilson İlkeleri</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">Yeni Devletlerin Katılımı:</b> <span style="color:#ffffff;">Savaşın başında İttifak Devletleri grubunda yer alan İtalya önce tarafsızlığını ilan etmişti. Daha sonra 1915 yılında İtilaf devletleri safında savaşa girdi. Bulgaristan ise 1915 yılı Ekim ayında İttifak Devletleri grubunda savaşa dahil oldu. 1916'da Romanya, 1917'de ise Yunanistan İtilaf devletlerinin yanında savaşa katıldı. Savaş başladığında tarafsız olan ABD, İtilaf devletlerine maddi yardımda bulunmakta ve silah satmaktaydı. Almanya'nın ABD'nin gemilerini denizaltılarla batırması üzerine ABD 1917 yılında savaşa girdi.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">Wilson İlkeleri (8 Ocak 1918):</b> <span style="color:#ffffff;">ABD başkanı Wilson I. Dünya Savaşı sonunda 14 maddeden oluşan Wilson İlkeleri'ni açıkladı. Bu ilkelerle savaş sona erdiğinde dünyada kalıcı bir barışın sağlanması amaçlanmaktaydı. İlkelerin önemli maddeleri: Savaş sonunda gizli antlaşmalar yapılmayacaktır; yenilen devletlerden toprak ve savaş tazminatı alınmayacaktır; uluslararası kalıcı bir barışın sağlanması amacıyla "Milletler Cemiyeti" kurulacaktır; Türklerin çoğunlukta olduğu bölgelere egemenlik hakkı tanınacak ancak Osmanlı Devleti'nde yaşayan azınlıklara da özerklik verilecektir.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #f39c12;">
+            <b style="color:#f39c12;">Wilson İlkeleri'nin Etkisi:</b> <span style="color:#ffffff;">Wilson İlkeleri, savaşı kaybeden devletler için umut ışığı oldu. Ateşkes antlaşmalarının imzalanmasını ve I. Dünya Savaşı'nın bitişini kolaylaştırdı. İtilaf devletleri, ABD'nin yayımladığı bu ilkelere uyacaklarını açıkladılar ancak savaştan sonra izledikleri politikalarla Wilson İlkeleri'ne uymadıklarını gösterdiler.</span>
+        </div>
+    </section>
+
+    <!-- Savaşın Sonu ve Sonuçları -->
+    <section class="section">
+        <h2><span style="color:#f39c12;">&#9733;</span> <span style="color:#f39c12;">I. Dünya Savaşı'nın Sona Ermesi ve Sonuçları</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">Savaşın Bitişi:</b> <span style="color:#ffffff;">1918 yılında savaşı İttifak Devletleri'nin kaybedeceği anlaşıldı. Önce Bulgaristan ateşkes isteyerek I. Dünya Savaşı'ndan çekildi. Bulgaristan'ın savaştan çekilmesi, Osmanlı Devleti'nin Almanya ile kara bağlantısının kopmasına neden oldu. Savaşı sürdürmekte her geçen gün daha fazla zorlanan Osmanlı Devleti, ardından Avusturya-Macaristan İmparatorluğu ve en son Almanya ateşkes isteyerek savaştan çekildi.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">Savaşın Etkileri:</b> <span style="color:#ffffff;">Dört yılı aşan bir süre devam eden I. Dünya Savaşı, savaşta yer alan bütün devletler açısından son derece yıkıcı olmuştur. Şehirler yakılıp yıkıldı, milyonlarca insan hayatını kaybetti. Büyük ekonomik kayıplar yaşandı. Devletler arası dengeler bozuldu, sınırlar değişti. Avrupa'nın siyasi haritası yeniden çizildi.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #f39c12;">
+            <b style="color:#f39c12;">Önemli Sonuçlar:</b>
+            <ul style="line-height:1.8;">
+                <li><span style="color:#ffffff;">İmparatorlukların yıkılmasıyla yeni devletler ortaya çıktı (Estonya, Letonya, Litvanya, Macaristan, Polonya, Yugoslavya)</span></li>
+                <li><span style="color:#ffffff;">Bazı ülkelerde rejim değişiklikleri yaşandı. Komünizm, Faşizm, Nazizm ortaya çıktı.</span></li>
+                <li><span style="color:#ffffff;">Tanklar, kimyasal silahlar ve denizaltılar ilk kez bu savaşta kullanıldı.</span></li>
+                <li><span style="color:#ffffff;">Sömürgeciliğin yerini manda ve himaye sistemi aldı.</span></li>
+                <li><span style="color:#ffffff;">Uluslararası barışı sağlamak için Milletler Cemiyeti (Cemiyet-i Akvam) kuruldu.</span></li>
+                <li><span style="color:#ffffff;">Savaş antlaşmalarının ağır şartları ve sınırların milliyetçilik olgusuna dikkat edilmemesi, ikinci bir dünya savaşının yaşanmasına zemin hazırladı.</span></li>
+            </ul>
+        </div>
+    </section>
+    
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/inkilap/unite-2/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">← 2. Ünite Ana Sayfa</a>
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">← İnkılap Tarihi Ana Sayfa</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<link rel="stylesheet" href="/static/dersler.css">
+<style>
+    .floating-icon { position:absolute; font-size:3em; pointer-events:none; z-index:0; }
+    .container { position:relative; }
+    @media (max-width:768px){ .floating-icon{ display:none; } }
+    .pill { display:inline-block; padding:6px 12px; border-radius:999px; font-weight:600; }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-theme');
+    });
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen ikonlar -->
+    <div class="floating-icon" style="top:120px; left:-60px; opacity:1; filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">⚔️</div>
+    <div class="floating-icon" style="top:300px; left:-70px; opacity:1; filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">🌍</div>
+    <div class="floating-icon" style="top:520px; left:-65px; opacity:1; filter:drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));">📜</div>
+    <div class="floating-icon" style="top:120px; right:-60px; opacity:1; filter:drop-shadow(0 0 8px rgba(232, 93, 93, 0.6));">🎖️</div>
+    <div class="floating-icon" style="top:340px; right:-70px; opacity:1; filter:drop-shadow(0 0 8px rgba(243, 156, 18, 0.6));">💣</div>
+
+    <h1 class="main-title">2.1 I. DÜNYA SAVAŞI (1914-1918) <span style="">⚔️</span></h1>
+    <p style="text-align:center; max-width:900px; margin:0 auto 28px auto;">Tarihin kaydettiği ilk küresel savaş, Orta Avrupa'da başlayıp dünyanın geniş bir bölümünü etkileyen bir savaş.</p>
+
+    <!-- Savaşın Nedenleri -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> <span style="color:#3498db;">Savaşın Nedenleri</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #3498db;">
+            <b style="color:#3498db;">I. Dünya Savaşı:</b> <span style="color:#ffffff;">Tarihin kaydettiği ilk küresel savaştır. Dünyanın büyük devletlerinin yer aldığı savaş Orta Avrupa'da başladı. Savaşın sürdüğü yıllarda yeni devletlerin katılımıyla Orta Doğu, Afrika, Uzak Doğu ve açık denizleri içine alan geniş bir alana yayıldı.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #3498db;">
+            <b style="color:#3498db;">Uzun Vadeli Nedenler:</b> <span style="color:#ffffff;">İki önemli olayın etkisi vardır:</span>
+            <ul style="line-height:1.8;">
+                <li><b style="color:#3498db;">1789 Fransız İhtilali:</b> <span style="color:#ffffff;">Milliyetçilik fikriyle çeşitli milletler millî devletlerini kurmaya yöneldiler. Hanedanların egemenliğine dayalı siyasi yapı, millî devletlerden oluşan bir yapıya dönüştü.</span></li>
+                <li><b style="color:#3498db;">Sanayi İnkılabı:</b> <span style="color:#ffffff;">Artan üretimin zamanla iç pazarlara fazla gelmesi, üreticileri yeni pazarlara yöneltti. Sanayileşen büyük Avrupa devletlerini sömürgeciliğe yöneltti, devletler arası rekabeti artırdı.</span></li>
+            </ul>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #3498db;">
+            <b style="color:#3498db;">Kuvvetler Dengesinin Değişmesi:</b> <span style="color:#ffffff;">1870'de İtalya'nın ve 1871'de Almanya'nın siyasi birliklerini tamamlayarak sömürgeciliğe yönelmeleri Avrupa'da kuvvetler dengesinin değişmesine neden oldu.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #3498db;">
+            <b style="color:#3498db;">Özel Nedenler:</b>
+            <ul style="line-height:1.8;">
+                <li><b style="color:#3498db;">İngiltere - Almanya Çatışması:</b> <span style="color:#ffffff;">İngiltere'nin sömürge imparatorluğu, Almanya'nın rakip olarak çıkar çatışması yaşaması</span></li>
+                <li><b style="color:#3498db;">Fransa'nın Alsace-Lorraine'i Geri Alma İsteği:</b> <span style="color:#ffffff;">1870'te Almanya'ya yenilerek verdiği bu zengin bölgeyi kurtarma hedefi</span></li>
+                <li><b style="color:#3498db;">İtalya'nın Genişleme Politikası:</b> <span style="color:#ffffff;">Sömürgeler elde etmek için Afrika ve Akdeniz'de yayılma çabası</span></li>
+                <li><b style="color:#3498db;">Rusya'nın Panslavizm Politikası:</b> <span style="color:#ffffff;">Balkanlar'da bütün Slavları bir araya getirme düşüncesi</span></li>
+                <li><b style="color:#3498db;">Avusturya-Macaristan - Balkanlar Mücadelesi:</b> <span style="color:#ffffff;">Rusya'nın Panslavizm politikasından rahatsız, Balkan toplulukları üzerinde nüfuz kurma çabası</span></li>
+                <li><b style="color:#3498db;">Rusya'nın Stratejik Hedefleri:</b> <span style="color:#ffffff;">Osmanlı Devleti ve Avusturya-Macaristan'ı parçalayıp Balkanlar'a ve Boğazlar'a hâkim olmak, sıcak denizlere ulaşmak</span></li>
+                <li><b style="color:#3498db;">Silahlanma Yarışı:</b> <span style="color:#ffffff;">Avrupa'daki büyük devletler kara ve denizlerde silahlanmaya yöneldiler</span></li>
+                <li><b style="color:#3498db;">Bloklaşmalar:</b> <span style="color:#ffffff;">Devletler arası bloklaşmalar ve bloklar arası çatışmalar yaşandı</span></li>
+                <li><b style="color:#3498db;">Çözümlenemeyen Bölgesel Sorunlar:</b> <span style="color:#ffffff;">Bosna-Hersek sorunu, Trablusgarp ve Balkan savaşları devletler arası ilişkileri gerginleştirdi</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Bloklaşmalar -->
+    <section class="section">
+        <h2><span style="color:#e85d5d;">&#9733;</span> <span style="color:#e85d5d;">Bloklaşmalar ve Ittifaklar</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Üçlü İttifak (1882):</b> <span style="color:#ffffff;">Almanya'nın öncülüğünde Avusturya-Macaristan İmparatorluğu ve İtalya'nın katılımıyla kuruldu.</span>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #e85d5d;">
+            <b style="color:#e85d5d;">Üçlü İtilaf (1907):</b> <span style="color:#ffffff;">İngiltere'nin liderliğinde Fransa ve Rusya'nın bir araya gelmesiyle oluştu.</span>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #f39c12;">
+            <b style="color:#f39c12;">Savaş Hazırlıkları:</b>
+            <ul style="line-height:1.8;">
+                <li><span style="color:#ffffff;">XX. yüzyılın başlarında bloklar arası giderek artan sömürgecilik rekabeti ve silahlanma yarışı</span></li>
+                <li><span style="color:#ffffff;">Avrupa devletlerinin Asya ve Afrika sömürgelerindeki topraklar da hesaba katıldığında çok sayıda devlet katılım gösterdi</span></li>
+                <li><b style="color:#f39c12;">65 milyondan fazla asker savaş için seferber edildi</b></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Savaşın Başlaması -->
+    <section class="section">
+        <h2><span style="color:#f39c12;">&#9733;</span> <span style="color:#f39c12;">Savaşın Başlaması ve Gelişmesi</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">28 Haziran 1914 - Saraybosna Suikastı:</b> <span style="color:#ffffff;">Avusturya-Macaristan İmparatorluğu Veliahdı Franz Ferdinand ve eşi, bir Sırp milliyetçisi tarafından suikast sonucu öldürüldü. </span><b style="color:#f39c12;">Bu olay I. Dünya Savaşı'nın fitilini ateşledi.</b>
+        </div>
+
+        <div class="example-box" style="margin-top:18px; border-left:3px solid #f39c12;">
+            <b style="color:#f39c12;">Savaşın Zincir Reaksiyonu:</b>
+            <ul style="line-height:1.8;">
+                <li><b style="color:#f39c12;">Avusturya-Macaristan'ın Hareketi:</b> <span style="color:#ffffff;">Suikasttan Sırbistan'ı sorumlu tuttu, iç işlerine karıştığı gerekçesiyle nota gönderdi, sorumlularının teslim edilmesini istedi</span></li>
+                <li><b style="color:#f39c12;">Sırbistan'ın Reddi:</b> <span style="color:#ffffff;">Rusya'dan aldığı destek üzerine notayı reddetti</span></li>
+                <li><b style="color:#f39c12;">28 Temmuz 1914 - Savaş İlanı:</b> <span style="color:#ffffff;">Avusturya-Macaristan Belgrad'ı bombalayarak Sırbistan'a savaş ilan etti</span></li>
+                <li><b style="color:#f39c12;">Rusya'nın Girişi:</b> <span style="color:#ffffff;">Antlaşma gereğince Sırbistan'ı destekledi, Avusturya-Macaristan'a savaş açtı</span></li>
+                <li><b style="color:#f39c12;">Almanya'nın Girişi:</b> <span style="color:#ffffff;">Avusturya-Macaristan'a garanti vermiş olması nedeniyle Rusya'ya, ardından Fransa'ya savaş ilan etti</span></li>
+                <li><b style="color:#f39c12;">İngiltere'nin Girişi:</b> <span style="color:#ffffff;">Almanya'ya savaş açtı</span></li>
+            </ul>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; margin-top:16px; border-left:4px solid #f39c12;">
+            <b style="color:#f39c12;">Sonuç:</b> <span style="color:#ffffff;">1914 yılı Ağustos ayı başlarında savaş Avrupa'da bütün şiddetiyle başladı. Farklı devletlerin de katılmasıyla zamanla geniş bir alana yayıldı ve bir </span><b style="color:#f39c12;">dünya savaşına dönüştü.</b>
+        </div>
+    </section>
+    
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/inkilap/unite-2/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">← 2. Ünite Ana Sayfa</a>
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">← İnkılap Tarihi Ana Sayfa</a>
+    </div>
+</div>
+{% endblock %}

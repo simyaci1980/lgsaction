@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="main-title">Büyük Millet Meclisine Karşı Ayaklanmalar ⚠️</h1>
+
+    <!-- Genel Bilgi -->
+    <section class="section">
+        <h2><span style="color:#e85d5d;">&#9733;</span> <span style="color:#e85d5d;">Ayaklanmaların Genel Özellikleri</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e85d5d; margin-bottom:20px;">
+            <h3 style="color:#e85d5d; margin-top:0;">⚠️ Genel Durum</h3>
+            <p style="line-height:1.8;">
+                <strong>Büyük Millet Meclisi</strong>, Millî Mücadele'yi yönetirken birçok zorluk ve <strong>maddi imkânsızlıkla</strong> karşı karşıya kaldı. Savaş ve işgal ortamının getirdiği <strong>otorite boşluğu ve asayişsizlik</strong> birçok soruna ortam hazırladı. Meclisin bu süreçte en fazla uğraşmak durumunda kaldığı sorun <strong style="color:#e85d5d;">iç ayaklanmalar</strong> oldu.
+            </p>
+            <p style="line-height:1.8;">
+                Anadolu'da <strong>Mustafa Kemal Paşa'nın liderliğinde</strong> işgal devletlerine karşı Millî Mücadele hareketi başladı. Bu hareketin giderek güç kazanması ve Ankara'da BMM'nin açılması başta <strong>işgal kuvvetlerini ve İstanbul Hükûmeti'ni</strong> rahatsız etti.
+            </p>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #e74c3c; background:rgba(231,76,60,0.1); margin-bottom:20px;">
+            <h3 style="color:#e74c3c; margin-top:0;">📋 Ayaklanmaların Nedenleri</h3>
+            <ul style="line-height:1.9;">
+                <li><strong>İtilaf devletlerinin</strong> özellikle İngilizlerin <strong>Anadolu ve Boğazlar üzerindeki emelleri</strong></li>
+                <li>İşgaller karşısında tam bağımsızlığa olan inancını ve heyecanını kaybetmiş bazı çevrelerin <strong>manda ve himaye</strong> gibi fikirleri kurtuluş yolu olarak görmeleri</li>
+                <li><strong>İtilaf devletleri ve Damat Ferit Hükûmeti'nin</strong> Anadolu insanını <strong>Büyük Millet Meclisine karşı kışkırtmaları</strong></li>
+                <li>Bazı <strong>Kuvâ-yı Millîye liderlerinin</strong> düzenli ordunun kurulması sürecinde kişisel çıkarları nedeniyle <strong>devlet otoritesi altına girmek yerine başına buyruk hareket etmek</strong> istemeleri</li>
+                <li><strong>Azınlıkların</strong> işgal devletlerinden destek alarak <strong>bağımsız devlet kurmak</strong> için çalışmaları</li>
+                <li><strong>İstanbul Hükûmeti ve işgalcilerin</strong> Anadolu insanı üzerinde <strong>kara propaganda</strong> yapmaları, Millî Mücadele'yi destekleyenleri <strong>düşman ve asi</strong> ilan etmeleri</li>
+                <li>Anadolu insanının <strong style="color:#e74c3c;">dinî duygularının istismar edilmesi</strong></li>
+            </ul>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; margin-bottom:20px;">
+            <h3 style="color:#f39c12; margin-top:0;">📜 Şeyhülislam'ın Fetvası</h3>
+            <p style="line-height:1.8;">
+                Tüm bu nedenler ve kışkırtmalar sonucu <strong>Büyük Millet Meclisi Hükûmeti'ne karşı</strong> ülkenin farklı bölgelerinde <strong>onlarca ayaklanma çıktı</strong>.
+            </p>
+            <p style="line-height:1.8;">
+                İstanbul Hükûmeti, ayaklanmaları daha etkili hâle getirmek için <strong style="color:#f39c12;">Şeyhülislam Dürrizade Abdullah Efendi'ye fetva yayımlattı</strong>. Fetvada <strong>Mustafa Kemal ve Millî Mücadele taraftarları vatan haini ve din düşmanı ilan edildi</strong>. Bu fetvalar <strong>İtilaf devletleri uçaklarıyla tüm Anadolu'ya dağıtıldı</strong>.
+            </p>
+            <p style="line-height:1.8;">
+                Meclis, yeni devletin örgütlenmesi ve işgallere karşı alınacak tedbirler üzerinde çalışırken <strong>Anadolu'da ortaya çıkan ayaklanmalarla uğraşmak zorunda</strong> kaldı. Büyük Millet Meclisine karşı bu ayaklanmalar <strong>Kuvâyı Millîye birliklerinin yardımı ve mevcut düzenli askerî birlikler</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #3498db; margin-bottom:20px;">
+            <h3 style="color:#3498db; margin-top:0;">🗺️ Ayaklanmaların Yayılım Bölgeleri</h3>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:15px; margin-top:15px;">
+                <div style="padding:15px; background:rgba(52,152,219,0.1); border-radius:8px;">
+                    <strong style="color:#3498db;">🔴 Marmara Bölgesi</strong>
+                    <p style="margin:5px 0 0 0; line-height:1.6;">Kuvayı İnzibatiye (Anzavur)<br>Bolu-Düzce (Delibaş)</p>
+                </div>
+                <div style="padding:15px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                    <strong style="color:#2ecc71;">🔴 İç Anadolu</strong>
+                    <p style="margin:5px 0 0 0; line-height:1.6;">Yozgat (Çapanoğlu)<br>Konya</p>
+                </div>
+                <div style="padding:15px; background:rgba(231,76,60,0.1); border-radius:8px;">
+                    <strong style="color:#e74c3c;">🔴 Karadeniz</strong>
+                    <p style="margin:5px 0 0 0; line-height:1.6;">Pontus Hareketi<br>(Trabzon-Giresun)</p>
+                </div>
+                <div style="padding:15px; background:rgba(155,89,182,0.1); border-radius:8px;">
+                    <strong style="color:#9b59b6;">🔴 Güneydoğu</strong>
+                    <p style="margin:5px 0 0 0; line-height:1.6;">Millî Aşiretler<br>(Koçgiri-Dersim)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #2ecc71; background:rgba(46,204,113,0.1); margin-bottom:20px;">
+            <h3 style="color:#2ecc71; margin-top:0;">💪 Meclisin Aldığı Tedbirler</h3>
+            <p style="line-height:1.8;">
+                Büyük Millet Meclisi ayaklanmaların bastırılmasında zorluklar yaşadı. Ancak aldığı şu tedbirlerle ayaklanmaları bastırdı:
+            </p>
+            <ul style="line-height:1.9;">
+                <li><strong style="color:#2ecc71;">İstanbul Hükûmetiyle resmî ilişkiler kesildi</strong></li>
+                <li>İstanbul Hükûmetinin yayımladığı fetvaya karşı <strong>Ankara Müftüsü Rıfat (Börekçi) Efendi ve 150 müftünün imzasıyla</strong> Millî Mücadele'yi destekleyen <strong>fetva yayımlandı</strong></li>
+                <li><strong style="color:#2ecc71;">29 Nisan 1920'de Hıyanet-i Vataniye (Vatana İhanet) Kanunu</strong> çıkarıldı. Bu kanuna göre meclise karşı söz, yazı ve hareketleriyle saldırıda bulunanlar ve ayaklananlar <strong>vatan haini</strong> sayıldı</li>
+                <li><strong style="color:#2ecc71;">11 Eylül 1920'de Firariler Hakkında Kanun</strong> (Asker Kaçaklarını Önleme Kanunu) çıkarıldı ve bu kanunu uygulamak üzere <strong>İstiklal Mahkemeleri</strong> kuruldu</li>
+                <li><strong>Düzenli ordunun kuruluş süreci</strong> hızlandırıldı</li>
+                <li>Ayaklanmaları karşılıklı konuşma ve ikna yöntemiyle sona erdirmek için <strong>Nasihat Heyetleri</strong> oluşturuldu</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e85d5d;">
+            <h3 style="color:#e85d5d; margin-top:0;">⚖️ Ayaklanmaların Sonuçları</h3>
+            <p style="line-height:1.8;">
+                Türk milletinin <strong>bağımsızlık mücadelesine</strong> giriştiği kritik bir dönemde ortaya çıkan ayaklanmalar <strong>BMM Hükûmetine maddi ve manevi zarar</strong> verdi. Millî kuvvetlere <strong>zaman ve insan kaybettirdi</strong>. <strong style="color:#e85d5d;">Kardeş kanı döküldü</strong> ve Millî Mücadele'nin kazanılması gecikti.
+            </p>
+            <p style="line-height:1.8;">
+                Ayaklanmalar, <strong>millî birlik ve beraberliğin</strong> sağlanmasında, sosyal hayatta ve savaşma gücünde derin yaralar açtı. <strong>İşgal kuvvetleri bu durumdan yararlanarak Anadolu içlerine ilerlediler</strong>.
+            </p>
+            <p style="line-height:1.8;">
+                Bütün zorluklara rağmen ayaklanmaların bastırılması <strong style="color:#e85d5d;">meclisin otoritesini güçlendirdi ve meclisi Anadolu'da tek hâkim güç hâline getirdi</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gerçek Harita: Leaflet + OpenStreetMap -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> <span style="color:#3498db;">Ayaklanmaların Harita Üzerinde Gösterimi</span></h2>
+        
+        <div style="margin-top:20px; margin-bottom:32px; padding:20px; border-radius:12px;">
+            <h3 style="margin-top:0; text-align:center;">📍 Büyük Millet Meclisine Karşı Ayaklanmalar (1919-1923)</h3>
+            
+            <!-- Harita Container -->
+            <div id="map" style="width:100%; height:600px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.3); margin:20px 0;"></div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (document.getElementById('map')) {
+                        const map = L.map('map').setView([39.0, 35.0], 6);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap',
+                            maxZoom: 19
+                        }).addTo(map);
+                        
+                        // Ayaklanmalar
+                        const ayaklanmalar = [
+                            // İstanbul Hükûmeti (Kırmızı)
+                            { lat: 40.7, lng: 30.3, yer: 'Anzavur', bilgi: '1919-1920<br>İstanbul Hükûmeti<br>Ali Fuat Paşa bastırdı', renk: '#e74c3c' },
+                            { lat: 40.74, lng: 30.58, yer: 'Kuvâ-yı İnzibatiye', bilgi: '1920<br>Halifelik Ordusu<br>Ali Fuat Paşa bastırdı', renk: '#e74c3c' },
+                            
+                            // İtilaf Kışkırtması (Turuncu)
+                            { lat: 40.73, lng: 31.61, yer: 'Bolu-Düzce', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            { lat: 40.81, lng: 30.32, yer: 'Hendek-Adapazarı', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            { lat: 39.82, lng: 34.81, yer: 'Yozgat (Çapanoğlu)', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            { lat: 37.87, lng: 32.49, yer: 'Konya', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            { lat: 37.19, lng: 32.25, yer: 'Bozkır', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            { lat: 38.35, lng: 33.78, yer: 'Çopur Musa', bilgi: '1920<br>İtilaf Kışkırtması<br>Kuvâ-yı Millîye bastırdı', renk: '#f39c12' },
+                            
+                            // Aşiret (Teal)
+                            { lat: 39.45, lng: 39.15, yer: 'Koçgiri', bilgi: '1920<br>Aşiret Ayaklanması<br>Kuvâ-yı Millîye bastırdı', renk: '#16a085' },
+                            { lat: 39.11, lng: 39.55, yer: 'Millî Aşireti', bilgi: '1920<br>Aşiret Ayaklanması<br>Kuvâ-yı Millîye bastırdı', renk: '#16a085' },
+                            { lat: 37.92, lng: 41.13, yer: 'Cemil Çeto', bilgi: '1920<br>Aşiret Ayaklanması<br>Kuvâ-yı Millîye bastırdı', renk: '#16a085' },
+                            { lat: 37.55, lng: 42.45, yer: 'Ali Batı', bilgi: '1919<br>Aşiret Ayaklanması<br>Kuvâ-yı Millîye bastırdı', renk: '#16a085' },
+                            
+                            // Kuvâ-yı Millîyeci Sonradan (Yeşil)
+                            { lat: 38.91, lng: 27.84, yer: 'Demirci Mehmet Efe', bilgi: '1920<br>Kuvâ-yı Millîyeci (Sonradan)<br>Batı Cephesi bastırdı', renk: '#2ecc71' },
+                            { lat: 39.45, lng: 29.12, yer: 'Çerkez Ethem', bilgi: '1920-1921<br>Kuvâ-yı Millîyeci (Sonradan)<br>Batı Cephesi bastırdı', renk: '#2ecc71' },
+                            
+                            // Azınlık (Mor ve Kırmızı)
+                            { lat: 40.98, lng: 39.73, yer: 'Pontus (Rum)', bilgi: '1920-1923<br>Rum Azınlık<br>Merkez Ordusu bastırdı', renk: '#9b59b6' },
+                            { lat: 40.16, lng: 44.51, yer: 'Ermeni', bilgi: '1918-1920<br>Ermeni Azınlık<br>Doğu Cephesi bastırdı', renk: '#e74c3c' }
+                        ];
+                        
+                        ayaklanmalar.forEach(function(ayaklanma) {
+                            const marker = L.circleMarker([ayaklanma.lat, ayaklanma.lng], {
+                                radius: 8,
+                                fillColor: ayaklanma.renk,
+                                color: '#fff',
+                                weight: 2,
+                                opacity: 1,
+                                fillOpacity: 0.9
+                            }).addTo(map);
+                            
+                            marker.bindPopup(
+                                '<div style="text-align:center; min-width:150px;">' +
+                                '<h4 style="margin:0 0 8px 0; color:' + ayaklanma.renk + ';">' + ayaklanma.yer + '</h4>' +
+                                '<p style="margin:0; line-height:1.6;">' + ayaklanma.bilgi + '</p>' +
+                                '</div>'
+                            );
+                        });
+                        
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            .leaflet-popup-content-wrapper {
+                                background: #2c3e50 !important;
+                                color: #fff !important;
+                            }
+                            .leaflet-popup-tip {
+                                background: #2c3e50 !important;
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                });
+            </script>
+            
+            <!-- Renk Açıklaması -->
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:20px; padding:16px; border-radius:8px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:16px; height:16px; background:#e74c3c; border-radius:50%;"></div>
+                    <span>İstanbul Hükûmeti / Ermeni Azınlık</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:16px; height:16px; background:#f39c12; border-radius:50%;"></div>
+                    <span>İstanbul + İtilaf Kışkırtması</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:16px; height:16px; background:#2ecc71; border-radius:50%;"></div>
+                    <span>Kuvâ-yı Millîyeci (Sonradan Ayaklanan)</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:16px; height:16px; background:#16a085; border-radius:50%;"></div>
+                    <span>Aşiret Ayaklanmaları</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:16px; height:16px; background:#9b59b6; border-radius:50%;"></div>
+                    <span>Pontus (Rum) Hareketi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategori 1: İstanbul Hükûmeti -->
+    <section class="section">
+        <h2><span style="color:#e74c3c;">&#9733;</span> <span style="color:#e74c3c;">Doğrudan İstanbul Hükûmeti Tarafından Çıkarılan Ayaklanmalar</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e74c3c; margin-bottom:15px;">
+            <h3 style="color:#e74c3c; margin-top:0;">🔴 Anzavur Ayaklanması (1919-1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Ali Fuat Paşa</strong> komutasındaki askerî birlikler ve <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e74c3c;">
+            <h3 style="color:#e74c3c; margin-top:0;">🔴 Kuvâ-yı İnzibatiye (Halifelik Ordusu) (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Ali Fuat Paşa</strong> komutasındaki askerî birlikler ve <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+    </section>
+
+    <!-- Kategori 2: İtilaf Kışkırtmaları -->
+    <section class="section">
+        <h2><span style="color:#f39c12;">&#9733;</span> <span style="color:#f39c12;">İstanbul Hükûmeti ve İtilaf Devletlerinin Kışkırtmalarıyla Çıkan Ayaklanmalar</span></h2>
+        
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; background:rgba(243,156,18,0.1); margin-bottom:15px;">
+            <h3 style="color:#f39c12; margin-top:0;">🟠 Bolu, Düzce, Hendek, Adapazarı Ayaklanmaları (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; background:rgba(243,156,18,0.1); margin-bottom:15px;">
+            <h3 style="color:#f39c12; margin-top:0;">🟠 Bozkır Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; background:rgba(243,156,18,0.1); margin-bottom:15px;">
+            <h3 style="color:#f39c12; margin-top:0;">🟠 Çapanoğlu Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; background:rgba(243,156,18,0.1);">
+            <h3 style="color:#f39c12; margin-top:0;">🟠 Çopur Musa Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+    </section>
+
+    <!-- Kategori 3: Aşiret Ayaklanmaları -->
+    <section class="section">
+        <h2><span style="color:#16a085;">&#9733;</span> <span style="color:#16a085;">Aşiret Ayaklanmaları</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #16a085; margin-bottom:15px;">
+            <h3 style="color:#16a085; margin-top:0;">🟢 Ali Batı Ayaklanması (1919)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #16a085; margin-bottom:15px;">
+            <h3 style="color:#16a085; margin-top:0;">🟢 Millî Aşireti Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #16a085; margin-bottom:15px;">
+            <h3 style="color:#16a085; margin-top:0;">🟢 Koçgiri Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #16a085;">
+            <h3 style="color:#16a085; margin-top:0;">🟢 Cemil Çeto Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Kuvâ-yı Millîye birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+    </section>
+
+    <!-- Kategori 4: Kuvâ-yı Millîyeci Sonradan Ayaklananlar -->
+    <section class="section">
+        <h2><span style="color:#2ecc71;">&#9733;</span> <span style="color:#2ecc71;">Kuvâ-yı Millîyeci Olup Sonradan Ayaklananlar</span></h2>
+        
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #2ecc71; background:rgba(46,204,113,0.1); margin-bottom:15px;">
+            <h3 style="color:#2ecc71; margin-top:0;">💚 Çerkez Ethem Ayaklanması (1920-1921)</h3>
+            <p style="line-height:1.8;">
+                <strong>Batı Cephesi'ndeki düzenli ordu birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #2ecc71; background:rgba(46,204,113,0.1);">
+            <h3 style="color:#2ecc71; margin-top:0;">💚 Demirci Mehmet Efe Ayaklanması (1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Batı Cephesi'ndeki düzenli ordu birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+    </section>
+
+    <!-- Kategori 5: Azınlık Ayaklanmaları -->
+    <section class="section">
+        <h2><span style="color:#9b59b6;">&#9733;</span> <span style="color:#9b59b6;">Azınlıkların Çıkardığı Ayaklanmalar</span></h2>
+        
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #e74c3c; margin-bottom:15px;">
+            <h3 style="color:#e74c3c; margin-top:0;">🔴 Ermeni Ayaklanmaları (1918-1920)</h3>
+            <p style="line-height:1.8;">
+                <strong>Doğu Cephesi'ndeki düzenli ordu birlikleri</strong> tarafından bastırıldı.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #9b59b6;">
+            <h3 style="color:#9b59b6; margin-top:0;">🟣 Rum (Pontus) Ayaklanmaları (1920-1923)</h3>
+            <p style="line-height:1.8;">
+                <strong>Merkez Ordusu</strong> tarafından bastırıldı.
+            </p>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/inkilap/unite-2/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← 2. Ünite: Millî Uyanış
+        </a>
+    </div>
+</div>
+{% endblock %}

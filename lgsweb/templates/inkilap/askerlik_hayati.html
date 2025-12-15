@@ -1,0 +1,377 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container kareli-bg" style="max-width:1200px; margin:0 auto; font-size:1.1em;">
+    <h2 class="ozel-baslik">1.4 Mustafa Kemal'in Askerlik Hayatı 🎖️</h2>
+
+    <!-- Gerçek Harita: Leaflet + OpenStreetMap -->
+    <div style="margin-top:32px; margin-bottom:32px; padding:20px; border-radius:12px;">
+        <h3 style="margin-top:0; text-align:center;">📍 Mustafa Kemal'in Askerlik Görevleri - Gerçek Harita (1905-1914)</h3>
+        
+        <!-- Harita Container -->
+        <div id="map" style="width:100%; height:600px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.3); margin:20px 0;"></div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (document.getElementById('map')) {
+                    const map = L.map('map').setView([39.0, 35.0], 4);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap',
+                        maxZoom: 19
+                    }).addTo(map);
+                    
+                    // Görev yerleri
+                    const gorevler = [
+                        { lat: 33.5138, lng: 36.2765, no: '1', yer: 'ŞAM', bilgi: '1905-1907<br>Kurmay Yüzbaşı<br>30. Süvari Alayı' },
+                        { lat: 40.6401, lng: 22.9444, no: '2', yer: 'SELÂNİK', bilgi: '1907-1909<br>Kolağa<br>3. Ordu Karargâhı' },
+                        { lat: 49.6184, lng: 2.6379, no: '3', yer: 'PİCARDİE', bilgi: '1910<br>Kurmay Yüzbaşı<br>Fransız Ordusu Gözlemcisi' },
+                        { lat: 32.6369, lng: 13.3503, no: '4', yer: 'TRABLUSGARP', bilgi: '1911-1912<br>Binbaşı<br>Doğu Cephesi Kumandanı' },
+                        { lat: 41.6086, lng: 21.7453, no: '5', yer: 'BALKANLAR', bilgi: '1912-1913<br>Binbaşı<br>Balkan Savaşları' },
+                        { lat: 42.6977, lng: 23.3219, no: '6', yer: 'SOFYA', bilgi: '1913-1914<br>Yarbay<br>Askerî Ataşe' }
+                    ];
+                    
+                    gorevler.forEach(function(gorev) {
+                        const marker = L.circleMarker([gorev.lat, gorev.lng], {
+                            radius: 10,
+                            fillColor: '#e85d5d',
+                            color: '#fff',
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.9
+                        }).addTo(map);
+                        
+                        marker.bindPopup(
+                            '<div style="text-align:center; min-width:150px;">' +
+                            '<h4 style="margin:0 0 8px 0; color:#e85d5d;">' + gorev.no + '. ' + gorev.yer + '</h4>' +
+                            '<p style="margin:0; line-height:1.6;">' + gorev.bilgi + '</p>' +
+                            '</div>'
+                        );
+                        
+                        marker.bindTooltip(gorev.no, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'map-number-label'
+                        });
+                    });
+                    
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .map-number-label {
+                            background: transparent !important;
+                            border: none !important;
+                            box-shadow: none !important;
+                            font-weight: bold !important;
+                            font-size: 14px !important;
+                            color: #fff !important;
+                            text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            });
+        </script>
+        
+        <!-- Görev Bilgileri -->
+        <div style="margin-top:20px; padding:16px; border-radius:8px;">
+            <h4 style="margin-top:0;">🎖️ Görevler ve Rütbeler:</h4>
+            <table style="width:100%; border-collapse:collapse; font-size:0.95em;">
+                <tr style="">
+                    <td style="padding:8px; border-bottom:1px solid #ddd;"><span style="" padding:2px 6px; border-radius:3px;">1</span> <b>Şam (1905-1907)</b></td>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;">Kurmay Yüzbaşı - 30. Süvari Alayı</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;"><span style="" padding:2px 6px; border-radius:3px;">2</span> <b>Selânik (1907-1909)</b></td>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;">Kolağa - 3. Ordu Karargâhı, 31 Mart Olayı</td>
+                </tr>
+                <tr style="">
+                    <td style="padding:8px; border-bottom:1px solid #ddd;"><span style="" padding:2px 6px; border-radius:3px;">3</span> <b>Picardie (1910)</b></td>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;">Kurmay Yüzbaşı - Fransız Ordusu Gözlemcisi</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;"><span style="" padding:2px 6px; border-radius:3px;">4</span> <b>Trablusgarp (1911-1912)</b></td>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;">Binbaşı - Doğu Cephesi Kumandanı</td>
+                </tr>
+                <tr style="">
+                    <td style="padding:8px; border-bottom:1px solid #ddd;"><span style="" padding:2px 6px; border-radius:3px;">5</span> <b>Balkanlar (1912-1913)</b></td>
+                    <td style="padding:8px; border-bottom:1px solid #ddd;">Binbaşı - I. ve II. Balkan Savaşları</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px;"><span style="" padding:2px 6px; border-radius:3px;">6</span> <b>Sofya (1913-1914)</b></td>
+                    <td style="padding:8px;">Yarbay - Askerî Ataşe</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Leaflet CSS ve JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+    <!-- Giriş -->
+    <div class="aciklama-kutu" style="margin-top:32px; ">
+        <b>📜 Mustafa Kemal'in Askerlik Hayatında Gösterdiği Başarılar:</b><br><br>
+        • Mesleğinin her aşamasında zorlu görevleri başarı ile tamamladı<br>
+        • Vatanın ve milletin kurtuluşu için mücadeleden kaçınmadı<br>
+        • Birinci Dünya Savaşı'na kadar askerlik görevleri:<br>
+        &nbsp;&nbsp;&nbsp;1905 - Şam'dan başlayarak devam ettiler
+    </div>
+
+    <!-- İlk Görev: Şam'da -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>📍 İlk Görev Yeri: Şam (1905)</b><br><br>
+        <b>Pozisyon:</b> Kurmay Yüzbaşı (Harp Akademisi'nden mezun olduktan sonra)<br>
+        <b>Görev Yeri:</b> 5. Ordu'ya bağlı 30. Süvari Alayı<br><br>
+        <b>Gizli Cemiyetin Kurulması:</b><br>
+        • <b>1906:</b> "Vatan ve Hürriyet" adında gizli bir cemiyeti arkadaşlarıyla kurdu<br>
+        • Amaç: Vatanı ve milleti kötü durumdan kurtarmak<br>
+        • Selânik'e gidip burada da şubesi kurdu<br><br>
+        <b>Başarılar ve Ödüller:</b><br>
+        • Bölgedeki üstün hizmetlerinden dolayı "Mecidî Nişanı" ile ödüllendirildi<br>
+        • Topçu stajını tamamladı<br>
+        • <b>1907:</b> Rütbesi Kolağalığa (kıdemli yüzbaşı) yükseltildi
+    </div>
+
+    <!-- Selânik'e Dönüş -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>🌍 Selânik'e Dönüş (1907)</b><br><br>
+        <b>Yeni Görev:</b> Merkezi Manastır'da olan 3. Ordu Karargâhının Selânik'teki kurmay şubesi<br>
+        <b>Ek Görev (1908):</b> Üsküp-Selânik arasındaki demir yolu müfettişliği<br><br>
+        <b>Vatan ve Hürriyet Cemiyetinin Gelişimi:</b><br>
+        • <b>1907:</b> Cemiyetin Selânik şubesi İttihat ve Terakki Cemiyeti'ne katıldı<br>
+        • Mustafa Kemal İttihat ve Terakki mensuplarıyla bir araya geldi<br>
+        • İstanbul'daki siyasi gelişmeleri yakından takip etti
+    </div>
+
+    <!-- 31 Mart Olayı -->
+    <div class="formul-kutu" style="margin-top:24px; ">
+        <b>⚔️ 31 Mart Olayı (13 Nisan 1909)</b><br><br>
+        <b>Ülkede Yaşanan Gerginlik:</b><br>
+        • II. Meşrutiyet ilan edilmesinden sonra siyasi ortam gergindi<br>
+        • 1908: Bulgaristan bağımsızlığını ilan etti<br>
+        • 1908: Avusturya-Macaristan Bosna-Hersek'i işgal etti<br>
+        • 1908: Girit Yunanistan'a bağlandı<br><br>
+        <b>Olayın Çıkışı:</b><br>
+        • Meşrutiyet yönetimine karşı olan gruplar ayaklanma çıkardı<br>
+        • İstanbul'daki avcı taburlarında başladı<br>
+        • Kısa sürede büyüdü, şehre yayıldı<br>
+        • Adı: Olayın Rumi takvim tarihine göre "31 Mart 1325" olması nedeniyle<br><br>
+        <b>Hareket Ordusu:</b><br>
+        • <b>Komutan:</b> Mahmut Şevket Paşa<br>
+        • <b>Kurmay Başkanı:</b> Mustafa Kemal<br>
+        • Görevler: Ordunun kuruluşunda yer aldı, "Hareket Ordusu" adını verdi<br>
+        • Orduun İstanbul'da uygulanacak planları ve bildiriyi hazırladı<br><br>
+        <b>Olayın Sonucu:</b><br>
+        • Hareket Ordusu kısa sürede duruma hâkim oldu<br>
+        • Ayaklanma bastırıldı<br>
+        • II. Abdülhamit tahttan indirildi<br>
+        • Yerine V. Mehmet Reşat geçti<br>
+        • İttihat ve Terakki yönetimdeki ağırlığı artmaya başladı
+    </div>
+
+    <div class="tip-box" style="margin-top:24px; ">
+        <b>💡 Mustafa Kemal'in Tavır:</b><br>
+        • Meşrutiyet'in ilanını ve sonrasındaki yenilikleri yeterli görmüyordu<br>
+        • Daha büyük ve köklü değişikliklerin yapılması gerektiğine inanıyordu<br>
+        • İttihat ve Terakki'nin gizli olmaktan çıkıp yasal partiye dönüşmesi gerektiğini savundu<br>
+        • Ordunun siyasetten ayrı tutulması fikrini savundu<br>
+        • Üst düzey yöneticilerle fikir ayrılığına düştü<br>
+        • <b>Sonuç:</b> İttihat ve Terakki'den uzaklaştı, askerlik mesleğine yoğunlaştı
+    </div>
+
+    <!-- Picardie Manevraları -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>🌍 Picardie (Pikardi) Manevraları (Eylül 1910)</b><br><br>
+        <b>Konum:</b> Kuzey Fransa'da<br>
+        <b>Amaç:</b> Fransızlar, Almanların manevrasına cevap verip daha güçlü olduklarını göstermek<br>
+        <b>Katılımcılar:</b> Avrupa devletlerinden askerî gözlemciler<br><br>
+        <b>Osmanlı Heyeti:</b><br>
+        • Başkan: Fethi (Okyar) Bey (Paris Askerî Ataşesi)<br>
+        • Binbaşı Selahattin Bey<br>
+        • Kolağası Mustafa Kemal<br><br>
+        <b>Mustafa Kemal'in Kazanımları:</b><br>
+        • Fransız Ordusunu ve komutanlarını yakından tanıdı<br>
+        • Avrupa ordularıyla Türk Ordusu'nun durumunu karşılaştırdı<br>
+        • Avrupa'daki askerî teknoloji gelişmelerini yakından gördü<br>
+        • Gelişmeleri yaklaşmakta olan dünya savaşının habercisi olarak yorumladı<br><br>
+        <b>Sonrası:</b><br>
+        • 1911: Arnavutluk'ta isyan bastırılmasında görev aldı
+    </div>
+
+    <!-- Trablusgarp Savaşı -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>⚔️ Trablusgarp Savaşı (1911-1912)</b><br><br>
+        <b>Sebep:</b><br>
+        • İtalya (sanayileşmiş ve sömürgeci bir devlet) Kuzey Afrika'daki Osmanlı toprağı Trablusgarp'ı işgal etti<br>
+        • 1911 Eylül: İşgal başladı<br><br>
+        <b>Osmanlı'nın Zayıf Olması:</b><br>
+        • Arnavutluk ve Makedonya'daki ayaklanmalarla uğraşmakta<br>
+        • Mısır İngiliz işgali altında olduğu için kara yardımı imkânsız<br>
+        • Donanma yetersiz, denizden müdahale edilemiyor<br><br>
+        <b>Türk Direniş Hareketi:</b><br>
+        • Mustafa Kemal, Enver Bey, Nuri Bey, Fethi Bey gibi genç subaylar gizlice gittiler<br>
+        • Birlikleri ve yerli halkı teşkilatlandırdılar<br>
+        • İtalyanlara karşı büyük direnişi başlattılar
+    </div>
+
+    <div class="formul-kutu" style="margin-top:24px; ">
+        <b>🎖️ Mustafa Kemal'in Başarıları:</b><br><br>
+        <b>Görev:</b> Doğu Cephesi'nin kumandasını üstlendi<br>
+        <b>Başarılar:</b><br>
+        • Derne ve Tobruk bölgelerinde İtalyanlara karşı önemli başarılar kazandı<br>
+        • <b>Binbaşılığa terfi etti</b><br><br>
+        <b>Savaşın Sonu:</b><br>
+        • İtalyanlar savaşı başka bölgelere kaydırdı<br>
+        • Çanakkale Boğazı'nı ablukaya aldı<br>
+        • "On İki Ada" (Rodos ve çevresindeki adalar) işgal etti<br>
+        • <b>18 Ekim 1912:</b> Ouchy (Uşi) Antlaşması imzalandı<br>
+        • Sonuç: Trablusgarp ve Bingazi İtalya'ya verildi
+    </div>
+
+    <!-- Balkan Savaşları -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>⚔️ Balkan Savaşları (1912-1913)</b><br><br>
+        <b>Taraf:</b> Yunanistan, Sırbistan, Karadağ, Bulgaristan ittifakı<br>
+        <b>Hedef:</b> Osmanlı Devleti'nin Avrupa'daki varlığına son vermek
+    </div>
+
+    <div class="formul-kutu" style="margin-top:24px; ">
+        <b>I. Balkan Savaşı (1912)</b><br><br>
+        <b>Başlangıç:</b> 1912 Ekim<br>
+        <b>Sonuç:</b> Osmanlı Devleti yenilgiye uğradı<br><br>
+        <b>Yenilgi Nedenleri:</b><br>
+        • Ordu içindeki çekişmeler<br>
+        • Balkanlar'da silah ticaretinin serbest olması<br>
+        • Ordunun hazırlıksız olması<br><br>
+        <b>30 Mayıs 1913 Londra Antlaşması:</b><br>
+        • Midye-Enez Hattı'nın batısındaki bütün topraklar kaybedildi<br>
+        • Bulgarlar Çatalca önlerinde durduruldu<br><br>
+        <b>Sonuç:</b> Osmanlı Balkanlar'ın büyük bölümünü kaybetti
+    </div>
+
+    <div class="formul-kutu" style="margin-top:24px; ">
+        <b>II. Balkan Savaşı (1913)</b><br><br>
+        <b>Neden:</b><br>
+        • I. Balkan Savaşı'nda Bulgaristan en fazla toprak aldı<br>
+        • Sırbistan ile Yunanistan bunu kabul etmedi<br><br>
+        <b>Başlangıç:</b> 1913 Haziran<br>
+        <b>Bulgaristan'ın Rakipleri:</b> Sırbistan, Yunanistan, Karadağ, Romanya<br>
+        <b>Sonuç:</b> Bulgaristan savaştığı tüm cephelerde yenildi<br><br>
+        <b>Osmanlı'nın Avantajı:</b><br>
+        • Osmanlı da Bulgaristan'a karşı cephe açtı<br>
+        • Dimetoka, Kırklareli ve Edirne Bulgarlardan geri alındı<br><br>
+        <b>10 Ağustos 1913 Bükreş Antlaşması:</b> Savaş sona erdi
+    </div>
+
+    <div class="tip-box" style="margin-top:24px;">
+        <b>📍 Mustafa Kemal'in Görevi:</b><br>
+        • Çanakkale ve Gelibolu'nun savunulması amacıyla kurulan askerî birliğin Harekât Şubesi Müdürlüğüne atandı<br>
+        • Çanakkale Boğazı'nı askerî açıdan ayrıntılı inceleme fırsatı buldu
+    </div>
+
+    <!-- Balkan Savaşları Sonucu -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>📜 Balkan Savaşları Sonucu Yapılan Antlaşmalar:</b><br><br>
+        <b>Bulgaristan ile (29 Eylül 1913):</b> İstanbul Antlaşması<br>
+        <b>Yunanistan ile (14 Kasım 1913):</b> Atina Antlaşması<br>
+        <b>Sırbistan ile (14 Mart 1914):</b> İstanbul Antlaşması<br><br>
+        <b>Antlaşmaların Amacı:</b><br>
+        • Balkanlar'da yaşayan azınlık Türklerin kültürel haklarını yasal garanti altına almak<br><br>
+        <b>Kaybedilen Topraklar:</b><br>
+        • Batı Trakya<br>
+        • Makedonya<br>
+        • Arnavutluk<br>
+        • Ege Denizi'ndeki adalar<br>
+        • On İki Ada<br><br>
+        <b>Sonuç:</b><br>
+        • Balkanlar'daki Türkler çeşitli baskılara maruz kaldı<br>
+        • Göç hareketleri başladı: Balkanlar'dan Anadolu'ya
+    </div>
+
+    <!-- Sofya'da Askerî Ataşe -->
+    <div class="aciklama-kutu" style="margin-top:48px; ">
+        <b>🌍 Sofya'da Askerî Ataşe (1913)</b><br><br>
+        <b>Görev:</b> Bulgaristan'ın başkenti Sofya'ya askerî ataşe olarak atandı<br><br>
+        <b>Araştırma Konuları:</b><br>
+        • Bulgaristan'ın I. Balkan Savaşı'nda neden Osmanlı'nın başkentini ele geçirmeye teşebbüs edecek kadar güçlendiğini araştırdı<br>
+        • Yüzlerce yıl Osmanlı egemenliği altında yaşamış Bulgaristan'ın bu ilerlemesi nasıl oldu?<br><br>
+        <b>Kazanımları:</b><br>
+        • Bulgaristan'ın sosyal, ekonomik ve kültürel hayatını yakından tanıdı<br>
+        • Operayı ilk kez burada izledi<br>
+        • Akılcı ve gerçekçi bir kalkınmanın sonuçlarını gördü<br><br>
+        <b>Görevleri:</b><br>
+        • Bulgarlarla Osmanlı Devleti arasındaki askerî sorunları çözmek<br>
+        • Askerî gelişmeleri yakından izlemek<br>
+        • Diğer Balkan devletlerinin askerî durumlarını öğrenmek<br><br>
+        <b>Ek Çalışmalar:</b><br>
+        • Bulgaristan'da yaşayan Türklerin sorunlarıyla ilgilendi<br>
+        • Onların kültürel hayatını geliştirmek için girişimler yaptı<br>
+        • Türklerin çıkardığı gazeteleri takip etti<br>
+        • Bulgar meclisinde incelemeler yaptı<br>
+        • Türklerin varlığının korunması ve millî bilinç temellerinin oluşmasına katkı sağladı<br><br>
+        <b>1 Mart 1914:</b> Yarbay rütbesine yükseldi
+    </div>
+
+    <!-- Özet -->
+    <div class="tip-box" style="margin-top:48px; ">
+        <b>🎯 Konunun Özeti:</b><br><br>
+        <b>1905-1907:</b> Şam'da ilk görevi, Vatan ve Hürriyet Cemiyeti<br>
+        <b>1907-1909:</b> Selânik'e dönüş, İttihat ve Terakki ile çalışma<br>
+        <b>1909:</b> 31 Mart Olayı'nda Hareket Ordusu Kurmay Başkanlığı<br>
+        <b>1910:</b> Picardie Manevraları, Avrupa askerî teknolojisini gözleme<br>
+        <b>1911-1912:</b> Trablusgarp Savaşı'nda Doğu Cephesi Kumandanı, başarılar, binbaşılığa terfi<br>
+        <b>1912-1913:</b> Balkan Savaşları, Çanakkale Boğazı incelemesi<br>
+        <b>1913-1914:</b> Sofya'da Askerî Ataşe, Bulgaristan'ı inceleme, yarbay rütbesiyle yükselme<br><br>
+        <b>Sonuç:</b> Mustafa Kemal her görevinde başarı gösterdi, liderlik ve teşkilatçılık becerilerini geliştirdi. Balkan topraklarını incelemesi ve Çanakkale Boğazı'nı tanıması, gelecekteki önemli görevlerine hazırlandı.
+    </div>
+
+    <a href="/inkilap/inkilap-unite-1/" style="display:inline-block; margin-top:32px; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold;">← 1. Ünite Ana Sayfa</a>
+</div>
+
+<style>
+.kareli-bg {
+    background-image: url('https://www.transparenttextures.com/patterns/squared-paper.png');
+    background-repeat: repeat;
+}
+.ozel-baslik {;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 4px solid #c62828;
+    padding: 8px 24px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px #e0e0e0;
+    display: inline-block;
+}
+.aciklama-kutu {;
+    font-size: 1.05em;
+    padding: 16px 24px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+.formul-kutu {;
+    border-radius: 8px;
+    display: block;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    box-shadow: 1px 1px 8px #e0e0e0;
+    line-height: 1.8;
+}
+.tip-box {;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    line-height: 1.8;
+}
+</style>
+{% endblock %}

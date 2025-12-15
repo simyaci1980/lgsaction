@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="main-title">Sevr Antlaşması (10 Ağustos 1920) 📄</h1>
+
+    <!-- İmzalanma Süreci -->
+    <section class="section">
+        <h2><span style="color:#3498db;">&#9733;</span> <span style="color:#3498db;">Antlaşmanın İmzalanması</span></h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #3498db; margin-bottom:20px;">
+            <p style="line-height:1.8;">
+                I. Dünya Savaşı sonrası <strong>Paris Barış Konferansı</strong>'nda mağlup devletlerle yapılacak barışın esasları belirlendi. Osmanlı dışındaki devletlerle antlaşmalar imzalandı; ancak <strong>Anadolu'da Millî Mücadele</strong> ve <strong>İtilaf devletleri arasındaki paylaşım çekişmeleri</strong> nedeniyle Osmanlı ile barış gecikti.
+            </p>
+            <p style="line-height:1.8;">
+                <strong>Misak-ı Millî'nin ilanı</strong>, <strong>BMM'nin açılışı</strong> İtilaf devletlerini rahatsız etti. <strong>18-26 Nisan 1920 San Remo Konferansı</strong>'nda Osmanlı ile yapılacak barışın esasları belirlendi; <strong>Osmanlı heyetinin fikri alınmadı</strong>.
+            </p>
+            <p style="line-height:1.8;">
+                Taslak Paris’te <strong>Tevfik Paşa</strong> başkanlığındaki heyete bildirildi; Tevfik Paşa antlaşmanın <strong>bağımsızlık ve hükümranlık hakları</strong> ile <strong>ülke bütünlüğüne</strong> aykırı olduğunu belirterek <strong>kabul edilemeyeceğini</strong> bildirdi.
+            </p>
+        </div>
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #e67e22; background:rgba(230,126,34,0.1);">
+            <h3 style="color:#e67e22; margin-top:0;">⚔️ İmzaya Zorlama Süreci</h3>
+            <p style="line-height:1.8;">
+                İngiliz desteğindeki <strong>Yunan ordusu</strong> <strong>Milne Hattı</strong>'ndan taarruza geçti; <strong>22 Haziran 1920</strong>'den itibaren <strong>Nazilli, Balıkesir, Bursa, İzmit, Uşak, Alaşehir, Edirne</strong> işgal edildi; İngilizler <strong>Mudanya ve Bandırma</strong>'ya asker çıkardı.
+            </p>
+            <p style="line-height:1.8;">
+                <strong>Saltanat Şurası</strong> toplandı; Padişah <strong>Vahdettin</strong> ve Sadrazam <strong>Damat Ferit</strong> katıldı. <strong>Topçu Feriki Rıza Paşa</strong> dışında kabul yönünde karar çıktı; <strong>Hâdi Paşa, Rıza Tevfik, Reşat Halis</strong>  <strong style="color:#e67e22;">10 Ağustos 1920</strong>'de <strong>Sevr Antlaşması</strong>'nı imzaladı.
+            </p>
+        </div>
+    </section>
+
+    <!-- Maddeler (Özet) -->
+    <section class="section">
+        <h2><span style="color:#e85d5d;">&#9733;</span> <span style="color:#e85d5d;">Temel Hükümler (Özet)</span></h2>
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #e85d5d; background:rgba(232,93,93,0.1);">
+            <ul style="line-height:1.9;">
+                <li><strong>İstanbul ve çevresi</strong> ile <strong>Anadolu'nun bir bölümü</strong> Osmanlı'da kalacak; ancak <strong>azınlık hakları</strong> gözetilmezse <strong>İstanbul alınacak</strong></li>
+                <li><strong>Boğazlar</strong> tüm devletlere açık; <strong>uluslararası komisyon</strong> yönetecek; <strong>Türk üye yok</strong></li>
+                <li><strong>Osmanlı ordusu</strong> (jandarma dahil) <strong>50.700</strong> kişiyle sınırlı; kara kuvveti <strong>gönüllü</strong>lerden oluşacak</li>
+                <li><strong>Azınlık hakları</strong> genişletilecek</li>
+                <li><strong>Kapitülasyonlar</strong> İtilaf vatandaşları lehine <strong>yeniden</strong> uygulanacak</li>
+                <li><strong>Mali komisyon</strong> Osmanlı <strong>bütçesini kontrol</strong> edecek</li>
+                <li><strong>Antalya, Konya, İç Batı Anadolu</strong> ve <strong>On İki Ada</strong> <strong>İtalya</strong>'ya</li>
+                <li><strong>Batı Anadolu, Doğu Trakya, Ege adaları</strong> <strong>Yunanistan</strong>'a</li>
+                <li><strong>Antep, Urfa, Mardin ve Suriye</strong> <strong>Fransa</strong>'ya; Adana'dan Kayseri'ye ve <strong>Sivas'ın kuzeyi</strong> <strong>Fransız nüfuz bölgesi</strong></li>
+                <li><strong>Irak, Ürdün ve Arap toprakları</strong> <strong>İngiliz manda</strong>sında</li>
+                <li><strong>Doğu Anadolu’da iki yeni devlet</strong> (Ermeni ve Kürt projeleri) öngörüldü</li>
+                <li><strong>Arkeolojik kazı izinleri</strong> genişletildi; <strong>uluslararası bilim insanlarına</strong> öncelik tanındı</li>
+            </ul>
+            <p style="margin-top:12px; opacity:0.9;">Antlaşma <strong>433 madde</strong> ve <strong>çok ağır şartlar</strong> içerir.</p>
+        </div>
+    </section>
+
+    <!-- Tepkiler ve Red -->
+    <section class="section">
+        <h2><span style="color:#f39c12;">&#9733;</span> <span style="color:#f39c12;">Tepkiler ve Antlaşmanın Reddedilmesi</span></h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #f39c12; margin-bottom:20px;">
+            <p style="line-height:1.8;">
+                Sevr, <strong>Mebusan Meclisi onayından geçmediği</strong> için <strong>hukuken geçersiz</strong>dir. <strong>BMM</strong> ve <strong>Türk milleti</strong> tarafından <strong>reddedildi</strong>; <strong>Misak-ı Millî’ye</strong> aykırıdır.
+            </p>
+            <p style="line-height:1.8;">
+                <strong>19 Ağustos 1920</strong>'de BMM, Sevr'i imzalayan ve onaylayanları <strong>vatan haini</strong> ilan etti. Mustafa Kemal: “<em>Siyasi, adli, iktisadi ve mali bağımsızlığımızı imhaya... yönelik olan Sevr Antlaşması bizce mevcut değildir.</em>” diyerek tanımadığını açıkladı.
+            </p>
+            <p style="line-height:1.8;">
+                <strong>21 Mayıs 1920 İstanbul mitingi</strong> ile halk <strong>barış şartlarını reddetti</strong>. Mecliste milletvekilleri şartların <strong>ağırlığı</strong> ve <strong>İtilaf emellerine</strong> tepkilerini dile getirdi.
+            </p>
+        </div>
+        <div class="example-box" style="padding:20px; border-radius:12px; border-left:4px solid #e67e22; background:rgba(230,126,34,0.1);">
+            <h3 style="color:#e67e22; margin-top:0;">💪 Sonuç</h3>
+            <p style="line-height:1.8;">
+                Türk milleti <strong>direnme gücünü ve mücadele azmini</strong> artırdı. <strong>İşgalcilerle savaş</strong> edilerek Sevr'in <strong>uygulanması engellendi</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sonuçları ve Önemi -->
+    <section class="section">
+        <h2><span style="color:#2ecc71;">&#9733;</span> <span style="color:#2ecc71;">Sonuçları ve Önemi</span></h2>
+        <div class="highlight-box" style="padding:20px; border-radius:12px; border-left:4px solid #2ecc71;">
+            <ul style="line-height:1.9;">
+                <li><strong>Ölü doğmuş antlaşma</strong>: Fiilen uygulanmadı, hukukî meşruiyeti yok</li>
+                <li><strong>Millî bilinç</strong>: Türk milletinde <strong>bağımsızlık</strong> ve <strong>birlik</strong> duygusunu pekiştirdi</li>
+                <li><strong>Misak-ı Millî</strong>: Sınır ve bağımsızlık ilkeleri savunuldu</li>
+                <li><strong>Lozan'a giden yol</strong>: Sevr'in reddi → <strong>Kurtuluş Savaşı</strong> zaferleri → <strong>Lozan Barışı</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sevr Haritası (Leaflet) -->
+    <section class="section">
+        <h2><span style="color:#9b59b6;">&#9733;</span> <span style="color:#9b59b6;">Sevr'e Göre Paylaşım Haritası (Şematik)</span></h2>
+        <div style="margin-top:20px; margin-bottom:32px; padding:20px; border-radius:12px;">
+            <h3 style="margin-top:0; text-align:center;">📍 Sevr Antlaşması'na Göre Osmanlı Topraklarının Paylaşımı</h3>
+            <div id="sevrMap" style="width:100%; height:520px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.3); margin:20px 0;"></div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (document.getElementById('sevrMap')) {
+                        const map = L.map('sevrMap').setView([39.0, 35.0], 6);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap',
+                            maxZoom: 18
+                        }).addTo(map);
+
+                        // Basit çokgenler ile nüfuz bölgeleri (yaklaşık)
+                        const yunan = L.polygon([[40.3, 26.6],[41.2, 28.9],[41.4, 30.1],[39.8, 27.0],[38.5, 26.5],[38.3, 27.2]], {color:'#2980b9', fillColor:'#2980b9', fillOpacity:0.25}).addTo(map).bindPopup('<b>Yunan Bölgesi</b><br>Doğu Trakya + Batı Anadolu + Ege adaları');
+                        const italy = L.polygon([[37.9, 30.5],[37.6, 31.8],[36.9, 29.5],[36.8, 27.7],[37.4, 27.2]], {color:'#e67e22', fillColor:'#e67e22', fillOpacity:0.25}).addTo(map).bindPopup('<b>İtalyan Nüfuz Bölgesi</b><br>Antalya, İç Batı Anadolu, On İki Ada');
+                        const fransa = L.polygon([[37.1, 35.3],[38.7, 36.9],[39.0, 37.5],[38.5, 34.6],[37.2, 34.9]], {color:'#c0392b', fillColor:'#c0392b', fillOpacity:0.25}).addTo(map).bindPopup('<b>Fransız Nüfuz Bölgesi</b><br>Adana-Kayseri hattı ve kuzeyi');
+                        const ingiliz = L.polygon([[36.8, 42.0],[34.9, 44.5],[33.3, 43.8],[33.2, 41.0],[35.3, 39.0]], {color:'#27ae60', fillColor:'#27ae60', fillOpacity:0.25}).addTo(map).bindPopup('<b>İngiliz Manda</b><br>Irak, Ürdün ve Arap toprakları');
+                        const bogazlar = L.polyline([[40.0, 26.0],[41.0, 29.0]], {color:'#8e44ad'}).addTo(map).bindPopup('<b>Boğazlar</b><br>Uluslararası Komisyon (Türk üye yok)');
+
+                        // Açıklama stili
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            .leaflet-popup-content-wrapper { background: #2c3e50; color: #fff; }
+                            .leaflet-popup-tip { background: #2c3e50; }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                });
+            </script>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px;">
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:#2980b9;"></div><span>Yunan Bölgesi</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:#e67e22;"></div><span>İtalyan Nüfuz Bölgesi</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:#c0392b;"></div><span>Fransız Nüfuz Bölgesi</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:#27ae60;"></div><span>İngiliz Manda</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:16px; height:4px; background:#8e44ad;"></div><span>Boğazlar (Komisyon)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/inkilap/unite-2/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← 2. Ünite: Millî Uyanış
+        </a>
+    </div>
+</div>
+{% endblock %}

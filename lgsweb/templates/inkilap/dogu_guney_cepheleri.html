@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block extra_head %}
     <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
     <style>
         .floating-icon {
             position: absolute;
             font-size: 3em;
-            opacity: 0.15;
             pointer-events: none;
             z-index: 0;
         }
@@ -17,13 +17,13 @@
                 display: none;
             }
         }
-        .answer-btn {
-            background:#00897b; color:white; padding:10px 20px; border:none; border-radius:6px; cursor:pointer; font-weight:bold;
-        }
-        .answer-btn:hover {
-            background:#00695c;
-        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -41,26 +41,45 @@
     <div class="floating-icon" style="top: 750px; right: -60px;">🌟</div>
     <div class="floating-icon" style="top: 950px; right: -70px;">🎯</div>
 
-    <h1 class="main-title">3.1 MİLLÎ MÜCADELE DÖNEMİ'NDE DOĞU VE GÜNEY CEPHELERİ <span style="color:#c62828;">🗺️</span></h1>
+    <h1 class="main-title">3.1 MİLLÎ MÜCADELE DÖNEMİ'NDE DOĞU VE GÜNEY CEPHELERİ <span style="">🗺️</span></h1>
     <ul class="topic-list">
         <li>Millî Mücadele'de üç cephede mücadele verildi</li>
         <li>Doğu Cephesi: Ermenilere karşı</li>
         <li>Güney Cephesi: Fransızlara karşı</li>
         <li>Batı Cephesi: Yunanlara karşı</li>
     </ul>
+    
+    <div style="margin:32px 0; padding:20px; border-radius:12px;">
+        <h3 style="margin-top:0; text-align:center;">📍 Doğu ve Güney Cepheleri - Gerçek Harita</h3>
+        <div id="map" style="width:100%; height:500px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('map')) {
+                const map = L.map('map').setView([39.0, 35.0], 6);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap',
+                    maxZoom: 19
+                }).addTo(map);
+            }
+        });
+    </script>
+
     <hr>
 
     <!-- DOĞU CEPHESİ -->
+
     <section class="section">
-        <h2><span style="color:#c62828;">&#9733;</span> Doğu Cephesi</h2>
+        <h2><span style="">&#9733;</span> Doğu Cephesi</h2>
         
-        <div class="highlight-box" style="background:#ffebee; padding:24px; border-radius:12px;">
-            <b style="color:#c62828;">Tanım:</b> <span style="color:#34495e;">Milli Mücadele döneminde Doğu Anadolu bölgesinde oluşturulan cephe. Ermenilere karşı mücadele verilmiştir.</span>
+        <div class="highlight-box" style="" padding:24px; border-radius:12px;">
+            <b style="">Tanım:</b> <span style="">Milli Mücadele döneminde Doğu Anadolu bölgesinde oluşturulan cephe. Ermenilere karşı mücadele verilmiştir.</span>
         </div>
 
         <!-- Ermenilerin Geçmişi -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #c62828; padding:20px; border-radius:8px; margin-top:24px;">
-            <p><b style="color:#c62828;">📜 Ermenilerin Geçmiş Çıkışkınlıkları:</b></p>
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style="">📜 Ermenilerin Geçmiş Çıkışkınlıkları:</b></p>
             <ul style="line-height:2;">
                 <li><b>XIX. yüzyılın ikinci yarısından itibaren</b> Osmanlı Devleti'nden ayrılmak ve bağımsız devlet kurmak için defalarca ayaklandılar</li>
                 <li><b>I. Dünya Savaşı sırasında</b> Ruslardan destek gören ve silahlandırılan Ermeniler, Doğu Anadolu'da bazı yerleri işgal ettiler</li>
@@ -70,10 +89,10 @@
         </div>
 
         <!-- Ermenistan Devleti -->
-        <div class="highlight-box" style="background:#fff9c4; padding:20px; border-radius:12px; margin-top:24px; border-left:6px solid #f57f17;">
-            <b style="color:#e65100;">🇦🇲 Ermenistan Devleti Kurulması</b><br><br>
-            <span style="color:#555;">Rusya'da Bolşevik İhtilali'nin yaşanması ve yeni Rus yönetiminin savaştan çekilmesiyle:</span><br>
-            <div style="background:#fff; padding:12px; border-radius:8px; margin-top:12px; border-left:4px solid #f57f17;">
+        <div class="highlight-box" style="" padding:20px; border-radius:12px; margin-top:24px;">
+            <b style="">🇦🇲 Ermenistan Devleti Kurulması</b><br><br>
+            <span style="">Rusya'da Bolşevik İhtilali'nin yaşanması ve yeni Rus yönetiminin savaştan çekilmesiyle:</span><br>
+            <div style="" padding:12px; border-radius:8px; margin-top:12px;">
                 • Ermeniler Güney Kafkasya sınırlarında Erivan, Gümrü ve Kars dolaylarında bir devlet kurdular<br>
                 • İngiltere, Fransa ve ABD gibi Batılı devletlerden her türlü yardım ve desteği aldılar<br>
                 • Mondros Ateşkes Antlaşması'nın 24. maddesiyle Doğu Anadolu'daki altı vilayette bir Ermeni devleti kurulmasına zemin hazırlandı<br>
@@ -83,78 +102,78 @@
         </div>
 
         <!-- Ermeni Saldırıları -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #c62828; padding:20px; border-radius:8px; margin-top:24px;">
-            <p><b style="color:#c62828;">⚠️ Ermenilerin Saldırıları ve İşgalleri:</b></p>
-            <div style="background:#ffebee; padding:12px; border-radius:8px;">
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style="">⚠️ Ermenilerin Saldırıları ve İşgalleri:</b></p>
+            <div style="" padding:12px; border-radius:8px;">
                 ❌ Tüm bu gelişmelerden cesaret alan Ermeniler, İngilizlerin kışkırtmalarıyla saldırılarını arttırdılar<br>
-                ❌ <b style="color:#c62828;">Kars, Sarıkamış ve Oltu'yu ele geçirdiler</b><br>
+                ❌ <b style="">Kars, Sarıkamış ve Oltu'yu ele geçirdiler</b><br>
                 ❌ Türk halkına ağır kayıplar verdirdiler
             </div>
         </div>
 
         <!-- Doğu Cephesi Kurulması -->
-        <div style="background:#fff; padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            <h3 style="color:#c62828; text-align:center;">⚔️ Doğu Cephesi'nin Kurulması - Kazım Karabekir Paşa</h3>
+        <div style="" padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+            <h3 style="" text-align:center;">⚔️ Doğu Cephesi'nin Kurulması - Kazım Karabekir Paşa</h3>
             
-            <div style="background:#ffebee; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">📅 8 Haziran 1920 - Seferberlik Kararı:</b><br>
-                <span style="color:#555;">Ermenilerin işgalleri sonucu doğu illerinde seferberlik ilan edildi ve belli yaştaki insanlar silah altına alındı.</span>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">style="">📅 8 Haziran 1920 - Seferberlik Kararı:</b><br>
+                <span style="">Ermenilerin işgalleri sonucu doğu illerinde seferberlik ilan edildi ve belli yaştaki insanlar silah altına alındı.</span>
             </div>
 
-            <div style="background:#ffebee; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">🎖️ 15 Haziran 1920 - BMM'nin Kararı:</b><br>
-                <span style="color:#555;">Büyük Millet Meclisi 15. Kolordu Komutanlığı'nı "Doğu Cephesi Komutanlığı"na çevirdi. Yetkilerini arttırdığı <b style="color:#c62828;">Kâzım Karabekir Paşa</b>'yı komutanlığa atadı.</span>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style=""><br>
+                <span style="">Büyük Millet Meclisi 15. Kolordu Komutanlığı'nı "Doğu Cephesi Komutanlığı"na çevirdi. Yetkilerini arttırdığı <b style="">Kâzım Karabekir Paşa</b>'yı komutanlığa atadı.</span>
             </div>
         </div>
 
         <!-- Sarıkamış-Kars Zaferleri -->
-        <div class="highlight-box" style="background:#fff3e0; padding:20px; border-radius:12px; margin-top:24px; border-left:6px solid #f57f17;">
-            <b style="color:#e65100;">🏆 Sarıkamış-Kars-Gümrü Harekâtı ve Zaferleri</b><br><br>
-            <span style="color:#555;">Kâzım Karabekir Paşa komutasındaki birlikler 28 Eylül 1920'den itibaren taarruza başladı:</span><br>
-            <div style="background:#fff; padding:12px; border-radius:8px; margin-top:12px;">
+        <div class="highlight-box" style="" padding:20px; border-radius:12px; margin-top:24px;">
+            <b style="">🏆 Sarıkamış-Kars-Gümrü Harekâtı ve Zaferleri</b><br><br>
+            <span style="">Kâzım Karabekir Paşa komutasındaki birlikler 28 Eylül 1920'den itibaren taarruza başladı:</span><br>
+            <div style="" padding:12px; border-radius:8px; margin-top:12px;">
                 📍 <b>29 Eylül 1920:</b> Sarıkamış geri alındı<br>
                 📍 <b>30 Ekim 1920:</b> Kars geri alındı<br>
                 📍 <b>7 Kasım 1920:</b> Gümrü'deki son direnişi kırdı<br>
                 📍 Ardahan, Artvin ve Batum Büyük Millet Meclisi Hükûmetine verildi<br>
-                📍 <b style="color:#e65100;">Ermeniler yenilgiye uğradı ve barış istedi</b>
+                📍 <b style="">Ermeniler yenilgiye uğradı ve barış istedi</b>
             </div>
         </div>
 
         <!-- Gümrü Antlaşması -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #c62828; padding:20px; border-radius:8px; margin-top:24px;">
-            <h3 style="color:#c62828; margin-top:0;">📜 Gümrü Antlaşması (3 Aralık 1920)</h3>
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="" margin-top:0;">📜 Gümrü Antlaşması (3 Aralık 1920)</h3>
             
-            <div style="background:#ffebee; padding:12px; border-radius:8px; margin:12px 0;">
-                <b style="color:#c62828;">Antlaşmanın Hükümleri:</b><br>
+            <div style="" padding:12px; border-radius:8px; margin:12px 0;">
+                <b style=""><br>
                 ✓ Ermeniler işgal ettikleri yerlerden geri çekilecek<br>
                 ✓ Kars, Sarıkamış, Kağızman, Iğdır, Oltu ve Kulp BMM Hükûmetine bırakılacak<br>
                 ✓ Ermeniler Sevr Antlaşması'nın geçersiz olduğunu kabul edecek<br>
                 ✓ Doğu Anadolu'ya yönelik toprak taleplerinden vazgeçecek
             </div>
 
-            <div style="background:#e8f5e9; padding:12px; border-radius:8px; margin:12px 0;">
-                <b style="color:#388e3c;">🎯 Antlaşmanın Sonuçları:</b><br>
-                • <b style="color:#388e3c;">Millî Mücadele'nin Doğu Cephesi başarıyla kapandı</b><br>
+            <div style="" padding:12px; border-radius:8px; margin:12px 0;">
+                <b style="">🎯 Antlaşmanın Sonuçları:</b><br>
+                • <b style="">Millî Mücadele'nin Doğu Cephesi başarıyla kapandı</b><br>
                 • Büyük Millet Meclisi Hükûmetinin saygınlığı arttı<br>
                 • Doğu Cephesi birliklerinin bir kısmı Batı Cephesi'ne kaydırıldı<br>
                 • Ele geçirilen silah ve mühimmat Batı Cephesi'ne gönderildi<br>
-                • <b style="color:#388e3c;">Ermenistan BMM'ni uluslararası alanda tanıyan ilk devlet oldu</b><br>
-                • <b style="color:#c62828;">BMM'nin ilk askerî başarısı, Gümrü Antlaşması ise ilk siyasi başarısıdır</b>
+                • <b style="">Ermenistan BMM'ni uluslararası alanda tanıyan ilk devlet oldu</b><br>
+                • <b style=""><b style="">BMM'nin ilk askerî başarısı, Gümrü Antlaşması ise ilk siyasi başarısıdır</b>
             </div>
         </div>
     </section>
 
     <!-- GÜNEY CEPHESİ -->
     <section class="section">
-        <h2><span style="color:#d32f2f;">&#9733;</span> Güney Cephesi</h2>
+        <h2><span style="">&#9733;</span> Güney Cephesi</h2>
         
-        <div class="highlight-box" style="background:#ffebee; padding:24px; border-radius:12px;">
-            <b style="color:#c62828;">Tanım:</b> <span style="color:#34495e;">Milli Mücadele döneminde Güney Anadolu bölgesinde oluşturulan cephe. Esas olarak Fransızlara karşı mücadele verilmiştir.</span>
+        <div class="highlight-box" style="" padding:24px; border-radius:12px;">
+            <b style="">Tanım:</b> <span style="">Milli Mücadele döneminde Güney Anadolu bölgesinde oluşturulan cephe. Esas olarak Fransızlara karşı mücadele verilmiştir.</span>
         </div>
 
         <!-- İşgaller -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #c62828; padding:20px; border-radius:8px; margin-top:24px;">
-            <p><b style="color:#c62828;">🌍 İtilaf Devletlerinin Güney İşgalleri:</b></p>
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <p><b style=""></p>
             <ul style="line-height:2;">
                 <li><b>İngilizler:</b> İskenderun, Kilis, Antep, Maraş ve Urfa'yı işgal ettiler</li>
                 <li><b>Fransızlar:</b> Adana, Mersin ve Osmaniye'yi işgal ettiler</li>
@@ -164,10 +183,10 @@
         </div>
 
         <!-- Fransız Baskısı -->
-        <div class="highlight-box" style="background:#fff9c4; padding:20px; border-radius:12px; margin-top:24px; border-left:6px solid #f57f17;">
-            <b style="color:#e65100;">⚠️ Fransızların ve Ermenilerin Baskısı</b><br><br>
-            <span style="color:#555;">Fransızlar, yöredeki Ermenilerle iş birliği yaparak:</span><br>
-            <div style="background:#fff; padding:12px; border-radius:8px; margin-top:12px;">
+        <div class="highlight-box" style="" padding:20px; border-radius:12px; margin-top:24px;">
+            <b style="">⚠️ Fransızların ve Ermenilerin Baskısı</b><br><br>
+            <span style="">Fransızlar, yöredeki Ermenilerle iş birliği yaparak:</span><br>
+            <div style="" padding:12px; border-radius:8px; margin-top:12px;">
                 • Bölgedeki Türk halkı üzerinde baskı uygulamaya başladılar<br>
                 • Ermenilerin taşkınlıklarına göz yumdular<br>
                 • Türk kasaba ve köylerine saldırıp katliam yaptırdılar<br>
@@ -176,10 +195,10 @@
         </div>
 
         <!-- Kuvâ-yi Milliye -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #d32f2f; padding:20px; border-radius:8px; margin-top:24px;">
-            <b style="color:#d32f2f;">💪 Kuvâ-yi Milliye'nin Hareketi</b><br><br>
-            <span style="color:#555;">Düzenli bir ordunun bulunmadığı güney illerinde:</span><br>
-            <div style="background:#ffebee; padding:12px; border-radius:8px; margin-top:12px;">
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <b style="">💪 Kuvâ-yi Milliye'nin Hareketi</b><br><br>
+            <span style="">Düzenli bir ordunun bulunmadığı güney illerinde:</span><br>
+            <div style="" padding:12px; border-radius:8px; margin-top:12px;">
                 • Bölge halkı Kuvâ-yı Millîye birlikleriyle direnişe başladı<br>
                 • Mustafa Kemal Paşa, bölge halkını işgalcilere karşı örgütlemek için subaylar gönderdi<br>
                 • Kuvâ-yı Millîye öncülüğünde halka büyük bir bağımsızlık mücadelesi başlattı
@@ -187,44 +206,44 @@
         </div>
 
         <!-- MARAŞ SAVUNMASI -->
-        <div style="background:#fff; padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            <h3 style="color:#c62828; text-align:center;">🏛️ Maraş Savunması (22 Günlük Direniş)</h3>
+        <div style="" padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+            <h3 style="" text-align:center;">🏛️ Maraş Savunması (22 Günlük Direniş)</h3>
             
-            <div style="background:#ffebee; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">📜 Sütçü İmam Olayı - Direniş Başlangıcı:</b><br>
-                İngilizler Maraş'tan çekildikten sonra Fransızlar şehri işgal ettiler. Fransızların Ermenilerin taşkınlıklarına göz yumması ve halka yönelik olumsuz davranışları tepkilere neden oldu. <b style="color:#c62828;">Ermeniler sokakta Türklere saldırıp, özellikle kadınlara onur kırıcı muamele yaptılar.</b> <br><br><b style="color:#c62828;">Sütçü İmam adında bir Türk, Ermenilerin ve Fransızların bu haline daha fazla dayanamayarak bir Fransız askerini öldürdü.</b> Bu olay Maraş halkının direnişinin fitilini ateşledi. Türk bayrağının indirilmesi ve Fransız bayrağının çekilmesi ise isyankârlığı daha da artırdı.
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style=""><br>
+                İngilizler Maraş'tan çekildikten sonra Fransızlar şehri işgal ettiler. Fransızların Ermenilerin taşkınlıklarına göz yumması ve halka yönelik olumsuz davranışları tepkilere neden oldu. <b style="">Ermeniler sokakta Türklere saldırıp, özellikle kadınlara onur kırıcı muamele yaptılar.</b> <br><br><b style="">Sütçü İmam adında bir Türk, Ermenilerin ve Fransızların bu haline daha fazla dayanamayarak bir Fransız askerini öldürdü.</b> Bu olay Maraş halkının direnişinin fitilini ateşledi. Türk bayrağının indirilmesi ve Fransız bayrağının çekilmesi ise isyankârlığı daha da artırdı.
             </div>
 
-            <div style="background:#ffebee; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">🚩 Organize Direniş:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style=""><br>
                 • Sütçü İmam olayından sonra Maraş halkı sokağa çıktı<br>
                 • 20. Kolordu ve 3. Kolordu'dan gelen subayların öncülüğünde Kuvâ-yı Millîye birlikleri güçlendirildi<br>
-                • <b style="color:#c62828;">Bütün Maraş halkı (kadın, erkek, yaşlı, çocuk) birlik ve beraberlik içinde mücadele etti</b><br>
+                • <b style="">Bütün Maraş halkı (kadın, erkek, yaşlı, çocuk) birlik ve beraberlik içinde mücadele etti</b><br>
                 • Evlerde, sokaklarda, çatılarda Fransızlara direndi
             </div>
 
-            <div style="background:#e8f5e9; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#388e3c;">⏱️ 22 Günlük Direniş ve Zafer:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">⏱️ 22 Günlük Direniş ve Zafer:</b><br>
                 • 22 gün boyunca şiddetli çarpışmalar yaşandı<br>
                 • <b>11 Şubat 1920:</b> Zor durumda kalan Fransızlar Maraş'ı terk ettiler<br>
                 • <b>12 Şubat 1920:</b> Şehir tamamen Fransız işgalinden kurtuldu<br>
                 • Bu zafer Kuvâ-yı Millîye'ye büyük moral verdi ve güney illerinin kurtuluşuna yol açtı
             </div>
 
-            <div style="background:#fff3e0; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#e65100;">🎖️ Ödüller ve Unvanlar:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">🎖️ Ödüller ve Unvanlar:</b><br>
                 • <b>5 Nisan 1925:</b> TBMM Maraş'a "İstiklal Madalyası" verdi<br>
                 • <b>7 Şubat 1973:</b> Şehre "Kahraman" unvanı verildi<br>
-                • <i style="color:#555;">Maraş savunması Türk milletinin bağımsızlığa olan inancının ve vatanseverliğinin önemli bir göstergesidir.</i>
+                • <i style="">Maraş savunması Türk milletinin bağımsızlığa olan inancının ve vatanseverliğinin önemli bir göstergesidir.</i>
             </div>
         </div>
 
         <!-- URFA'NIN KURTULUŞU -->
-        <div style="background:#fff; padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            <h3 style="color:#d32f2f; text-align:center;">⚔️ Urfa'nın Kurtuluşu (Şanlı Unvanı)</h3>
+        <div style="" padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+            <h3 style="" text-align:center;">⚔️ Urfa'nın Kurtuluşu (Şanlı Unvanı)</h3>
             
-            <div style="background:#fff3e0; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#e65100;">İşgal ve Müdafaa:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">İşgal ve Müdafaa:</b><br>
                 • <b>24 Mart 1919:</b> İngilizler Urfa'yı işgal ettiler (7 ay işgal altında)<br>
                 • <b>Ekim 1919:</b> İngilizler Urfa'dan çekildiler<br>
                 • Fransızlar şehri işgal etti ve Ermenilerle iş birliği yaptılar<br>
@@ -232,8 +251,8 @@
                 • Ali Saip (Ursavaş) Bey 3 bin kişilik Kuvâ-yı Millîye birliği oluşturdu
             </div>
 
-            <div style="background:#c8e6c9; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#2e7d32;">Zafer:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">Zafer:</b><br>
                 • <b>11 Nisan 1920:</b> Yaklaşık 2 ay çatışma sonunda Fransızlar Urfa'yı terk ettiler<br>
                 • <b>1984:</b> TBMM Urfa'ya "Şanlı" unvanı verdi<br>
                 • Şehrin adı resmi olarak <b>Şanlıurfa</b> oldu
@@ -241,11 +260,11 @@
         </div>
 
         <!-- ANTEP SAVUNMASI -->
-        <div style="background:#fff; padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            <h3 style="color:#ff5722; text-align:center;">🏰 Antep Savunması (11 Aylık - Gazi Unvanı)</h3>
+        <div style="" padding:24px; border-radius:12px; margin-top:24px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+            <h3 style="" text-align:center;">🏰 Antep Savunması (11 Aylık - Gazi Unvanı)</h3>
             
-            <div style="background:#ffe0b2; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#e65100;">İşgal Süreci:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">İşgal Süreci:</b><br>
                 • <b>15 Ocak 1919:</b> İngilizler Antep'i işgal ettiler<br>
                 • <b>15 Eylül 1919:</b> Fransa Antep'i işgal etti (İngilizler çekildi)<br>
                 • Fransızlar bir Ermeni alayı kurdu ve Türkleri baskı altına aldılar<br>
@@ -253,21 +272,21 @@
                 • Sokaklarda kadınların kıyafetlerine saldırdılar
             </div>
 
-            <div style="background:#ffebee; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">🎯 Şahin Bey - Direnişin Sembol İsmi:</b><br>
-                <b style="color:#c62828;">Şahin Bey (Üsteğmen Mehmet Sait Bey)</b> Mustafa Kemal Paşa tarafından Antep-Kilis yolu Kuvâ-yı Millîye Komutanı olarak atandı. <b style="color:#c62828;">Kilis-Antep yolu üzerinde Fransızların ikmal kollarını vurarak önemli başarılar elde etti.</b> <b>1920 Mart ayında Fransızlara karşı büyük ve kahramanca bir saldırı başlattı ancak şehit oldu.</b> <br><br>Ama onun kahramanlığı Antep halkını devam etmeye motive etti. Şahin Bey'in ölümü Anteplileri daha da birleştirdi ve dirençlerini artırdı.
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style=""><br>
+                <b style="">Şahin Bey (Üsteğmen Mehmet Sait Bey)</b> Mustafa Kemal Paşa tarafından Antep-Kilis yolu Kuvâ-yı Millîye Komutanı olarak atandı. <b style="">Kilis-Antep yolu üzerinde Fransızların ikmal kollarını vurarak önemli başarılar elde etti.</b> <b>1920 Mart ayında Fransızlara karşı büyük ve kahramanca bir saldırı başlattı ancak şehit oldu.</b> <br><br>Ama onun kahramanlığı Antep halkını devam etmeye motive etti. Şahin Bey'in ölümü Anteplileri daha da birleştirdi ve dirençlerini artırdı.
             </div>
 
-            <div style="background:#ffcdd2; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#c62828;">Kılıç Ali Bey Dönemi (Şahin Bey'den Sonra):</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style=""><br>
                 • Mustafa Kemal Paşa'nın emriyle Kılıç Ali Bey komutanlığı üstlendi<br>
                 • Kılıç Ali Bey Fransızların isteklerini reddederek mücadeleye devam etti<br>
                 • <b>On bir ay boyunca</b> şiddetli çarpışmalar yaşandı<br>
                 • <b>6000+ şehit</b> verildi
             </div>
 
-            <div style="background:#c8e6c9; padding:16px; border-radius:8px; margin:16px 0;">
-                <b style="color:#2e7d32;">🎖️ Teslim ve Ödül:</b><br>
+            <div style="" padding:16px; border-radius:8px; margin:16px 0;">
+                <b style="">🎖️ Teslim ve Ödül:</b><br>
                 • <b>9 Şubat 1921:</b> 11 aylık direniş sonunda Antep teslim oldu<br>
                 • <b>6 Şubat 1921:</b> TBMM Antep'e "Gazi" unvanı verdi<br>
                 • <b>7 Şubat 2008:</b> Antep halkı İstiklal Madalyası ile ödüllendirildi<br>
@@ -276,10 +295,10 @@
         </div>
 
         <!-- Güney Cephesi'nin Kapanması -->
-        <div class="highlight-box" style="background:#f3e5f5; padding:20px; border-radius:12px; margin-top:24px; border-left:6px solid #7b1fa2;">
-            <b style="color:#7b1fa2;">🤝 Ankara Antlaşması ile Güney Cephesi'nin Kapanması</b><br><br>
-            <span style="color:#555;">Batı Cephesi'nde Türk ordusunun Yunanlara karşı kazandığı zaferler Fransa'nın politikasını değiştirdi.</span><br><br>
-            <div style="background:#ede7f6; padding:12px; border-radius:8px;">
+        <div class="highlight-box" style="" padding:20px; border-radius:12px; margin-top:24px;">
+            <b style="">🤝 Ankara Antlaşması ile Güney Cephesi'nin Kapanması</b><br><br>
+            <span style="">Batı Cephesi'nde Türk ordusunun Yunanlara karşı kazandığı zaferler Fransa'nın politikasını değiştirdi.</span><br><br>
+            <div style="" padding:12px; border-radius:8px;">
                 <b>20 Ekim 1921:</b> Ankara Antlaşması imzalandı<br>
                 • Türkiye Büyük Millet Meclisi Hükûmeti ile Fransa barış antlaşması yaptı<br>
                 • Güney Cephesi'ndeki savaş sona erdi ve cephe kapandı
@@ -287,9 +306,9 @@
         </div>
 
         <!-- İtalyan İşgali -->
-        <div class="example-box" style="background:#fff; border-left:6px solid #d32f2f; padding:20px; border-radius:8px; margin-top:24px;">
-            <b style="color:#d32f2f;">🇮🇹 İtalyan İşgali</b><br><br>
-            <div style="background:#ffebee; padding:12px; border-radius:8px; margin-top:12px;">
+        <div class="example-box" style="" padding:20px; border-radius:8px; margin-top:24px;">
+            <b style="">🇮🇹 İtalyan İşgali</b><br><br>
+            <div style="" padding:12px; border-radius:8px; margin-top:12px;">
                 • <b>İşgal Edilen Yerler:</b> Antalya, Kuşadası, Marmaris ve Fethiye yöreleri<br>
                 • <b>Direniş:</b> Bu bölgelerde İtalyanlara karşı bir direniş olmadı<br>
                 • <b>Çekilme:</b> II. İnönü Savaşı ve Sakarya Zaferi'nden sonra Anadolu'yu tamamen terk ettiler<br>
@@ -300,40 +319,41 @@
 
     <!-- ÖNEMLİ İPUÇLARI -->
     <section class="section">
-        <h2><span style="color:#c62828;">&#9733;</span> Önemli İpuçları</h2>
+        <h2><span style="">&#9733;</span> Önemli İpuçları</h2>
         
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 1:</b> Doğu Cephesi'nin komutanı Kazım Karabekir Paşa'dır ve başarıyla sonuçlandı.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 1:</b> Doğu Cephesi'nin komutanı Kazım Karabekir Paşa'dır ve başarıyla sonuçlandı.
         </div>
 
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 2:</b> Kars Zaferi 30 Ekim 1920'de kazanılmıştır.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 2:</b> Kars Zaferi 30 Ekim 1920'de kazanılmıştır.
         </div>
 
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 3:</b> Gümrü Antlaşması 3 Aralık 1920'de imzalanarak Doğu Cephesi kapandı.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 3:</b> Gümrü Antlaşması 3 Aralık 1920'de imzalanarak Doğu Cephesi kapandı.
         </div>
 
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 4:</b> Sütçü İmam olayı Maraş'ın direnişini başlatan tetikleyici olay olmuştur.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 4:</b> Sütçü İmam olayı Maraş'ın direnişini başlatan tetikleyici olay olmuştur.
         </div>
 
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 5:</b> Şahin Bey Antep savunmasında şehit olmuş ama direniş devam etmiştir.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 5:</b> Şahin Bey Antep savunmasında şehit olmuş ama direniş devam etmiştir.
         </div>
 
-        <div class="highlight-box" style="background:#ffebee;">
-            <b style="color:#c62828;">💡 İpucu 6:</b> Maraş, Urfa ve Antep Güney Cephesi'nde kahraman şehirlerdir.
+        <div class="highlight-box" style="">
+            <b style="">💡 İpucu 6:</b> Maraş, Urfa ve Antep Güney Cephesi'nde kahraman şehirlerdir.
         </div>
     </section>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; background:#c62828; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+        <a href="/inkilap/unite-3/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
             ← 3. Ünite Ana Sayfa
         </a>
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#ffcdd2; color:#c62828; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
             ← İnkılap Tarihi Ana Sayfa
         </a>
     </div>
 </div>
 {% endblock %}
+

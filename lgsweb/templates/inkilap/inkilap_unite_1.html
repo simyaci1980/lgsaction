@@ -1,74 +1,87 @@
 {% extends "base.html" %}
 {% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
     <link rel="stylesheet" href="/static/dersler.css">
 {% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="main-title">1. ÜNİTE: BİR KAHRAMAN DOĞUYOR 🇹🇷</h1>
-    <p style="text-align:center; color:#666; font-size:1.1em; margin-bottom:40px;">
+    <p style="text-align:center; font-size:1.1em; margin-bottom:40px;">
         Bu ünitede Mustafa Kemal'in doğumu, öğrenim hayatı ve askerlik dönemini öğreneceğiz.
     </p>
 
     <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:800px; margin:0 auto;">
         <!-- Konu 1 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
-            <div style="display:flex; align-items:center; gap:16px;">
-                <div style="font-size:3em;">🌍</div>
-                <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Gelişen Avrupa ve Güç Kaybeden Osmanlı Devleti</h2>
-                    <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
-                    </p>
+        <a href="/inkilap/gelisen-avrupa/" style="text-decoration:none;">
+            <div style="display:block; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div style="font-size:3em;">🌍</div>
+                    <div style="flex:1;">
+                        <h2 style="margin:0; font-size:1.4em;">Gelişen Avrupa ve Güç Kaybeden Osmanlı Devleti</h2>
+                        <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
+                            Sanayi Devrimi ve Osmanlı'nın Gerilemesi
+                        </p>
+                    </div>
+                    <div style="font-size:1.5em;">▶</div>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 2 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
-            <div style="display:flex; align-items:center; gap:16px;">
-                <div style="font-size:3em;">👶</div>
-                <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Mustafa Kemal'in Çocukluk Dönemi ve Öğrenim Hayatı</h2>
-                    <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
-                    </p>
+        <a href="/inkilap/cocukluk-donem/" style="text-decoration:none;">
+            <div style="display:block; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div style="font-size:3em;">👶</div>
+                    <div style="flex:1;">
+                        <h2 style="margin:0; font-size:1.4em;">Mustafa Kemal'in Çocukluk Dönemi ve Öğrenim Hayatı</h2>
+                        <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
+                            Doğumu, Ailesi ve Eğitim Hayatı
+                        </p>
+                    </div>
+                    <div style="font-size:1.5em;">▶</div>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 3 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
-            <div style="display:flex; align-items:center; gap:16px;">
-                <div style="font-size:3em;">📚</div>
-                <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar</h2>
-                    <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
-                    </p>
+        <a href="/inkilap/fikir-hayati/" style="text-decoration:none;">
+            <div style="display:block; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div style="font-size:3em;">📚</div>
+                    <div style="flex:1;">
+                        <h2 style="margin:0; font-size:1.4em;">Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar</h2>
+                        <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
+                            Türk ve Avrupa Aydınları, Siya si Olaylar
+                        </p>
+                    </div>
+                    <div style="font-size:1.5em;">▶</div>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 4 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
-            <div style="display:flex; align-items:center; gap:16px;">
-                <div style="font-size:3em;">🎖️</div>
-                <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Mustafa Kemal'in Askerlik Hayatı</h2>
-                    <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
-                    </p>
+        <a href="/inkilap/askerlik-hayati/" style="text-decoration:none;">
+            <div style="display:block; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.2s;">
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div style="font-size:3em;">🎖️</div>
+                    <div style="flex:1;">
+                        <h2 style="margin:0; font-size:1.4em;">Mustafa Kemal'in Askerlik Hayatı</h2>
+                        <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
+                            Şam'dan I. Dünya Savaşı'na Kadar
+                        </p>
+                    </div>
+                    <div style="font-size:1.5em;">▶</div>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#c62828; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
             ← İnkılap Tarihi Ana Sayfa
         </a>
     </div>

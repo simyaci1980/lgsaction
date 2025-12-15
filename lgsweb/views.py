@@ -48,6 +48,30 @@ def inkilap_unite_1(request):
 def inkilap_unite_2(request):
     return render(request, 'inkilap/inkilap_unite_2.html')
 
+def dunyasavasi_1(request):
+    return render(request, 'inkilap/dunyasavasi_1.html')
+
+def dunyasavasi_osmanlı(request):
+    return render(request, 'inkilap/dunyasavasi_osmanlı.html')
+
+def mondros_ateskesi(request):
+    return render(request, 'inkilap/mondros_ateskesi.html')
+
+def kuvayi_milliye(request):
+    return render(request, 'inkilap/kuvayi_milliye.html')
+
+def hazirlik_donemi(request):
+    return render(request, 'inkilap/hazirlik_donemi.html')
+
+def misak_i_milli_tbmm(request):
+    return render(request, 'inkilap/misak_i_milli_tbmm.html')
+
+def ayaklanmalar(request):
+    return render(request, 'inkilap/ayaklanmalar.html')
+
+def sevr_antlasmasi(request):
+    return render(request, 'inkilap/sevr_antlasmasi.html')
+
 def inkilap_unite_3(request):
     return render(request, 'inkilap/inkilap_unite_3.html')
 
@@ -138,7 +162,17 @@ def olasilik(request):
 def cebirsel_ifadeler(request):
     return render(request, 'matematik/cebirsel_ifadeler.html')
 
+def gelisen_avrupa(request):
+    return render(request, 'inkilap/gelisen_avrupa.html')
 
+def cocukluk_donem(request):
+    return render(request, 'inkilap/cocukluk_donem.html')
+
+def fikir_hayati(request):
+    return render(request, 'inkilap/fikir_hayati.html')
+
+def askerlik_hayati(request):
+    return render(request, 'inkilap/askerlik_hayati.html')
 
 
 

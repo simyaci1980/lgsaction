@@ -3,6 +3,11 @@
 {% block title %}İnkılap Tarihi Üniteleri{% endblock %}
 
 {% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
     <link rel="stylesheet" href="/static/dersler.css">
 {% endblock %}
 
@@ -10,9 +15,9 @@
 <div style="display: flex; justify-content: center; align-items: stretch; gap: 24px; max-width: 1400px; margin: 0 auto;">
     <div class="side-fun" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-end; min-width: 60px; max-width: 80px;">
         <div style="font-size: 2.5em;">🇹🇷</div>
-        <div style="font-family: 'Comic Neue', cursive; color: #2d5be3; font-size: 1.1em; text-align: right; margin-top: 12px;">Kahramanlık Hikayeleri!</div>
+        <div style="font-family: 'Comic Neue', cursive; font-size: 1.1em; text-align: right; margin-top: 12px;">Kahramanlık Hikayeleri!</div>
         <div style="font-size: 2.2em; margin-top: 18px;">📜</div>
-        <div style="font-family: 'Comic Neue', cursive; color: #1565c0; font-size: 1em; text-align: right; margin-top: 8px;">Tarihi Yolculuk!</div>
+        <div style="font-family: 'Comic Neue', cursive; font-size: 1em; text-align: right; margin-top: 8px;">Tarihi Yolculuk!</div>
     </div>
     <div class="main-container" style="flex: 1;">
         <h1 class="main-title">8. Sınıf İnkılap Tarihi Üniteleri</h1>
@@ -49,9 +54,9 @@
     </div>
     <div class="side-fun" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-width: 60px; max-width: 80px;">
         <div style="font-size: 2.5em;">🏛️</div>
-        <div style="font-family: 'Comic Neue', cursive; color: #2d5be3; font-size: 1.1em; text-align: left; margin-top: 12px;">Cumhuriyetin İzinde!</div>
+        <div style="font-family: 'Comic Neue', cursive; font-size: 1.1em; text-align: left; margin-top: 12px;">Cumhuriyetin İzinde!</div>
         <div style="font-size: 2.2em; margin-top: 18px;">🕊️</div>
-        <div style="font-family: 'Comic Neue', cursive; color: #1565c0; font-size: 1em; text-align: left; margin-top: 8px;">Barış ve Özgürlük!</div>
+        <div style="font-family: 'Comic Neue', cursive; font-size: 1em; text-align: left; margin-top: 8px;">Barış ve Özgürlük!</div>
     </div>
 </div>
 {% endblock %}

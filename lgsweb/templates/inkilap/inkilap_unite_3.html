@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 {% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
     <link rel="stylesheet" href="/static/dersler.css">
 {% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="main-title">3. ÜNİTE: MİLLİ BİR DESTAN - YA İSTİKLAL YA ÖLÜM 🎖️</h1>
-    <p style="text-align:center; color:#666; font-size:1.1em; margin-bottom:40px;">
+    <p style="text-align:center; font-size:1.1em; margin-bottom:40px;">
         Bu ünitede Milli Mücadele cepheleri, Sakarya Meydan Savaşı, Lozan Antlaşması ve sanat-edebiyata yansımalarını öğreneceğiz.
     </p>
 
     <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:800px; margin:0 auto;">
         <!-- Konu 1 -->
-        <a href="/inkilap/dogu-guney-cepheleri/" style="display:block; background:linear-gradient(135deg, #c62828 0%, #b71c1c 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/dogu-guney-cepheleri/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🗺️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Doğu ve Güney Cepheleri</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Doğu ve Güney Cepheleri</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Kazım Karabekir, Kars Zaferi, Franklin-Bouillon Anlaşması
                     </p>
@@ -25,11 +30,11 @@
         </a>
 
         <!-- Konu 2 -->
-        <a href="/inkilap/bati-cephesi/" style="display:block; background:linear-gradient(135deg, #3949ab 0%, #283593 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/bati-cephesi/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">⚔️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Batı Cephesi</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Batı Cephesi</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Düzenli Ordu, İnönü Muharebeleri, Kütahya-Eskişehir
                     </p>
@@ -39,11 +44,11 @@
         </a>
 
         <!-- Konu 3 -->
-        <a href="/inkilap/maarif-kongresi/" style="display:block; background:linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/maarif-kongresi/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">📚</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Maarif Kongresi (15-21 Temmuz 1921)</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Maarif Kongresi (15-21 Temmuz 1921)</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Eğitimde millîleşme, çağdaşlaşma, cehaletle mücadele
                     </p>
@@ -53,11 +58,11 @@
         </a>
 
         <!-- Konu 4 -->
-        <a href="/inkilap/baskomutanlik-kanunu/" style="display:block; background:linear-gradient(135deg, #ff9800 0%, #e65100 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/baskomutanlik-kanunu/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">⚖️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Başkomutanlık Kanunu ve Tekalif-i Milliye Emirleri</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Başkomutanlık Kanunu ve Tekalif-i Milliye Emirleri</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Mustafa Kemal'e fullmacht, ulusal dayanışma ve seferberlik
                     </p>
@@ -67,11 +72,11 @@
         </a>
 
         <!-- Konu 5 -->
-        <a href="/inkilap/sakarya-mudanya/" style="display:block; background:linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/sakarya-mudanya/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🏆</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Sakarya Meydan Savaşı'ndan Mudanya Ateşkes Antlaşması'na</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Sakarya Meydan Savaşı'ndan Mudanya Ateşkes Antlaşması'na</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Büyük Taarruz, 30 Ağustos, İzmir'e giriş, Mudanya Antlaşması
                     </p>
@@ -81,11 +86,11 @@
         </a>
 
         <!-- Konu 6 -->
-        <a href="/inkilap/lozan-baris/" style="display:block; background:linear-gradient(135deg, #1976d2 0%, #0d47a1 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/lozan-baris/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🕊️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Lozan Barış Antlaşması (24 Temmuz 1923)</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Lozan Barış Antlaşması (24 Temmuz 1923)</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Türkiye tanındı, Sevr tarihe gömüldü, kapitülasyonlar kaldırıldı
                     </p>
@@ -95,11 +100,11 @@
         </a>
 
         <!-- Konu 7 -->
-        <a href="/inkilap/sanat-edebiyat/" style="display:block; background:linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%); padding:24px; border-radius:12px; text-decoration:none; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <a href="/inkilap/sanat-edebiyat/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.12); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🎭</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Milli Mücadele'nin Sanata ve Edebiyata Yansımaları</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Milli Mücadele'nin Sanata ve Edebiyata Yansımaları</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
                         Edebiyat, resim, heykel, müzik: Millî Mücadele'nin sanatçılar tarafından anlatılması
                     </p>
@@ -111,28 +116,28 @@
 
     <!-- ÖZET BUTONU -->
     <div style="text-align:center; margin:40px auto 20px auto;">
-        <button onclick="document.getElementById('ozetModal').style.display='flex'" style="padding:14px 36px; background:linear-gradient(135deg, #2196F3 0%, #1565c0 100%); color:white; border:none; border-radius:8px; font-size:1.1em; font-weight:bold; cursor:pointer; box-shadow:0 4px 12px rgba(33, 150, 243, 0.3); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <button onclick="document.getElementById('ozetModal').style.display='flex'" style="padding:14px 36px; border:none; border-radius:8px; font-size:1.1em; font-weight:bold; cursor:pointer; box-shadow:0 4px 12px rgba(33, 150, 243, 0.3); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             📖 3. ÜNİTE ÖZET AÇ
         </button>
     </div>
 
     <!-- ÖZET MODAL -->
-    <div id="ozetModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1000; padding:20px;">
-        <div style="background:white; border-radius:16px; width:100%; max-width:900px; max-height:85vh; overflow-y:auto; box-shadow:0 10px 40px rgba(0,0,0,0.3);">
+    <div id="ozetModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000; padding:20px;">
+        <div style="background:#1e1e1e; border-radius:16px; width:100%; max-width:900px; max-height:85vh; overflow-y:auto; box-shadow:0 10px 40px rgba(0,0,0,0.3); color:#c8c8c8;">
             
             <!-- Modal Başlığı -->
-            <div style="background:linear-gradient(135deg, #2196F3 0%, #1565c0 100%); padding:24px; position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; z-index:10;">
-                <h2 style="margin:0; color:white; font-size:1.6em;">📖 3. ÜNİTE ÖZET</h2>
-                <button onclick="document.getElementById('ozetModal').style.display='none'" style="background:white; border:none; font-size:1.8em; cursor:pointer; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center;">✕</button>
+            <div style="background:#282828; padding:24px; position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; z-index:10; border-bottom:1px solid #444;">
+                <h2 style="margin:0; font-size:1.6em; color:#b8b8b8;">📖 3. ÜNİTE ÖZET</h2>
+                <button onclick="document.getElementById('ozetModal').style.display='none'" style="background:transparent; border:none; font-size:1.8em; cursor:pointer; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#c8c8c8;">✕</button>
             </div>
 
             <!-- Modal İçeriği -->
             <div style="padding:30px;">
 
                 <!-- Özet 1 -->
-                <div style="background:linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #c62828;">
-                    <h3 style="color:#c62828; margin:0 0 12px 0; font-size:1.2em;">🗺️ Doğu ve Güney Cepheleri</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #e85d5d;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">🗺️ Doğu ve Güney Cepheleri</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Doğu Cephesi:</strong> Kazım Karabekir Paşa komutasında, Sarıkamış-Kars-Gümrü çizgisinde yapılan mücadele, Kars Zaferi (16 Aralık 1920), Gümrü Antlaşması (2-3 Aralık 1920)</li>
                         <li><strong>Güney Cephesi:</strong> Fransız işgaline karşı Kuvâ-yı Milliye dirençi, Franklin-Bouillon Antlaşması (20 Mart 1926) ile Fransa'nın çekilişi</li>
                         <li><strong>Sütçü İmam (Maraş Savunması):</strong> Bir Türk sivilin Fransız askerine karşı isyanı, halkın direniş gösterişi, 22 günlük Maraş savunması (1919-1920)</li>
@@ -142,9 +147,9 @@
                 </div>
 
                 <!-- Özet 2 -->
-                <div style="background:linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #3949ab;">
-                    <h3 style="color:#3949ab; margin:0 0 12px 0; font-size:1.2em;">⚔️ Batı Cephesi</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #3498db;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">⚔️ Batı Cephesi</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Düzenli Ordu Kurulması:</strong> 9 Kasım 1920'de İzmit-Kütahya hattında düzenli ordu teşkili, İsmet Paşa ve Refet Paşa komutasında, Yunan ilerleyişine karşı ilk ciddi savunma</li>
                         <li><strong>İnönü I. Muharebesi (6-10 Ocak 1921):</strong> İlk düzenli ordu zaferi, Yunan 3. Ordusu'nun geri çekilmesi, Mustafa Kemal'in "Generallik" unvanı alması</li>
                         <li><strong>İnönü II. Muharebesi (23 Mart - 1 Nisan 1921):</strong> İkinci zafer, Yunan ilerleyişinin durması, Ankara'nın güvenliğinin sağlanması</li>
@@ -158,9 +163,9 @@
                 </div>
 
                 <!-- Özet 3 -->
-                <div style="background:linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #4caf50;">
-                    <h3 style="color:#2e7d32; margin:0 0 12px 0; font-size:1.2em;">📚 Maarif Kongresi (15-21 Temmuz 1921)</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #2ecc71;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">📚 Maarif Kongresi (15-21 Temmuz 1921)</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Amaç:</strong> Eğitim sistemi üzerinde millî ve çağdaş prensipler belirlemek, "cehaletle savaş" başlatmak</li>
                         <li><strong>Katılımcılar:</strong> 180+ öğretmen, müdür, eğitim yöneticileri ve aydın</li>
                         <li><strong>Açılış:</strong> Mustafa Kemal tarafından kişisel olarak yapılan açılış, milli eğitimde yenileşmenin vurgulanması</li>
@@ -170,9 +175,9 @@
                 </div>
 
                 <!-- Özet 4 -->
-                <div style="background:linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #e65100;">
-                    <h3 style="color:#e65100; margin:0 0 12px 0; font-size:1.2em;">⚖️ Başkomutanlık Kanunu (5 Ağustos 1921)</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #f39c12;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">⚖️ Başkomutanlık Kanunu (5 Ağustos 1921)</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Gerekçe:</strong> Kütahya-Eskişehir hezimeti sonrası TBMM'de siyasi krize, Mustafa Kemal'e karşı muhalefete karşı alınan kararname</li>
                         <li><strong>İçerik:</strong> 5 maddeli kanun, Mustafa Kemal'e 3 aylık dönem için tam yürütme ve yasama yetkisi</li>
                         <li><strong>Mustafa Kemal'in Sözü:</strong> "İman ve güvenim bir dakika olsun sarsılmamıştır" - halkın ve milletin gücüne olan inancı</li>
@@ -185,9 +190,9 @@
                 </div>
 
                 <!-- Özet 5 -->
-                <div style="background:linear-gradient(135deg, #ffebee 0%, #f8bbd0 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #d32f2f;">
-                    <h3 style="color:#b71c1c; margin:0 0 12px 0; font-size:1.2em;">🏆 Sakarya Meydan Savaşı → Mudanya</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #9b59b6;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">🏆 Sakarya Meydan Savaşı → Mudanya</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Sakarya Meydan Savaşı (23 Ağustos - 13 Eylül 1921):</strong> 22 günlük muharebe, Sakarya Nehri'nin batısında "sathı müdafaa" (alan savunması) taktiksi uygulanması</li>
                         <li><strong>Zafer Sonuçları:</strong> Yunan 3. Ordusu'nun Ankara yönündeki ilerleyişinin durması, Mustafa Kemal'in "Gazi" unvanını alması, mareşalliğe yükseltilmesi</li>
                         <li><strong>Büyük Taarruz (26 Ağustos - 18 Eylül 1922):</strong> Sakarya'dan bir yıl sonra Türk ordusunun taarruzu:</li>
@@ -200,9 +205,9 @@
                 </div>
 
                 <!-- Özet 6 -->
-                <div style="background:linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #1976d2;">
-                    <h3 style="color:#0d47a1; margin:0 0 12px 0; font-size:1.2em;">🕊️ Lozan Barış Antlaşması (24 Temmuz 1923)</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #1abc9c;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">🕊️ Lozan Barış Antlaşması (24 Temmuz 1923)</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Konferans Süreci:</strong> 20 Kasım 1922'de başlangıç, 4 Şubat 1923'de kesinti, 23 Nisan 1923'de yeniden başlangıç, 24 Temmuz 1923'de imzalanması</li>
                         <li><strong>Türk Heyeti:</strong> İsmet Paşa (başheyet), Yusuf Kemal Paşa (dışişleri), Rıza Nur Paşa (TBMM), Tevfik Rüştü Bey</li>
                         <li><strong>Katılımcı Devletler:</strong> TBMM, Britanya, Fransa, İtalya, Japonya, Romanya, Yugoslavya, Yunanistan</li>
@@ -224,9 +229,9 @@
                 </div>
 
                 <!-- Özet 7 -->
-                <div style="background:linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); padding:20px; border-radius:12px; margin-bottom:20px; border-left:5px solid #7b1fa2;">
-                    <h3 style="color:#4a148c; margin:0 0 12px 0; font-size:1.2em;">🎭 Sanata ve Edebiyata Yansımaları</h3>
-                    <ul style="margin:0; padding-left:20px; color:#333; font-size:0.95em; line-height:1.7;">
+                <div style="background:#333333; padding:20px; border-radius:12px; margin-bottom:20px; border-left:4px solid #e74c3c;">
+                    <h3 style="margin:0 0 12px 0; font-size:1.2em; color:#b8b8b8;">🎭 Sanata ve Edebiyata Yansımaları</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; line-height:1.7;">
                         <li><strong>Sanat ve Toplum Etkileşimi:</strong> Sanat ve toplum arasında sürekli etkileşim vardır, toplumsal olaylar sanatçıları etkilemiş, sanatçılar da toplumu mobilize etmiştir</li>
                         <li><strong>Edebiyat Eserleri:</strong></li>
                         <li style="margin-left:20px;">- Halide Edib (Adıvar): "Ateşten Gömlek" (dönemin ilk romanı), "Türk'ün Ateşle İmtihanı" (anı türü)</li>
@@ -252,8 +257,8 @@
             </div>
 
             <!-- Modal Footer -->
-            <div style="padding:20px; text-align:center; background:#f5f5f5; border-top:1px solid #ddd; border-radius:0 0 16px 16px;">
-                <button onclick="document.getElementById('ozetModal').style.display='none'" style="padding:12px 32px; background:#2196F3; color:white; border:none; border-radius:8px; font-size:1em; font-weight:bold; cursor:pointer;">
+            <div style="padding:20px; text-align:center; border-top:1px solid #ddd; border-radius:0 0 16px 16px;">
+                <button onclick="document.getElementById('ozetModal').style.display='none'" style="padding:12px 32px; border:none; border-radius:8px; font-size:1em; font-weight:bold; cursor:pointer;">
                     Kapat
                 </button>
             </div>
@@ -270,7 +275,7 @@
     </script>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#c62828; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
             ← İnkılap Tarihi Ana Sayfa
         </a>
     </div>

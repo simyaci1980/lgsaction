@@ -1,130 +1,135 @@
 {% extends "base.html" %}
 {% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
     <link rel="stylesheet" href="/static/dersler.css">
 {% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="main-title">2. ÜNİTE: MİLLİ UYANIŞ - BAĞIMSIZLIK YOLUNDA ATILAN ADIMLAR 🎯</h1>
-    <p style="text-align:center; color:#666; font-size:1.1em; margin-bottom:40px;">
+    <p style="text-align:center; font-size:1.1em; margin-bottom:40px;">
         Bu ünitede I. Dünya Savaşı, Mondros Ateşkes Antlaşması, Kuvâ-yi Milliye ve TBMM'nin açılışını öğreneceğiz.
     </p>
 
     <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:800px; margin:0 auto;">
         <!-- Konu 1 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/dunyasavasi-1/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">⚔️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">I. Dünya Savaşı</h2>
+                    <h2 style="margin:0; font-size:1.4em;">I. Dünya Savaşı</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 2 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/dunyasavasi-osmanlı/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🏴</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">I. Dünya Savaşı'nda Osmanlı Devleti</h2>
+                    <h2 style="margin:0; font-size:1.4em;">I. Dünya Savaşı'nda Osmanlı Devleti</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 3 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/mondros-ateskesi/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">📜</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Mondros Ateşkes Antlaşması (30 Ekim 1918)</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Mondros Ateşkes Antlaşması (30 Ekim 1918)</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 4 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/kuvayi-milliye/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">💪</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Kuvâ-yi Milliye Hareketi ve Cemiyetler</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Kuvâ-yi Milliye Hareketi ve Cemiyetler</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 5 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/hazirlik-donemi/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🎯</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Milli Mücadele'nin Hazırlık Dönemi</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Milli Mücadele'nin Hazırlık Dönemi</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 6 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/misak-i-milli-tbmm/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🏛️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Misak-ı Milli'nin Kabulü ve TBMM'nin Açılması</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Misak-ı Milli'nin Kabulü ve TBMM'nin Açılması</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 7 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/ayaklanmalar/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">⚠️</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Büyük Millet Meclisine Karşı Ayaklanmalar</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Büyük Millet Meclisine Karşı Ayaklanmalar</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 8 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/inkilap/sevr-antlasmasi/" style="display:block; padding:24px; border-radius:12px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">📄</div>
                 <div style="flex:1;">
-                    <h2 style="margin:0; font-size:1.4em; color:white;">Sevr Antlaşması (10 Ağustos 1920)</h2>
+                    <h2 style="margin:0; font-size:1.4em;">Sevr Antlaşması (10 Ağustos 1920)</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        [İçerik hazırlanıyor...]
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:2em;">→</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
-        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; background:#c62828; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <a href="/inkilap/" style="display:inline-block; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
             ← İnkılap Tarihi Ana Sayfa
         </a>
     </div>
