@@ -16,6 +16,9 @@ def turkce(request):
 def fen(request):
     return render(request, 'fen/fen.html')
 
+def yazili_hazirligi(request):
+    return render(request, 'fen/yazili_hazirligi.html')
+
 def fen_unite_1(request):
     return render(request, 'fen/fen_unite_1.html')
 

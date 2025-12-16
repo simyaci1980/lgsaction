@@ -57,6 +57,7 @@ urlpatterns = [
     path('fen/asitler_bazlar/', views.asitler_bazlar, name='asitler_bazlar'),
     path('fen/maddenin_isi_etkisimi/', views.maddenin_isi_etkisimi, name='maddenin_isi_etkisimi'),
     path('fen/unite-7/', views.fen_unite_7, name='fen_unite_7'),
+    path('fen/yazili_hazirligi/', views.yazili_hazirligi, name='yazili_hazirligi'),
     path('inkilap/', views.inkilap, name='inkilap'),
     path('inkilap/unite-1/', views.inkilap_unite_1, name='inkilap_unite_1'),
     path('inkilap/gelisen-avrupa/', views.gelisen_avrupa, name='gelisen_avrupa'),
