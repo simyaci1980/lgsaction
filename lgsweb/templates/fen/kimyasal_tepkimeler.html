@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+        .floating-icon {
+            font-size: 3em;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #0a0e27;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        .section h2 {
+            color: #64b5f6;
+            margin-bottom: 24px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #64b5f6;
+            padding-bottom: 12px;
+        }
+        .example-box {
+            background: #1e2a38;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #64b5f6;
+            color: #fff;
+        }
+        .highlight-box {
+            background: #1a2a3a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #81c784;
+            margin: 20px 0;
+            color: #fff;
+        }
+        .formula-box {
+            background: #181818;
+            padding: 24px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffb74d;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.6em;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:center; margin:40px 0;">
+        <div class="floating-icon">⚗️</div>
+        <h1 class="main-title">KİMYASAL TEPKİMELER</h1>
+    </div>
+
+    <!-- İçerik buraya eklenecek -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> Kimyasal Tepkimeler</h2>
+        
+        <div class="highlight-box">
+            <p style="color:#e0e0e0; font-size:1.1em; line-height:1.8;">
+                <b>KONU: Kimyasal Tepkimeler</b><br><br>
+                Maddenin yapısında fiziksel ve kimyasal değişmeler meydana gelir.<br>
+                Fiziksel değişmeler sadece dış görünümde meydana gelirken, kimyasal değişmeler maddenin iç yapısında meydana gelir.<br><br>
+                Kimyasal değişim, kimyasal tepkimelerle meydana gelir.<br>
+                Demirin paslanması, kağıdın yanması, elmanın çürümesi, ekmeğin küflenmesi kimyasal değişimdir. Bu olaylar kimyasal tepkimelerle oluşur.<br><br>
+                Maddelerin kimyasal değişime uğrayarak yeni maddeler oluşturmasına <b>kimyasal tepkime</b> denir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>A- Kimyasal Tepkimelerin Özellikleri</h2>
+            <ul style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                <li>Madde özelliklerini kaybeder, yeni madde oluşur.</li>
+                <li>Kimyasal özellikler değişir.</li>
+                <li>Atomlar arasındaki kimyasal bağlar kopar.</li>
+                <li>Farklı atomlarla yeni bağlar oluşur.</li>
+                <li>Kimyasal tepkimeye giren atomların türü ve sayısı değişmez.</li>
+                <li>Kimyasal tepkimeye giren maddenin kütlesi ile ürünlerin kütleleri eşittir.</li>
+                <li>Girenlerin ve ürünlerin molekül sayısı ve hacimleri korunmayabilir.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>B- Kimyasal Tepkimelerin Yazılması</h2>
+            <ul style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                <li>Kimyasal tepkimeler yazılırken <b>kimyasal denklem</b> şeklinde gösterilir.</li>
+                <li>Tepkimeye (reaksiyona) girenler sol tarafa, ürünler ise sağ tarafa yazılır.</li>
+                <li>Tepkimeye girenler ve ürünler birden fazla ise aralarına <b>+</b> işareti konulur.</li>
+                <li>Girenler ve ürünler arasına <b>→</b> işareti konulur.</li>
+                <li>Kimyasal tepkimede maddenin hali katı (k), sıvı (s) ve gaz (g) şeklinde sağ alt tarafına yazılabilir. <b>H<sub>2</sub>O (s)</b> gibi.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>C- Kimyasal Tepkimelerde Kütlenin Korunumu</h2>
+            <p style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                Bir kimyasal tepkimede var olan madde yok olmaz, yoktan da madde var edilemez.<br>
+                Madde içerisindeki atomlar arasındaki bağlar kopar ve yeni bağlar oluşur. Bu nedenle yeni maddeler meydana gelir. Atomların sayısı ve türü değişmemektedir.<br><br>
+                Kimyasal tepkimeye giren maddelerin toplam kütlesi ile tepkimeden çıkan maddelerin toplam kütleleri birbirine eşittir. Buna <b>kütlenin korunumu kanunu</b> denir.
+            </p>
+            <div class="example-box">
+                <b>Örnek:</b> 16 gram oksijen ile miktarı bilinmeyen karbon tepkimeye girerek, 22 gram karbondioksit oluşuyor. Buna göre tepkimeye giren karbon miktarı kaç gramdır?<br>
+                <span style="color:#81c784;">CEVAP</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>D- Kimyasal Tepkimede Korunanlar ve Korunmayanlar</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:32px;">
+                <div style="flex:1; min-width:220px;">
+                    <b style="color:#64b5f6;">Kimyasal Tepkimede Korunanlar</b>
+                    <ul style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                        <li>Atom cinsi ve sayısı</li>
+                        <li>Kütle</li>
+                        <li>Toplam proton, nötron ve elektron sayıları</li>
+                    </ul>
+                </div>
+                <div style="flex:1; min-width:220px;">
+                    <b style="color:#ef5350;">Kimyasal Tepkimede Korunmayabilenler</b>
+                    <ul style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                        <li>Molekül sayısı korunmayabilir.</li>
+                        <li>Hacim korunmayabilir.</li>
+                        <li>Kimyasal özellikler korunmaz.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>E- Kimyasal Tepkimelerin Grafiği</h2>
+            <div class="formula-box">
+                A + B → C
+            </div>
+            <p style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                Kimyasal tepkimeye giren maddelerin kütlesi azalır, ürünlerin kütlesi artar.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>F- Amonyak Tepkime Denklemi</h2>
+            <div class="formula-box">
+                N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub>
+            </div>
+            <ul style="color:#e0e0e0; font-size:1.08em; line-height:1.8;">
+                <li>Tepkimede molekül sayısı azaldı. (Girenlerde 8 atom, ürünlerde 8 atom vardır)</li>
+                <li>Girenlerde toplam molekül sayısı: 1 azot, 3 hidrojen toplam 4 molekül</li>
+                <li>Ürünlerde toplam molekül sayısı: 2 amonyak</li>
+                <li>Tepkime sonucu oluşan amonyak yeni maddedir.</li>
+                <li>Molekül sayısı ve hacim azalmıştır.</li>
+                <li>Tepkimede atom sayısı değişmedi. (Girenlerde 8 atom, ürünlerde 8 atom vardır)</li>
+                <li>Atom türü değişmemiştir.</li>
+                <li>Azot ve hidrojen molekülü içindeki atomlar arasındaki bağlar kırılır.</li>
+                <li>Amonyağın yapısında azot ve hidrojen atomları arasında yeni bağlar oluşur.</li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <div style="margin:60px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-4/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            ← 4. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#43a047; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            🏠 Fen Bilimleri
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+
+    // Dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+{% endblock %}

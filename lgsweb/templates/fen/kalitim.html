@@ -1,0 +1,560 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 1 !important;
+            text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.55), 0 0 6px rgba(0, 0, 0, 0.75);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 5;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">👨‍👩‍👧‍👦</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">🧬</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">👶</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">🧪</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">📊</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">🔬</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">💡</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">🧬</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">📚</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🎯</div>
+
+    <h1 class="main-title">KALITIM <span style="color:#64b5f6;">👨‍👩‍👧‍👦</span></h1>
+    <ul class="topic-list">
+        <li>Kalıtımla İlgili Kavramlar</li>
+        <li>Karakter Çaprazlamaları</li>
+        <li>Cinsiyete Bağlı Kalıtım</li>
+        <li>Akraba Evliliği</li>
+    </ul>
+    <hr>
+
+    <!-- GİRİŞ -->
+    <section class="section">
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+            <span style="color:#e0e0e0;">Kalıtsal özelliklerin nesilden nesile nasıl aktarıldığını araştıran bilim dalına <b style="color:#64b5f6;">kalıtım (genetik)</b> denir.</span>
+        </div>
+    </section>
+
+    <!-- A- KALITIMLA İLGİLİ KAVRAMLAR -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> <span style="color:#64b5f6;">A- Kalıtımla İlgili Kavramlar</span></h2>
+        
+        <!-- Gen -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🧬 Gen</h3>
+            <span style="color:#e0e0e0;">Kromozom üzerinde bulunan ve <b style="color:#64b5f6;">kalıtsal karakterleri taşıyan birimlerdir</b>.</span>
+        </div>
+
+        <!-- Baskın ve Çekinik Gen -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #81c784;">
+                <b style="color:#81c784;">💪 Baskın Gen</b><br><br>
+                <span style="color:#e0e0e0;">Özelliğini <b>her zaman gösteren</b> gendir.</span><br>
+                <span style="color:#e0e0e0;">Baskın gen <b style="color:#81c784;">büyük harfle</b> gösterilir.</span><br>
+                <span style="color:#ccc; font-size:0.95em; margin-top:8px; display:block;">(A, B, S, K gibi)</span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ba68c8;">
+                <b style="color:#ba68c8;">😶 Çekinik Gen</b><br><br>
+                <span style="color:#e0e0e0;"><b>Baskın gen olmadığı zaman</b> etkisini gösteren gendir.</span><br>
+                <span style="color:#e0e0e0;">Çekinik gen <b style="color:#ba68c8;">küçük harfle</b> gösterilir.</span><br>
+                <span style="color:#ccc; font-size:0.95em; margin-top:8px; display:block;">(a, b, s, k gibi)</span>
+            </div>
+        </div>
+
+        <!-- Alel Gen -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">👨‍👩‍👧 Alel Gen</b><br><br>
+            <span style="color:#e0e0e0;">Biri <b>anneden</b> diğeri <b>babadan</b> gelen <b style="color:#ffb74d;">gen çiftine</b> alel gen denir.</span>
+        </div>
+
+        <!-- Genotip ve Fenotip -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px;">
+                <h3 style="color:#64b5f6; margin-top:0;">🧬 Genotip</h3>
+                <ul style="line-height:2; color:#e0e0e0;">
+                    <li><b style="color:#64b5f6;">Gen yapısına</b> genotip denir</li>
+                    <li>Bireyin sahip olduğu <b>genlerin toplamıdır</b></li>
+                    <li>Genotip, <b>homozigot (Saf, arı)</b> veya <b>heterozigot (melez)</b> olabilir</li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px;">
+                <h3 style="color:#4db6ac; margin-top:0;">👁️ Fenotip</h3>
+                <ul style="line-height:2; color:#e0e0e0;">
+                    <li>Canlının <b style="color:#4db6ac;">dış görünüşüdür</b></li>
+                    <li>Gen yapısının <b>dışa yansımasıdır</b></li>
+                    <li>Dış görünüşte gen yapısı ile birlikte <b>çevrenin de etkisi</b> vardır</li>
+                </ul>
+                <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <b style="color:#4db6ac; font-size:1.1em;">Fenotip = Genotip + Çevre</b>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saf ve Melez Döl -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #81c784;">
+                <b style="color:#81c784;">✅ Saf Döl (Homozigot/Arı Döl)</b><br><br>
+                <span style="color:#e0e0e0;">Alel genlerin <b>birbirinin aynı olmasıdır</b>.</span><br>
+                <div style="background:#1e2a38; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <b style="color:#81c784; font-size:1.2em;">AA, aa</b>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ffb74d;">
+                <b style="color:#ffb74d;">🔀 Melez Döl (Heterozigot)</b><br><br>
+                <span style="color:#e0e0e0;">Alel genlerin <b>farklı olmasıdır</b>.</span><br>
+                <div style="background:#1e2a38; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <b style="color:#ffb74d; font-size:1.2em;">Aa</b>
+                </div>
+            </div>
+        </div>
+
+        <!-- F1 ve F2 Dölü -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ef5350;">
+                <b style="color:#ef5350;">1️⃣ F1 Dölü</b><br><br>
+                <span style="color:#e0e0e0;"><b style="color:#ef5350;">1.Kuşak çaprazlamasına</b> F1 dölü denir.</span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ef5350;">
+                <b style="color:#ef5350;">2️⃣ F2 Dölü</b><br><br>
+                <span style="color:#e0e0e0;">F1 dölünün çaprazlanması sonucu oluşan bireylerin kendi aralarında çaprazlanması sonucu oluşan <b style="color:#ef5350;">2.kuşaktır</b>.</span>
+            </div>
+        </div>
+
+        <!-- Karakterin Gösterilmesi -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #64b5f6;">
+            <b style="color:#64b5f6;">📊 Bir Karakterin Gösterilmesi</b><br><br>
+            <span style="color:#e0e0e0;">Genlerin <b>yan yana yazılması</b> gerekir:</span>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:16px;">
+                <div style="background:#1a2a3a; padding:16px; border-radius:8px; text-align:center;">
+                    <div style="font-size:1.5em; color:#81c784; font-weight:bold; margin-bottom:8px;">AA</div>
+                    <span style="color:#81c784;">Baskın özellik görülür</span>
+                </div>
+                <div style="background:#1a2a3a; padding:16px; border-radius:8px; text-align:center;">
+                    <div style="font-size:1.5em; color:#81c784; font-weight:bold; margin-bottom:8px;">Aa</div>
+                    <span style="color:#81c784;">Baskın özellik görülür</span>
+                </div>
+                <div style="background:#1a2a3a; padding:16px; border-radius:8px; text-align:center;">
+                    <div style="font-size:1.5em; color:#ba68c8; font-weight:bold; margin-bottom:8px;">aa</div>
+                    <span style="color:#ba68c8;">Çekinik özellik görülür</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- İnsanlarda Kalıtsal Özellikler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">👤 İnsanlarda Görülen Bazı Kalıtsal Özellikler</h3>
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li><b style="color:#ffb74d;">Siyah saç</b>, sarı saça baskındır</li>
+                <li><b style="color:#ffb74d;">Kıvırcık saç</b>, düz saça baskındır</li>
+                <li><b style="color:#ffb74d;">Siyah deri</b>, beyaz deriye baskındır</li>
+                <li><b style="color:#ffb74d;">Kahverengi göz</b>, mavi göz rengine baskındır</li>
+                <li><b style="color:#ffb74d;">Ayrık kulak memesi</b>, bitişik kulak memesine baskındır</li>
+            </ul>
+        </div>
+
+        <!-- Mendel -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #64b5f6;">
+            <h3 style="color:#64b5f6; margin-top:0;">👨‍🔬 Gregor Mendel</h3>
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>Kalıtımla ilgili çalışmaların başlangıcı <b style="color:#64b5f6;">Mendel ile başlamıştır</b></li>
+                <li><b style="color:#64b5f6;">Kalıtım biliminin kurucusudur</b></li>
+                <li>Mendel'in çalışmalarında <b>bezelye bitkisini</b> kullanmıştır</li>
+            </ul>
+
+            <div style="background:#1e2a38; padding:16px; border-radius:8px; margin-top:16px;">
+                <b style="color:#64b5f6;">🌱 Mendel'in Bezelye Bitkisini Seçmesinin Sebepleri:</b><br>
+                <ul style="line-height:2; color:#e0e0e0; margin-top:8px;">
+                    <li>Bezelyenin <b>kolay yetiştirilmesi</b></li>
+                    <li>Bir mevsimde <b>birkaç döl (ürün) vermesi</b></li>
+                    <li><b>Karakter çeşidinin fazla olması</b></li>
+                    <li><b>Tozlaşmanın kontrol altında tutulabilmesi</b></li>
+                    <li><b>Kapalı çiçek yapısına</b> sahip olması</li>
+                    <li>Bezelyenin <b>yalnızca kendi arasında tozlaşması</b></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bezelyenin Karakterleri -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px;">
+            <b style="color:#81c784;">🌱 Bezelyelerin Farklı Karakterleri</b><br><br>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:16px;">
+                <div style="background:#1e2a38; padding:16px; border-radius:8px;">
+                    <b style="color:#81c784;">1. Tohum Şekli</b><br>
+                    <span style="color:#e0e0e0;"><b>Yuvarlak tohum</b>, buruşuk tohuma baskındır</span>
+                </div>
+                <div style="background:#1e2a38; padding:16px; border-radius:8px;">
+                    <b style="color:#ffb74d;">2. Tohum Rengi</b><br>
+                    <span style="color:#e0e0e0;"><b>Sarı tohum</b>, yeşil tohuma baskındır</span>
+                </div>
+                <div style="background:#1e2a38; padding:16px; border-radius:8px;">
+                    <b style="color:#64b5f6;">3. Gövde Uzunluğu</b><br>
+                    <span style="color:#e0e0e0;"><b>Uzun gövde</b>, kısa gövdeye baskındır</span>
+                </div>
+                <div style="background:#1e2a38; padding:16px; border-radius:8px;">
+                    <b style="color:#ba68c8;">4. Çiçek Rengi</b><br>
+                    <span style="color:#e0e0e0;"><b>Mor çiçek</b>, beyaz çiçeğe baskındır</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B- KARAKTER ÇAPRAZLAMALARI -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#9733;</span> <span style="color:#81c784;">B- Karakter Çaprazlamaları</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #81c784;">
+            <span style="color:#e0e0e0;">Eşeyli üreyen canlılarda <b style="color:#81c784;">karakterlerin nesilden nesile aktarılmasının gösterilmesine çaprazlama denir</b>. Çaprazlamada anne ve babadan gelen karakterler birbiri üzerine dağıtılır. Oluşan yavruların genotip ve fenotipleri bulunmaya çalışılır.</span>
+        </div>
+
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">⚠️ ÖNEMLİ NOT:</b><br><br>
+            <span style="color:#e0e0e0;">Çaprazlamada elde edilen sonuçlar <b>ihtimali verir, kesinlik belirtmez</b>.</span>
+            <ul style="line-height:2; color:#e0e0e0; margin-top:12px;">
+                <li><b style="color:#81c784;">%100</b> → Kesin ortaya çıkar</li>
+                <li><b style="color:#ef5350;">%0</b> → İmkansızdır</li>
+                <li><b style="color:#ffb74d;">%50</b> → Yarı yarıya olabilir veya olmayabilir</li>
+            </ul>
+        </div>
+
+        <!-- SORU 1 -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:24px; border-radius:8px; margin-top:32px;">
+            <h3 style="color:#81c784; margin-top:0;">📝 Soru 1</h3>
+            <span style="color:#e0e0e0;">Saf döl sarı bezelye ile, saf döl yeşil bezelyenin çaprazlaması sonucu oluşacak bezelyelerin fenotip ve genotiplerini bulunuz?</span>
+            
+            <div style="margin-top:24px; text-align:center;">
+                <div style="display:inline-block; background:#1a2a3a; padding:20px; border-radius:8px;">
+                    <div style="color:#e0e0e0; margin-bottom:16px; font-size:1.1em;">
+                        <b style="color:#81c784;">Sarı (AA)</b> × <b style="color:#ba68c8;">Yeşil (aa)</b>
+                    </div>
+                    
+                    <table style="border-collapse:collapse; margin:0 auto; background:#1e2a38;">
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#64b5f6; font-weight:bold; background:#1a2a2a;"></td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#81c784; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">A</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#81c784; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">A</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; background:#1a2a2a;">a</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; background:#1a2a2a;">a</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top:24px; padding:16px; background:#1a2a2a; border-radius:8px;">
+                        <div style="color:#64b5f6; font-weight:bold; margin-bottom:8px;">📊 SONUÇ:</div>
+                        <div style="color:#e0e0e0;"><b>Genotip:</b> <span style="color:#81c784;">%100 Melez (Heterozigot)</span></div>
+                        <div style="color:#e0e0e0; margin-top:4px;"><b>Fenotip:</b> <span style="color:#81c784;">%100 Sarı</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px; border-left:4px solid #81c784;">
+                <span style="color:#e0e0e0;">Farklı özellikteki iki arı dölün çaprazlaması sonucu oluşan bezelyeler <b style="color:#81c784;">%100 melez ve %100 sarıdır</b>.</span>
+            </div>
+
+            <div style="background:#2a1a1a; padding:16px; border-radius:8px; margin-top:12px; border-left:4px solid #ffb74d;">
+                <b style="color:#ffb74d;">💡 NOT:</b> <span style="color:#e0e0e0;">F1 dölü çaprazlamasında oluşan bireyler <b>baskın karakterin özelliğini göstermektedir</b>. Çekinik karakter gizli kalmıştır.</span>
+            </div>
+        </div>
+
+        <!-- SORU 2 -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:24px; border-radius:8px; margin-top:32px;">
+            <h3 style="color:#ffb74d; margin-top:0;">📝 Soru 2</h3>
+            <span style="color:#e0e0e0;">Melez sarı iki bezelyenin çaprazlaması sonucu oluşacak bezelyelerin fenotip ve genotiplerini bulunuz?</span>
+            
+            <div style="margin-top:24px; text-align:center;">
+                <div style="display:inline-block; background:#1a2a3a; padding:20px; border-radius:8px;">
+                    <div style="color:#e0e0e0; margin-bottom:16px; font-size:1.1em;">
+                        <b style="color:#ffb74d;">Melez Sarı (Aa)</b> × <b style="color:#ffb74d;">Melez Sarı (Aa)</b>
+                    </div>
+                    
+                    <table style="border-collapse:collapse; margin:0 auto; background:#1e2a38;">
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#64b5f6; font-weight:bold; background:#1a2a2a;"></td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#81c784; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">A</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">a</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#81c784; font-weight:bold; text-align:center; background:#1a2a2a;">A</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#1a3a1a;">AA</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; background:#1a2a2a;">a</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#3a1a1a;">aa</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top:24px; padding:16px; background:#1a2a2a; border-radius:8px;">
+                        <div style="color:#64b5f6; font-weight:bold; margin-bottom:8px;">📊 SONUÇ:</div>
+                        <div style="color:#e0e0e0;"><b>Genotip:</b> <span style="color:#ffb74d;">%50 Melez (Heterozigot)</span>, <span style="color:#81c784;">%50 Arı döl (Homozigot)</span></div>
+                        <div style="color:#e0e0e0; margin-top:4px;"><b>Fenotip:</b> <span style="color:#81c784;">%75 Sarı</span>, <span style="color:#ba68c8;">%25 Yeşil</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px; border-left:4px solid #ffb74d;">
+                <span style="color:#e0e0e0;">Melez bireylerin çaprazlaması sonucu <b style="color:#ba68c8;">çekinik karakterler ortaya çıkabilir</b>. <b style="color:#ef5350;">%25 ihtimalle</b> çekinik karakter ortaya çıkabilir.</span>
+            </div>
+
+            <div style="background:#2a1a1a; padding:16px; border-radius:8px; margin-top:12px; border-left:4px solid #ffb74d;">
+                <b style="color:#ffb74d;">💡 NOT:</b> <span style="color:#e0e0e0;">Çekinik özelliğin görülebilmesi için <b>anneden ve babadan çekinik geni alması gerekir</b>.</span>
+            </div>
+        </div>
+
+        <!-- SORU 3 -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:24px; border-radius:8px; margin-top:32px;">
+            <h3 style="color:#4db6ac; margin-top:0;">📝 Soru 3</h3>
+            <span style="color:#e0e0e0;">Arı döl (saf döl) yeşil tohumlu bezelye ile melez sarı tohumlu bezelyenin çaprazlamasını yapınız?</span>
+            
+            <div style="margin-top:24px; text-align:center;">
+                <div style="display:inline-block; background:#1a2a3a; padding:20px; border-radius:8px;">
+                    <div style="color:#e0e0e0; margin-bottom:16px; font-size:1.1em;">
+                        <b style="color:#ba68c8;">Yeşil (aa)</b> × <b style="color:#ffb74d;">Melez Sarı (Aa)</b>
+                    </div>
+                    
+                    <table style="border-collapse:collapse; margin:0 auto; background:#1e2a38;">
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#64b5f6; font-weight:bold; background:#1a2a2a;"></td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#81c784; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">A</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">a</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; background:#1a2a2a;">a</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#3a1a1a;">aa</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#ba68c8; font-weight:bold; text-align:center; background:#1a2a2a;">a</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#2a1a3a;">Aa</td>
+                            <td style="padding:16px; border:2px solid #64b5f6; color:#e0e0e0; font-weight:bold; text-align:center; background:#3a1a1a;">aa</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top:24px; padding:16px; background:#1a2a2a; border-radius:8px;">
+                        <div style="color:#64b5f6; font-weight:bold; margin-bottom:8px;">📊 SONUÇ:</div>
+                        <div style="color:#e0e0e0;"><b>Genotip:</b> <span style="color:#ffb74d;">%50 Melez</span>, <span style="color:#ba68c8;">%50 Saf döl</span></div>
+                        <div style="color:#e0e0e0; margin-top:4px;"><b>Fenotip:</b> <span style="color:#81c784;">%50 Sarı</span>, <span style="color:#ba68c8;">%50 Yeşil</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px; border-left:4px solid #4db6ac;">
+                <span style="color:#e0e0e0;">Bezelye tohumlarında sarı, yeşil renge baskındır. Sarı tohumlu bezelye <b style="color:#81c784;">AA</b> veya <b style="color:#ffb74d;">Aa</b> genotipine sahip olabilir. Yeşil tohumlu bezelye sadece <b style="color:#ba68c8;">aa</b> genotipine sahip olabilir.</span>
+            </div>
+        </div>
+
+        <!-- ÖNEMLİ NOTLAR -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #ef5350;">
+            <h3 style="color:#ef5350; margin-top:0;">⚠️ ÖNEMLİ NOTLAR</h3>
+            
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                <b style="color:#ba68c8;">🔹 NOT 1:</b><br>
+                <span style="color:#e0e0e0; margin-top:8px; display:block;">Çekinik fenotipli bezelyelerin genotipi bellidir, <b>saf döl çekiniktir</b>. Baskın fenotipli bezelyelerin fenotipine bakarak genotipi belirlenemez. Genotipleri <b>melez veya saf döl olabilir</b>.</span>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                <b style="color:#64b5f6;">🔹 NOT 2:</b><br>
+                <span style="color:#e0e0e0; margin-top:8px; display:block;">Baskın fenotipli bir bezelyenin melez veya saf döl olduğunu bulabilmek için <b>saf döl çekinik (aa) karakterle çaprazlanır</b>. Çaprazlama sonucu fenotipte çekinik karakter oluşuyorsa çaprazlanan bezelye <b style="color:#ffb74d;">melezdir (Aa)</b>, çekinik karakter oluşmuyorsa <b style="color:#81c784;">saf döldür (AA)</b>.</span>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                <b style="color:#ffb74d;">🔹 NOT 3:</b><br>
+                <span style="color:#e0e0e0; margin-top:8px; display:block;">Fenotipte <b style="color:#ffb74d;">%50 baskın %50 çekinik</b> özellikte bireyler oluşursa <b>Aa × aa</b> çaprazlamasıdır.</span><br>
+                <span style="color:#e0e0e0; margin-top:8px; display:block;">Fenotipte <b style="color:#ef5350;">%75 baskın %25 çekinik</b> özellikte bireyler oluşursa <b>Aa × Aa</b> çaprazlamasıdır.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- C- CİNSİYETE BAĞLI KALITIM -->
+    <section class="section">
+        <h2><span style="color:#ba68c8;">&#9733;</span> <span style="color:#ba68c8;">C- Cinsiyete Bağlı Kalıtım</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ba68c8;">
+            <span style="color:#e0e0e0;">Sağlıklı bir insanın <b style="color:#ba68c8;">46 kromozomu</b> vardır. Bu kromozomların <b style="color:#64b5f6;">44 tanesi vücut</b>, <b style="color:#ef5350;">2 tanesi cinsiyet kromozomudur</b>.</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="highlight-box" style="background:#1e2a38; padding:24px; border-radius:12px; border-left:4px solid #ef5350;">
+                <div style="text-align:center; font-size:3em; margin-bottom:12px;">♀️</div>
+                <h3 style="color:#ef5350; text-align:center; margin:0;">Dişilerde</h3>
+                <div style="text-align:center; margin-top:16px; background:#1a2a2a; padding:20px; border-radius:8px;">
+                    <div style="font-size:2.5em; color:#ef5350; font-weight:bold;">XX</div>
+                    <span style="color:#ccc; font-size:0.9em;">Cinsiyet Kromozomu</span>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background:#1e2a38; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+                <div style="text-align:center; font-size:3em; margin-bottom:12px;">♂️</div>
+                <h3 style="color:#64b5f6; text-align:center; margin:0;">Erkeklerde</h3>
+                <div style="text-align:center; margin-top:16px; background:#1a2a2a; padding:20px; border-radius:8px;">
+                    <div style="font-size:2.5em; color:#64b5f6; font-weight:bold;">XY</div>
+                    <span style="color:#ccc; font-size:0.9em;">Cinsiyet Kromozomu</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">💡 NOT:</b><br><br>
+            <span style="color:#e0e0e0;">İnsanlarda doğacak olan çocuğun cinsiyetini <b style="color:#64b5f6;">babadan gelen sperm belirler</b>. Babadan <b style="color:#ef5350;">X kromozomu</b> taşıyan sperm geldiğinde <b>kız</b>, <b style="color:#64b5f6;">Y kromozomu</b> geldiğinde <b>erkek</b> çocuk dünyaya gelir.</span>
+        </div>
+
+        <!-- Cinsiyet Örnek Soru -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:24px; border-radius:8px; margin-top:32px;">
+            <h3 style="color:#ba68c8; margin-top:0;">📝 Soru</h3>
+            <span style="color:#e0e0e0;">Bir ailede doğan 4 çocuğun tamamı erkektir. 5. çocuğun kız olma olasılığı nedir?</span>
+            
+            <div style="margin-top:24px; text-align:center;">
+                <div style="display:inline-block; background:#1a2a3a; padding:20px; border-radius:8px;">
+                    <div style="color:#e0e0e0; margin-bottom:16px; font-size:1.1em;">
+                        <b style="color:#ef5350;">Anne (XX)</b> × <b style="color:#64b5f6;">Baba (XY)</b>
+                    </div>
+                    
+                    <table style="border-collapse:collapse; margin:0 auto; background:#1e2a38;">
+                        <tr>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#ba68c8; font-weight:bold; background:#1a2a2a;"></td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#ef5350; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">X</td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#64b5f6; font-weight:bold; text-align:center; min-width:80px; background:#1a2a2a;">Y</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#ef5350; font-weight:bold; text-align:center; background:#1a2a2a;">X</td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#e0e0e0; font-weight:bold; text-align:center; background:#3a1a1a;">XX<br><span style="font-size:0.8em; color:#ef5350;">♀️ KIZ</span></td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#e0e0e0; font-weight:bold; text-align:center; background:#1a2a3a;">XY<br><span style="font-size:0.8em; color:#64b5f6;">♂️ ERKEK</span></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#ef5350; font-weight:bold; text-align:center; background:#1a2a2a;">X</td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#e0e0e0; font-weight:bold; text-align:center; background:#3a1a1a;">XX<br><span style="font-size:0.8em; color:#ef5350;">♀️ KIZ</span></td>
+                            <td style="padding:16px; border:2px solid #ba68c8; color:#e0e0e0; font-weight:bold; text-align:center; background:#1a2a3a;">XY<br><span style="font-size:0.8em; color:#64b5f6;">♂️ ERKEK</span></td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top:24px; padding:16px; background:#1a2a2a; border-radius:8px;">
+                        <div style="color:#ba68c8; font-weight:bold; margin-bottom:8px;">💡 CEVAP:</div>
+                        <div style="color:#e0e0e0; font-size:1.1em;">Kız ve erkek doğma olasılığı <b style="color:#ffb74d;">%50</b>'dir. Bu ihtimal <b style="color:#ef5350;">değişmez</b>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kalıtsal Hastalıklar -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px;">
+            <h3 style="color:#ef5350; margin-top:0;">🏥 Kalıtsal Hastalıklar</h3>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px;">
+                <!-- Hemofili -->
+                <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px;">
+                    <div style="text-align:center; font-size:2.5em; margin-bottom:12px;">🩸</div>
+                    <h4 style="color:#ef5350; text-align:center; margin:0 0 16px 0;">1. Hemofili Hastalığı</h4>
+                    <span style="color:#e0e0e0;">Kanın <b>pıhtılaşmamasıdır</b>.</span><br><br>
+                    <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:8px; text-align:center;">
+                        <span style="color:#ef5350; font-weight:bold;">X kromozomunda bulunur</span>
+                    </div>
+                </div>
+
+                <!-- Orak Hücreli Anemi -->
+                <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px;">
+                    <div style="text-align:center; font-size:2.5em; margin-bottom:12px;">🔴</div>
+                    <h4 style="color:#ef5350; text-align:center; margin:0 0 16px 0;">2. Orak Hücreli Anemi</h4>
+                    <span style="color:#e0e0e0;">Kişinin alyuvarları <b>orak şekline benzer</b>, yeteri kadar oksijen taşıyamaz.</span><br><br>
+                    <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:8px; text-align:center;">
+                        <span style="color:#ef5350; font-weight:bold;">Vücut kromozomunda çekinik olarak bulunur</span>
+                    </div>
+                </div>
+
+                <!-- Renk Körlüğü -->
+                <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px;">
+                    <div style="text-align:center; font-size:2.5em; margin-bottom:12px;">👁️</div>
+                    <h4 style="color:#ef5350; text-align:center; margin:0 0 16px 0;">3. Renk Körlüğü</h4>
+                    <span style="color:#e0e0e0;"><b>Kırmızı ve yeşil renklerin</b> ayırt edilememesidir.</span><br><br>
+                    <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:8px; text-align:center;">
+                        <span style="color:#ef5350; font-weight:bold;">X kromozomunda bulunur</span>
+                    </div>
+                </div>
+
+                <!-- Down Sendromu -->
+                <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px;">
+                    <div style="text-align:center; font-size:2.5em; margin-bottom:12px;">🧬</div>
+                    <h4 style="color:#ef5350; text-align:center; margin:0 0 16px 0;">4. Down Sendromu</h4>
+                    <span style="color:#e0e0e0;">Vücut kromozomlarından birinin <b>fazla olması</b> sonucu oluşur.</span><br><br>
+                    <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:8px; text-align:center;">
+                        <span style="color:#ef5350; font-weight:bold;">Kesin nedeni belli değildir</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background:#2a1a1a; padding:16px; border-radius:8px; margin-top:20px; border-left:4px solid #64b5f6;">
+                <b style="color:#64b5f6;">💡 NOT:</b><br><br>
+                <span style="color:#e0e0e0;"><b style="color:#64b5f6;">Balık pulluluk</b>, <b style="color:#64b5f6;">kulak içi kıllığı</b> Y kromozomunda bulunan kalıtsal hastalıklardır. Bunlar <b>sadece erkeklerde görülür</b>.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- D- AKRABA EVLİLİĞİ -->
+    <section class="section">
+        <h2><span style="color:#ef5350;">&#9733;</span> <span style="color:#ef5350;">D- Akraba Evliliği</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ef5350;">
+            <div style="text-align:center; font-size:3em; margin-bottom:16px;">👨‍👩‍👧‍👦</div>
+            <span style="color:#e0e0e0; display:block; margin-bottom:16px;">Aralarında kan bağı olan kişiler <b style="color:#ef5350;">akrabadır</b>.</span>
+            <span style="color:#e0e0e0; display:block; margin-bottom:16px;">Akraba evliliği sonucu doğacak çocukların <b style="color:#ef5350;">sakat doğma ihtimali yüksektir</b>.</span>
+            <span style="color:#e0e0e0; display:block;">Akraba olan kişilerde aynı genetik hastalığın <b style="color:#ef5350;">çekinik olarak taşınma ihtimali yüksektir</b>.</span>
+        </div>
+
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:24px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ef5350; margin-top:0;">⚠️ Akraba Evliliğinde Risk</h3>
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>Akraba olan kişilerde <b style="color:#ef5350;">aynı genetik hastalığın</b> çekinik olarak taşınma ihtimali yüksektir</li>
+                <li>Melez bireylerde <b style="color:#ffb74d;">çekinik karakter ortaya çıkma ihtimali</b> olduğundan dolayı genetik hastalıklar görülebilir</li>
+                <li>Akraba evliliği yapan çiftlerin çocuklarında <b style="color:#ef5350;">genetik hastalık görülme riski artar</b></li>
+            </ul>
+
+            <div style="background:#1a2a2a; padding:20px; border-radius:8px; margin-top:20px; text-align:center;">
+                <div style="font-size:2em; margin-bottom:12px;">🚫</div>
+                <b style="color:#ef5350; font-size:1.2em;">Akraba evliliğinden kaçınılmalıdır!</b>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-2/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ← 2. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Fen Bilimleri Ana Sayfa
+        </a>
+    </div>
+</div>
+{% endblock %}

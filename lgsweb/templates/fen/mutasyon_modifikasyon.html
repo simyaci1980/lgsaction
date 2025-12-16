@@ -1,0 +1,408 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 1 !important;
+            text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.55), 0 0 6px rgba(0, 0, 0, 0.75);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 5;
+        }
+        .container { position: relative; }
+        @media (max-width: 768px) { .floating-icon { display: none; } }
+        .section { margin-bottom: 40px; }
+        .main-title { color: #64b5f6; text-align: center; margin-bottom: 30px; }
+        .topic-list { list-style: none; padding: 0; text-align: center; color: #e0e0e0; }
+        .topic-list li { display: inline-block; margin: 0 20px; font-size: 1.1em; }
+        .highlight-box { background: #1a2a3a; padding: 24px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #64b5f6; }
+        .example-box { background: #1e2a38; padding: 20px; border-radius: 8px; margin: 16px 0; border-left: 6px solid #64b5f6; }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="main-title">MUTASYON VE MODİFİKASYON <span style="color:#64b5f6;">🔬</span></h1>
+    <ul class="topic-list">
+        <li>Mutasyon Nedir?</li>
+        <li>Mutasyon Türleri</li>
+        <li>Modifikasyon</li>
+    </ul>
+    <hr>
+
+    <!-- A- MUTASYON NEDIR -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> <span style="color:#64b5f6;">A- Mutasyon Nedir</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+            <span style="color:#e0e0e0;">DNA üzerinde meydana gelen ani değişikliklere <b style="color:#64b5f6;">mutasyon denir</b>.</span><br><br>
+            <span style="color:#e0e0e0;">DNA'nın yapısında meydana gelen bu değişiklik canlıda <b style="color:#64b5f6;">farklı özelliklerin ortaya çıkmasına neden olur</b>.</span>
+        </div>
+
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ffb74d; margin-top:24px;">
+            <span style="color:#e0e0e0;">DNA'nın yapısının değişmesi, DNA'nın işleyişini değiştirir, bu da <b style="color:#ffb74d;">farklı özellikte canlılar meydana getirir</b>.</span>
+        </div>
+
+        <!-- Mutajen ve Mutant -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px;">
+                <h3 style="color:#64b5f6; margin-top:0;">🔬 Mutajen</h3>
+                <span style="color:#e0e0e0;">Mutasyona neden olan faktörlere <b style="color:#64b5f6;">mutajen denir</b>.</span>
+                <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <span style="color:#ccc; font-size:0.9em;">Mutasyonu tetikleyen etkenler</span>
+                </div>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px;">
+                <h3 style="color:#81c784; margin-top:0;">🧬 Mutant</h3>
+                <span style="color:#e0e0e0;">Mutasyona uğramış canlıya <b style="color:#81c784;">mutant denir</b>.</span>
+                <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <span style="color:#ccc; font-size:0.9em;">Genetik değişime uğramış organizma</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mutasyona Nasıl Gerçekleşir -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #ffb74d;">
+            <h3 style="color:#ffb74d; margin-top:0;">🔄 Mutasyona Nasıl Gerçekleşir</h3>
+            
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ba68c8; margin-top:0;">1️⃣ DNA'daki Nükleotidlerin Karşılıklı Kaybolması</h4>
+                <span style="color:#e0e0e0;">DNA yapısında nükleotidlerin eksik hale gelmesi veya yerlerinin değişmesi...</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ba68c8; margin-top:0;">2️⃣ DNA'nın Bir Parçasının Koparak Kaybolması</h4>
+                <span style="color:#e0e0e0;">DNA'nın bir bölümünün bütünüyle silinmesi sonucu meydana gelen mutasyon türü.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ba68c8; margin-top:0;">3️⃣ DNA Kendini Eşlerken Nükleotidlerin Değişmesi</h4>
+                <span style="color:#e0e0e0;">DNA replikasyonu sırasında nükleotidlerde yanlış eşleşme meydana gelmesi.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ba68c8; margin-top:0;">4️⃣ Kromozom Sayısında Eksiklik veya Fazlalık</h4>
+                <span style="color:#e0e0e0;">Hücre bölünmesi sırasında kromozomların yanlış dağılımı sonucu oluşan mutasyon.</span>
+            </div>
+        </div>
+
+        <!-- Mutasyona Sebep Olan Faktörler -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #ef5350;">
+            <h3 style="color:#ef5350; margin-top:0;">⚠️ Mutasyona Sebep Olan Faktörler (Mutajenler)</h3>
+            
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#64b5f6; margin-top:0;">☢️ 1. Zararlı Işınlar</h4>
+                <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                    <li><b style="color:#64b5f6;">X ışını</b></li>
+                    <li><b style="color:#64b5f6;">Gama ışını</b></li>
+                    <li><b style="color:#64b5f6;">Morötesi (ultraviyole) ışınlar</b></li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ffb74d; margin-top:0;">⚗️ 2. Kimyasal Maddeler</h4>
+                <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                    <li><b style="color:#ffb74d;">Katkı maddeleri</b></li>
+                    <li><b style="color:#ffb74d;">Cıva</b></li>
+                    <li><b style="color:#ffb74d;">İlaçlar (Antibiyotik vb.)</b></li>
+                    <li><b style="color:#ffb74d;">DDT</b></li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ef5350; margin-top:0;">🔥 3. Aşırı Sıcaklık</h4>
+                <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                    <li><b style="color:#ef5350;">Ateşli hastalık</b></li>
+                    <li><b style="color:#ef5350;">Sıcak ortamda fazla bulunma</b></li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ba68c8; margin-top:0;">🚬 4. Zararlı Maddeler</h4>
+                <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                    <li><b style="color:#ba68c8;">Alkol</b></li>
+                    <li><b style="color:#ba68c8;">Uyuşturucu</b></li>
+                    <li><b style="color:#ba68c8;">Sigara içindeki katran</b></li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#4db6ac; margin-top:0;">🧪 5. Asitlik (pH Derecesi)</h4>
+                <span style="color:#e0e0e0;">Çevredeki <b style="color:#4db6ac;">asit seviyesindeki değişimler</b> mutasyon tetikleyebilir.</span>
+            </div>
+        </div>
+
+        <!-- Mutasyonun Özellikleri -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #64b5f6;">
+            <h3 style="color:#64b5f6; margin-top:0;">🔍 Mutasyonun Özellikleri</h3>
+            
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#64b5f6; margin-top:0;">💡 Özellik 1</h4>
+                <span style="color:#e0e0e0;">Mutasyon <b style="color:#64b5f6;">vücut hücresinde meydana geldiğinde</b> yalnızca o canlıyı ilgilendirir, <b style="color:#ef5350;">sonraki nesle aktarılmaz</b>.</span><br><br>
+                <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:12px; text-align:center;">
+                    <span style="color:#ccc; font-size:0.9em;">(Eşeyli üreyen canlılar için)</span>
+                </div>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#81c784; margin-top:0;">💡 Özellik 2</h4>
+                <span style="color:#e0e0e0;"><b style="color:#81c784;">Üreme hücrelerinde meydana gelen mutasyon</b> sonraki nesle aktarılır, canlıya etki etmez.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#4db6ac; margin-top:0;">💡 Özellik 3</h4>
+                <span style="color:#e0e0e0;">Üreme hücrelerinde meydana gelen mutasyon <b style="color:#4db6ac;">kalıtsal çeşitlilik sağlar</b>.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ffb74d; margin-top:0;">💡 Özellik 4</h4>
+                <span style="color:#e0e0e0;">Mutasyonlar <b style="color:#ffb74d;">yararlı ve zararlı olabilir</b>.</span><br><br>
+                <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:12px;">
+                    <div style="color:#81c784; font-weight:bold; margin-bottom:8px;">✅ Yararlı Mutasyon Örnekleri:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:8px 0 0 0;">
+                        <li><b style="color:#81c784;">Bitki tohumlarının fazla olması</b></li>
+                        <li><b style="color:#81c784;">Çekirdeksiz üzüm</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ef5350; margin-top:0;">💡 Özellik 5</h4>
+                <span style="color:#e0e0e0;"><b style="color:#81c784;">Yararlı mutasyonlar</b> canlının yaşama ve üreme şansını <b style="color:#81c784;">artırırken</b>, <b style="color:#ef5350;">zararlı mutasyonlar</b> canlının yaşama ve üreme şansını <b style="color:#ef5350;">azaltır</b>.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#ef5350; margin-top:0;">💡 Özellik 6</h4>
+                <span style="color:#e0e0e0;">Mutasyonların <b style="color:#ef5350;">büyük bir kısmı zararlıdır, öldürücü olabilir</b>.</span>
+            </div>
+
+            <!-- Uyarı -->
+            <div class="highlight-box" style="background:#3a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ef5350;">
+                <div style="text-align:center; font-size:2em; margin-bottom:12px;">⚠️</div>
+                <b style="color:#ef5350;">Sakat Doğum Riski:</b><br><br>
+                <span style="color:#e0e0e0;">Gebelik döneminde <b style="color:#ef5350;">röntgen filmi (X-ışını) çektirmek mutasyona neden olmaktadır</b>. Bu nedenle <b style="color:#ef5350;">sakat doğum meydana gelmektedir</b>.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- B- MUTASYONA ÖRNEKLER -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#9733;</span> <span style="color:#81c784;">B- Mutasyona Örnekler</span></h2>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <!-- Zararlı Mutasyonlar -->
+            <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ef5350;">
+                <h3 style="color:#ef5350; margin-top:0;">❌ Zararlı Mutasyonlar</h3>
+                <ul style="line-height:2.2; color:#e0e0e0; font-size:0.95em; margin-top:16px;">
+                    <li>🔴 Kanser</li>
+                    <li>🔴 Altı parmaklılık</li>
+                    <li>🔴 Eksik organlı doğma</li>
+                    <li>🔴 Gelişim bozuklukları</li>
+                    <li>🔴 Albinoluk</li>
+                    <li>🔴 Hemofili hastalığı</li>
+                    <li>🔴 Down sendromu</li>
+                    <li>🔴 Orak hücreli anemi</li>
+                    <li>🔴 Balık pulluluk</li>
+                    <li>🔴 Kelebek çocuk hastalığı</li>
+                    <li>🔴 Progeria (Erken yaşlanma hastalığı)</li>
+                </ul>
+            </div>
+
+            <!-- Yararlı Mutasyonlar -->
+            <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #81c784;">
+                <h3 style="color:#81c784; margin-top:0;">✅ Yararlı Mutasyonlar</h3>
+                <ul style="line-height:2.2; color:#e0e0e0; font-size:0.95em; margin-top:16px;">
+                    <li>🟢 Çekirdeksiz üzüm</li>
+                    <li>🟢 Dört boynuzlu keçi</li>
+                    <li>🟢 Van kedisinin farklı renkte gözleri</li>
+                    <li>🟢 Çift başlı yılan/kaplumbağa (kalıtsal çeşitlilik)</li>
+                    <li>🟢 Bakterilerin ilaçlara direnç kazanması</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- C- MODİFİKASYON -->
+    <section class="section">
+        <h2><span style="color:#4db6ac;">&#9733;</span> <span style="color:#4db6ac;">C- Modifikasyon</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #4db6ac;">
+            <span style="color:#e0e0e0;">Çevre etkisiyle vücut hücrelerinde meydana gelen ve <b style="color:#4db6ac;">kalıtsal olmayan değişikliklere modifikasyon denir</b>.</span><br><br>
+            <span style="color:#e0e0e0;"><b style="color:#4db6ac;">Modifikasyonda genlerin yapısında değişiklik meydana gelmez</b>, <b style="color:#4db6ac;">genlerin işleyişi değişir</b>.</span>
+        </div>
+
+        <!-- Modifikasyona Sebep Olan Faktörler -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #ffb74d;">
+            <h3 style="color:#ffb74d; margin-top:0;">🌍 Modifikasyona Sebep Olan Faktörler</h3>
+            
+            <!-- Sıcaklık -->
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:24px; border-radius:8px; margin-top:20px;">
+                <h4 style="color:#ef5350; margin-top:0;">🔥 1. Sıcaklık</h4>
+                
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#ef5350; font-weight:bold; margin-bottom:12px;">📍 Himalaya Tavşanları Örneği:</div>
+                    <span style="color:#e0e0e0;">Himalaya tavşanlarında kürk rengi <b style="color:#81c784;">beyazdır</b>. Eğer tüyler kazınarak buraya <b style="color:#64b5f6;">buz parçası konursa</b> çıkan tüyler <b style="color:#ba68c8;">siyah olur</b>.</span>
+                </div>
+
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#ffb74d; font-weight:bold; margin-bottom:12px;">🌺 Çuha Çiçeği Örneği:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li><b style="color:#ffb74d;">30-35ºC sıcaklıkta</b> → <b style="color:#ffff00;">Beyaz çiçek</b></li>
+                        <li><b style="color:#4db6ac;">15-20ºC sıcaklıkta</b> → <b style="color:#ef5350;">Kırmızı çiçek</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Besin -->
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:24px; border-radius:8px; margin-top:20px;">
+                <h4 style="color:#81c784; margin-top:0;">🍽️ 2. Besin</h4>
+                
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#81c784; font-weight:bold; margin-bottom:12px;">🐝 Arılar Örneği:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li>Dişi arılar <b style="color:#ffb74d;">arı sütü</b> ile beslenirse → <b style="color:#ffb74d;">Kraliçe arı</b> oluşur</li>
+                        <li>Dişi arılar <b style="color:#81c784;">çiçek tozu (polen)</b> ile beslenirse → <b style="color:#81c784;">İşçi arılar</b> oluşur</li>
+                    </ul>
+                </div>
+
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#81c784; font-weight:bold; margin-bottom:12px;">🌱 Bitkiler Örneği:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li><b style="color:#81c784;">Nemli yerde</b> yetişen bitkiler → <b style="color:#81c784;">Daha iyi gelişir</b></li>
+                        <li><b style="color:#ba68c8;">Kurak yerde</b> yetişen bitkiler → <b style="color:#ba68c8;">Fazla gelişemez</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Işık -->
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:24px; border-radius:8px; margin-top:20px;">
+                <h4 style="color:#64b5f6; margin-top:0;">💡 3. Işık</h4>
+                
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#64b5f6; font-weight:bold; margin-bottom:12px;">🌿 Bitkilerde Işık Etkisi:</div>
+                    <span style="color:#e0e0e0;">Bitkiler <b style="color:#ef5350;">ışık almadıkları zaman</b> klorofil oluşmaz, <b style="color:#ef5350;">beyaz renkli (Albino) bitki oluşur</b>.</span>
+                </div>
+
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#64b5f6; font-weight:bold; margin-bottom:12px;">👤 İnsanda Işık Etkisi:</div>
+                    <span style="color:#e0e0e0;">İnsan derisinin <b style="color:#ffb74d;">yazın fazla ışık aldığında</b> <b style="color:#ffb74d;">bronzlaşır</b>.</span>
+                </div>
+            </div>
+
+            <!-- Toprak -->
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:24px; border-radius:8px; margin-top:20px;">
+                <h4 style="color:#4db6ac; margin-top:0;">🌍 4. Toprak</h4>
+                
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#4db6ac; font-weight:bold; margin-bottom:12px;">🌺 Ortanca Çiçekleri Örneği:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li><b style="color:#64b5f6;">Asitli toprakta</b> → <b style="color:#64b5f6;">Mavi çiçek</b></li>
+                        <li><b style="color:#ef5350;">Bazik toprakta</b> → <b style="color:#ef5350;">Kırmızı çiçek</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Basınç -->
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:24px; border-radius:8px; margin-top:20px;">
+                <h4 style="color:#ba68c8; margin-top:0;">⛰️ 5. Basınç</h4>
+                
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#ba68c8; font-weight:bold; margin-bottom:12px;">🌱 Karahindiba Bitkisi Örneği:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li><b style="color:#ba68c8;">Dağda yetişirse</b> → <b style="color:#ba68c8;">Kısa boylu</b></li>
+                        <li><b style="color:#4db6ac;">Ovada yetişirse</b> → <b style="color:#4db6ac;">Uzun boylu</b></li>
+                    </ul>
+                </div>
+
+                <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin-top:16px;">
+                    <div style="color:#ba68c8; font-weight:bold; margin-bottom:12px;">👤 İnsanlarda Basınç Etkisi:</div>
+                    <ul style="line-height:2; color:#e0e0e0; margin:12px 0 0 0;">
+                        <li><b style="color:#ffb74d;">Spor yapan insanların</b> kaslı olması ama çocuklarının kaslı doğmaması</li>
+                        <li><b style="color:#ffb74d;">Tek yumurta ikizleri:</b> İyi beslenen daha fazla gelişirken diğerinin cılız kalması</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modifikasyonun Özellikleri -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:32px; border-left:4px solid #81c784;">
+            <h3 style="color:#81c784; margin-top:0;">✨ Modifikasyonun Özellikleri</h3>
+            
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#81c784; margin-top:0;">💡 Özellik 1</h4>
+                <span style="color:#e0e0e0;">Modifikasyonlar <b style="color:#81c784;">dölden döle (nesilden nesile) aktarılmaz</b>.</span>
+            </div>
+
+            <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:16px;">
+                <h4 style="color:#4db6ac; margin-top:0;">💡 Özellik 2</h4>
+                <span style="color:#e0e0e0;">Modifikasyonların bir kısmı <b style="color:#4db6ac;">şartlar düzeldiğinde tekrar eski halini alabilir</b>.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- D- MUTASYON VE MODİFİKASYON ARASINDAKI FARKLAR -->
+    <section class="section">
+        <h2><span style="color:#ffb74d;">&#9733;</span> <span style="color:#ffb74d;">D- Mutasyon ve Modifikasyon Arasındaki Farklar</span></h2>
+        
+        <div style="display:grid; grid-template-columns:1fr; gap:16px; margin-top:24px;">
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #64b5f6;">
+                <b style="color:#64b5f6;">1️⃣ Gen Yapısı</b><br><br>
+                <span style="color:#81c784;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Gen yapısı değişir</b></span><br>
+                <span style="color:#4db6ac;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Genin işleyişi değişir</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ba68c8;">
+                <b style="color:#ba68c8;">2️⃣ Kalıtsallık</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Üreme hücrelerinde meydana gelirse kalıtsaldır</b></span><br>
+                <span style="color:#81c784;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Kalıtsal değildir</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ef5350;">
+                <b style="color:#ef5350;">3️⃣ Sebep Olan Faktörler</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Zararlı ışınlar, kimyasal maddeler, yüksek sıcaklık</b></span><br>
+                <span style="color:#ffb74d;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Sıcaklık, ışık, beslenme, nem, toprak, basınç</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #81c784;">
+                <b style="color:#81c784;">4️⃣ Zararlılık</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Genellikle zararlıdır ve ölümcül olabilir</b></span><br>
+                <span style="color:#81c784;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Zararsızdır</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #4db6ac;">
+                <b style="color:#4db6ac;">5️⃣ Geri Dönüşebilirlik</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Faktörler ortadan kalkınca canlı eski haline dönemez</b></span><br>
+                <span style="color:#81c784;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Şartlar düzeldiğinde dönem</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ba68c8;">
+                <b style="color:#ba68c8;">6️⃣ Kalıtsal Çeşitlilik</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Kalıtsal çeşitliliğe neden olur</b></span><br>
+                <span style="color:#4db6ac;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Kalıtsal çeşitlilik sağlamaz</b></span>
+            </div>
+
+            <div class="highlight-box" style="background:#1a2a3a; padding:20px; border-radius:12px; border-left:4px solid #ffb74d;">
+                <b style="color:#ffb74d;">7️⃣ Genotip ve Fenotip</b><br><br>
+                <span style="color:#ef5350;">Mutasyon:</span> <span style="color:#e0e0e0;"><b>Canlının genotipini ve fenotipini değiştirir</b></span><br>
+                <span style="color:#81c784;">Modifikasyon:</span> <span style="color:#e0e0e0;"><b>Canlının fenotipini değiştirir</b></span>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-2/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ← 2. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Fen Bilimleri Ana Sayfa
+        </a>
+    </div>
+</div>
+{% endblock %}

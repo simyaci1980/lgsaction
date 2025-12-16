@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        body.dark-theme {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+        }
+        .main-title {
+            text-align: center;
+            color: #64b5f6;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+        }
+        .section-box {
+            background: linear-gradient(135deg, #1a2a3a 0%, #1e2a38 100%);
+            border-left: 5px solid #64b5f6;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section-box h2 {
+            color: #64b5f6;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .section-box h3 {
+            color: #81c784;
+            font-size: 1.3em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .section-box p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #ccc;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .summary-item {
+            background: rgba(100, 181, 246, 0.1);
+            border: 2px solid #64b5f6;
+            padding: 15px;
+            border-radius: 6px;
+            color: #e0e0e0;
+        }
+        .summary-item h4 {
+            color: #81c784;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        .summary-item p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+    <h1 class="main-title">2. ÜNİTE ÖZETI 📋</h1>
+    <p style="text-align: center; color: #999; font-size: 1.1em; margin-bottom: 40px;">
+        DNA ve Kalıtım Ünitesinin Tüm Konuları Bir Bakışta
+    </p>
+
+    <div class="section-box">
+        <h2>🧬 1. DNA ve Genetik Kod</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🔬 DNA Nedir?</h4>
+                <p>Deoksiribonükleik asit, canlıların genetik bilgilerini taşıyan molekül. Double helix (çift sarmal) yapısında</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧩 Nükleotid</h4>
+                <p>DNA'nın yapı taşı. Şeker, fosfat grubu ve 4 nitrojenlı baz (A, T, G, C) içerir</p>
+            </div>
+            <div class="summary-item">
+                <h4>⚗️ Baz Eşleşmesi</h4>
+                <p>Adenin (A) Timin (T) ile, Guanin (G) Sitosin (C) ile eşleşir</p>
+            </div>
+            <div class="summary-item">
+                <h4>🎯 Gen</h4>
+                <p>Belirli bir özelliği kodlayan DNA parçası. Proteinlerin üretimini kontrol eder</p>
+            </div>
+            <div class="summary-item">
+                <h4>📍 Kromozom</h4>
+                <p>Genleri taşıyan yapı. İnsanda 46 adet (23 çift), mitokondride ekstra DNA var</p>
+            </div>
+            <div class="summary-item">
+                <h4>🔁 DNA Replikasyonu</h4>
+                <p>DNA'nın kendini kopya etmesi. Hücre bölünmesinden önce gerçekleşir</p>
+            </div>
+        </div>
+        <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+            <p><strong style="color: #ffb74d;">💡 Önemli:</strong> DNA taşıdığı bilgiyi RNA aracılığıyla proteinlere dönüştürür. Bu gen ifadesi (ekspresyon) olarak adlandırılır.</p>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>👨‍👩‍👧‍👦 2. Kalıtım</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>👶 Gen</h4>
+                <p>Belirli özelliği kodlayan DNA bölümü. Her genin 2 kopyası vardır (biri anne, biri babadan)</p>
+            </div>
+            <div class="summary-item">
+                <h4>🏆 Baskın Gen</h4>
+                <p>Heterozigot durumda kendini gösterir. Büyük harfle gösterilir (A)</p>
+            </div>
+            <div class="summary-item">
+                <h4>🔇 Çekinik Gen</h4>
+                <p>Heterozigot durumda gizlenir. Küçük harfle gösterilir (a). Homozigot çekinik (aa) olunca gösterilir</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧬 Alel</h4>
+                <p>Aynı gene ait farklı formlar. Örnek: Göz rengi geni için mavi ve kahverengi alelleri</p>
+            </div>
+            <div class="summary-item">
+                <h4>📊 Genotip vs Fenotip</h4>
+                <p><strong>Genotip:</strong> Genetik yapı (AA, Aa, aa) | <strong>Fenotip:</strong> Gözle görünen özellik (kıvırcık saç, düz saç)</p>
+            </div>
+            <div class="summary-item">
+                <h4>👫 Homozigot vs Heterozigot</h4>
+                <p><strong>Homozigot:</strong> Her iki gen aynı (AA veya aa) | <strong>Heterozigot:</strong> Genler farklı (Aa)</p>
+            </div>
+            <div class="summary-item">
+                <h4>📈 Mendel Kanunları</h4>
+                <p><strong>1. Kanun:</strong> Ayrılma (F1: tüm heterozigot, F2: 3:1 oranı) | <strong>2. Kanun:</strong> Bağımsız assortment</p>
+            </div>
+            <div class="summary-item">
+                <h4>👩 Cinsiyete Bağlı Kalıtım</h4>
+                <p>X ve Y kromozomlarında yer alan genlerin kalıtımı. Renk körlüğü ve hemofili örneği</p>
+            </div>
+            <div class="summary-item">
+                <h4>🏥 Kalıtsal Hastalıklar</h4>
+                <p>Hemofili (kanama hastalığı), renk körlüğü, down sendromu, akraba evliliğinin riskleri</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧮 Punnett Karesi</h4>
+                <p>Kalıtım problemlerini çözmek için kullanılan grafik yöntem. 2x2 ızgarası ile olasılıkları hesaplarız</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>🔬 3. Mutasyon ve Modifikasyon</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🧬 Mutasyon Tanımı</h4>
+                <p>DNA yapısında kalıtsal değişim. Gen yapısı değişir, sonraki nesillere aktarılır</p>
+            </div>
+            <div class="summary-item">
+                <h4>⚡ Mutasyon Sebepleri</h4>
+                <p><strong>Zararlı ışınlar:</strong> X-ışını, UV | <strong>Kimyasal:</strong> Pestisitler | <strong>Sıcaklık:</strong> Aşırı ısı</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧬 Mutasyon Türleri</h4>
+                <p><strong>Nükleotid:</strong> Bir baz değişir | <strong>Çoklama:</strong> Baz iki kez kopyalanır | <strong>Silme:</strong> Baz kaybolur | <strong>Kromozom:</strong> Yapısı değişir</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌿 Modifikasyon Tanımı</h4>
+                <p>Çevre etkisiyle gene yazışı değişir, kalıtsal değildir. Bir nesil sonra geri döner</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌡️ Modifikasyon Faktörleri</h4>
+                <p><strong>Sıcaklık:</strong> Himalaya tavşanı | <strong>Besin:</strong> Arı kraliçesi vs işçi | <strong>Işık:</strong> Bitki boyu | <strong>Toprak:</strong> Ortanca çiçeği rengi</p>
+            </div>
+            <div class="summary-item">
+                <h4>⚖️ Mutasyon vs Modifikasyon</h4>
+                <p><strong>Mutasyon:</strong> Kalıtsal ✓ | <strong>Modifikasyon:</strong> Kalıtsal ✗ | Fark: Gen yapısı vs gen işleyişi</p>
+            </div>
+            <div class="summary-item">
+                <h4>✅ Yararlı Mutasyonlar</h4>
+                <p>Çekirdeksiz üzüm, dört boynuzlu keçi, ilaç direnci, van kedisi</p>
+            </div>
+            <div class="summary-item">
+                <h4>❌ Zararlı Mutasyonlar</h4>
+                <p>Kanser, hemofili, albinoluk, balık pulluluk, down sendromu, progeria hastalığı</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>🦎 4. Adaptasyon</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🎯 Adaptasyon Tanımı</h4>
+                <p>Canlıların yaşadığı ortama uyum sağlamak için geliştirdiği kalıtsal özellikler. Uzun süreçte gelişir</p>
+            </div>
+            <div class="summary-item">
+                <h4>🔄 Doğal Seçilim (Seleksiyon)</h4>
+                <p>Ortama uyum sağlayanlar yaşar, uyum sağlayamayanlar elenir. Adaptasyona sebep olur</p>
+            </div>
+            <div class="summary-item">
+                <h4>⚖️ Doğal Seçilim Faktörleri</h4>
+                <p>Canlılar arası rekabet, iklim şartları, beslenme kaynakları, hastalıklar</p>
+            </div>
+            <div class="summary-item">
+                <h4>🎨 Varyasyon (Tür İçi Çeşitlilik)</h4>
+                <p>Tür içinde görülen farklılık. Kalıtsal (gen) veya çevre kaynaklı olabilir</p>
+            </div>
+            <div class="summary-item">
+                <h4>👨‍🌾 Yapay Seçilim</h4>
+                <p>İnsan tarafından istenilen özellikteki canlıların seçilmesi. Mısır bitkisi örneği</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌾 Geleneksel Islah</h4>
+                <p>Aynı türün farklı özellikteki bireylerinin çaprazlanması. Tarım ve hayvancılıkta uzun zaman alır</p>
+            </div>
+            <div class="summary-item">
+                <h4>🐦 Adaptasyon Örnekleri</h4>
+                <p><strong>Beslenme:</strong> Kuşlar göç etme | <strong>Barınma:</strong> Yuva yapma | <strong>Korunma:</strong> Renk (çekirgen yeşil) | <strong>İklim:</strong> Kutup ayısı yağ depolaması</p>
+            </div>
+            <div class="summary-item">
+                <h4>🦁 Canlılarda Adaptasyonlar</h4>
+                <p>Kutup ayısı (beyaz kürkü), Deve (hörücük), Nilüfer (hava boşlukları), Kaktüs (diken yaprakları), Penguen (perdeli ayakları)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>🧪 5. Biyoteknoloji</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🧪 Biyoteknoloji Tanımı</h4>
+                <p>Canlıların yapılarında teknoloji kullanarak değişiklik meydana getirme. Canlıları ekonomik olarak iyileştirme</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧬 Gen Aktarımı</h4>
+                <p>Bir canlıdan alınan gen başka canlıya aktarılır. Farklı türler arası aktarım: GDO (Genetiği Değiştirilmiş Organizma)</p>
+            </div>
+            <div class="summary-item">
+                <h4>💡 GDO Örneği</h4>
+                <p>Ateş böceğinin gen ışık saçan tütün bitkisine aktarılması. Tütün bitkisi ateş böceği gibi parladı</p>
+            </div>
+            <div class="summary-item">
+                <h4>💊 Gen Tedavisi</h4>
+                <p>Genetik hastalıklar tedavi edici gen aktarımı ile tedavi edilir. Hemofili, kanser, kalıtsal hastalıklar</p>
+            </div>
+            <div class="summary-item">
+                <h4>👯 Klonlama (Kopyalama)</h4>
+                <p>Canlıların genetik olarak kopyasını oluşturma. İlk memeli: Dolly koyunu (1996). Türkiye: Oyalı koyunu</p>
+            </div>
+            <div class="summary-item">
+                <h4>🔬 Klonlama Bilgileri</h4>
+                <p>Tek yumurta ikizleri doğal klondur. Eşeysiz üreme. Nesli tükenme tehlikesindeki hayvanları çoğaltmaya yardım eder</p>
+            </div>
+            <div class="summary-item">
+                <h4>🔎 DNA Parmak İzi</h4>
+                <p>DNA diziliminin belirlenmesi. Her insanda farklı. Adli suçlar, babalık testi, genetik hastalık tespiti</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌾 Geleneksel Islah (Tekrar)</h4>
+                <p>Üstün özellikteki bitki/hayvanları seçme. Çok uzun zaman alır. Yapay seçilim gerçekleşir</p>
+            </div>
+            <div class="summary-item">
+                <h4>💉 Aşılama (Üç Türü)</h4>
+                <p><strong>1. Suni:</strong> Tüp bebek, mikro enjeksiyon | <strong>2. Bitkilerde:</strong> Tohumsuz üreme | <strong>3. Hastalıklara:</strong> Hepatit B aşısı biyoteknoloji ürünü</p>
+            </div>
+            <div class="summary-item">
+                <h4>🗺️ İnsan Genom Projesi</h4>
+                <p>İnsana ait tüm genlerin haritasını çıkarma. Genetik hastalıkların erken tanısı ve tedavisi mümkün hale geldi</p>
+            </div>
+            <div class="summary-item">
+                <h4>🧬 Kök Hücre</h4>
+                <p>Vücudun ana hücreleri, başka hücrelere dönüşebilir. Yapay doku ve organ üretimi. Sinir, kalp, diyabet tedavisi</p>
+            </div>
+            <div class="summary-item">
+                <h4>✅ Biyoteknolojinin Faydaları</h4>
+                <p>Yeni ilaçlar, hastalık tanı/tedavisi, verimli ürünler, doku/organ, hastalıklara direnç, çevre koruması, raf ömrü uzama</p>
+            </div>
+            <div class="summary-item">
+                <h4>❌ Biyoteknolojinin Zararları</h4>
+                <p>Biyolojik silah, GDO alerjiler, DNA kirliliği, ekolojik dengeyi bozma, kısır tohumlar, mutasyon riski, gelir dengesizliği</p>
+            </div>
+            <div class="summary-item">
+                <h4>🚀 Gelecek Uygulamaları</h4>
+                <p>Yapay türler, klonlama rutin hale, sera gazı yok eden canlılar, hasar organ değişimi, istenilen bebekler</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>📚 Ünitenin Temel Hedefleri</h2>
+        <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+            <p>✓ DNA yapısını ve genetik kodunun nasıl çalıştığını anlamak</p>
+            <p>✓ Kalıtsal özellikler ve kalıtsal hastalıkları öğrenmek</p>
+            <p>✓ Mutasyon ve modifikasyon arasındaki farkları ayırt etmek</p>
+            <p>✓ Canlıların ortama uyumunu (adaptasyonunu) kavramak</p>
+            <p>✓ Biyoteknolojinin faydaları ve zararlarını değerlendirmek</p>
+            <p>✓ Genetik mühendisliği uygulamalarını anlamak</p>
+        </div>
+    </div>
+
+    <div style="margin: 40px auto; text-align: center; padding-bottom: 60px;">
+        <a href="/fen/unite-2/" style="display: inline-block; padding: 14px 28px; background: #1976d2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+            ← 2. Üniteye Dön
+        </a>
+    </div>
+</div>
+{% endblock %}

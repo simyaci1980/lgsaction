@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+                .vurgulu {
+                    color: #ffb74d;
+                    font-weight: bold;
+                }
+                .asit {
+                    color: #ef5350;
+                    font-weight: bold;
+                }
+                .baz {
+                    color: #64b5f6;
+                    font-weight: bold;
+                }
+                .ph {
+                    color: #81c784;
+                    font-weight: bold;
+                }
+                .uyari {
+                    color: #fff;
+                    background: #ef5350;
+                    padding: 6px 14px;
+                    border-radius: 8px;
+                    display: inline-block;
+                    margin: 8px 0;
+                    font-weight: bold;
+                }
+                .icon {
+                    font-size: 1.2em;
+                    margin-right: 6px;
+                }
+        .floating-icon {
+            font-size: 3em;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #0a0e27;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        .section h2 {
+            color: #64b5f6;
+            margin-bottom: 24px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #64b5f6;
+            padding-bottom: 12px;
+        }
+        .example-box {
+            background: #1e2a38;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #64b5f6;
+            color: #fff;
+        }
+        .highlight-box {
+            background: #1a2a3a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #81c784;
+            margin: 20px 0;
+            color: #fff;
+        }
+        .formula-box {
+            background: #181818;
+            padding: 24px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffb74d;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.6em;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:center; margin:40px 0;">
+        <div class="floating-icon">🧪</div>
+        <h1 class="main-title">ASİTLER VE BAZLAR</h1>
+    </div>
+
+    <!-- İçerik buraya eklenecek -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> Asitler ve Bazlar</h2>
+        <div class="highlight-box">
+            <p style="color:#e0e0e0; font-size:1.1em; line-height:1.8;">
+                <span class="vurgulu">KONU: Asitler ve Bazlar</span> <span class="icon">🧪</span><br><br>
+                <span class="asit">A- Asitler</span> <span class="icon">🍋</span><br>
+                Suda çözündüğünde <span class="asit">H<sup>+</sup></span> iyonu oluşturan maddelere <span class="asit">asit</span> denir.<br><br>
+                <span class="vurgulu">Asitlerin Genel Özellikleri</span><br>
+                <span class="asit">1.</span> Mavi turnusol kağıdını <span style="color:#ef5350;">kırmızıya</span> çevirir.<br>
+                <span class="asit">2.</span> Tatları <span style="color:#ffb74d;">ekşidir</span> (Limon gibi).<br>
+                <span class="asit">3.</span> Metaller ile tepkimeye girerek <span class="asit">(H<sub>2</sub>)</span> hidrojen gazı açığa çıkarır. Bu nedenle metal kaplarda saklanmaz.<br>
+                <span class="asit">4.</span> Sulu çözeltileri elektrik akımını iletir.<br>
+                <span class="asit">5.</span> Tahrip edici özelliğe sahiptir. (Mermeri aşındırır, kumaşı deler, deriyi yakar)<br>
+                <span class="asit">6.</span> Bazlarla tepkimeye girerek tuz ve su oluşturur.<br>
+                <span class="asit">7.</span> <span class="ph">pH</span> değerleri 7'den küçüktür.<br>
+                <span class="asit">8.</span> Sulu çözeltilerinde <span class="asit">H<sup>+</sup></span> iyonu oluşturur.<br>
+                <span class="asit">9.</span> Ametallerin oksijenli bileşikleri asit özellik gösterir.<br><br>
+                <span class="vurgulu">Önemli Asitler</span><br>
+                <span class="asit">HCl</span> &rarr; H<sup>+</sup> + Cl<sup>-</sup> <span class="vurgulu">Hidroklorik asit</span><br>
+                <span class="asit">HNO<sub>3</sub></span> &rarr; H<sup>+</sup> + NO<sub>3</sub><sup>-</sup> <span class="vurgulu">Nitrik asit</span><br>
+                <span class="asit">H<sub>2</sub>SO<sub>4</sub></span> &rarr; 2 H<sup>+</sup> + SO<sub>4</sub><sup>2-</sup> <span class="vurgulu">Sülfürik asit</span><br><br>
+                <span class="uyari">Not:</span> Asitlerin genel olarak yapısında Hidrojen olduğu gözlenir. Ancak bazı özel durumlar vardır.<br>
+                NH<sub>3</sub>, CH<sub>4</sub>, H<sub>2</sub>O bileşiklerinde Hidrojen olmasına rağmen asit değildir.<br>
+                Bazı bileşikler yapısında Hidrojen bulundurmaz fakat suda çözündüklerinde <span class="asit">H<sup>+</sup></span> iyonu oluştururlar.<br><br>
+                <span class="asit">CO<sub>2</sub> + H<sub>2</sub>O &rarr; 2 H<sup>+</sup> + CO<sub>3</sub><sup>2-</sup></span> <span class="vurgulu">Karbondioksit</span><br><br>
+                Asitler günlük hayatta ve sanayide kullanılmaktadır. Bazı asitler ve kullanım alanları aşağıda belirtilmiştir.<br><br>
+                <table style="width:100%; color:#fff; background:#1e2a38; border-radius:8px; margin:16px 0; font-size:1em;">
+                    <tr style="background:#263859; color:#64b5f6;">
+                        <th style="padding:8px;">Asit</th>
+                        <th style="padding:8px;">Sistematik Adı</th>
+                        <th style="padding:8px;">Piyasa Adı</th>
+                        <th style="padding:8px;">Kullanım Alanı</th>
+                    </tr>
+                    <tr><td class="asit">HCl</td><td>Hidroklorik asit</td><td>Tuz ruhu</td><td>Temizlik ürünlerinde kullanılır.</td></tr>
+                    <tr><td class="asit">HNO<sub>3</sub></td><td>Nitrik asit</td><td>Kezzap</td><td>Dinamit yapımında ve gübre üretiminde kullanılır.</td></tr>
+                    <tr><td class="asit">H<sub>2</sub>SO<sub>4</sub></td><td>Sülfürik asit</td><td>Zaç yağı</td><td>Gübre ve boya sanayinde, patlayıcı yapımında, aküde asit olarak kullanılır.</td></tr>
+                    <tr><td class="asit">H<sub>3</sub>PO<sub>4</sub></td><td>Fosforik asit</td><td>Fosfat asidi</td><td>Gübre üretimi, ilaç ve gıda sanayinde kullanılır.</td></tr>
+                </table>
+                <span class="vurgulu">Günlük yaşamda sıkça kullandığımız asit örnekleri:</span><br>
+                <span class="icon">🥒</span> Sirkede &rarr; <span class="asit">Asetik asit</span><br>
+                <span class="icon">🍋</span> Limonda &rarr; <span class="asit">Sitrik asit</span><br>
+                <span class="icon">🍏</span> Elmada &rarr; <span class="asit">Malik asit</span><br>
+                <span class="icon">🍓</span> Çilekte &rarr; <span class="asit">Folik asit</span><br>
+                <span class="icon">🍇</span> Üzümde &rarr; <span class="asit">Tartarik asit</span><br>
+                <span class="icon">🥛</span> Süt, yoğurt &rarr; <span class="asit">Laktik asit</span> (Yorgunluk asidi)<br>
+                <span class="icon">🥒</span> Turşu, ketçap, meyve suyu &rarr; <span class="asit">Benzoik asit</span> (Koruyucu madde)<br>
+                <span class="icon">🍯</span> Reçel, marmelat &rarr; <span class="asit">Sorbik asit</span> (Koruyucu madde)<br>
+                <span class="icon">🥤</span> Gazoz &rarr; <span class="asit">Karbonik asit</span><br>
+                <span class="icon">🥤</span> Kolalı içecekler &rarr; <span class="asit">Fosforik asit</span><br>
+                <span class="icon">🐜</span> Karınca &rarr; <span class="asit">Formik asit</span><br><br>
+                <span class="ph">pH (Power of Hydrogen) Kavramı</span> <span class="icon">🧪</span><br>
+                Bir çözeltinin asit ya da baz olma derecesi <span class="ph">pH</span> derecesi ile ölçülür. pH cetveli 0-14 arasında değişmektedir. 0-7 arası <span class="asit">asit</span>, 7-14 arası <span class="baz">baz</span> özelliktedir. 7 ise nötrdür.<br>
+                <span class="uyari">pH değeri 3'ten küçük olanlar kuvvetli asit, pH değeri 12'den büyük olanlar kuvvetli bazdır.</span><br><br>
+                <span class="vurgulu">pH Cetveli</span><br>
+                <ul style="margin-left:16px;">
+                    <li><span class="asit">Hidroklorik asit:</span> 0</li>
+                    <li><span class="asit">Sülfürik asit:</span> 0.3</li>
+                    <li><span class="asit">Mide asidi:</span> 1</li>
+                    <li><span class="asit">Nitrik asit:</span> 1</li>
+                    <li><span class="asit">Gazlı içecek:</span> 2.4</li>
+                    <li><span class="asit">Kola:</span> 2.5</li>
+                    <li><span class="asit">Limon:</span> 2.3</li>
+                    <li><span class="asit">Sirke:</span> 2.9</li>
+                    <li><span class="asit">Portakal suyu:</span> 3.5</li>
+                    <li><span class="asit">Domates suyu:</span> 4.2</li>
+                    <li><span class="asit">Asit yağmuru:</span> 5.6</li>
+                    <li><span class="asit">Kahve:</span> 5.0</li>
+                    <li><span class="asit">Çay:</span> 5.5</li>
+                    <li><span class="asit">İdrar:</span> 6.0</li>
+                    <li><span class="asit">Süt:</span> 6.5</li>
+                    <li><span class="vurgulu">Saf Su:</span> 7</li>
+                    <li><span class="baz">Tükürük:</span> 7.2</li>
+                    <li><span class="baz">Kan:</span> 7.4</li>
+                    <li><span class="baz">Göz yaşı:</span> 7.4</li>
+                    <li><span class="baz">Safra sıvısı:</span> 7-8</li>
+                    <li><span class="baz">Deniz suyu:</span> 8.0</li>
+                    <li><span class="baz">El sabunu:</span> 10.5</li>
+                    <li><span class="baz">Amonyak:</span> 11.5</li>
+                    <li><span class="baz">Kalsiyum hidroksit:</span> 12.4</li>
+                    <li><span class="baz">Çamaşır suyu:</span> 12.5</li>
+                    <li><span class="baz">Sodyum hidroksit:</span> 13.5</li>
+                </ul>
+                <span class="baz">Diğer bazlar:</span> Çikolata, mayonez, arap sabunu, cam silme sıvısı, hamur kabartma tozu, mide ilacı, kül<br>
+                <span class="asit">Diğer asitler:</span> Yoğurt, aspirin<br><br>
+                <span class="vurgulu">Ayıraç (Belirteç, indikatör)</span> <span class="icon">🧪</span><br>
+                Ayıraç bir maddeyi başka maddeden ayırt etmemizi sağlayan maddelere ayıraç denir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>A- Asit ve Bazlarda Kullanılan Bazı Ayıraçlar</h2>
+            <ul style="color:#fff; font-size:1.08em; line-height:1.8;">
+                <li><b>Turnusol Kağıdı:</b> Asitlerde kırmızı, bazlarda mavi renk alır.</li>
+                <li><b>Fenolftalein çözeltisi:</b> Asitlerde renksiz, bazlarda pembe (kırmızı) renk alır.</li>
+                <li><b>Metil Oranj çözeltisi:</b> Asitlerde kırmızı, bazlarda sarı renk alır.</li>
+                <li><b>Kırmızı (Mor) Lahana Suyu:</b> Asitlerde kırmızı, bazlarda mavi-yeşil renk alır.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>B- Bazlar</h2>
+            <p style="color:#fff; font-size:1.08em; line-height:1.8;">
+                Suda çözündüğünde OH<sup>-</sup> iyonu veren maddelere <b>baz</b> denir.<br><br>
+                <b>Bazların Genel Özellikleri</b><br>
+                1. Tatları acıdır. (Sabun gibi)<br>
+                2. Ele kayganlık hissi verir.<br>
+                3. Sulu çözeltileri elektrik akımını iletir.<br>
+                4. Kırmızı turnusol kağıdını maviye çevirir.<br>
+                5. Sulu çözeltilerinde OH<sup>-</sup> iyonu oluşturur.<br>
+                6. Asitlerle tepkimeye girerek tuz ve su oluşturur.<br>
+                7. pH değerleri 7'den büyüktür.<br>
+                8. Metallere etki etmez, ancak amfoter metallere (Zn, Al) kuvvetli bazlar etki eder.<br>
+                9. Cam ve porseleni aşındırır.<br>
+                10. Metallerin oksijenli bileşikleri bazik özellik gösterir.<br><br>
+                <b>Önemli Bazlar</b><br>
+                NaOH &rarr; Na<sup>+</sup> + OH<sup>-</sup> &nbsp; Sodyum hidroksit<br>
+                KOH &rarr; K<sup>+</sup> + OH<sup>-</sup> &nbsp; Potasyum hidroksit<br>
+                Mg(OH)<sub>2</sub> &rarr; Mg<sup>2+</sup> + 2OH<sup>-</sup> &nbsp; Magnezyum hidroksit<br>
+                Ca(OH)<sub>2</sub> &rarr; Ca<sup>2+</sup> + 2OH<sup>-</sup> &nbsp; Kalsiyum hidroksit<br>
+                NH<sub>3</sub> + H<sub>2</sub>O &rarr; NH<sub>4</sub><sup>+</sup> + OH<sup>-</sup> &nbsp; Amonyak<br><br>
+                <b>Not:</b> Bazı bileşikler yapılarında OH<sup>-</sup> iyonu içermesine rağmen baz değildir. CH<sub>3</sub>COOH baz değil asittir.<br>
+                Bazı bileşiklerin yapısında OH<sup>-</sup> iyonu içermemesine rağmen bazdır. NH<sub>3</sub> baz özellik gösterir.<br><br>
+                Bazlar günlük hayatta ve sanayide kullanılmaktadır. Bazı bazlar ve kullanım alanları aşağıda belirtilmiştir.<br>
+                Temizlik malzemelerinin geneli bazdır.<br><br>
+                <table style="width:100%; color:#fff; background:#1e2a38; border-radius:8px; margin:16px 0; font-size:1em;">
+                    <tr style="background:#263859; color:#64b5f6;">
+                        <th style="padding:8px;">Baz</th>
+                        <th style="padding:8px;">Sistematik Adı</th>
+                        <th style="padding:8px;">Piyasa Adı</th>
+                        <th style="padding:8px;">Kullanım Alanı</th>
+                    </tr>
+                    <tr><td>NaOH</td><td>Sodyum hidroksit</td><td>Sud kostik</td><td>Sabun, kağıt, boya, deterjan, yapay ipek yapımında kullanılır.</td></tr>
+                    <tr><td>KOH</td><td>Potasyum hidroksit</td><td>Potas kostik</td><td>Sabun, pil, gübre yapımında kullanılır.</td></tr>
+                    <tr><td>Ca(OH)<sub>2</sub></td><td>Kalsiyum hidroksit</td><td>Sönmüş kireç</td><td>Kireç ve çimento yapımında kullanılır.</td></tr>
+                    <tr><td>NH<sub>3</sub></td><td>Amonyak</td><td>Amonyak</td><td>Gübre üretimi, temizlik maddeleri, çamaşır suyu yapımında kullanılır.</td></tr>
+                </table>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>C- Asit ve Bazların Tahribatları</h2>
+            <ul style="color:#fff; font-size:1.08em; line-height:1.8;">
+                <li>Asitler ve bazlar tahriş edici (aşındırıcı) özelliğe sahiptir.</li>
+                <li>Asit ve bazları kullanırken, taşırken dikkatli olmamız gerekir.</li>
+                <li>Laboratuvar, mutfak, banyoda kullanılan asit ve bazların etkilerinden korunmak için eldiven takılmalı, gözlük kullanılmalıdır.</li>
+                <li>Asit ve bazların kullanımında birbiri ile karıştırılmamalıdır. Özellikle tuz ruhu ve çamaşır suyunu kesinlikle karıştırmamalıyız.</li>
+                <li>Temizlik yapılan ortamın iyice havalandırılmasını sağlamalıyız.</li>
+                <li>Asit ve bazların kullanırken güvenlik işaretlerine dikkat etmeli ambalajında yazan uyarılara uymalıyız.</li>
+            </ul>
+            <div style="display:flex; flex-wrap:wrap; gap:32px; margin-top:16px;">
+                <div style="flex:1; min-width:220px;">
+                    <b style="color:#ef5350;">Aşındırıcı Madde</b>
+                </div>
+                <div style="flex:1; min-width:220px;">
+                    <b style="color:#ffb74d;">Zehirli Madde</b>
+                </div>
+            </div>
+            <ul style="color:#fff; font-size:1.08em; line-height:1.8; margin-top:16px;">
+                <li><b>Asitlerin zararları:</b> ✪ Asitler metal, mermer yüzeyleri aşındırır. ✪ Dişlerin çürümesine neden olur. ✪ Asitli içecekler ülser, reflü, gastrit hastalıklarına neden olur.</li>
+                <li><b>Bazların zararları:</b> ✪ Bazlar cam ve porselen eşyaları aşındırır. ✪ Kristal cam eşyalar zamanla matlaşır.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>D- Asit Yağmurları</h2>
+            <p style="color:#fff; font-size:1.08em; line-height:1.8;">
+                Fabrika bacalarından, otomobil egzozlarından çıkan zehirli gazlar (SO<sub>2</sub>, NO<sub>2</sub>, CO<sub>2</sub>) havada yağmur damlaları ile birleşerek asit yağmurlarını oluşturur. Asit yağmurunun pH değeri 5.6'dan küçüktür.<br><br>
+                SO<sub>2</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>SO<sub>4</sub> (Sülfürik asit)<br>
+                NO<sub>2</sub> + H<sub>2</sub>O &rarr; HNO<sub>3</sub> (Nitrik asit)<br>
+                CO<sub>2</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>CO<sub>3</sub> (Karbonik asit)<br><br>
+                <b>Not:</b> CO<sub>2</sub>'nin oluşturduğu karbonik asit diğerlerine göre zayıf bir asittir.<br>
+                Asit yağmurlarında en zararlı olan SO<sub>2</sub> ve NO<sub>2</sub>'dir.<br>
+                Bu nedenle fosil yakıtlardan en zararsızı doğal gazdır. (Sadece CO<sub>2</sub> ve H<sub>2</sub>O oluşmaktadır.)<br>
+            </p>
+            <b>Asit Yağmurlarının Zararları</b>
+            <ul style="color:#fff; font-size:1.08em; line-height:1.8;">
+                <li>Topraktaki kalsiyum, magnezyum, potasyum elementlerini çözerek toprağın mineral bakımından fakirleştirir.</li>
+                <li>Ormanların kurumasına neden olur.</li>
+                <li>Tarihi binalara ve eserlere zarar verir.</li>
+                <li>Deniz, göl sularına karışarak burada yaşayan canlıları olumsuz etkiler.</li>
+                <li>Araçların ve metal yüzeylerin aşınmasına neden olur.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>E- Asit Yağmurlarının Engellenmesi İçin Yapılabilecekler</h2>
+            <ul style="color:#fff; font-size:1.08em; line-height:1.8;">
+                <li>Fosil yakıtların kullanımı azaltılmalıdır.</li>
+                <li>Fosil yakıtlar yerine yenilenebilir enerji kaynakları kullanılmalıdır.</li>
+                <li>Yeşil alan ve ormanlar artırılmalıdır.</li>
+                <li>Sanayi tesislerine filtre takılmalıdır.</li>
+                <li>Araçların bakımları zamanında yapılmalıdır.</li>
+                <li>Kalorisi düşük yakıtlar yerine doğal gaz kullanılmalıdır.</li>
+                <li>Kışın yaprak dökmeyen ağaçlar tercih edilmelidir.</li>
+            </ul>
+        </div>
+            </p>
+        </div>
+    </section>
+
+    <div style="margin:60px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-4/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            ← 4. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#43a047; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            🏠 Fen Bilimleri
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+{% endblock %}

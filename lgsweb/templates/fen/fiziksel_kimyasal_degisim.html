@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+        .floating-icon {
+            font-size: 3em;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #0a0e27;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .section h2 {
+            color: #64b5f6;
+            margin-bottom: 24px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #64b5f6;
+            padding-bottom: 12px;
+        }
+        .example-box {
+            background: #1e2a38;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #64b5f6;
+        }
+        .highlight-box {
+            background: #1a2a3a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #81c784;
+            margin: 20px 0;
+        }
+        .formula-box {
+            background: #2a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffb74d;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.3em;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:center; margin:40px 0;">
+        <div class="floating-icon">🧊</div>
+        <h1 class="main-title">FİZİKSEL VE KİMYASAL DEĞİŞİM</h1>
+    </div>
+
+    <!-- A- FİZİKSEL DEĞİŞİM -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#9733;</span> A- Fiziksel Değişim</h2>
+        
+        <!-- Tanım -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #81c784;">
+            <b style="color:#81c784;">Tanım:</b><br><br>
+            <span style="color:#e0e0e0;">Maddenin <b style="color:#4fc3f7;">sadece dış görünümünde</b> meydana gelen değişmelere <b style="color:#81c784;">fiziksel değişim</b> denir.</span>
+        </div>
+
+        <!-- Temel Özellikler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">📋 Fiziksel Değişimin Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Maddenin yapısı (kimliği) <b style="color:#ef5350;">değişmez</b></span><br>
+                <span style="color:#ccc;">• Sadece <b style="color:#81c784;">tanecikler arasındaki boşluk değişir</b></span><br>
+                <span style="color:#ccc;">• Madde yine <b style="color:#81c784;">aynı maddedir</b> fakat görünümü değişmiştir</span><br>
+                <span style="color:#ccc;">• Bazı fiziksel değişikliklerde madde <b style="color:#81c784;">tekrar eski halini alabilir</b></span>
+            </div>
+        </div>
+
+        <!-- Fiziksel Değişim Örnekleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">🔄 Fiziksel Değişim Görülen Olaylar</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">1. Hal Değişimleri</b><br>
+                <span style="color:#ccc;">• Buzun erimesi, suyun buharlaşması, yağın donması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">2. Çözünme Olayı</b><br>
+                <span style="color:#ccc;">• Şekerin ve tuzun suda çözünmesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">3. Ufalanma Olayı</b><br>
+                <span style="color:#ccc;">• Peynirin rendelenmesi, buğdayın öğütülmesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">4. Yırtılma Olayı</b><br>
+                <span style="color:#ccc;">• Kağıdın yırtılması, kumaşın yırtılması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">5. Kırılma Olayı</b><br>
+                <span style="color:#ccc;">• Camın kırılması, buzun kırılması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">6. Karışımın Oluşması</b><br>
+                <span style="color:#ccc;">• Kum ve çakılın karışması, kokunun odaya dağılması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">7. Genleşme ve Büzülme Olayı</b><br>
+                <span style="color:#ccc;">• Suyun genleşmesi, demirin büzülmesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">8. Fiziksel Sindirim</b><br>
+                <span style="color:#ccc;">• Besinlerin ağızda dişlerle parçalanması, yağların safra sıvısı ile yağ damlacıklarına dönüşmesi</span>
+            </div>
+        </div>
+
+        <!-- Karışım Notu -->
+        <div style="background:#2a1a3a; padding:20px; border-radius:12px; margin:20px 0; border-left:4px solid #ba68c8;">
+            <b style="color:#ba68c8;">📌 ÖNEMLI NOT - Karışımlar:</b><br><br>
+            <span style="color:#e0e0e0;">Karışımlar <b style="color:#81c784;">iki ya da daha fazla maddenin</b> kendi özelliklerini kaybetmeden bir araya gelmesiyle oluşur.</span><br><br>
+            <span style="color:#ccc;">• Karışımı oluşturan maddeler <b style="color:#81c784;">kimliklerini kaybetmezler</b></span><br>
+            <span style="color:#ccc;">• Fiziksel olarak meydana geldiği için <b style="color:#81c784;">fiziksel yollarla ayrılırlar</b></span><br><br>
+            <b style="color:#ffb74d;">Örnek:</b> Tuz ve su karışımıyla tuzlu su olur. Tuzlu suyu buharlaştırsak tekrar tuz elde edilebilir.
+        </div>
+    </section>
+
+    <!-- B- KİMYASAL DEĞİŞİM -->
+    <section class="section">
+        <h2><span style="color:#ffb74d;">⚡</span> B- Kimyasal Değişim</h2>
+        
+        <!-- Tanım -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">Tanım:</b><br><br>
+            <span style="color:#e0e0e0;">Maddenin <b style="color:#ef5350;">iç yapısında</b> meydana gelen değişmelere <b style="color:#ffb74d;">kimyasal değişim</b> denir.</span>
+        </div>
+
+        <!-- Temel Özellikler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ef5350; margin-top:0;">📋 Kimyasal Değişimin Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Maddenin yapısı (kimliği) <b style="color:#81c784;">değişir</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Yeni özellikte maddeler oluşur</b></span><br>
+                <span style="color:#ccc;">• Kimyasal değişim sırasında <b style="color:#ffb74d;">renk değişimi, gaz çıkışı, ısı veya ışık yayılması</b> gibi belirtiler gözlenir</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ffb74d;">
+                <b style="color:#ffb74d;">Örnek:</b><br>
+                <span style="color:#ccc;">Kağıt yandığında kağıt artık kağıt özelliği göstermez. Yeni maddeler oluşur. Kağıt ve oluşan külün de fiziksel özellikleri farklıdır.</span>
+            </div>
+        </div>
+
+        <!-- Kimyasal Değişim Örnekleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">🔬 Kimyasal Değişim Görülen Olaylar</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">1. Kimyasal Tepkimeler</b><br>
+                <span style="color:#ccc;">• Nötralleşme tepkimesi (Asit-baz tepkimesi)</span><br>
+                <span style="color:#ccc;">• Ayrışma tepkimesi (Bir bileşik ısı ile parçalanarak yeni madde oluşur)</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">2. Yanma Olayı</b><br>
+                <span style="color:#ccc;">• Kağıdın yanması, kömürün yanması, ekmeğin yanması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">3. Paslanma Olayı</b><br>
+                <span style="color:#ccc;">• Çivinin paslanması, bakırın paslanması, gümüşün kararması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">4. Pişirilme</b><br>
+                <span style="color:#ccc;">• Etin pişmesi, yemeğin pişmesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">5. Kızartılma</b><br>
+                <span style="color:#ccc;">• Patatesin kızartılması, balığın kızartılması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">6. Mayalanma</b><br>
+                <span style="color:#ccc;">• Hamurun mayalanması, sütün mayalanması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">7. Kokuşma</b><br>
+                <span style="color:#ccc;">• Etin kokuşması, yemeğin kokuşması</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">8. Küflenme</b><br>
+                <span style="color:#ccc;">• Peynirin küflenmesi, ekmeğin küflenmesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">9. Çürüme</b><br>
+                <span style="color:#ccc;">• Domatesin çürümesi, yaprakların çürümesi, tahtanın çürümesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">10. Solunum</b><br>
+                <span style="color:#ccc;">• Canlıların soluk alıp vermesi</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">11. Fotosentez</b><br>
+                <span style="color:#ccc;">• Bitkilerin fotosentez yapmaları</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">12. Kimyasal Sindirim</b><br>
+                <span style="color:#ccc;">• Besinlerin tükürük, mide öz suyu, pankreas sıvıları içerisinde bulunan enzimlerle sindirilmesi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- C- FİZİKSEL VE KİMYASAL DEĞİŞİM ÖRNEKLERİ -->
+    <section class="section">
+        <h2><span style="color:#4db6ac;">✔️</span> C- Fiziksel ve Kimyasal Değişime Örnekler</h2>
+        
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4db6ac; margin-top:0;">📚 40+ Örnek Sorular</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.1; column-count: 2; column-gap: 24px;">
+                <span style="color:#ccc;">🔹 Kanın pıhtılaşması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Mumun erimesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Mumun yanması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Naftalinin süblimleşmesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Soyulan elmanın kararması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Elmanın soyulması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Suyun yoğuşması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Bitkinin büyümesi: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Camın erimesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Dişin çürümesi: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Kumla suyun karışması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Tohumun çimlenmesi: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Şekerin tükürük ile parçalanması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Suyun kaynaması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Odunun talaş olması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Sütün mayalanması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Yoğurttan ayran yapılması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Kibritin yanması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Çamaşır suyunun kumaşı beyazlatması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Asit yağmurlarının oluşması ve canlılara zarar vermesi: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Gökkuşağının oluşması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Bakır telin elektriği iletmesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Odunun kömüre dönüşmesi: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Yaprağın sararması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Domatesin olgunlaşması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Sütten yağın ayrılması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Safra sıvısının yağla karışması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Üzüm suyundan sirke yapılması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Sirke ile sütün karışması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Oksijenin suda çözünmesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Kumdan cam yapılması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Erimiş cama şekil verilmesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Suya sandoz tableti atılması: <b style="color:#ffb74d;">Kimyasal</b></span><br>
+                <span style="color:#ccc;">🔹 Katı iyodun ısıtılınca mor duman çıkarması: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Yazının silinmesi: <b style="color:#81c784;">Fiziksel</b></span><br>
+                <span style="color:#ccc;">🔹 Kül oluşması: <b style="color:#ffb74d;">Kimyasal</b></span>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:60px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-4/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            ← 4. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#43a047; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            🏠 Fen Bilimleri
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+
+    // Dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+{% endblock %}

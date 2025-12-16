@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 1 !important;
+            text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.55), 0 0 6px rgba(0, 0, 0, 0.75);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 5;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">🧬</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">🔬</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">🧪</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">🧫</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">🔍</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">📊</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">💡</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">🧬</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">📚</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🎯</div>
+
+    <h1 class="main-title">DNA VE GENETİK KOD <span style="color:#64b5f6;">🧬</span></h1>
+    <ul class="topic-list">
+        <li>Nükleotid, Gen, DNA ve Kromozom</li>
+        <li>DNA'nın Kendini Eşlemesi</li>
+    </ul>
+    <hr>
+
+    <!-- GİRİŞ -->
+    <section class="section">
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+            <span style="color:#e0e0e0;">İnsan vücudunda <b style="color:#64b5f6;">milyarlarca hücre</b> vardır.</span><br>
+            <span style="color:#e0e0e0;">Her bir hücre içerisinde <b style="color:#64b5f6;">kalıtsal bilgilerin</b> bulunduğu <b style="color:#64b5f6;">DNA</b> vardır.</span>
+        </div>
+    </section>
+
+    <!-- A- NÜKLEOTİD, GEN, DNA VE KROMOZOM -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> <span style="color:#64b5f6;">A- Nükleotid, Gen, DNA ve Kromozom</span></h2>
+        
+        <!-- DNA Nedir -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🧬 DNA Nedir?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">DNA hücre içerisindeki <b>yönetici molekül</b>dür.</span><br>
+                <span style="color:#e0e0e0;"><b style="color:#64b5f6;">DeoksiriboNükleikAsit</b> kısaltması DNA'dır.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">🎯 DNA'nın Görevleri:</b><br>
+                <span style="color:#e0e0e0;">• Hücre içinde <b>solunum, beslenme, üreme, boşaltım, protein sentezi</b> gibi yaşamsal faaliyetleri yönetir</span><br>
+                <span style="color:#e0e0e0;">• Kalıtsal bilgilerimizin bulunduğu <b style="color:#ba68c8;">büyük bir kütüphanedir</b></span><br>
+                <span style="color:#e0e0e0;">• İçerisinde canlıya ait bilgiler <b>nükleotidlerle şifrelenmiştir</b></span>
+            </div>
+
+            <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin-top:16px; border-left:4px solid #4db6ac;">
+                <b style="color:#4db6ac;">💡 Bilgi:</b> <span style="color:#e0e0e0;">DNA'nın yapısı ile ilgili olarak ilk modeli oluşturan kişiler <b style="color:#64b5f6;">James Watson</b> ve <b style="color:#64b5f6;">Francis Crick</b>'tir.</span>
+            </div>
+        </div>
+
+        <!-- Kalıtsal Yapıların Sıralaması -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">📊 Kalıtsal Yapıların Sıralanışı (Basitten Karmaşığa)</b><br><br>
+            <div style="text-align:center; font-size:1.2em; line-height:2;">
+                <span style="color:#e0e0e0;">Organik Baz → Nükleotid → Gen → DNA → Kromozom → Çekirdek</span>
+            </div>
+            <div style="background:#3a2f1a; padding:12px; border-radius:8px; margin-top:16px;">
+                <b style="color:#ffb74d;">💡 Not:</b> <span style="color:#e0e0e0;">Kolay hatırlanması amacıyla büyükten küçüğe <b style="color:#ffb74d;">KeDiGeNi</b> (Kromozom-DNA-Gen-Nükleotid) olarak şifrelenebilir.</span>
+            </div>
+        </div>
+
+        <!-- DNA'nın Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">✅ DNA'nın Özellikleri</h3>
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>DNA'nın yapısı <b style="color:#81c784;">nükleotidlerden</b> oluşur</li>
+                <li>DNA'nın <b>yapı birimi Nükleotid</b>'dir</li>
+                <li>DNA'nın <b>görev birimi Gen</b>'dir</li>
+                <li>DNA'nın yapısında <b style="color:#81c784;">dört farklı organik baz</b> vardır: <b>Adenin (A), Timin (T), Guanin (G) ve Sitozin (S/C)</b></li>
+                <li>Bütün canlılarda DNA'sında bulunabilecek <b>4 çeşit nükleotid</b> vardır. Ancak her canlıda bu <b>nükleotid sayısı ve dizilişi farklıdır</b></li>
+                <li>DNA molekülünü oluşturan zincirler arasında <b style="color:#64b5f6;">zayıf hidrojen bağı</b> bulunur</li>
+                <li>DNA bakteri gibi gelişmemiş canlılarda <b>sitoplazmada</b>, diğer gelişmiş canlılarda ise <b>çekirdek, mitokondri ve kloroplast</b> içerisinde bulunur</li>
+                <li>DNA ismini yapısındaki <b style="color:#81c784;">Deoksiriboz şekeri</b>nden alır</li>
+            </ul>
+        </div>
+
+        <!-- DNA'nın Kendini Onarması -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ef5350;">
+            <b style="color:#ef5350;">🔧 DNA'nın Kendini Onarması</b><br><br>
+            <div style="line-height:2; color:#e0e0e0;">
+                <span style="color:#81c784;">✅</span> DNA üzerinde <b>Nükleotidlerden biri kaybolduğunda</b> DNA <b style="color:#81c784;">kendini onarabilir</b><br>
+                <span style="color:#ef5350;">❌</span> <b>Karşılıklı iki nükleotid kaybolursa</b> DNA <b style="color:#ef5350;">kendini onaramaz</b>. Buraya hangi nükleotidin geleceği belli değildir.
+            </div>
+        </div>
+
+        <!-- Nükleotid Nedir -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">🧩 Nükleotid Nedir?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">Nükleotid, <b style="color:#ba68c8;">DNA'nın yapı birimidir</b>.</span><br>
+                <span style="color:#e0e0e0;">Bir nükleotid, <b>şeker + fosfat + azotlu organik baz</b>dan oluşur.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">🔬 Nükleotidlerin Oluşması:</b><br><br>
+                <span style="color:#e0e0e0;">Fosfat + Deoksiriboz şekeri + <b style="color:#64b5f6;">Adenin</b> = Adenin Nükleotid</span><br>
+                <span style="color:#e0e0e0;">Fosfat + Deoksiriboz şekeri + <b style="color:#ef5350;">Timin</b> = Timin Nükleotid</span><br>
+                <span style="color:#e0e0e0;">Fosfat + Deoksiriboz şekeri + <b style="color:#81c784;">Guanin</b> = Guanin Nükleotid</span><br>
+                <span style="color:#e0e0e0;">Fosfat + Deoksiriboz şekeri + <b style="color:#ffb74d;">Sitozin</b> = Sitozin Nükleotid</span>
+            </div>
+        </div>
+
+        <!-- Nükleotid'in Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4db6ac; margin-top:0;">✅ Nükleotid'in Özellikleri</h3>
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>Bir nükleotidin ismi <b style="color:#4db6ac;">organik baza göre</b> söylenir</li>
+                <li>Nükleotidin yapısında Adenin organik bazı varsa <b>Adenin nükleotid</b> adı verilir</li>
+                <li>DNA üzerinde <b>4 farklı çeşit nükleotid</b> bulunmaktadır</li>
+                <li>DNA'nın çift sarmallı yapısında <b style="color:#64b5f6;">Adenin ↔ Timin</b>, <b style="color:#81c784;">Guanin ↔ Sitozin</b> gelir</li>
+                <li>Nükleotidi oluşturan organik bazlar değişir, <b>şeker ve fosfat aynı kalır</b></li>
+                <li>Nükleotidlerin <b style="color:#4db6ac;">dizilimi DNA'nın genetik şifresini</b> oluşturur</li>
+                <li>Nükleotid sayısı ve diziliminde meydana gelen farklılık <b>genetik çeşitliliği</b> sağlar</li>
+                <li>Adenin ile Timin arasında <b>ikili (A=T)</b>, Guanin ile Sitozin arasında <b>üçlü (G≡C)</b> bağ bulunur</li>
+                <li>Bir DNA zincirinde: <b>A=T</b>, <b>G=C</b> (A/T=1, G/C=1)</li>
+                <li>Şeker Sayısı = Fosfat Sayısı = Nükleotid Sayısı = A+T+G+C</li>
+                <li>Nükleotidler arasında <b>(A+G)/(T+C)=1</b> eşitliği vardır</li>
+            </ul>
+        </div>
+
+        <!-- Gen Nedir -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">📖 Gen Nedir?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ffb74d;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">DNA üzerinde <b style="color:#ffb74d;">belirli görevleri yerine getiren kısma Gen</b> denir.</span>
+            </div>
+
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>Genler <b style="color:#ffb74d;">belirli özelliklerin ortaya çıkmasını</b> sağlar (Saç rengi, göz rengi, kan grubu vb.)</li>
+                <li><b>Kalıtsal özelliklerimiz</b> genlerde bulunmaktadır</li>
+                <li>Genlerde <b>bazı hastalıklar</b> da taşınmaktadır (Örnek: şeker hastalığı)</li>
+                <li>DNA üzerinde <b>çok sayıda gen</b> bulunmaktadır</li>
+            </ul>
+        </div>
+
+        <!-- Kromozom Nedir -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ef5350; margin-top:0;">❌ Kromozom Nedir?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ef5350;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">Kromozom, <b style="color:#ef5350;">DNA'nın etrafını özel proteinlerin sarması</b> sonucu oluşan ve şekli <b>X'e benzeyen</b> kalıtım maddesidir.</span>
+            </div>
+
+            <ul style="line-height:2; color:#e0e0e0;">
+                <li>Kromozomlar hücrenin <b>normal yaşam evresinde görülmezler</b>, sadece <b>çekirdek bölünmesi sırasında görülür</b></li>
+                <li>Kromozom DNA'nın <b style="color:#ef5350;">eşlenmiş halidir</b> (Kromozom > DNA)</li>
+                <li><b>Her türün kendine ait kromozom sayısı</b> vardır (Aynı türde kromozom sayısı değişmez)</li>
+                <li>İnsanlarda kromozom sayısı <b style="color:#ef5350;">2n=46</b>'dır. Bu kromozomların <b>n=23 tanesi anneden</b>, <b>n=23 tanesi babadan</b> gelir</li>
+            </ul>
+
+            <div style="background:#2a1a1a; padding:12px; border-radius:8px; margin-top:16px; text-align:center;">
+                <b style="color:#ef5350; font-size:1.2em;">Kromozom = DNA + Özel Protein</b>
+            </div>
+        </div>
+
+        <!-- Kromozom Sayıları Tablosu -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px;">
+            <b style="color:#64b5f6;">📊 Bazı Canlıların Kromozom Sayısı</b><br><br>
+            <table style="width:100%; border-collapse:collapse; color:#e0e0e0;">
+                <thead>
+                    <tr style="background:#2a3a4a;">
+                        <th style="padding:12px; border:1px solid #3a4a5a; text-align:left;">Tür</th>
+                        <th style="padding:12px; border:1px solid #3a4a5a; text-align:center;">Kromozom Sayısı</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:#1e2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">İnsan</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center; color:#64b5f6; font-weight:bold;">46</td>
+                    </tr>
+                    <tr style="background:#1a2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Moli Balığı</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center;">46</td>
+                    </tr>
+                    <tr style="background:#1e2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Soğan</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center;">16</td>
+                    </tr>
+                    <tr style="background:#1a2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Güvercin</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center;">16</td>
+                    </tr>
+                    <tr style="background:#1e2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Eğrelti otu</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center; color:#81c784; font-weight:bold;">500</td>
+                    </tr>
+                    <tr style="background:#1a2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Solucan</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center;">2</td>
+                    </tr>
+                    <tr style="background:#1e2a38;">
+                        <td style="padding:10px; border:1px solid #3a4a5a;">Fil</td>
+                        <td style="padding:10px; border:1px solid #3a4a5a; text-align:center;">56</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Kromozom Uyarıları -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">⚠️ UYARI</b><br><br>
+            <div style="line-height:2; color:#e0e0e0;">
+                <b style="color:#ffb74d;">1.</b> Kromozom sayısının fazla olması bir canlının <b>gelişmişliğini göstermez</b>. Eğrelti otunun 500 kromozomu olması insanlardan gelişmiş olduğunu göstermez.<br><br>
+                <b style="color:#ffb74d;">2.</b> Kromozom sayısının <b>vücut büyüklüğü ile ilişkisi yoktur</b>. Filin kromozom sayısı 56, eğrelti otunun 500'dür.<br><br>
+                <b style="color:#ffb74d;">3.</b> Kromozom sayısının aynı olması canlılar arasında <b>akrabalık olduğunu göstermez</b>. İnsan ve moli balığının kromozom sayısı 46'dır. Aralarında bir benzerlik yoktur.
+            </div>
+        </div>
+    </section>
+
+    <!-- B- DNA'NIN KENDİNİ EŞLEMESİ -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> <span style="color:#64b5f6;">B- DNA'nın Kendini Eşlemesi</span></h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+            <span style="color:#e0e0e0;">Hücre bölünmeye başlamadan önce <b style="color:#64b5f6;">DNA kendini eşler</b>.</span><br>
+            <span style="color:#e0e0e0;">Bu sayede DNA <b>iki katına</b> çıkmış olur.</span><br>
+            <span style="color:#e0e0e0;">Ana hücrede bulunan <b>kalıtsal bilgilerin yeni hücrelere aktarılması</b> için DNA'nın kendini eşlemesi gerekir.</span>
+        </div>
+
+        <!-- DNA Eşlenmesi Adımları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">🔄 DNA Eşlenmesi Adımları</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#81c784;">1️⃣ Açılma:</b><br>
+                <span style="color:#e0e0e0;">DNA'nın çift zincirli yapısı <b>ortadan ikiye ayrılır</b> (Fermuar gibi açılır)</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">2️⃣ Nükleotidlerin Girişi:</b><br>
+                <span style="color:#e0e0e0;">Sitoplazmada bulunan <b>serbest nükleotidler çekirdeğe girer</b></span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ffb74d;">3️⃣ Eşleşme:</b><br>
+                <span style="color:#e0e0e0;">Ayrılan zincirlerin karşısına serbest nükleotidler <b>uygun olacak şekilde yerleşir</b></span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">4️⃣ Tamamlanma:</b><br>
+                <span style="color:#e0e0e0;">Eşler tamamlandıktan sonra başlangıçtaki ile <b style="color:#64b5f6;">aynı olan iki DNA</b> meydana gelir</span>
+            </div>
+        </div>
+
+        <!-- Önemli Notlar -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #4db6ac;">
+            <b style="color:#4db6ac;">💡 Önemli Bilgiler</b><br><br>
+            <div style="line-height:2; color:#e0e0e0;">
+                <span style="color:#e0e0e0;">• DNA'nın kendini eşlemesi sırasında ortadan ikiye ayrılan zincirler <b style="color:#4db6ac;">yeni DNA oluşumunda kalıp olarak kullanılır</b></span><br>
+                <span style="color:#e0e0e0;">• Oluşan DNA zincirinin her birinde <b>biri eski diğeri yeni</b> iki zincir bulunur</span>
+            </div>
+        </div>
+
+        <!-- Genetik Çeşitlilik -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">🌍 Genetik Çeşitlilik</b><br><br>
+            <div style="line-height:2; color:#e0e0e0;">
+                <span style="color:#e0e0e0;">• Dünyadaki bütün insanların DNA'ları <b style="color:#81c784;">%99,5 aynıdır</b>. Geriye kalan fark insanların farklı özellikte olmasını sağlar.</span><br><br>
+                <span style="color:#e0e0e0;">• Canlıların birbirinden farklı olmasının nedeni DNA molekülündeki <b style="color:#ffb74d;">nükleotid sayısı ve dizilişinin farklı olmasından</b> kaynaklanır.</span><br><br>
+                <span style="color:#e0e0e0;">• Nükleotid çeşidi canlıların birbirinden farklı olmasını etkilemez. Bütün canlılarda <b>nükleotid çeşidi aynıdır</b>.</span>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-2/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-right:12px;">
+            ← 2. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#2a3a4a; color:#64b5f6; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← Fen Bilimleri Ana Sayfa
+        </a>
+    </div>
+</div>
+{% endblock %}

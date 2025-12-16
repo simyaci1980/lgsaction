@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 {% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
     <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 4em;
+            opacity: 1 !important;
+            text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.55), 0 0 6px rgba(0, 0, 0, 0.75);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 5;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -11,74 +35,80 @@
 
     <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:800px; margin:0 auto;">
         <!-- Konu 1 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/fen/dna-genetik-kod/" style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🧬</div>
                 <div style="flex:1;">
                     <h2 style="margin:0; font-size:1.4em; color:white;">DNA ve Genetik Kod</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        Nükleotid, Gen, DNA ve Kromozom
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:1.5em;">✅</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 2 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/fen/kalitim/" style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">👨‍👩‍👧‍👦</div>
                 <div style="flex:1;">
                     <h2 style="margin:0; font-size:1.4em; color:white;">Kalıtım</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        Kalıtım ve Genetik
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:1.5em;">✅</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 3 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/fen/mutasyon-modifikasyon/" style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🔬</div>
                 <div style="flex:1;">
                     <h2 style="margin:0; font-size:1.4em; color:white;">Mutasyon ve Modifikasyon</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        Genetik Değişimler
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:1.5em;">✅</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 4 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/fen/adaptasyon/" style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🦎</div>
                 <div style="flex:1;">
                     <h2 style="margin:0; font-size:1.4em; color:white;">Adaptasyon</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        Canlıların Ortama Uyarlanması
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:1.5em;">✅</div>
             </div>
-        </div>
+        </a>
 
         <!-- Konu 5 -->
-        <div style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0.7;">
+        <a href="/fen/biyoteknoloji/" style="display:block; background:linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); padding:24px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
             <div style="display:flex; align-items:center; gap:16px;">
                 <div style="font-size:3em;">🧪</div>
                 <div style="flex:1;">
                     <h2 style="margin:0; font-size:1.4em; color:white;">Biyoteknoloji</h2>
                     <p style="margin:8px 0 0 0; opacity:0.9; font-size:0.95em;">
-                        (Yakında eklenecek)
+                        Teknoloji ve Genetik Mühendisliği
                     </p>
                 </div>
-                <div style="font-size:1.5em; opacity:0.5;">🔒</div>
+                <div style="font-size:1.5em;">✅</div>
             </div>
-        </div>
+        </a>
+    </div>
+
+    <div style="display:block; margin:40px auto; max-width:800px; text-align:center;">
+        <a href="/fen/unite-2-ozeti/" style="display:inline-block; background:linear-gradient(135deg, #81c784 0%, #66bb6a 100%); padding:20px 40px; border-radius:12px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); text-decoration:none; font-weight:bold; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s;">
+            📋 2. Ünite Özeti
+        </a>
     </div>
 
     <div style="margin:40px auto; text-align:center; padding-bottom:60px;">

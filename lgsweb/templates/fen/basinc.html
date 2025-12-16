@@ -1,0 +1,581 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        .floating-icon {
+            position: absolute;
+            font-size: 3em;
+            opacity: 1 !important;
+            text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.55), 0 0 6px rgba(0, 0, 0, 0.75);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 5;
+        }
+        .container {
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Yüzen İkonlar - Sol -->
+    <div class="floating-icon" style="top: 100px; left: -60px;">⚡</div>
+    <div class="floating-icon" style="top: 300px; left: -70px;">📊</div>
+    <div class="floating-icon" style="top: 500px; left: -65px;">💧</div>
+    <div class="floating-icon" style="top: 700px; left: -60px;">🔨</div>
+    <div class="floating-icon" style="top: 900px; left: -70px;">⚙️</div>
+    
+    <!-- Yüzen İkonlar - Sağ -->
+    <div class="floating-icon" style="top: 150px; right: -60px;">🌊</div>
+    <div class="floating-icon" style="top: 350px; right: -70px;">💨</div>
+    <div class="floating-icon" style="top: 550px; right: -65px;">🏗️</div>
+    <div class="floating-icon" style="top: 750px; right: -60px;">📐</div>
+    <div class="floating-icon" style="top: 950px; right: -70px;">🔬</div>
+
+    <h1 class="main-title">BASINÇ <span style="color:#64b5f6;">⚡</span></h1>
+    <ul class="topic-list">
+        <li>Basınç Kavramı ve Formülü</li>
+        <li>Katı, Sıvı ve Gaz Basıncı</li>
+    </ul>
+    <hr>
+
+    <!-- A- KATILARıN BASINCI -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> Basınç Nedir?</h2>
+        
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #64b5f6;">
+            <b style="color:#64b5f6;">Tanım:</b> <span style="color:#e0e0e0;">Birim yüzeye etki eden dik kuvvete <b style="color:#64b5f6;">basınç</b> denir.</span>
+        </div>
+
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">📊 Basınç Çeşitleri</h3>
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">Basınç üçe ayrılır:</b><br><br>
+                <span style="color:#81c784;">1️⃣ Katıların Basıncı</span> - Katı nesnelerin yüzeye uyguladığı basınç<br>
+                <span style="color:#4fc3f7;">2️⃣ Sıvıların Basıncı</span> - Sıvıların kap içinde oluşturduğu basınç<br>
+                <span style="color:#ffb74d;">3️⃣ Gazların Basıncı</span> - Gazların uyguladığı basınç
+            </div>
+        </div>
+    </section>
+
+    <!-- KATILARIN BASINCI -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#9733;</span> A- Katıların Basıncı</h2>
+        
+        <!-- Basınç Nelere Bağlıdır -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">🔍 Basınç Nelere Bağlıdır?</h3>
+            
+            <div style="background:#2a1a1a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ef5350;">1️⃣ Kuvvet (Ağırlık) ile Doğru Orantılı</b><br><br>
+                <span style="color:#e0e0e0;">Kuvvet arttıkça basınç artar.</span><br><br>
+                
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Örnek:</b><br>
+                    <span style="color:#ccc;">• Tek tuğlanın yere yaptığı basınç <b>az</b></span><br>
+                    <span style="color:#ccc;">• Üst üste iki tuğlanın yaptığı basınç <b>daha fazla</b></span>
+                </div>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4db6ac;">2️⃣ Yüzey Alanı ile Ters Orantılı</b><br><br>
+                <span style="color:#e0e0e0;">Kuvvet aynı kalmak şartıyla, yüzey alanı arttıkça basınç azalır.</span><br><br>
+                
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Örnek 1:</b><br>
+                    <span style="color:#ccc;">• Tuğlanın dik durumda yaptığı basınç → <b>Daha fazla</b></span><br>
+                    <span style="color:#ccc;">• Tuğlanın yatay durumda yaptığı basınç → <b>Daha az</b></span>
+                </div>
+
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Örnek 2:</b><br>
+                    <span style="color:#ccc;">• Sivri uçlu iğne → <b>Daha iyi batar</b> (Yüzey alanı küçük)</span><br>
+                    <span style="color:#ccc;">• Körleşmiş iğne → <b>Zor batar</b> (Yüzey alanı büyük)</span>
+                </div>
+
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Örnek 3:</b><br>
+                    <span style="color:#ccc;">• Kum zeminde batmamak için geniş tabanlı ayakkabı giyeriz (Yüzey alanı büyük = basınç azalır)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Önemli Not -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ef5350;">
+            <b style="color:#ef5350;">⚠️ ÖNEMLİ NOT</b><br><br>
+            <span style="color:#e0e0e0;">
+                • <b>Kuvvet:</b> Katılar üzerine uygulanan kuvveti <b style="color:#81c784;">aynen iletir</b><br><br>
+                • <b>Basınç:</b> Katılar basıncı <b style="color:#ef5350;">aynen iletmez</b><br><br>
+                • <b>Sebep:</b> Basınç yüzey alanı ile <b style="color:#4db6ac;">ters orantılı</b>dır
+            </span>
+        </div>
+
+        <!-- Çivi Örneği -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">🔨 Çivinin Sivri Ucunda Basınç</h3>
+            <div style="background:#1a2a1a; padding:16px; border-radius:8px;">
+                <span style="color:#e0e0e0;">Çivinin sivri ucunda, kuvvet aynı olmasına rağmen <b style="color:#ffb74d;">basınç fazladır</b>.</span><br><br>
+                <span style="color:#ccc; font-size:0.95em;">Nedeni: Sivri ucun yüzey alanı çok küçük olmasıdır.</span>
+            </div>
+        </div>
+
+        <!-- Basınç Formülü -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #64b5f6;">
+            <b style="color:#64b5f6;">📐 Basınç Formülü</b><br><br>
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; text-align:center; margin:12px 0;">
+                <span style="color:#ba68c8; font-size:1.3em; font-weight:bold;">Basınç = Kuvvet / Alan</span><br>
+                <span style="color:#ccc; font-size:0.9em; margin-top:8px;">P = F / A</span>
+            </div>
+            <div style="background:#1a2a1a; padding:12px; border-radius:8px; margin-top:12px;">
+                <b style="color:#81c784;">Birimi:</b> <span style="color:#e0e0e0;">1N / 1m² = <b style="color:#ffb74d;">1 Pa (Pascal)</b></span><br>
+                <span style="color:#ccc; font-size:0.9em;">Pa (Pascal), basınç ölçü birimidir.</span>
+            </div>
+        </div>
+
+        <!-- Basıncı Artırma Örnekleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ef5350; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ef5350; margin-top:0;">⬆️ Basıncı Artırmaya Örnekler</h3>
+            <div style="background:#1a2a1a; padding:16px; border-radius:8px; margin:12px 0;">
+                <span style="color:#ccc; line-height:2;">
+                    🔪 Bıçağın ucunun sivri olması<br>
+                    👠 Sivri topuklu ayakkabının kuma gömülmesi<br>
+                    🥾 Krampon tabanında sivri çiviler olması<br>
+                    🚗 Kışın tekerlere zincir takılması<br>
+                    📌 Toplu iğnenin ucunun sivri olması<br>
+                    👞 Botların altının tırtıklı olması<br>
+                    🛼 Patenlerin sivri olması<br>
+                    🐓 Tavukların ayaklarının perdesiz olması<br>
+                    😁 Dişlerimizin keskin olması<br>
+                    💅 Tırnaklarının sivri olması
+                </span>
+            </div>
+        </div>
+
+        <!-- Basıncı Azaltma Örnekleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">⬇️ Basıncı Azaltmaya Örnekler</h3>
+            <div style="background:#1a2a1a; padding:16px; border-radius:8px; margin:12px 0;">
+                <span style="color:#ccc; line-height:2;">
+                    🚚 Kamyonların tekerlek sayısının fazla olması<br>
+                    🏗️ Kepçe ve tanklarda palet kullanılması<br>
+                    🚂 Trenlerin teker sayısının fazla olması<br>
+                    ⛷️ Kar ayakkabılarının geniş olması<br>
+                    🐘 Fil, deve, gergedan ve ayı gibi hayvanların ayaklarının geniş olması<br>
+                    🦆 Kaz ve ördeklerin ayaklarının perdeli olması<br>
+                    📎 Raptiyenin bastırdığımız ucunun geniş olması<br>
+                    🚜 Traktör arka tekerlerinin geniş olması<br>
+                    🎈 Tek çivi balonu patlatır, çok sayıda çivi balona batırıldığında balonun patlamaması
+                </span>
+            </div>
+        </div>
+
+        <!-- Önemli Not 2 -->
+        <div class="highlight-box" style="background:#2a1a2a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ba68c8;">
+            <b style="color:#ba68c8;">💡 ÖNEMLİ NOT</b><br><br>
+            <span style="color:#e0e0e0;">
+                Bir cismin <b>taban alanı</b> ve <b>ağırlığı</b> aynı oranda artarsa,<br>
+                zemine yaptığı <b style="color:#ba68c8;">basınç değişmez.</b>
+            </span>
+        </div>
+    </section>
+
+    <!-- B- SIVILARIN BASINCI -->
+    <section class="section">
+        <h2><span style="color:#4fc3f7;">&#9733;</span> B- Sıvıların Basıncı</h2>
+        
+        <!-- Sıvı Tanımı -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #4fc3f7;">
+            <b style="color:#4fc3f7;">Tanım:</b> <span style="color:#e0e0e0;">Sıvılar <b style="color:#4fc3f7;">akışkandır</b>. Bu nedenle sıvılar temas ettikleri yüzeye <b style="color:#4fc3f7;">basınç uygular</b>.</span>
+        </div>
+
+        <!-- Sıvı Basıncı Formülü -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">📐 Sıvı Basıncı Formülü</h3>
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <div style="text-align:center; margin:12px 0;">
+                    <span style="color:#81c784; font-size:1.2em; font-weight:bold;">P = h × d × g</span>
+                </div>
+                <div style="background:#2a1a3a; padding:12px; border-radius:6px; margin-top:12px; line-height:2;">
+                    <span style="color:#ba68c8;"><b>P:</b></span> <span style="color:#ccc;">Sıvı basıncı</span><br>
+                    <span style="color:#ba68c8;"><b>h:</b></span> <span style="color:#ccc;">Yükseklik (Derinlik)</span><br>
+                    <span style="color:#ba68c8;"><b>d:</b></span> <span style="color:#ccc;">Sıvının yoğunluğu</span><br>
+                    <span style="color:#ba68c8;"><b>g:</b></span> <span style="color:#ccc;">Yer çekimi ivmesi (Dünya'da çok değişmediği için kullanılmaz)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sıvı Basıncı Nelere Bağlıdır -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">🔍 Sıvı Basıncı Nelere Bağlıdır?</h3>
+            
+            <div style="background:#2a1a1a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4fc3f7;">1️⃣ Sıvının Derinliğine Bağlıdır</b><br><br>
+                <span style="color:#e0e0e0;">Sıvının derinliği arttıkça yaptığı basınç da artar.</span><br><br>
+                
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Örnekler:</b><br>
+                    <span style="color:#ccc;">• Yüksekliği fazla olan suyun tabana yaptığı basınç <b>fazladır</b></span><br>
+                    <span style="color:#ccc;">• Suyun içerisinde derinlik arttıkça basınç <b>artar</b></span><br>
+                    <span style="color:#ccc;">• Denizdeki dalgıçlar derine indikçe → <b>Daha yüksek basınç hissederler</b></span><br>
+                    <span style="color:#ccc;">• Derinlik arttıkça sıvı basıncı artacağı için <b style="color:#ffb74d;">sıvının akış hızı da artar</b></span>
+                </div>
+            </div>
+
+            <div style="background:#1a2a2a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4db6ac;">2️⃣ Sıvının Yoğunluğuna Bağlıdır</b><br><br>
+                <span style="color:#e0e0e0;">Sıvının yoğunluğu arttıkça basıncı da artar.</span><br><br>
+                
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin-top:10px;">
+                    <b style="color:#81c784;">Yoğunluk-Basınç İlişkisi:</b><br>
+                    <span style="color:#ccc;">• Aynı yükseklikte <b>su</b> ve <b>alkol</b>den → Suyun yoğunluğu fazla olduğu için tabana yaptığı basınç <b>daha fazladır</b></span><br>
+                    <span style="color:#ccc;">• Aynı derinlikte su ve yağ bulunan kaplardaki basınçlar <b>birbirinden farklıdır</b></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sıvı Basıncı Nelere Bağlı Değildir -->
+        <div class="highlight-box" style="background:#2a1a1a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #ef5350;">
+            <b style="color:#ef5350;">⚠️ ÖNEMLİ - Sıvı Basıncı Nelere Bağlı DEĞİLDİR</b><br><br>
+            <span style="color:#e0e0e0;">
+                Sıvı basıncı:<br>
+                • Kabın <b style="color:#ef5350;">şekline</b> bağlı değildir<br>
+                • Kabın <b style="color:#ef5350;">hacmine</b> bağlı değildir<br>
+                • Sıvının <b style="color:#ef5350;">miktarına</b> bağlı değildir
+            </span>
+        </div>
+
+        <!-- Bileşik Kaplar -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">🧪 Bileşik Kaplar</h3>
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">Şekildeki bileşik kabın içerisine konulan <b>sıvının yüksekliği eşittir</b>.</span><br><br>
+                <span style="color:#ccc;">Buradan sıvı basıncının <b style="color:#ba68c8;">kabın şekline bağlı olmadığını</b> anlarız.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4fc3f7;">🏠 Köylerde Kullanılan Su Deposu</b><br><br>
+                <span style="color:#ccc;">• Köylerde su basıncının belirli bir seviyede olması için <b>su depoları</b> kullanılır.</span><br>
+                <span style="color:#ccc;">• Su deposunun yüksekliğinden <b>az olan bütün evlere su gelecektir</b>.</span><br>
+                <span style="color:#ccc;">• Bu bir <b style="color:#81c784;">bileşik kap örneğidir</b>.</span>
+            </div>
+        </div>
+
+        <!-- Pascal Prensibi -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">⚙️ Pascal Prensibi (Sıvıların Basıncı İletmesi)</h3>
+            
+            <div style="background:#1a2a1a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ffb74d;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">Sıvıların sıkıştırılabilme özelliği <b>yoktur</b>.</span><br><br>
+                <span style="color:#e0e0e0;">Sıvılar, uygulanan basıncı <b style="color:#ffb74d;">her yöne ve eşit büyüklükte iletir</b>. Buna <b style="color:#ffb74d;">Pascal prensibi</b> denir.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:12px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4fc3f7;">Şartlar:</b><br>
+                <span style="color:#ccc;">• <b>Kapalı bir kap</b> olmalıdır</span><br>
+                <span style="color:#ccc;">• Kullanılan sıvının cinsi (yoğunluğu) basıncın iletimini <b>etkilemez</b></span>
+            </div>
+
+            <div style="background:#1a2a2a; padding:12px; border-radius:8px; margin:12px 0;">
+                <b style="color:#81c784;">Örnek: Balon Deneyi</b><br>
+                <span style="color:#ccc;">İçi su dolu balonuna eşit büyüklükte delik açılıp üzerine bastırıldığında, deliklerden fışkıran suların <b>aynı uzaklığa gittiği</b> görülür.</span><br><br>
+                <span style="color:#aaa; font-size:0.95em;">Sebep: Pascal prensibine göre sıvı basıncı <b>her noktaya aynen iletilir</b>.</span>
+            </div>
+
+            <div style="background:#2a1a1a; padding:12px; border-radius:8px; margin:12px 0; border-left:3px solid #ef5350;">
+                <b style="color:#ef5350;">Not:</b> <span style="color:#e0e0e0;"><b>Basınç değişmez</b>, fakat <b>basınç kuvveti</b> alanın büyüklüğüne göre <b style="color:#ffb74d;">değişir</b>.</span>
+            </div>
+        </div>
+
+        <!-- Pascal Prensibinin Uygulama Alanları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🔧 Pascal Prensibinin Uygulama Alanları</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">1. Su Cenderesi (Hidrolik Sistem)</b><br><br>
+                
+                <div style="background:#2a1a3a; padding:12px; border-radius:6px; margin:10px 0; line-height:1.9;">
+                    <span style="color:#ccc;">• Kesitleri farklı 2 silindirin tabanından birleşmesiyle oluşan bir <b>bileşik kaptır</b></span><br>
+                    <span style="color:#ccc;">• Küçük piston üzerine uygulanan <b style="color:#81c784;">az kuvvet</b> ile büyük silindir pistonundan <b style="color:#81c784;">fazla kuvvet</b> elde edilir (F < G)</span><br>
+                    <span style="color:#ccc;">• <b style="color:#ffb74d;">Kuvvet kazancı</b> vardır</span><br>
+                    <span style="color:#ccc;">• Uygulanan sıvı basıncı <b style="color:#4fc3f7;">her tarafa aynen iletilir</b></span>
+                </div>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">2. Otomobil Fren Sistemleri</b><br><br>
+                <span style="color:#ccc;">Otomobillerin fren sistemleri <b style="color:#4fc3f7;">Pascal prensibi</b> ile çalışır.</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">3. Hidrolik Kaldırma Sistemleri (Hidrolik Lift)</b><br><br>
+                <div style="background:#2a1a3a; padding:10px; border-radius:6px; margin:8px 0;">
+                    <span style="color:#ccc;">Kullanım alanları:</span><br>
+                    <span style="color:#aaa;">🚜 Traktör</span><br>
+                    <span style="color:#aaa;">🚒 İtfaiye merdiveni</span><br>
+                    <span style="color:#aaa;">🏗️ Kepçe</span><br>
+                    <span style="color:#aaa;">🚚 Damperli kamyon</span>
+                </div>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">4. Su Tulumbası</b><br><br>
+                <span style="color:#ccc;">Su kuyularından <b>su çekmek</b> için geliştirilmiştir.</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">5. Berber Koltuğu</b><br><br>
+                <span style="color:#ccc;">Az bir kuvvet uygulanarak koltuk <b>kaldırılabilir</b>.</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">6. Hidrolik Direksiyon</b><br><br>
+                <span style="color:#ccc;">Araçlarda kullanılan hidrolik direksiyon, <b>az bir kuvvetle</b> tekerin çevrilmesini sağlar.</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">7. İlaç Pompaları</b><br><br>
+                <span style="color:#ccc;">İlaçlama yapmada kullanılan pompa (tulumba) <b style="color:#4fc3f7;">Pascal prensibi</b> ile çalışır.</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">8. Hidrolik Pres</b><br><br>
+                <span style="color:#ccc;">Sanayi ve hurdalıklarda <b>sıkıştırma</b> amacı ile kullanılır.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #81c784;">
+                <b style="color:#81c784;">Diğer Kullanım Alanları:</b><br>
+                <span style="color:#ccc;">💧 Su depoları</span><br>
+                <span style="color:#ccc;">🛢️ Yağdanlık</span><br>
+                <span style="color:#ccc;">💐 Parfüm şişeleri</span><br>
+                <span style="color:#ccc;">🚚 Damperli kamyonlarda hidrolik lift</span>
+            </div>
+        </div>
+
+        <!-- Önemli Not Sıvı Basıncı -->
+        <div class="highlight-box" style="background:#2a1a3a; padding:20px; border-radius:12px; margin-top:24px; border-left:4px solid #4fc3f7;">
+            <b style="color:#4fc3f7;">💡 ÖNEMLİ NOT</b><br><br>
+            <span style="color:#e0e0e0;">
+                • <b>Sıvı basıncı</b> yükseklik ve yoğunluk ile <b style="color:#81c784;">doğru orantılı</b>dır.<br><br>
+                • Sıvı basıncı sabitken yükseklik ve yoğunluk <b style="color:#4fc3f7;">ters orantılı</b>dır.<br><br>
+                • <b>Not:</b> Formülü kullanmayacağız, sadece <b>basıncın nelere bağlı olduğunu</b> bileceğiz.
+            </span>
+        </div>
+    </section>
+
+    <!-- C- GAZLARIN BASINCI -->
+    <section class="section">
+        <h2><span style="color:#ffb74d;">&#9733;</span> C- Gazların Basıncı</h2>
+        
+        <!-- Gaz Basıncı Tanımı -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">Tanım:</b> <span style="color:#e0e0e0;">Gazlar, sıvı basıncına benzer şekilde <b style="color:#ffb74d;">yüzeye basınç uygular</b>.</span>
+        </div>
+
+        <!-- Gazların Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">💨 Gazların Basınç Özellikleri</h3>
+            
+            <div style="background:#1a2a1a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Gazlar bulundukları <b style="color:#ffb74d;">kabın tamamını doldurur</b></span><br>
+                <span style="color:#ccc;">• Bu nedenle içinde bulundukları kabın <b style="color:#81c784;">her tarafına basınç uygular</b></span><br>
+                <span style="color:#ccc;">• Gazlar da sıvılar gibi <b style="color:#4fc3f7;">akışkandır</b></span><br>
+                <span style="color:#ccc;">• Gazlar içerisinde bulunan <b>cisimlere basınç uygular</b></span>
+            </div>
+        </div>
+
+        <!-- Açık Hava Basıncı -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🌍 Açık Hava Basıncı</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">Tanım:</b><br>
+                <span style="color:#e0e0e0;">Atmosferin üzerimize uyguladığı basınca <b style="color:#64b5f6;">açık hava basıncı</b> denir.</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ba68c8;">🔬 Toriçelli'nin Deneyi</b><br><br>
+                
+                <div style="background:#1a2a1a; padding:12px; border-radius:6px; margin:10px 0; line-height:1.9;">
+                    <span style="color:#ccc;">• Dünya'nın etrafını saran atmosfer <b>ağırlığından dolayı basınç uygular</b></span><br>
+                    <span style="color:#ccc;">• Açık hava basıncını bulan bilim insanı <b style="color:#4fc3f7;">Torricelli</b>'dir</span><br><br>
+                    
+                    <b style="color:#81c784;">Deney:</b><br>
+                    <span style="color:#aaa;">1. Torricelli, <b>1 m uzunluğundaki</b> bir cam boruyu cıva ile doldurdu</span><br>
+                    <span style="color:#aaa;">2. Cıva dolu bir kabın içine <b>ters çevirdi</b></span><br>
+                    <span style="color:#aaa;">3. Cıva seviyesini deniz seviyesinde ve <b>0°C</b>'de <b style="color:#ffb74d;">76 cm</b> olarak ölçtü</span><br><br>
+                    
+                    <div style="background:#3a2a1a; padding:12px; border-radius:6px; border-left:3px solid #ffb74d;">
+                        <b style="color:#ffb74d;">📌 ÖNEMLİ NOT:</b><br>
+                        <span style="color:#ccc;">Cıva seviyesi, borunun <b>kalınlığına</b> ve <b>şekline</b> bağlı <b style="color:#ef5350;">değildir</b>.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#ef5350;">⬇️ Açık Hava Basıncı Deniz Seviyesinden Yukarıya Doğru Çıkıldıkça Azalır</b><br><br>
+                
+                <span style="color:#ccc;">• Deniz seviyesinde 0°C'de açık hava basıncı: <b style="color:#ffb74d;">76 cmHg</b> (Cıva)</span><br>
+                <span style="color:#ccc;">• Torricelli deneyinde cıva yerine <b>su kullanılmış olsaydı</b>, su seviyesi <b style="color:#4fc3f7;">daha fazla</b> olacaktı (Yaklaşık <b>10.5 metre</b>)</span><br>
+                <span style="color:#ccc;">• Açık hava basıncını ölçen araçlara <b style="color:#81c784;">"Barometre"</b> denir</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ba68c8;">
+                <b style="color:#ba68c8;">📊 Açık Hava Basıncı = Atmosfer Basıncı = 1 atm (76 cmHg)</b>
+            </div>
+        </div>
+
+        <!-- Açık Hava Basıncının Varlığı -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">🔬 Açık Hava Basıncının Varlığını Nasıl Anlarız?</h3>
+            
+            <!-- Deney 1: Bardak-Su -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">1. Bardak-Su Deneyi</b><br><br>
+                <span style="color:#ccc;">• Bardağın içerisine ağzına kadar su doldurulur</span><br>
+                <span style="color:#ccc;">• İçinde hava kalmayacak şekilde üzeri kağıtla kapatılır</span><br>
+                <span style="color:#ccc;">• Bardak hızlıca ters çevrildiğinde suyun <b style="color:#81c784;">dökülmediği</b> görülür</span><br>
+                <span style="color:#ccc;">• Aşağıdan etki eden <b style="color:#ffb74d;">açık hava basıncının</b> suyun dökülmesini engellediği görülür</span>
+            </div>
+
+            <!-- Deney 2: Magdeburg -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">2. Magdeburg Deneyi</b><br><br>
+                <span style="color:#ccc;">• Magdeburg yarım küreleri <b>hava almayacak şekilde</b> birleştirilir</span><br>
+                <span style="color:#ccc;">• Kürenin içerisindeki hava boşaltıldığında küreler <b style="color:#ef5350;">birbirinden ayrılmaz</b></span><br>
+                <span style="color:#ccc;">• Bu deney <b style="color:#ffb74d;">açık hava basıncının büyüklüğünü</b> göstermektedir</span>
+            </div>
+
+            <!-- Deney 3: Teneke Kutu -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">3. Isıtılan Teneke Kutu Deneyi</b><br><br>
+                <span style="color:#ccc;">• Teneke kutu ısıtılıp, ağzı sıkıca kapatılır</span><br>
+                <span style="color:#ccc;">• Soğumaya bırakıldığında teneke kutu <b style="color:#4fc3f7;">içerisine doğru büzülür</b></span>
+            </div>
+
+            <!-- Deney 4: Çay Tabağı -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">4. Çay Tabağı ve Çay Bardağı</b><br><br>
+                <span style="color:#ccc;">• Çay tabağı ve çay bardağı arasına su girdiğinde</span><br>
+                <span style="color:#ccc;">• Tabak bardakla beraber <b style="color:#81c784;">tabakta kalkar</b></span><br>
+                <span style="color:#ccc;">• Bu olay <b style="color:#ffb74d;">açık hava basıncını</b> gösterir</span>
+            </div>
+
+            <!-- Deney 5: Haşlanmış Yumurta -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">5. Haşlanmış Yumurta Deneyi</b><br><br>
+                <span style="color:#ccc;">• Cam şişe içerisinde kibritle ateş yakılarak atılır</span><br>
+                <span style="color:#ccc;">• Şişenin ağzına haşlanmış yumurta yerleştirilir</span><br>
+                <span style="color:#ccc;">• Şişe içerisinde ateş söndüğünde yumurta <b style="color:#4fc3f7;">şişe içerisine düşecektir</b></span>
+            </div>
+
+            <!-- Deney 6: Vantuz -->
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">6. Vantuzun Cama Yapışması</b><br><br>
+                <span style="color:#ccc;">• Vantuzu cama bastırıldığında içindeki hava dışarı çıkar</span><br>
+                <span style="color:#ccc;">• Vantuz ile cam arasında <b>çok az hava kalır</b></span><br>
+                <span style="color:#ccc;">• İçerideki basınç az, dışarıdaki hava basıncı fazla olduğu için vantuz <b style="color:#81c784;">cama yapışır</b></span>
+            </div>
+        </div>
+
+        <!-- Açık Hava Basıncı Nelere Bağlıdır -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">📏 Açık Hava Basıncı Nelere Bağlıdır?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Yerden yukarı çıkıldıkça açık hava basıncı <b style="color:#ef5350;">azalır</b></span><br>
+                <span style="color:#ccc;">• Yüksek dağlara çıkıldığında havanın yoğunluğu azalır</span><br>
+                <span style="color:#ccc;">• Bu nedenle basınçta <b style="color:#ef5350;">azalır</b></span>
+            </div>
+        </div>
+
+        <!-- Kapalı Kaptaki Basınç -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">🔒 Kapalı Kaptaki Basınç</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <span style="color:#ccc;">• Kapalı kap içerisinde bulunan gaz tanecikleri hareket ederken <b>kaba çarparak basınç oluşturur</b></span><br><br>
+                <span style="color:#ccc;">• Kapalı bir kaptaki gazın <b>hacmi ile basıncı</b> <b style="color:#4fc3f7;">ters orantılıdır</b></span><br>
+                <span style="color:#ccc;">• Hacim azaldıkça basınç <b style="color:#81c784;">artar</b></span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #81c784;">
+                <b style="color:#81c784;">📊 Kapalı kaplardaki gazın basıncı "Manometre" ile ölçülür.</b>
+            </div>
+        </div>
+
+        <!-- Bernoulli İlkesi -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">💨 Bernoulli İlkesi</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4fc3f7;">Tanım:</b><br><br>
+                <span style="color:#e0e0e0;">Hızlı akan bir akışkan bölgesinin, yavaş akan akışkan bölgesine göre çevresine <b style="color:#ffb74d;">daha düşük basınç oluşturur</b>.</span><br><br>
+                <span style="color:#ccc;">Bir bölgedeki akış hızındaki bir artış basınçta azalmaya neden olmasına <b style="color:#4fc3f7;">Bernoulli ilkesi</b> denir.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- D- BASINCIN GÜNLÜK YAŞAMDA UYGULAMALARI -->
+    <section class="section">
+        <h2><span style="color:#4db6ac;">&#128161;</span> D- Basıncın Günlük Yaşamda ve Teknolojide Uygulamaları</h2>
+
+        <!-- a) Katı Basıncı Uygulamaları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🔨 a) Katı Basıncı Uygulamaları</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">🔪 Bıçağın meyveyi kesmesi için ağzı keskinleştirilir → Basınç artırılır</span><br>
+                <span style="color:#ccc;">🎿 Kışın karda ayağın batmaması için geniş tabanlı kar ayakkabıları giyilir</span><br>
+                <span style="color:#ccc;">🪓 Baltanın ağzının bilenmesi katı basıncını artırır</span>
+            </div>
+        </div>
+
+        <!-- b) Sıvı Basıncı Uygulamaları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">💧 b) Sıvı Basıncı Uygulamaları</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">🚗 Otomobilin fren sistemini çalıştırmak için sıvı basıncından yararlanılır</span><br>
+                <span style="color:#ccc;">🏗️ Hidrolik liftlerle çok büyük ağırlıklar kaldırılabilir</span><br>
+                <span style="color:#ccc;">🚒 İtfaiye, kamyon, vinç gibi araçlarda kaldırma işi için sıvı basıncı kullanılır</span><br>
+                <span style="color:#ccc;">🌊 Bahçe hortumun ucu sıkıştırıldığında su daha ileri gider → Sıvı basıncı artar</span><br>
+                <span style="color:#ccc;">💉 Şırınganın içerisine sıvı çekmek için sıvı basıncı kullanılır</span>
+            </div>
+        </div>
+
+        <!-- c) Gaz Basıncı Uygulamaları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#ffb74d; margin-top:0;">💨 c) Gaz Basıncı Uygulamaları</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">🧃 Pipet ile meyve suyunu içmek → Açık hava basıncı</span><br>
+                <span style="color:#ccc;">🎨 Boya makinelerinde gaz basıncı kullanılır</span><br>
+                <span style="color:#ccc;">💧 Emme basma tulumbalarda açık hava basıncı kullanılır</span><br>
+                <span style="color:#ccc;">🧯 Yangın tüpü, mutfak tüpü ve oksijen tüpünde gaz basıncı kullanılır</span><br>
+                <span style="color:#ccc;">💐 Parfümlerde gaz basıncı kullanılır</span><br>
+                <span style="color:#ccc;">🚗 Otomobil hava yastıklarında gaz basıncı kullanılır</span><br>
+                <span style="color:#ccc;">🧹 Elektrikli süpürgenin tozu çekmesi hava basıncı ile gerçekleşir</span><br>
+                <span style="color:#ccc;">🔧 Vantuzların cama yapışması hava basıncı sayesinde olur</span><br>
+                <span style="color:#ccc;">📦 Vakumlu poşetler içerisinde hava basıncı alınmıştır</span>
+            </div>
+        </div>
+
+    <div style="margin:40px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-3/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            ← 3. Üniteye Dön
+        </a>
+    </div>
+</div>
+{% endblock %}

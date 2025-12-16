@@ -1,0 +1,211 @@
+    <section class="section">
+        <h2>2. Isı ve Kütle Arasındaki İlişki (Q ve m)</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Kütle ve ısı <b>doğru orantılıdır</b>.</li>
+                <li>Aynı sıcaklıkta, aynı türden maddelerin kütlesi arttıkça içerisindeki ısı miktarı da artar.</li>
+                <li>Aynı sıcaklıkta bir bardak su ile bir sürahi suyu aynı sıcaklığa çıkarabilmek için, sürahiye daha fazla ısı verilmelidir.</li>
+            </ul>
+        </div>
+        <div class="example-box">
+            <b>Örnek:</b> Aynı sıcaklıktaki küçük ve büyük su şişesinin verebileceği ısı miktarı karşılaştırıldığında, <b>büyük şişedeki su daha fazla ısı verir</b> çünkü kütlesi fazladır.<br>
+            <b>Örnek:</b> Sıcaklıkları 70°C olan, 50 g ve 100 g suya buz atıldığında, <b>100 g su daha fazla buz eritir</b> çünkü daha fazla ısıya sahiptir.
+        </div>
+        <div class="highlight-box">
+            <b>Bağımsız değişken:</b> Suyun kütlesi<br>
+            <b>Bağımlı değişken:</b> Verdiği ısı<br>
+            <b>Kontrol edilen değişken:</b> Madde cinsi (öz ısı), sıcaklık değişimi
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>3. Isı ve Sıcaklık Arasındaki İlişki (Q ve Δt)</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Isı ve sıcaklık <b>doğru orantılıdır</b>.</li>
+                <li>Bir maddenin sıcaklık artışı verilen ısı miktarına bağlıdır.</li>
+                <li>Az ısı verilen maddenin sıcaklığı az, çok ısı verilenin sıcaklığı çok artar.</li>
+            </ul>
+        </div>
+        <div class="example-box">
+            <b>Örnek:</b> Esra suyun kaynama noktasına daha hızlı ulaşmak için çaydanlığı ocağın <b>büyük gözünde</b> ısıtmalıdır. Büyük göz daha fazla ısı verir, sıcaklık artışı daha fazla olur.
+        </div>
+        <div class="highlight-box">
+            <b>Bağımsız değişken:</b> Verilen ısı<br>
+            <b>Bağımlı değişken:</b> Sıcaklık değişimi<br>
+            <b>Kontrol edilen değişken:</b> Madde cinsi (öz ısı), kütle
+        </div>
+    </section>
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+        .floating-icon {
+            font-size: 3em;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #0a0e27;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        .section h2 {
+            color: #ffb74d;
+            margin-bottom: 24px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #ffb74d;
+            padding-bottom: 12px;
+        }
+        .example-box {
+            background: #1e2a38;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #64b5f6;
+            color: #fff;
+        }
+        .highlight-box {
+            background: #1a2a3a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #81c784;
+            margin: 20px 0;
+            color: #fff;
+        }
+        .formula-box {
+            background: #181818;
+            padding: 24px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffb74d;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.6em;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:center; margin:40px 0;">
+        <div class="floating-icon">🌡️</div>
+        <h1 class="main-title">MADDENİN ISI İLE ETKİLEŞİMİ</h1>
+    </div>
+
+    <section class="section">
+        <h2>Sıcaklık Nedir?</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Maddenin içerisindeki taneciklerin <b>ortalama hareket enerjisine</b> sıcaklık denir.</li>
+                <li>Sıcaklık enerji değildir, enerjinin göstergesidir.</li>
+                <li>Sıcaklık <b>termometre</b> ile ölçülür.</li>
+                <li>Sıcaklık birimi <b>°C</b>'dir.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Isı Nedir?</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Maddeyi oluşturan taneciklerin <b>toplam hareket enerjisine</b> ısı denir.</li>
+                <li>Sıcak olan maddeden soğuk olana aktarılan enerjiye <b>ısı</b> denir.</li>
+                <li><b>Isı bir enerjidir.</b></li>
+                <li>Isı <b>kalorimetre kabı</b> ile ölçülür.</li>
+                <li>Isı birimi: <b>kalori (cal)</b> veya <b>Joule (J)</b></li>
+                <li>Bir maddenin ısısı doğrudan ölçülemez, maddeler arasında alınan/verilen ısı ölçülebilir.</li>
+                <li>Sıcaklıkları aynı olan iki madde arasında <b>ısı alışverişi gerçekleşmez</b>.</li>
+                <li>1 gram suyun sıcaklığını 1°C artırmak için <b>1 kalori</b> ısı verilmesi gerekir.</li>
+            </ul>
+            <div style="margin-top:10px; color:#ffd54f;">Not: 1 cal = 4,18 J'dür.</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Öz Isı Nedir?</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Bir gram saf maddenin sıcaklığını 1°C değiştirmek için alınması veya verilmesi gereken ısı miktarına <b>öz ısı</b> denir.</li>
+                <li>Farklı cins maddelere eşit miktarda ısı verildiğinde sıcaklık artışı farklı olur. Sebep: <b>öz ısı farkı</b>.</li>
+                <li>Öz ısı, maddenin tutabileceği ısı miktarıdır (<b>ısı kapasitesi</b>).</li>
+                <li>Öz ısı <b>c</b> sembolü ile gösterilir.</li>
+                <li>Öz ısının birimi <b>J/g·°C</b> veya <b>cal/g·°C</b> olabilir.</li>
+            </ul>
+            <div class="example-box"><b>Not:</b> Bir madde hal değiştirdiğinde öz ısısı da değişir.</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Öz Isının Özellikleri</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Öz ısı <b>saf maddeler için ayırt edici</b> bir özelliktir.</li>
+                <li>Saf maddelerin öz ısıları farklıdır.</li>
+                <li>Yoğunluk, erime noktası, kaynama noktası, donma noktası da ayırt edici özelliklerdir.</li>
+                <li>Öz ısı <b>miktara bağlı değildir</b>.</li>
+                <li>Eşit miktarda farklı sıvılara eşit ısı verildiğinde <b>öz ısısı az olanın sıcaklığı daha çok artar</b>.</li>
+                <li>Öz ısısı fazla olan çevreye daha fazla ısı verir.</li>
+            </ul>
+            <div class="example-box"><b>Not:</b> Öz ısısı küçük olan maddeler erken ısınır, erken soğur. Öz ısısı büyük olan maddeler geç ısınır, geç soğur.</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Günlük Yaşamda Öz Isı Örnekleri</h2>
+        <div class="highlight-box">
+            <b>Meltem Oluşumu:</b> Meltem rüzgârı kara ile deniz arasında oluşur. Karaların öz ısısı denizden düşüktür. Karalar erken ısınır, erken soğur. Denizler geç ısınır, geç soğur. Kara ve deniz arasındaki sıcaklık farkından meltem rüzgârı oluşur.<br><br>
+            <b>Termometre:</b> Termometre içerisinde öz ısısı düşük olan cıva kullanılır. Cıvanın az miktarda aldığı ısı sıcaklığın hemen artmasını sağlar. Cıva yerine su kullanılsaydı sıcaklık artışı daha yavaş olurdu.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>A- Isınmanın Maddenin Cinsine, Kütlesine, Sıcaklığa Bağlı Değişimi</h2>
+        <div class="formula-box">Q = m · c · Δt</div>
+        <div class="highlight-box">
+            <ul>
+                <li>Isı alışverişinde kullanılan formül: <b>Q = m · c · Δt</b></li>
+                <li>Bu formül ile ısı, kütle, öz ısı ve sıcaklık arasındaki ilişki gösterilir.</li>
+                <li>Q, m, c, Δt çarpım durumunda; Q diğerleriyle doğru orantılıdır.</li>
+                <li>m, c, Δt birbiriyle ters orantılıdır.</li>
+            </ul>
+            <div class="example-box"><b>Not:</b> Q = m·c·Δt formülüyle problem çözülmeyecek.</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>1. Öz ısı ve Sıcaklık Arasındaki İlişki (c ve Δt)</h2>
+        <div class="highlight-box">
+            <ul>
+                <li>Sıcaklık ile öz ısı (maddenin cinsi) <b>ters orantılıdır</b>.</li>
+                <li>İlk sıcaklıkları aynı, eşit kütleli su ve yağ özdeş ısıtıcılarla ısıtılırsa, <b>suyun sıcaklığı yağdan az artar</b>.</li>
+                <li>Saf maddelerde maddenin cinsi değiştiği için öz ısıları da değişir.</li>
+                <li>Suyun öz ısısı yağdan büyük olduğu için sıcaklık değişimi az olur.</li>
+            </ul>
+        </div>
+        <div class="example-box">
+            <b>Bağımsız değişken:</b> Madde cinsi (öz ısı)<br>
+            <b>Bağımlı değişken:</b> Sıcaklık değişimi<br>
+            <b>Kontrol edilen değişken:</b> Kütle, ısıtma süresi (verilen ısı)
+        </div>
+    </section>
+
+    <div style="margin:60px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-4/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            ← 4. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#43a047; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            🏠 Fen Bilimleri
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+{% endblock %}

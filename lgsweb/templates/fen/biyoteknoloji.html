@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        body.dark-theme {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+        }
+        .main-title {
+            text-align: center;
+            color: #64b5f6;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+        }
+        .section-box {
+            background: linear-gradient(135deg, #1a2a3a 0%, #1e2a38 100%);
+            border-left: 5px solid #64b5f6;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section-box h2 {
+            color: #64b5f6;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .section-box h3 {
+            color: #81c784;
+            font-size: 1.3em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .section-box p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #ccc;
+        }
+        .example-box {
+            background: rgba(100, 181, 246, 0.1);
+            border: 2px solid #64b5f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            color: #e0e0e0;
+        }
+        .highlight-box {
+            background: rgba(129, 199, 132, 0.15);
+            border: 2px solid #81c784;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            color: #ccc;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+    <h1 class="main-title">BİYOTEKNOLOJİ 🧪</h1>
+    <p style="text-align: center; color: #999; font-size: 1.1em; margin-bottom: 40px;">
+        Canlı organizmalar ve bileşenleri kullanarak yeni ürünler geliştirme
+    </p>
+
+    <!-- SECTION A -->
+    <div class="section-box">
+        <h2>🎯 A - Biyoteknoloji Nedir?</h2>
+        <p>Canlıların yapılarında <strong>çeşitli teknolojiler kullanılarak değişiklikler meydana getirmek</strong>, bu sayede ihtiyacımız olan ürünlerin üretilmesini sağlayan teknolojiye <strong style="color: #81c784;">biyoteknoloji</strong> denir.</p>
+        <p style="margin-top: 15px; color: #ffb74d;"><strong>📌 Kısaca:</strong> Canlıların ekonomik olarak iyileştirilerek endüstride kullanımını sağlar.</p>
+        
+        <div style="margin: 20px 0;">
+            <h3>🔬 Biyoteknolojinin Disiplinler Arası Yapısı</h3>
+            <div class="highlight-box">
+                <p><strong>Biyoteknoloji</strong> şu bilim dallarından yararlanır:</p>
+                <p>✓ Moleküler Biyoloji</p>
+                <p>✓ Genetik</p>
+                <p>✓ Fizyoloji</p>
+                <p>✓ Biyokimya</p>
+                <p>✓ Mühendislik</p>
+                <p>✓ Bilgisayar Teknolojisi</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="section-box">
+        <h2>🔗 B - Biyoteknoloji ve Genetik Mühendisliği İlişkisi</h2>
+        
+        <div style="margin: 20px 0;">
+            <div class="highlight-box">
+                <p><strong style="color: #81c784;">Genetik mühendisliği biyoteknolojinin alt dalıdır.</strong></p>
+                <p>Genetik mühendisliği çalışmaları aynı zamanda biyoteknolojik çalışmalar içerisine girer.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>📊 Fark ve Benzerlikler</h3>
+            <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                <p><strong style="color: #ffb74d;">🔬 Genetik Mühendisleri:</strong> Araştırma çalışmaları yapar, yeni teknolojiler geliştirir.</p>
+                <p style="margin-top: 12px;"><strong style="color: #81c784;">🏭 Biyoteknoloji:</strong> Üretime yöneliktir, geliştirilen teknolojileri endüstriye uygulanır.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION C -->
+    <div class="section-box">
+        <h2>⚙️ C - Biyoteknoloji Uygulama Alanları</h2>
+        
+        <div style="margin: 20px 0;">
+            <h3>🧬 a) Gen Aktarımı</h3>
+            <div class="highlight-box">
+                <p><strong>Bir canlıdan alınan genin başka bir canlının DNA'sına aktarılmasına</strong> <strong style="color: #81c784;">gen aktarımı</strong> denir.</p>
+                <p style="margin-top: 10px;">Aktarılan gene ait özellik taşındığı canlıda kendi etkisini gösterir.</p>
+                <p style="margin-top: 10px;"><strong style="color: #ffb74d;">✓ Farklı Türler Arası Aktarım:</strong> Gen aktarımı farklı tür canlılar arasında olabilir.</p>
+            </div>
+            
+            <div style="background: rgba(239, 83, 80, 0.15); border: 2px solid #ef5350; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #ef5350;">🔀 Genetiği Değiştirilmiş Organizma (GDO):</strong></p>
+                <p>Farklı türden gen aktarımı yapılan canlılara <strong>genetiği değiştirilmiş organizma (GDO)</strong> veya <strong>transgenetik</strong> denir.</p>
+                <p style="margin-top: 10px; color: #81c784;"><strong>📌 Örnek:</strong> Ateş böceğinden alınan gen tütün bitkisine aktarıldığında, tütün bitkisi de ateş böceği gibi etrafa ışık saçmaktadır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>💊 b) Gen Tedavisi (Terapisi)</h3>
+            <div class="highlight-box">
+                <p><strong style="color: #81c784;">Genetik hastalıkların tedavisi veya önlenmesi işlemidir.</strong></p>
+                <p style="margin-top: 10px;">✓ <strong>Tedavi edici gen aktarılır</strong> veya zararlı genler etkisiz hale getirilir.</p>
+                <p style="margin-top: 8px;">✓ <strong>Virüsler</strong> gen tedavisinde genin aktarılması amacıyla kullanılır.</p>
+            </div>
+            
+            <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #81c784;">🏥 Tedavi Edilen Hastalıklar:</strong></p>
+                <p>✓ Kanser</p>
+                <p>✓ Kalıtsal hastalıklar (Hemofili, Kistik Fibroz, vb.)</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>👯 c) Klonlama (Kopyalama)</h3>
+            <div class="highlight-box">
+                <p><strong style="color: #81c784;">Canlıların genetik olarak kopyasını oluşturmaktır.</strong></p>
+            </div>
+            
+            <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                <p><strong style="color: #ffb74d;">📜 Klonlama Tarihi:</strong></p>
+                <p>✓ <strong>İlk genetik klonlama:</strong> Kurbağada yapılmıştır.</p>
+                <p style="margin-top: 10px;">✓ <strong>İlk klonlanan memeli hayvan:</strong> <strong style="color: #81c784;">Dolly adlı koyundur</strong> (1996)</p>
+                <p style="margin-top: 10px;">✓ <strong>Türkiye'nin ilk klon koyunu:</strong> <strong style="color: #81c784;">Oyalı'dır</strong></p>
+            </div>
+
+            <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #81c784;">📋 Klonlama Hakkında Önemli Bilgiler:</strong></p>
+                <p>✓ <strong>İnsan klonlama etik sorunlar</strong> getirmesinden dolayı birçok ülkede yasaklanmıştır.</p>
+                <p style="margin-top: 8px;">✓ <strong>Tek yumurta ikizleri</strong> doğal klonlardır.</p>
+                <p style="margin-top: 8px;">✓ Klonlama <strong>eşeysiz üreme</strong> yöntemlerinden biridir.</p>
+                <p style="margin-top: 8px;">✓ Klonlama sayesinde <strong>nesli tükenme tehlikesinde olan hayvanlar</strong> çoğaltılabilir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🔬 d) DNA Parmak İzi</h3>
+            <div class="highlight-box">
+                <p><strong style="color: #81c784;">Canlının vücut parçalarından alınan DNA'nın diziliminin belirlenmesidir.</strong></p>
+            </div>
+
+            <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                <p><strong style="color: #ffb74d;">🧬 DNA Parmak İzinin Özellikleri:</strong></p>
+                <p>Olay yerinde kalan <strong>saç, deri, kemik</strong> gibi vücuda ait küçük bir parça DNA dizilimini bulmak için yeterlidir.</p>
+                <p style="margin-top: 10px;"><strong style="color: #81c784;">DNA, parmak izi gibi her insanda farklıdır.</strong></p>
+            </div>
+
+            <div style="background: rgba(239, 83, 80, 0.15); border: 2px solid #ef5350; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #ef5350;">⚖️ DNA Parmak İzinin Kullanım Alanları:</strong></p>
+                <p>✓ <strong>Adli suçlarda</strong> — Olay yerindeki kanıt bulma</p>
+                <p style="margin-top: 8px;">✓ <strong>Babalık testinde</strong> — Genetik ilişki tespiti</p>
+                <p style="margin-top: 8px;">✓ <strong>Kalıtsal hastalıkların belirlenmesinde</strong> — Genetik hastalık tespiti</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🌾 e) Geleneksel Islah</h3>
+            <div class="highlight-box">
+                <p><strong style="color: #81c784;">Aynı türün farklı özellikteki bireylerinin çaprazlanmasıyla üstün özellikteki bireyler elde etmeye geleneksel ıslah denir.</strong></p>
+            </div>
+
+            <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                <p><strong style="color: #ffb74d;">📌 Geleneksel Islah Örneği:</strong></p>
+                <p><strong style="color: #81c784;">Et verimi yüksek inek</strong> ile <strong style="color: #81c784;">süt verimi yüksek inek</strong>in çaprazlanması sonucu:</p>
+                <p style="margin-top: 8px; color: #81c784;">➜ <strong>Et ve süt verimi yüksek inek</strong> elde edilebilir.</p>
+            </div>
+
+            <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #81c784;">🔄 Geleneksel Islahın Özellikleri:</strong></p>
+                <p>✓ <strong>Kullanım alanları:</strong> Tarım ve hayvancılıkta kullanılır.</p>
+                <p style="margin-top: 8px;">✓ <strong>Zaman:</strong> Çok uzun zaman alır.</p>
+                <p style="margin-top: 8px;">✓ <strong>Seçilim türü:</strong> Geleneksel ıslahla <strong>yapay seçilim</strong> gerçekleşir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>💉 f) Aşılama</h3>
+            
+            <div style="margin: 15px 0;">
+                <h4 style="color: #81c784; font-size: 1.1em;">🧬 I. Suni Tohumlama (Aşılama)</h4>
+                <div class="highlight-box">
+                    <p><strong>Doğal yöntemlerle çocuk sahibi olamayan kişilere aşılama yöntemi ile çocuk sahibi olabilir.</strong></p>
+                </div>
+
+                <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                    <p><strong style="color: #ffb74d;">🔬 Aşılama Yöntemleri:</strong></p>
+                    <p style="margin-top: 10px;"><strong style="color: #81c784;">1️⃣ Tüp Bebek Yöntemi:</strong></p>
+                    <p style="margin-left: 15px; margin-top: 8px;">Sperm ve yumurta hücreleri laboratuvar ortamında birleştirilerek anne rahmine aktarılır.</p>
+                    
+                    <p style="margin-top: 12px;"><strong style="color: #81c784;">2️⃣ Mikro Enjeksiyon Yöntemi:</strong></p>
+                    <p style="margin-left: 15px; margin-top: 8px;">Sperm hücresi yumurta hücresinin içerisine enjekte edilir.</p>
+                </div>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <h4 style="color: #81c784; font-size: 1.1em;">🌱 II. Bitkilerde Aşılama</h4>
+                <div class="highlight-box">
+                    <p><strong style="color: #81c784;">Verimli bir bitkiye ait göz (tomurcuk) veya dalın verimsiz bitkiye aktarılarak burada büyümesidir.</strong></p>
+                </div>
+
+                <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                    <p><strong style="color: #81c784;">📋 Bitkilerde Aşılamanın Özellikleri:</strong></p>
+                    <p>✓ <strong>Üreme yöntemi:</strong> Bitkilerde tohumsuz üremeyi sağlar.</p>
+                    <p style="margin-top: 8px;">✓ <strong>Tarihçe:</strong> İlk aşılama <strong>milattan önce Hipokrat döneminde</strong> kullanılmıştır.</p>
+                </div>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <h4 style="color: #81c784; font-size: 1.1em;">⚕️ III. Hastalıklara Karşı Aşılama</h4>
+                <div class="highlight-box">
+                    <p><strong>İnsan ve hayvanlarda hastalık yapan mikroplara karşı aşı yapılır.</strong></p>
+                </div>
+
+                <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                    <p><strong style="color: #ffb74d;">🦠 Aşının İçeriği:</strong></p>
+                    <p>Aşı içerisinde <strong>gücü azaltılmış, ölü veya etkisiz hale getirilmiş mikroorganizmalar</strong> bulunur.</p>
+                </div>
+
+                <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                    <p><strong style="color: #81c784;">🛡️ Aşının Çalışması:</strong></p>
+                    <p>Aşı sayesinde <strong>vücut mikropları tanıyarak savunma mekanizması geliştirir.</strong></p>
+                    <p style="margin-top: 10px; color: #ffb74d;"><strong>📌 Örnek:</strong> Hepatit B aşısı <strong>biyoteknolojik yöntemle üretilmektedir.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION E -->
+    <div class="section-box">
+        <h2>🗺️ İnsan Genom Projesi</h2>
+        <p><strong style="color: #81c784;">İnsana ait tüm genlerin haritasının çıkarılması projesidir.</strong></p>
+        
+        <div style="margin: 20px 0;">
+            <div class="highlight-box">
+                <p>İnsan Genom Projesi, insanın genetik yapısını tamamen anlamak ve genetik hastalıkların tedavisi için kapı açmak amacıyla gerçekleştirilmiştir.</p>
+                <p style="margin-top: 10px;">Bu proje sayesinde genetik hastalıkların erken tanısı ve tedavisi mümkün hale gelmiştir.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION F -->
+    <div class="section-box">
+        <h2>🧬 Kök Hücre</h2>
+        <p><strong style="color: #81c784;">Kök hücreler vücudumuzun ana hücreleridir, başka hücrelere dönüşebilme özelliğine sahiptir.</strong></p>
+        
+        <div style="margin: 20px 0;">
+            <h3>🔄 Kök Hücrelerin Özellikleri</h3>
+            <div class="highlight-box">
+                <p>✓ Vücudun ana hücreleridir</p>
+                <p>✓ Farklı hücre türlerine dönüşebilir (plastisitesi yüksektir)</p>
+                <p>✓ Kendini yenileme kapasitesine sahiptir</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🏥 Kök Hücrelerin Kullanım Alanları</h3>
+            <div style="background: rgba(129, 199, 132, 0.15); border: 2px solid #81c784; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong style="color: #81c784;">🧬 Yapay Doku Üretimi:</strong></p>
+                <p>Kök hücreler <strong>kas, sinir hücrelerine dönüşerek yapay doku üretilmektedir.</strong></p>
+                <p style="margin-top: 10px;">✓ Sinir hasarı tedavisi</p>
+                <p>✓ Kalp hastalıkları tedavisi</p>
+                <p>✓ Diyabet tedavisi</p>
+                <p>✓ Kanser araştırmaları</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION G -->
+    <div class="section-box">
+        <h2>⚖️ D - Biyoteknolojinin Olumlu ve Olumsuz Yönleri</h2>
+        
+        <div style="margin: 20px 0;">
+            <h3>✅ Biyoteknolojinin Faydaları</h3>
+            <div class="highlight-box">
+                <p>✓ <strong>Yeni ilaçlar üretilmektedir</strong></p>
+                <p>✓ <strong>Hastalıkların tanı ve tedavisinde</strong> yarar sağlar</p>
+                <p>✓ <strong>Hormon, antibiyotik ve vitaminler</strong> üretilir</p>
+                <p>✓ Canlılarda <strong>zararlı genlerin ayrıştırılmasını</strong> sağlar</p>
+                <p>✓ <strong>Verimli, sağlıklı ve kaliteli</strong> bitki ve hayvanlar üretilir</p>
+                <p>✓ İnsanlarda zarar gören <strong>doku ve organlar yapay olanla değiştirilir</strong></p>
+                <p>✓ <strong>Kirli suların arıtılmasında</strong> biyoteknoloji ürünü bakteriler kullanılmaktadır</p>
+                <p>✓ Bitki ve hayvanlar <strong>hastalıklara karşı dirençli</strong> olur</p>
+                <p>✓ Daha sağlıklı canlılar üretildiği için <strong>gübre ve ilaç kullanımı azalır → çevre korunur</strong></p>
+                <p>✓ <strong>Temizlik ürünleri</strong> daha az maliyetle üretilir</p>
+                <p>✓ <strong>Yapay doku ve organlar</strong> üretilmiştir</p>
+                <p>✓ <strong>Genetik hastalıklara</strong> karşı gen tedavisi ve kök hücreler kullanılmaktadır</p>
+                <p>✓ <strong>Sebze ve meyvelerin raf ömrü</strong> uzatılmıştır</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>❌ Biyoteknolojinin Zararları</h3>
+            <div style="background: rgba(239, 83, 80, 0.15); border: 2px solid #ef5350; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p>✗ <strong>Biyolojik silah yapımında</strong> kullanılır</p>
+                <p>✗ <strong>GDO (Genetiği Değiştirilmiş Organizmalar)</strong> biyoteknoloji ürünüdür</p>
+                <p>✗ GDO ürünler insanlarda <strong>alerjiye ve başka hastalıklara</strong> neden olmaktadır</p>
+                <p>✗ GDO'lu ürünler dünyada <strong>DNA kirliliğine</strong> neden olmaktadır → Doğal ürünler gittikçe azalmaktadır</p>
+                <p>✗ <strong>Ekolojik dengenin bozulmasına</strong> neden olmaktadır</p>
+                <p>✗ Elde edilen tohumlar <strong>kısır olmaktadır</strong> (Tekrar üretici tarafından tohum alınması gerekir)</p>
+                <p>✗ Biyoteknoloji <strong>canlılarda mutasyona</strong> neden olabilmektedir</p>
+                <p>✗ Biyoteknoloji gücüne sahip şirketler ve ülkeler <strong>gelir dengesizliğine</strong> neden olmaktadır</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION H -->
+    <div class="section-box">
+        <h2>🚀 E - Gelecekte Biyoteknolojik Uygulamalar</h2>
+        <p><strong style="color: #81c784;">Gelecekte biyoteknolojik ürünler sıkça karşımıza çıkacaktır.</strong> DNA diziliminin yapay olarak kodlanması sonucu <strong style="color: #ffb74d;">yapay canlıların üretilebileceği</strong> düşünülmektedir.</p>
+        
+        <div style="margin: 20px 0;">
+            <h3>🔮 Şuan Hayal Olan Fakat Gerçekleştirilmesi Düşünülen Biyoteknolojik Çalışmalar</h3>
+            <div style="background: rgba(100, 181, 246, 0.1); border: 2px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 6px; color: #e0e0e0;">
+                <p style="margin-bottom: 12px;"><strong style="color: #ffb74d;">🧬 Yapay Türler Elde Edilebilir</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">DNA mühendisliği ile tamamen yeni tür canlılar tasarlanabilecektir.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 12px;"><strong style="color: #81c784;">👯 Klonlama Sıradanlaşacak</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">Birçok canlının klonlanması rutin bir işlem haline gelecektir.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 12px;"><strong style="color: #81c784;">🌍 Sera Gazlarını Yok Eden Sentetik Canlılar</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">CO₂ ve diğer sera gazlarını yok etme kapasitesine sahip canlılar üretilecek.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 12px;"><strong style="color: #81c784;">🏥 Hasar Görmüş Organ Değişimi</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">Hasar görmüş organ yenisi ile değiştirilecek.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 12px;"><strong style="color: #ffb74d;">👶 İstenilen Özellikte Bebek</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">Anne babalar istedikleri özellikte (boy, göz rengi, vb.) bebek sahibi olabilecek.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 12px;"><strong style="color: #81c784;">🩺 Hastalıkların Önceden Teşhisi</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">Hastalıklar oluşmadan önce belirlenerek tedavi edilecek.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 0;"><strong style="color: #81c784;">🌾 Topraksız ve Çiftçisiz Besin Üretimi</strong></p>
+                <p style="color: #ccc; margin-left: 15px;">İnsan müdahalesi olmaksızın laboratuvar ortamında gıda üretilecek.</p>
+            </div>
+        </div>
+    </div>
+        <a href="/fen/unite-2/" style="display: inline-block; padding: 14px 28px; background: #1976d2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+            ← 2. Üniteye Dön
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,3 +1,7 @@
+def maddenin_isi_etkisimi(request):
+    return render(request, 'fen/maddenin_isi_etkisimi.html')
+def asitler_bazlar(request):
+    return render(request, 'fen/asitler_bazlar.html')
 from django.shortcuts import render
 
 def index(request):
@@ -15,6 +19,9 @@ def fen(request):
 def fen_unite_1(request):
     return render(request, 'fen/fen_unite_1.html')
 
+def unite_1_ozeti(request):
+    return render(request, 'fen/unite_1_ozeti.html')
+
 def mevsimler_iklim(request):
     return render(request, 'fen/mevsimler_iklim.html')
 
@@ -24,8 +31,38 @@ def iklim_olaylari(request):
 def fen_unite_2(request):
     return render(request, 'fen/fen_unite_2.html')
 
+def dna_genetik_kod(request):
+    return render(request, 'fen/dna_genetik_kod.html')
+
+def kalitim(request):
+    return render(request, 'fen/kalitim.html')
+
+def mutasyon_modifikasyon(request):
+    return render(request, 'fen/mutasyon_modifikasyon.html')
+
+def adaptasyon(request):
+    return render(request, 'fen/adaptasyon.html')
+
+def biyoteknoloji(request):
+    return render(request, 'fen/biyoteknoloji.html')
+
+def unite_2_ozeti(request):
+    return render(request, 'fen/unite_2_ozeti.html')
+
 def fen_unite_3(request):
     return render(request, 'fen/fen_unite_3.html')
+
+def basinc(request):
+    return render(request, 'fen/basinc.html')
+
+def periyodik_sistem(request):
+    return render(request, 'fen/periyodik_sistem.html')
+
+def fiziksel_kimyasal_degisim(request):
+    return render(request, 'fen/fiziksel_kimyasal_degisim.html')
+
+def kimyasal_tepkimeler(request):
+    return render(request, 'fen/kimyasal_tepkimeler.html')
 
 def fen_unite_4(request):
     return render(request, 'fen/fen_unite_4.html')

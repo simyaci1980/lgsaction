@@ -1,0 +1,504 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/dersler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <style>
+        .floating-icon {
+            font-size: 3em;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #0a0e27;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .section h2 {
+            color: #64b5f6;
+            margin-bottom: 24px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #64b5f6;
+            padding-bottom: 12px;
+        }
+        .example-box {
+            background: #1e2a38;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #64b5f6;
+        }
+        .highlight-box {
+            background: #1a2a3a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #81c784;
+            margin: 20px 0;
+        }
+        .formula-box {
+            background: #2a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffb74d;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.3em;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:center; margin:40px 0;">
+        <div class="floating-icon">🔬</div>
+        <h1 class="main-title">PERİYODİK SISTEM</h1>
+    </div>
+
+    <!-- PERİYODİK SİSTEM -->
+    <section class="section">
+        <h2><span style="color:#64b5f6;">&#9733;</span> Periyodik Sistem</h2>
+        
+        <!-- Periyodik Sistemin Neden Gereklidir -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🔬 Periyodik Sistemin Neden Gereklidir?</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Elementler <b style="color:#81c784;">benzer ve farklı özelliklerine</b> göre sınıflandırılmıştır</span><br>
+                <span style="color:#ccc;">• Doğada bulunan elementlerin <b style="color:#4fc3f7;">daha kolay incelenebilmesi</b> ve <b style="color:#4fc3f7;">arandığında daha kolay bulunabilmesi</b> için belirli özelliklerine göre sınıflandırılmıştır</span><br>
+                <span style="color:#ccc;">• Elementlerin sınıflandırılması sonucunda <b style="color:#ffb74d;">periyodik sistem</b> oluşmuştur</span><br>
+                <span style="color:#ccc;">• Periyodik sistem oluşturulduktan sonra <b style="color:#ba68c8;">yeni bulunan elementlerin hangi özellik gösterebileceği tahmin edilebilmiştir</b></span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ffb74d;">
+                <b style="color:#ffb74d;">📌 ÖNEMLİ NOT:</b><br>
+                <span style="color:#ccc;">Periyodik sistem = Periyodik tablo = Periyodik cetvel (aynı şeyi ifade eder)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- A- PERİYODİK SİSTEMİN TARİHÇESİ -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#128214;</span> A- Periyodik Sistemin Tarihçesi</h2>
+        
+        <!-- 1. Johann Döbereiner -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">1. Johann Döbereiner (Yohan Döbereynar)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Elementlerin sınıflandırılması ile ilgili <b style="color:#81c784;">ilk çalışmayı yapmıştır</b></span><br>
+                <span style="color:#ccc;">• Benzer özellik gösteren elementleri <b style="color:#81c784;">üçlü gruplar</b> oluşturmuştur</span><br>
+                <span style="color:#ccc;">• Örnek: <b style="color:#ffb74d;">Lityum, Sodyum, Potasyum</b> elementleri benzer özellik gösterir</span>
+            </div>
+        </div>
+
+        <!-- 2. Alexandre Beguyer de Chancourtois -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">2. Alexandre Beguyer de Chancourtois (Aleksandır Beguye dö Şankurtua)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Benzer fiziksel özellikleri gösteren elementleri <b style="color:#81c784;">dikey gelecek şekilde sarmal olarak</b> sıralamıştır</span><br>
+                <span style="color:#ccc;">• Elementlerin dışında <b style="color:#4fc3f7;">bazı iyonlara</b> da yer vermiştir</span>
+            </div>
+        </div>
+
+        <!-- 3. John Newlands -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">3. John Newlands (Con Nivlends)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• O zamana kadar bilinen <b style="color:#81c784;">62 elementi atom ağırlığına göre</b> sıralamıştır</span><br>
+                <span style="color:#ccc;">• İlk 8 elementten sonraki elementlerin <b style="color:#ffb74d;">fiziksel ve kimyasal özelliklerinin tekrarladığını</b> fark etmiştir</span><br>
+                <span style="color:#ccc;">• Bu bulguya <b style="color:#ba68c8;">"Oktav Kanunu"</b> adı verilmiştir</span>
+            </div>
+        </div>
+
+        <!-- 4. Lothar Meyer -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">4. Lothar Meyer (Lotar Meyer)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Mendeleyev ile aynı zamanda elementleri <b style="color:#81c784;">benzer biçimde sıralamıştır</b></span><br>
+                <span style="color:#ccc;">• Elementleri sıralarken <b style="color:#81c784;">fiziksel özelliklerine göre</b> sıralamıştır</span>
+            </div>
+        </div>
+
+        <!-- 5. Dimitri İvanovic Mendeleyev -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#64b5f6; margin-top:0;">5. Dimitri İvanovic Mendeleyev (Dimitri İvanoviç Mendeleyev) ⭐</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Elementleri <b style="color:#81c784;">kütle numaralarına (atom ağırlıklarına)</b> göre sıralamıştır</span><br>
+                <span style="color:#ccc;">• Ancak bazı elementlerin yeri <b style="color:#ffb74d;">bulunması gereken yerden farklı</b> olmuştur</span><br>
+                <span style="color:#ccc;">• Periyodik sistemde <b style="color:#81c784;">boşluklar bırakarak daha bulunmamış elementleri tahmin</b> etmiştir</span><br>
+                <span style="color:#ccc;">• <b style="color:#ef5350;">Periyodik sistemin babası</b> olarak bilinir</span>
+            </div>
+        </div>
+
+        <!-- 6. Henry Moseley -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#64b5f6; margin-top:0;">6. Henry Moseley (Henri Mozeli)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• <b style="color:#81c784;">Günümüzdeki periyodik tablonun temelini</b> atmıştır</span><br>
+                <span style="color:#ccc;">• Elementleri <b style="color:#81c784;">atom numaralarına (proton sayısına)</b> göre sıralamıştır</span>
+            </div>
+        </div>
+
+        <!-- 7. Glenn Seaborg -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:20px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">7. Glenn Seaborg (Gılen Siborg)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Periyodik tabloya en altta iki satır ekleyerek <b style="color:#81c784;">Lantanit ve Aktinit</b>'i eklemiştir</span><br>
+                <span style="color:#ccc;">• Periyodik tablonun <b style="color:#81c784;">en son halini almasını</b> sağlamıştır</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- B- PERİYODİK SİSTEM -->
+    <section class="section">
+        <h2><span style="color:#ffb74d;">&#9733;</span> B- Periyodik Sistem</h2>
+        
+        <!-- Tanım -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ffb74d;">
+            <b style="color:#ffb74d;">Tanım:</b> <span style="color:#e0e0e0;">Elementlerin <b style="color:#81c784;">artan atom numaralarına</b> göre sıralandıklarında oluşan tabloya <b style="color:#ffb74d;">"Periyodik Sistem"</b> denir.</span>
+        </div>
+
+        <!-- Periyodik Sistemin Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">📋 Periyodik Sistemin Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• Elementlerin <b style="color:#4fc3f7;">fiziksel ve kimyasal özellikleri</b> guruplarda <b style="color:#81c784;">benzer özellik gösterir</b></span><br>
+                <span style="color:#ccc;">• Periyodik sistemde elementlerin <b style="color:#4fc3f7;">adı, sembolü, atom numarası</b> gibi <b>birçok özellik</b> yer alır</span><br>
+                <span style="color:#ccc;">• Elementler atom numaralarına göre sıralandıklarında <b style="color:#ba68c8;">bazı özelliklerin periyotlar halinde tekrar etmektedir</b></span><br>
+                <span style="color:#ccc;">• Periyodik tabloda <b style="color:#81c784;">benzer özellikler alt alta</b> sıralıdır</span>
+            </div>
+        </div>
+
+        <!-- Periyot -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4db6ac; margin-top:0;">↔️ Periyot (Yatay Sıralar)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <span style="color:#ccc;"><b style="color:#4db6ac;">Tanım:</b> Yatay sıralara <b style="color:#4db6ac;">periyot</b> denir</span><br><br>
+                <span style="color:#ccc;"><b style="color:#81c784;">7 periyot vardır</b> (1. periyottan 7. periyota kadar)</span>
+            </div>
+        </div>
+
+        <!-- Grup -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">⬇️ Grup (Dikey Sütunlar)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <span style="color:#ccc;"><b style="color:#ba68c8;">Tanım:</b> Dikey sütunlara <b style="color:#ba68c8;">grup</b> denir</span><br><br>
+                <span style="color:#ccc;"><b style="color:#81c784;">18 grup vardır</b> (1. gruptan 18. gruba kadar)</span><br>
+                <span style="color:#ccc;">Bir grupta yer alan elementler <b style="color:#4fc3f7;">benzer kimyasal özellik</b> gösterir</span>
+            </div>
+        </div>
+
+        <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0;">
+            <b style="color:#ef5350;">📌 ÖNEMLİ NOT:</b><br>
+            <span style="color:#ccc;">Yukarıdaki periyodik sistem <b style="color:#81c784;">8. sınıf düzeyine</b> göre hazırlanmıştır.</span>
+        </div>
+    </section>
+
+    <!-- C- GRUPLARIN ÖZELLİKLERİ -->
+    <section class="section">
+        <h2><span style="color:#81c784;">&#128172;</span> C- Periyodik Sistemde Grupların Özellikleri</h2>
+        
+        <!-- Genel Özellik -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #81c784;">
+            <b style="color:#81c784;">📌 Temel Özellik:</b><br><br>
+            <span style="color:#e0e0e0;">Aynı grupta bulunan elementlerin <b style="color:#ffb74d;">kimyasal özellikleri</b> (sertlik, parlaklık, iletkenlik, reaksiyona girme isteği vb.) <b style="color:#81c784;">genellikle benzerdir</b>.</span>
+        </div>
+
+        <!-- Yukarıdan Aşağıya Özellikler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">⬇️ Aynı Grupta Yukarıdan Aşağıya Gittikçe</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Atom numarası (Proton sayısı) <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Kütle numarası <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Metalik özellik <b style="color:#81c784;">artar</b>, ametalik özellik <b style="color:#ef5350;">azalır</b></span><br>
+                <span style="color:#ccc;">• Son katmanında elektron sayıları <b style="color:#ba68c8;">değişmez</b></span><br>
+                <span style="color:#ccc;">• Atom hacmi (çapı) <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Katman sayısı (Periyot sayısı) <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Elektron verme isteği <b style="color:#81c784;">artar</b></span>
+            </div>
+        </div>
+
+        <!-- Grup İsimleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">🏷️ Bazı Grupların Özel İsimleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;"><b style="color:#64b5f6;">1A Grubu:</b> <span style="color:#81c784;">Alkali Metaller</span></span><br>
+                <span style="color:#ccc;"><b style="color:#64b5f6;">2A Grubu:</b> <span style="color:#81c784;">Toprak Alkali Metaller</span></span><br>
+                <span style="color:#ccc;"><b style="color:#64b5f6;">7A Grubu:</b> <span style="color:#ffb74d;">Halojenler</span></span><br>
+                <span style="color:#ccc;"><b style="color:#64b5f6;">8A Grubu:</b> <span style="color:#4db6ac;">Soy (Asal) Gazlar</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- D- PERİYOTLARIN ÖZELLİKLERİ -->
+    <section class="section">
+        <h2><span style="color:#ffb74d;">↔️</span> D- Periyodik Sistemde Periyotların Özellikleri</h2>
+        
+        <!-- Soldan Sağa Özellikler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">→ Aynı Periyotlarda Soldan Sağa Gittikçe</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Atom numarası (Proton sayısı) <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Kütle numarası <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Katman sayısı (Periyot sayısı) <b style="color:#ba68c8;">değişmez</b></span><br>
+                <span style="color:#ccc;">• Atom hacmi (çapı) <b style="color:#ef5350;">azalır</b></span><br>
+                <span style="color:#ccc;">• Değerlik elektron sayısı (son yörüngedeki elektron sayısı) <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Metalik özellik <b style="color:#ef5350;">azalır</b>, ametalik özellik <b style="color:#81c784;">artar</b></span><br>
+                <span style="color:#ccc;">• Elektron alma isteği <b style="color:#81c784;">artar</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- E- ELEKTRONLARİN PERİYODİK SİSTEMDE YERİ -->
+    <section class="section">
+        <h2><span style="color:#4db6ac;">⚛️</span> E- Elementlerin Periyodik Sistemde Yerlerinin Bulunması</h2>
+        
+        <!-- Genel Kural -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #4db6ac;">
+            <b style="color:#4db6ac;">Temel Kural:</b><br><br>
+            <span style="color:#e0e0e0;">Bir elementi periyodik sistemdeki yeri <b style="color:#81c784;">nötr durumdaki elektron dağılımına</b> göre yapılır.</span>
+        </div>
+
+        <!-- Elektron Dağılımı Kuralları -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4fc3f7; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4fc3f7; margin-top:0;">📊 Elektron Dağılımında</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• <b style="color:#81c784;">Katman sayısı</b> = <b style="color:#ffb74d;">Periyot Numarası</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Son Katmandaki elektron sayısı</b> = <b style="color:#ffb74d;">Grup Numarasını</b> verir</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #81c784;">
+                <b style="color:#81c784;">Katman Kapasiteleri:</b><br>
+                <span style="color:#ccc;">1. Katman: <b>2 elektron</b></span><br>
+                <span style="color:#ccc;">2. Katman: <b>8 elektron</b></span><br>
+                <span style="color:#ccc;">3. Katman: <b>8 elektron</b> alabilir</span>
+            </div>
+        </div>
+
+        <!-- Örnek: Alüminyum -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #81c784; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#81c784; margin-top:0;">📌 Örnek: 13 Atom Numaralı Alüminyumun (Al) Yeri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#64b5f6;">Elektron Dağılımı:</b><br>
+                <span style="color:#e0e0e0; font-size:1.2em; font-weight:bold;">Al₁₃: 2) 8) 3)</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2;">
+                <span style="color:#ccc;">• <b style="color:#ffb74d;">3. Periyot</b> (3 katman olduğu için)</span><br>
+                <span style="color:#ccc;">• <b style="color:#ffb74d;">3A Grubu</b> (Son katmanda 3 elektron olduğu için)</span>
+            </div>
+        </div>
+
+        <!-- Genel Bilgiler -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">📌 Genel Bilgiler</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Atomun kimliğini <b style="color:#81c784;">atomdaki proton sayısı</b> belirler</span><br>
+                <span style="color:#ccc;">• Farklı elementlerin <b style="color:#81c784;">proton sayısı</b> birbirinden <b>farklıdır</b></span><br>
+                <span style="color:#ccc;">• Elementlerin sayısı <b style="color:#ffb74d;">118'dir</b></span><br>
+                <span style="color:#ccc;">• Bunlardan <b style="color:#81c784;">94 tanesi doğada</b> bulunmaktadır</span><br>
+                <span style="color:#ccc;">• Bilim insanları elementleri <b style="color:#4fc3f7;">benzer özelliklerine göre sınıflandırmıştır</b></span><br>
+                <span style="color:#ccc;">• Elementler sınıflandırılarak <b style="color:#81c784;">kullanımı ve anlaşılması kolaylaşır</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- F- ELEMENTLERİN SINIFLANDIRILMASI -->
+    <section class="section">
+        <h2><span style="color:#ef5350;">🔀</span> F- Elementlerin Sınıflandırılması</h2>
+        
+        <!-- Genel Tanım -->
+        <div class="highlight-box" style="background:#1a2a3a; padding:24px; border-radius:12px; border-left:4px solid #ef5350;">
+            <b style="color:#ef5350;">Elementlerin Üç Türü:</b><br><br>
+            <span style="color:#e0e0e0;">Elementler, <b style="color:#64b5f6;">metal</b>, <b style="color:#ffb74d;">ametal</b> ve <b style="color:#ba68c8;">yarı metal</b> olmak üzere <b style="color:#81c784;">üç gruba</b> ayrılmaktadır.</span>
+        </div>
+
+        <!-- I. Metallerin Genel Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #64b5f6; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#64b5f6; margin-top:0;">🔹 I- Metallerin Genel Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Tel ve levha haline <b style="color:#81c784;">getirilebilir</b> (Esneklik)</span><br>
+                <span style="color:#ccc;">• Isı ve elektriği <b style="color:#81c784;">iyi iletir</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Parlaktır</b></span><br>
+                <span style="color:#ccc;">• Oda koşullarında <b style="color:#81c784;">katıdır</b> (Cıva hariç)</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Atomik yapıdadır</b></span><br>
+                <span style="color:#ccc;">• Kendi aralarında bileşik yapmazlar, <b style="color:#81c784;">alaşım oluştururlar</b></span><br>
+                <span style="color:#ccc;">• Bileşik yaparken <b style="color:#4fc3f7;">elektron vererek + yüklü (Katyon) oluşturur</b></span><br>
+                <span style="color:#ccc;">• Son yörüngelerdeki elektron sayısı (değerlik elektron sayısı): <b style="color:#ffb74d;">1, 2 veya 3</b></span><br>
+                <span style="color:#ccc;">• Vurulduklarında <b style="color:#81c784;">çın sesi çıkarır</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Haddelenebilir, şekil verilebilir</b></span><br>
+                <span style="color:#ccc;">• Periyodik sistemin <b style="color:#81c784;">sol tarafında</b> yer alırlar</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #64b5f6;">
+                <b style="color:#64b5f6;">📌 İlk 18 Element İçerisindeki Metaller:</b><br><br>
+                <span style="color:#ccc;">
+                    🔷 <b style="color:#4fc3f7;">Lityum</b> (Li)<br>
+                    🔷 <b style="color:#4fc3f7;">Berilyum</b> (Be)<br>
+                    🔷 <b style="color:#4fc3f7;">Sodyum</b> (Na)<br>
+                    🔷 <b style="color:#4fc3f7;">Magnezyum</b> (Mg)<br>
+                    🔷 <b style="color:#4fc3f7;">Alüminyum</b> (Al)
+                </span>
+            </div>
+        </div>
+
+        <!-- II. Yarı Metallerin Genel Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ba68c8; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ba68c8; margin-top:0;">🔸 II- Yarı Metallerin Genel Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Fiziksel özellikleri bakımından <b style="color:#81c784;">metallere</b>, kimyasal özellikleri bakımından <b style="color:#4fc3f7;">ametallere benzemektedirler</b></span><br>
+                <span style="color:#ccc;">• Yarı metaller <b style="color:#81c784;">elektronik devrelerde, merceklerde ve projektörlerde</b> kullanılır</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Parlak veya mat</b> görünümdedir</span><br>
+                <span style="color:#ccc;">• Oda koşullarında <b style="color:#81c784;">katıdır</b></span><br>
+                <span style="color:#ccc;">• Tel ve levha haline <b style="color:#81c784;">gelebilir</b></span><br>
+                <span style="color:#ccc;">• Isı ve elektriği <b style="color:#4fc3f7;">ametallerden iyi, metallerden kötü</b> iletir</span><br>
+                <span style="color:#ccc;">• Periyodik sistemde <b style="color:#ba68c8;">kırık çizgi halinde</b> bulunur</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ba68c8;">
+                <b style="color:#ba68c8;">📌 İlk 18 Element İçerisindeki Yarı Metaller:</b><br><br>
+                <span style="color:#ccc;">
+                    🔶 <b style="color:#ffb74d;">Bor</b> (B)<br>
+                    🔶 <b style="color:#ffb74d;">Silisyum</b> (Si)
+                </span>
+            </div>
+        </div>
+
+        <!-- III. Ametallerin Genel Özellikleri -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #ffb74d; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#ffb74d; margin-top:0;">🔷 III- Ametallerin Genel Özellikleri</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Tel ve levha haline <b style="color:#ef5350;">getirilemez</b></span><br>
+                <span style="color:#ccc;">• Isı ve elektriği <b style="color:#ef5350;">iyi iletmez</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#ef5350;">Mattır</b> (Işığı yansıtmaz)</span><br>
+                <span style="color:#ccc;">• Oda koşullarında <b style="color:#4fc3f7;">katı, sıvı ve gaz</b> haldedir</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Molekül yapıdadır</b></span><br>
+                <span style="color:#ccc;">• Elektron alarak <b style="color:#4fc3f7;">- yüklü (Anyon) oluşturur</b></span><br>
+                <span style="color:#ccc;">• Son yörüngelerinde <b style="color:#ffb74d;">5, 6 veya 7 elektron</b> bulundurur</span><br>
+                <span style="color:#ccc;">• Periyodik sistemin <b style="color:#81c784;">sağ tarafında</b> bulunmaktadır</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ffb74d;">
+                <b style="color:#ffb74d;">📌 İlk 18 Element İçerisindeki Ametaller:</b><br><br>
+                <span style="color:#ccc;">
+                    🟡 <b style="color:#4fc3f7;">Hidrojen</b> (H)<br>
+                    🟡 <b style="color:#4fc3f7;">Karbon</b> (C)<br>
+                    🟡 <b style="color:#4fc3f7;">Azot</b> (N)<br>
+                    🟡 <b style="color:#4fc3f7;">Oksijen</b> (O)<br>
+                    🟡 <b style="color:#4fc3f7;">Flor</b> (F)<br>
+                    🟡 <b style="color:#4fc3f7;">Fosfor</b> (P)<br>
+                    🟡 <b style="color:#4fc3f7;">Kükürt</b> (S)<br>
+                    🟡 <b style="color:#4fc3f7;">Klor</b> (Cl)
+                </span>
+            </div>
+        </div>
+
+        <!-- Soygazlar -->
+        <div class="example-box" style="background:#1e2a38; border-left:6px solid #4db6ac; padding:20px; border-radius:8px; margin-top:24px;">
+            <h3 style="color:#4db6ac; margin-top:0;">✨ Soygazlar (Asal Gazlar)</h3>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0;">
+                <b style="color:#4db6ac;">Tanım:</b> <span style="color:#e0e0e0;">Soygazlar <b style="color:#ffb74d;">ametaller sınıfı içerisinde</b> yer alan <b style="color:#81c784;">özel bir gruptur</b>.</span>
+            </div>
+
+            <h4 style="color:#4db6ac; margin-top:20px;">Soygazların Genel Özellikleri:</h4>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; line-height:2.2;">
+                <span style="color:#ccc;">• Oda şartlarında <b style="color:#81c784;">hepsi gaz halindedir</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Kararlı yapıya sahiptir</b>, kimyasal reaksiyona <b style="color:#ef5350;">girmezler</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#ef5350;">Bileşik oluşturmazlar</b></span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Tek atomludur</b></span><br>
+                <span style="color:#ccc;">• Erime ve kaynama noktaları <b style="color:#ef5350;">çok düşüktür</b></span><br>
+                <span style="color:#ccc;">• Son yörüngelerinde <b style="color:#81c784;">8 elektron</b> bulundururlar (Helyum hariç)</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Işığı geçirirler</b> (Saydamdır)</span><br>
+                <span style="color:#ccc;">• Isı ve elektriği <b style="color:#ef5350;">iletmezler</b></span><br>
+                <span style="color:#ccc;">• Periyodik sistemin <b style="color:#ba68c8;">8A grubunda</b> bulunurlar</span>
+            </div>
+
+            <div style="background:#2a1a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #4db6ac;">
+                <b style="color:#4db6ac;">📌 İlk 18 Element İçerisindeki Soygazlar:</b><br><br>
+                <span style="color:#ccc;">
+                    ✨ <b style="color:#4db6ac;">Helyum</b> (He)<br>
+                    ✨ <b style="color:#4db6ac;">Neon</b> (Ne)<br>
+                    ✨ <b style="color:#4db6ac;">Argon</b> (Ar)
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- G- ÖZEL DİKKAT EDİLMESİ GEREKEN ELEMENTLER -->
+    <section class="section">
+        <h2><span style="color:#ef5350;">⚠️</span> G- Özel Dikkat Edilmesi Gereken Elementler</h2>
+        
+        <div style="background:#2a1a1a; padding:20px; border-radius:12px; margin:20px 0; border-left:4px solid #ef5350;">
+            <b style="color:#ef5350;">📌 ÖNEMLI DİKKAT !!!</b><br><br>
+            
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #64b5f6;">
+                <b style="color:#64b5f6;">1️⃣ Hidrojen (H)</b><br><br>
+                <span style="color:#ccc;">• <b style="color:#4fc3f7;">Ametal</b> olmasına rağmen</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">1A grubunda</b> (metallerin arasında) bulunur</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ba68c8;">
+                <b style="color:#ba68c8;">2️⃣ Helyum (He)</b><br><br>
+                <span style="color:#ccc;">• Son yörüngesinde <b style="color:#ffb74d;">2 elektron</b> olmasına rağmen</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">2A grubu</b> yerine <b style="color:#4db6ac;">8A grubunda</b> (soygazlar) yer alır</span>
+            </div>
+
+            <div style="background:#1a2a3a; padding:16px; border-radius:8px; margin:12px 0; border-left:3px solid #ffb74d;">
+                <b style="color:#ffb74d;">3️⃣ Bor (B)</b><br><br>
+                <span style="color:#ccc;">• Son yörüngesi: 3 elektron</span><br>
+                <span style="color:#ccc;">• <b style="color:#81c784;">Metal olması gerekirse</b> de</span><br>
+                <span style="color:#ccc;">• <b style="color:#ba68c8;">Yarı metal</b> olarak sınıflandırılır</span>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <div style="margin:60px auto; text-align:center; padding-bottom:60px;">
+        <a href="/fen/unite-4/" style="display:inline-block; padding:14px 28px; background:#1976d2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            ← 4. Ünite Ana Sayfa
+        </a>
+        <a href="/fen/" style="display:inline-block; padding:14px 28px; background:#43a047; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin:0 10px;">
+            🏠 Fen Bilimleri
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+
+    // Dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+{% endblock %}

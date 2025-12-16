@@ -1,0 +1,450 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        body.dark-theme {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+        }
+        .main-title {
+            text-align: center;
+            color: #64b5f6;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+        }
+        .section-box {
+            background: linear-gradient(135deg, #1a2a3a 0%, #1e2a38 100%);
+            border-left: 5px solid #64b5f6;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section-box h2 {
+            color: #64b5f6;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .section-box h3 {
+            color: #81c784;
+            font-size: 1.3em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .section-box p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #ccc;
+        }
+        .example-box {
+            background: rgba(100, 181, 246, 0.1);
+            border: 2px solid #64b5f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            color: #e0e0e0;
+        }
+        .highlight-box {
+            background: rgba(129, 199, 132, 0.15);
+            border: 2px solid #81c784;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            color: #ccc;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+    <h1 class="main-title">ADAPTASYON (UYUM) 🦎</h1>
+    <p style="text-align: center; color: #999; font-size: 1.1em; margin-bottom: 40px;">
+        Canlıların yaşadığı ortama uyarlanması
+    </p>
+
+    <!-- SECTION A -->
+    <div class="section-box">
+        <h2>🎯 A - Adaptasyon (Çevreye Uyum) Nedir?</h2>
+        <p>Canlıların yaşadığı ortama <strong>uyum sağlayabilmek için kalıtsal olarak geliştirdiği</strong>, yaşama ve üreme şansını artıran özelliklere <strong style="color: #81c784;">adaptasyon</strong> denir.</p>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="section-box">
+        <h2>📋 Adaptasyonun Özellikleri</h2>
+        
+        <div style="margin: 20px 0;">
+            <h3>1️⃣ Kalıtsal Aktarım</h3>
+            <div class="highlight-box">
+                <p><strong>Adaptasyonda kazanılan özellikler sonraki nesillere aktarılır.</strong></p>
+                <p>Gen yapısı değiştiği için sonraki nesillerde aynı özellik görülür.</p>
+                <p style="color: #81c784;"><strong>📌 Örnek:</strong> Bukalemunun renk değiştirebilme özelliği sonraki nesillerde de görülür.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>2️⃣ Benzer Ortamda Benzer Adaptasyonlar</h3>
+            <div class="highlight-box">
+                <p><strong>Aynı ortamda yaşayan farklı tür canlılarda benzer adaptasyonlar görülebilir.</strong></p>
+                <p style="color: #81c784;"><strong>📌 Örnek:</strong> Kutup ayısı ve kutup tilkisinin beyaz kürklerinin olması, kulak ve burunlarının küçük olması buna örnek olarak verilebilir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>3️⃣ Farklı Ortamda Farklı Adaptasyonlar</h3>
+            <div class="highlight-box">
+                <p><strong>Farklı ortamda yaşayan aynı tür canlılarda farklı adaptasyonlar görülebilir.</strong></p>
+                <p style="color: #81c784;"><strong>📌 Örnek:</strong> Kutup tilkisi beyaz kürk rengine sahipken, çöl tilkisi krem renginde olması.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>4️⃣ Uzun Zaman Gerektirir</h3>
+            <div class="highlight-box">
+                <p><strong>Adaptasyon uzun süreçte meydana gelir.</strong></p>
+                <p>Canlıdaki adaptasyon uzun sürede gerçekleşir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>5️⃣ Biyolojik Çeşitliliğe Katkısı</h3>
+            <div class="highlight-box">
+                <p><strong>Adaptasyonlar biyolojik çeşitliliğe katkı sağlar.</strong></p>
+                <p>Adaptasyonlar farklı türde canlıların oluşmasına katkı sağlamaktadır.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="section-box">
+        <h2>🦁 B - Canlılarda Adaptasyon Örnekleri</h2>
+        
+        <div style="margin: 20px 0;">
+            <h3>❄️ 1. Kutup Ayısı</h3>
+            <div class="example-box">
+                <p><strong>Beyaz renkli olması</strong> — Karla kaplı ortamda kamu flaj (gizlenme) sağlar.</p>
+                <p><strong>Geniş ayakları olması</strong> — Buzda kaymaması ve karında batmamsı için.</p>
+                <p><strong>Yağ depo etmesi</strong> — Soğuk ortamda ısı kaybını azaltır, enerji deposu görevi görür.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐫 2. Deve</h3>
+            <div class="example-box">
+                <p><strong>Uzun kirpikleri ve kulak kılları</strong> — Toz girmesini engeller.</p>
+                <p><strong>Hörgücünde yağ ve su tutması</strong> — Uzun süre açlığa ve susuzluğa dayanmasını sağlar.</p>
+                <p><strong>Kalın dudakları</strong> — Dikenli bitkiler yemesini kolaylaştırır.</p>
+                <p><strong>Geniş ayakları</strong> — Kumda batmadan yürür.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🌿 3. Nilüfer</h3>
+            <div class="example-box">
+                <p><strong>Geniş yaprakları olması</strong> — Işık absorpsiyonunu artırır.</p>
+                <p><strong>Yapraklarında hava boşlukları olması</strong> — Su yüzeyinde yüzebilmesini sağlar, yaprakları çimdiklenmeye dayanıklı hale getirir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🌵 4. Kaktüs</h3>
+            <div class="example-box">
+                <p><strong>Diken yaprakları olması</strong> — Su kaybını azaltır, hayvanlardan koruma sağlar.</p>
+                <p><strong>Gövdesinde su depo etmesi</strong> — Kurak iklimde kuraklık döneminde yaşamasını sağlar.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦆 5. Ördek ve Kaz</h3>
+            <div class="example-box">
+                <p><strong>Suda yüzmek için ayaklarının perdeli olması</strong> — Yüzme hızını artırır ve suya karşı direnci azaltır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦓 6. Zebra</h3>
+            <div class="example-box">
+                <p><strong>Çizgili görünüme sahip olması</strong> — Başıboş avlanıcıları kafes altına almak amacıyla bu çizgiler optik illüzyon oluşturur (dazzle camouflage).</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐧 7. Penguen</h3>
+            <div class="example-box">
+                <p><strong>Ayakları perdeli olması</strong> — Buzda yürümeyi ve suda yüzmeyi kolaylaştırır.</p>
+                <p><strong>Deri altında yağ depolaması</strong> — Soğuk denizlerde ısı kaybını engeller.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION C -->
+    <div class="section-box">
+        <h2>🌍 Daha Fazla Adaptasyon Örnekleri</h2>
+        
+        <div style="margin: 20px 0;">
+            <h3>🦅 8. Deve Kuşu</h3>
+            <div class="example-box">
+                <p><strong>Bacakları uzun ve kaslı olması</strong> — Hızlı koşmaya ve uzun mesafeleri yürümeye olanak sağlar.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦅 9. Kartal</h3>
+            <div class="example-box">
+                <p><strong>Ayaklarında sivri pençeleri olması</strong> — Avını yakalaması ve tutması için.</p>
+                <p><strong>Gagasının sivri olması</strong> — Avını parçalamayı kolaylaştırır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦈 10. Köpek Balığı</h3>
+            <div class="example-box">
+                <p><strong>Sırt ve karın bölgelerinin farklı renkte olması</strong> — Sırtı koyu (deniz tabanına uyum), karnı açık (yüzey ışığında gizlenme). Fark edilmeyi zorlaştırır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>⚡ 11. Tırpana Balığı</h3>
+            <div class="example-box">
+                <p><strong>Kuyruğunda elektrik üretmesi</strong> — Karşı cinsle iletişim kurma, düşmanlarından korunma, avını ava çevirmek için kullanılır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐠 12. Balıklar</h3>
+            <div class="example-box">
+                <p><strong>Fazla sayıda yumurta ve sperm üretme</strong> — Üreme şansını artırır, yavru hayatta kalma oranını yükseltir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐸 13. Kurbağa</h3>
+            <div class="example-box">
+                <p><strong>Sinekleri yakalayabilmek için dilinin uzun olması</strong> — Hızlı avlanmaya olanak sağlar.</p>
+                <p><strong>Derilerinin nemli olması</strong> — Su kaybını engeller, cilt solunumu sağlar.</p>
+                <p><strong>Ayaklarının perdeli olması</strong> — Su ortamında yüzmeyi kolaylaştırır.</p>
+                <p><strong>Fazla sayıda yumurta üretmeleri</strong> — Üreme (Üreme başarısını artırır).</p>
+                <p><strong>Erkek kurbağaların vıraklayarak dişilerin dikkatini çekmesi</strong> — Üreme davranışı (çiftleşmeyi sağlar).</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦎 14. Bukalemun</h3>
+            <div class="example-box">
+                <p><strong>Bulunduğu ortama göre renk değiştirmesi</strong> — Kamuflaj (gizlenme) ve duygu iletişimi için kullanılır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦇 15. Yarasa</h3>
+            <div class="example-box">
+                <p><strong>Karanlıkta avlanmak ve yön bulabilmek için ses dalgalarını kullanması</strong> — Sonar (eko-lokasyon) sistemi ile oryantasyon.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🕷️ 16. Örümcek</h3>
+            <div class="example-box">
+                <p><strong>Ağ örebilmesi</strong> — Avını yakalamak için kompleks yapı oluşturması.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐘 17. Fil</h3>
+            <div class="example-box">
+                <p><strong>Uzun hortumu olması</strong> — Ağaçların yüksek dallarındaki yaprakları almasını, su içmesini sağlar.</p>
+                <p><strong>Büyük kulaklarının olması</strong> — Vücut ısısını atarak soğumasını sağlar.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🌴 18. Palmiye Ağaçları</h3>
+            <div class="example-box">
+                <p><strong>Terlemeyi kolaylaştıran geniş yapraklarının olması</strong> — Su kaybı sayesinde yapraklar soğur, bitki sıcaklığı düşer.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐟 19. Alabalık</h3>
+            <div class="example-box">
+                <p><strong>Yumurta bırakmak için nehir akıntısına ters yüzmeleri</strong> — Üreme davranışı, yumurtaların uygun yerde kalmasını sağlar.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦒 20. Zürafa</h3>
+            <div class="example-box">
+                <p><strong>Ağaçların üst dallarındaki yaprakları yiyebilmesi için boynunun uzun olması</strong> — Beslenme adaptasyonu.</p>
+                <p><strong>Su içmeden uzun süre yaşayabilmesi</strong> — Bitkilerden aldığı su kurak iklime uyum sağlar.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦡 21. Köstebek</h3>
+            <div class="example-box">
+                <p><strong>Toprak kazmaya yarayan ayaklarının olması</strong> — Yer altında yaşam için yapılı adaptasyon.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐠 22. Dil Balığı</h3>
+            <div class="example-box">
+                <p><strong>Üzerinde yattığı taşların renginde olması</strong> — Kamuflaj ile korunma.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦎 23. Kertenkele</h3>
+            <div class="example-box">
+                <p><strong>Tehlike anında kuyruğunu koparması</strong> — Avcıdan kurtulma mekanizması (ototomi).</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🍎 24. Elma Tohumları</h3>
+            <div class="example-box">
+                <p><strong>Tohumların meyve içerisinde olması</strong> — Koruma ve yayılma adaptasyonu, hayvanlar tarafından tüketilerek tohumlar yayılır.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🌳 26. Ağaçların Yapraklarını Dökmesi</h3>
+            <div class="example-box">
+                <p><strong>Yapraklarını dökmesi</strong> — Soğuk mevsiminde su kaybını azaltarak kış uykusunun optimizasyonu.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🦅 27. Göçmen Kuşların Göç Etmesi</h3>
+            <div class="example-box">
+                <p><strong>Mevsim değişikliklerinde göç etmesi</strong> — Beslenme ve sıcak iklim adaptasyonu.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐻 28. Bazı Canlıların Kış Uykusuna Yatması</h3>
+            <div class="example-box">
+                <p><strong>Kış uykusuna yatması</strong> — Enerji tasarrufu ve soğuk şartlara dayanma mekanizması.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🐭 29. Çölde Yaşayan Canlıların Uzun Kulaklı ve Kuyruklu Olması</h3>
+            <div class="example-box">
+                <p><strong>Uzun kulaklı ve kuyruklu olması</strong> — Geniş yüzey alanı vücut ısısını atmaya yardımcı olur (çöl ısısına uyum).</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>❄️ 30. Soğuk Bölgelerde Yaşayan Canlıların Kısa Kulaklı Olması</h3>
+            <div class="example-box">
+                <p><strong>Kısa kulaklı olması</strong> — Az yüzey alanı ısı kaybını azaltır (kutup ikliminde ısı koruma).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION D -->
+    <div class="section-box">
+        <h2>🔄 Doğal Seçilim (Seleksiyon)</h2>
+        <p><strong style="color: #ffb74d;">Doğadaki yaşama şartlarına uyum sağlayan canlıların yaşamına devam etmesi, uyum sağlayamayanların ise yok olmasına</strong> <strong style="color: #81c784;">doğal seçilim (seleksiyon)</strong> denir.</p>
+        
+        <div style="margin: 20px 0;">
+            <h3>📌 Doğal Seçilimin Özellikleri</h3>
+            <div class="highlight-box">
+                <p><strong>Doğal seçilim, adaptasyona sebep olur.</strong></p>
+                <p>Doğal seçilimde <strong>güçlü olan, ortama uyum sağlayan canlı yaşar</strong>, uyum sağlayamayan canlı ise elenir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>⚙️ Doğal Seçilime Sebep Olan Faktörler</h3>
+            <div class="example-box">
+                <p>✓ Canlılar arasındaki rekabet</p>
+                <p>✓ İklim şartları</p>
+                <p>✓ Beslenme kaynakları</p>
+                <p>✓ Hastalıklar</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>📚 Doğal Seçilim Örneği</h3>
+            <div class="highlight-box">
+                <p><strong>🦋 Siyah ve Beyaz Güve Kelebeklerinin Değişimi:</strong></p>
+                <p>Sanayi devrimi ile beraber ortam şartlarının değişmesiyle birlikte:</p>
+                <p>▸ <strong>Siyah güve kelebeklerinin</strong> nesli <strong style="color: #81c784;">devam ederken</strong></p>
+                <p>▸ <strong>Beyaz güve kelebeklerinin</strong> sayısı <strong style="color: #ef5350;">azalmıştır</strong></p>
+                <p style="margin-top: 10px; color: #81c784;"><strong>Sebep:</strong> Çevre şartlarına uyum sağlayabilen siyah güve kelebekleri yaşamaya devam etmiş, beyaz olanlar avlanmaya daha kolay maruz kalmıştır.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION E -->
+    <div class="section-box">
+        <h2>🎨 Varyasyon (Tür İçi Çeşitlilik)</h2>
+        <p><strong style="color: #81c784;">Tür içerisinde görülen çeşitliliğe varyasyon (tür içi çeşitlilik)</strong> denir.</p>
+        
+        <div style="margin: 20px 0;">
+            <h3>📋 Varyasyonun Özellikleri</h3>
+            <div class="highlight-box">
+                <p><strong>✓ Aynı tür içerisindeki farklılıktır.</strong></p>
+                <p style="color: #ffb74d;">📌 Örnek: İnsanlarda ten renginin, göz renginin farklı olması varyasyondur.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>🧬 Varyasyonların Kaynağı</h3>
+            <div class="highlight-box">
+                <p><strong>Varyasyonlar genellikle kalıtsaldır.</strong></p>
+                <p>Varyasyon, <strong style="color: #81c784;">kalıtsal yapının değişmesiyle</strong> veya <strong style="color: #ffb74d;">çevre etkisiyle</strong> gerçekleşebilir.</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>📚 Varyasyona Örnekler</h3>
+            <div class="example-box">
+                <p>🐢 <strong>Kara Kaplumbağası ve Su Kaplumbağası</strong> — Aynı cins içinde farklı yapı ve davranış</p>
+                <p>🍎 <strong>Elma Ağacının Farklı Meyve Vermesi</strong> — Aynı türde ağaçlar farklı kalitede meyve verir</p>
+                <p>🐚 <strong>Farklı Kabuk Rengine Sahip İstiridyeler</strong> — Aynı tür içinde renk çeşitliliği</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION F -->
+    <div class="section-box">
+        <h2>👨‍🌾 Yapay Seçilim</h2>
+        <p><strong style="color: #64b5f6;">İnsanlar tarafından gerçekleştirilen belirli özellikteki bitki ve hayvanların seçilerek nesillerinin devam etmesinin sağlanmasıdır.</strong></p>
+        
+        <div style="margin: 20px 0;">
+            <h3>📚 Yapay Seçilim Örneği</h3>
+            <div class="highlight-box">
+                <p><strong>🌽 Mısır Bitkisinin Evrilmesi:</strong></p>
+                <p><strong style="color: #ef5350;">Önceden:</strong> Kısa boylu ve tohumu verimsizdi</p>
+                <p><strong style="color: #81c784;">Yapılanlar:</strong> Mısır bitkisinden iyi tohum veren ve uzun boylu olanları seçildi</p>
+                <p><strong style="color: #64b5f6;">Sonuç:</strong> İstenilen özellikteki mısırın nesli devam ederken diğerlerinin nesli devam etmedi</p>
+                <p style="margin-top: 10px; color: #ffb74d;"><strong>Günümüzde:</strong> Günümüzdeki verimli ve uzun boylu mısır bitkisi elde edildi</p>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>⚠️ Önemli Not</h3>
+            <div style="background: rgba(239, 83, 80, 0.15); border: 2px solid #ef5350; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+                <p><strong>Yapay Seçilim vs Doğal Seçilim Ayrımı:</strong></p>
+                <p style="margin-top: 10px;"><strong style="color: #64b5f6;">✓ Yapay Seçilim:</strong> İnsan eliyle teker teker seçilim gerçekleşir.</p>
+                <p style="margin-top: 8px;"><strong style="color: #81c784;">✓ Doğal Seçilim Örneği:</strong> İnsanların yaptığı ilaçlama sonucu böceklerin ölmesi doğal seçilimdir. Böceklerden bağışıklığı düşük olanlar elenir, güçlü olanlar yaşamaya devam eder.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin: 40px auto; text-align: center; padding-bottom: 60px;">
+        <a href="/fen/unite-2/" style="display: inline-block; padding: 14px 28px; background: #1976d2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+            ← 2. Üniteye Dön
+        </a>
+    </div>
+</div>
+{% endblock %}

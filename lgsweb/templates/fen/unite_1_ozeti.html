@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block extra_head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-theme');
+        });
+    </script>
+    <link rel="stylesheet" href="/static/dersler.css">
+    <style>
+        body.dark-theme {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+        }
+        .main-title {
+            text-align: center;
+            color: #2196F3;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+        }
+        .section-box {
+            background: linear-gradient(135deg, #1a2a3a 0%, #1e2a38 100%);
+            border-left: 5px solid #2196F3;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section-box h2 {
+            color: #2196F3;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .section-box h3 {
+            color: #4fc3f7;
+            font-size: 1.3em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .section-box p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #ccc;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .summary-item {
+            background: rgba(33, 150, 243, 0.1);
+            border: 2px solid #2196F3;
+            padding: 15px;
+            border-radius: 6px;
+            color: #e0e0e0;
+        }
+        .summary-item h4 {
+            color: #4fc3f7;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        .summary-item p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+    <h1 class="main-title">1. ÜNİTE ÖZETI 📋</h1>
+    <p style="text-align: center; color: #999; font-size: 1.1em; margin-bottom: 40px;">
+        Mevsimler ve İklim Ünitesinin Tüm Konuları Bir Bakışta
+    </p>
+
+    <div class="section-box">
+        <h2>🌍 1. Mevsimler ve İklim</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🌎 Dönme Hareketi</h4>
+                <p>Dünya kendi ekseni etrafında batıdan doğuya döner. 24 saatte bir tam dönüş. Gece-gündüz oluşur.</p>
+            </div>
+            <div class="summary-item">
+                <h4>📐 Dolanma Hareketi</h4>
+                <p>Dünya Güneş etrafında eliptik yörüngede dolanır. 365 gün 6 saatte bir tam tur. Mevsimler oluşur.</p>
+            </div>
+            <div class="summary-item">
+                <h4>⚡ Eksen Eğikliği</h4>
+                <p>Dünya'nın dönme ekseni 23° 27' açıyla eğimli. Bu mevsimlerin başlıca sebebidir.</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌤️ Mevsimler</h4>
+                <p><strong>İlkbahar:</strong> Günler uzar | <strong>Yaz:</strong> En uzun gün | <strong>Sonbahar:</strong> Günler kısalır | <strong>Kış:</strong> En kısa gün</p>
+            </div>
+            <div class="summary-item">
+                <h4>☀️ Güneş Işınlarının Açısı</h4>
+                <p>Ekvator'da dik, kutuplara gidildikçe eğik düşer. Yüksek açı sıcak, düşük açı soğuk demektir.</p>
+            </div>
+            <div class="summary-item">
+                <h4>📏 Gölge Boyu</h4>
+                <p>Güneş ışınlarının açısı değişirse gölge boyu da değişir. Yüksek açı kısa gölge, düşük açı uzun gölge.</p>
+            </div>
+            <div class="summary-item">
+                <h4>📅 Önemli Tarihler</h4>
+                <p><strong>Bahar Ekinoksu:</strong> 20-21 Mart | <strong>Yaz Solstisi:</strong> 20-21 Haziran | <strong>Kış Solstisi:</strong> 21-22 Aralık</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌐 Enlem ve Sıcaklık</h4>
+                <p>Ekvatordan kutuplara gidildikçe sıcaklık azalır. Çünkü güneş ışınları daha eğik gelir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>🌪️ 2. Atmosfer ve İklim Olayları</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h4>🌫️ Atmosfer</h4>
+                <p>Dünya'yı çevreleyen gaz tabakası. %78 Azot, %21 Oksijen, geri kalanı diğer gazlar.</p>
+            </div>
+            <div class="summary-item">
+                <h4>🛡️ Atmosferin Görevleri</h4>
+                <p>Canlılara gerekli gazları sağlar, güneşin zararlı ışınlarını engeller, dünyayı korur, hava olaylarını oluşturur.</p>
+            </div>
+            <div class="summary-item">
+                <h4>📊 Atmosfer Katmanları</h4>
+                <p><strong>Troposfer:</strong> 0-10 km (hava olayları burada) | <strong>Stratosfer:</strong> Ozon tabakası</p>
+            </div>
+            <div class="summary-item">
+                <h4>📈 Hava Basıncı</h4>
+                <p>Atmosferin ağırlığının neden olduğu basınç. <strong>Yüksek:</strong> Soğuk bölgelerde | <strong>Düşük:</strong> Sıcak bölgelerde</p>
+            </div>
+            <div class="summary-item">
+                <h4>💨 Rüzgar</h4>
+                <p>Yüksek basınç bölgesinden düşük basınç bölgesine doğru akan hava. Sıcaklık farkından oluşur.</p>
+            </div>
+            <div class="summary-item">
+                <h4>💧 Su Döngüsü</h4>
+                <p>Buharlaşma → Yoğunlaşma → Yağış → Akış. Su sürekli dolaşır ve hava olaylarını oluşturur.</p>
+            </div>
+            <div class="summary-item">
+                <h4>☔ Yağış Türleri</h4>
+                <p><strong>Yağmur, Kar, Dolu, Çiğ.</strong> Su döngüsü sırasında oluşan farklı yağış biçimleri.</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌦️ Hava Olayları</h4>
+                <p>Sıcaklık ve nem değişimlerinden oluşur. Rüzgar, yağmur, sis, kar, şimşek gibi olayları içerir.</p>
+            </div>
+            <div class="summary-item">
+                <h4>⛈️ Tehlikeli Hava Olayları</h4>
+                <p><strong>Kasırga:</strong> Çok güçlü rüzgar | <strong>Gök Gürültülü Fırtına:</strong> Şimşek ve şiddetli yağış</p>
+            </div>
+            <div class="summary-item">
+                <h4>🌡️ Küresel Isınma</h4>
+                <p>Sera gazlarının artmasıyla dünya ısınıyor. İklim değişikliği, hava olayları şiddetleniyor.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>📚 Ünitenin Temel Hedefleri</h2>
+        <div style="background: rgba(79, 195, 247, 0.15); border: 2px solid #4fc3f7; padding: 15px; margin: 15px 0; border-radius: 6px; color: #ccc;">
+            <p>✓ Dünya'nın dönme ve dolanma hareketlerini anlamak</p>
+            <p>✓ Mevsim oluşumunda eksen eğikliğinin rolünü kavramak</p>
+            <p>✓ Güneş ışınlarının açısının sıcaklık değişimlerine etkisini bilmek</p>
+            <p>✓ Atmosferin yapısını ve önemini anlamak</p>
+            <p>✓ Rüzgar ve hava basıncını öğrenmek</p>
+            <p>✓ Hava olaylarının sebebini açıklamak</p>
+        </div>
+    </div>
+
+    <div style="margin: 40px auto; text-align: center; padding-bottom: 60px;">
+        <a href="/fen/unite-1/" style="display: inline-block; padding: 14px 28px; background: #1976d2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+            ← 1. Üniteye Dön
+        </a>
+    </div>
+</div>
+{% endblock %}
