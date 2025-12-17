@@ -38,6 +38,7 @@ urlpatterns = [
     path('turkce/', views.turkce, name='turkce'),
     path('fen/', views.fen, name='fen'),
     path('fen/unite-1/', views.fen_unite_1, name='fen_unite_1'),
+    path('fen/unite-1/yazili-hazirlik-atmosfer-iklim/', views.yazili_hazirlik_atmosfer_iklim, name='yazili_hazirlik_atmosfer_iklim'),
     path('fen/unite-1-ozeti/', views.unite_1_ozeti, name='unite_1_ozeti'),
     path('fen/mevsimler-iklim/', views.mevsimler_iklim, name='mevsimler_iklim'),
     path('fen/iklim-olaylari/', views.iklim_olaylari, name='iklim_olaylari'),

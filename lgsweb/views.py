@@ -34,6 +34,12 @@ def iklim_olaylari(request):
 def fen_unite_2(request):
     return render(request, 'fen/fen_unite_2.html')
 
+
+    return render(request, 'fen/yazili_hazirlik_atmosfer_iklim.html')
+
+    return render(request, 'fen/yazili_hazirlik_atmosfer_iklim.html')
+
+    return render(request, 'fen/yazili_hazirlik_atmosfer_iklim.html')
 def dna_genetik_kod(request):
     return render(request, 'fen/dna_genetik_kod.html')
 
